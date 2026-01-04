@@ -13,6 +13,7 @@ export interface Testimonial {
     content: string;
     avatar: string;
     rating: number;
+    socialHandle?: string;
 }
 
 export interface NavLink {

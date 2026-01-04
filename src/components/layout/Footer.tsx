@@ -4,7 +4,7 @@ import { Mountain, Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "luc
 export function Footer() {
     return (
         <footer className="bg-brand-dark border-t border-brand-light/10 pt-16 pb-8 text-brand-white">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-8 md:px-20 lg:px-32">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="space-y-4">
@@ -22,10 +22,10 @@ export function Footer() {
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-brand-light">Explore</h4>
                         <ul className="space-y-3 text-brand-white/70">
-                            <li><Link href="#destinations" className="hover:text-white transition-colors">Destinations</Link></li>
-                            <li><Link href="#gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Destinations</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">Gallery</Link></li>
                             <li><Link href="#about" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link href="#faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                            <li><Link href="#" className="hover:text-white transition-colors">FAQ</Link></li>
                         </ul>
                     </div>
 
@@ -56,9 +56,9 @@ export function Footer() {
                             <input
                                 type="email"
                                 placeholder="Email address"
-                                className="bg-brand-medium/30 border border-brand-light/20 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-brand-light text-white"
+                                className="bg-brand-medium/30 border border-brand-light/20 rounded-xl px-4 py-2 w-full focus:outline-none focus:border-brand-light text-white"
                             />
-                            <button className="bg-brand-light hover:bg-white hover:text-brand-dark text-white px-4 py-2 rounded-lg transition-colors font-medium">
+                            <button className="bg-brand-light hover:bg-brand-white text-brand-dark px-6 py-2 rounded-xl transition-all font-bold shadow-[0_4px_15px_rgba(80,140,155,0.3)] hover:shadow-[0_4px_25px_rgba(80,140,155,0.5)]">
                                 Go
                             </button>
                         </form>

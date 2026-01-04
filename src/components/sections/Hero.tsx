@@ -51,12 +51,12 @@ export function Hero() {
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                         style={{ backgroundImage: `url(${HERO_IMAGES[index]})` }}
                     />
-                    <div className="absolute inset-0 bg-brand-dark/50" /> {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/60 to-brand-dark" /> {/* Overlay */}
                 </motion.div>
             </AnimatePresence>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-6 text-center">
+            <div className="relative z-10 container mx-auto px-8 md:px-20 lg:px-32 text-center ">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={index}
@@ -76,9 +76,9 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
-                            className="pt-8"
+                            className="pt-8 "
                         >
-                            <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-brand-light text-white rounded-full text-lg font-semibold overflow-hidden transition-all hover:bg-white hover:text-brand-dark shadow-[0_0_20px_rgba(80,140,155,0.5)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)]">
+                            <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-brand-light text-brand-dark rounded-full text-lg font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(80,140,155,0.4)] hover:cursor-pointer hover:shadow-[0_8px_40px_rgba(80,140,155,0.6)]">
                                 <span className="relative z-10">Start Your Journey</span>
                                 <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
                             </button>

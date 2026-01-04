@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, Clock } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import type { ContactFormData } from "@/types";
+import { Section } from "@/components/ui/Section";
+import { SectionBadge } from "@/components/ui/SectionBadge";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const contactInfo = [
     {
@@ -64,161 +65,131 @@ export function ContactSection() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-brand-medium/10">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16">
-                    {/* Contact Info */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <span className="inline-block px-4 py-2 rounded-full bg-brand-light/20 text-brand-light font-medium text-sm mb-6 uppercase tracking-wider">
-                            Get In Touch
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready for Your Next{" "}
-                            <span className="text-brand-light">Adventure?</span>
-                        </h2>
-                        <p className="text-lg text-brand-white/70 mb-10">
-                            Whether you have questions about our treks, need help planning your
-                            expedition, or want to create a custom itinerary, our team is here to help.
+        <Section id="contact" background="white">
+            {/* Arctic Decorative Background */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #134B70 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-light/10 blur-[100px] rounded-full" />
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-medium/5 blur-[100px] rounded-full" />
+
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+                {/* Contact Info Side */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="space-y-12"
+                >
+                    <div className="space-y-6">
+                        <SectionBadge>Contact Us</SectionBadge>
+                        <SectionHeading dark={false} gradientText="Next Summit.">
+                            Let's Map Your
+                        </SectionHeading>
+                        <p className="text-xl text-brand-medium/70 font-medium max-w-xl leading-relaxed">
+                            Whether you're seeking a soul-stirring solo trek or a group expedition, our team of high-altitude experts is ready to guide you.
                         </p>
+                    </div>
 
-                        {/* Contact Cards */}
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            {contactInfo.map((item, index) => (
-                                <motion.a
-                                    key={item.label}
-                                    href={item.href}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    whileHover={{ y: -4 }}
-                                    className="flex items-start gap-4 p-5 rounded-xl bg-brand-dark border border-brand-light/10 hover:border-brand-light/30 hover:shadow-lg transition-all"
-                                >
-                                    <div className="p-3 rounded-lg bg-brand-light/10 text-brand-light">
-                                        <item.icon className="h-5 w-5" />
-                                    </div>
-                                    <div>
-                                        <div className="text-sm text-brand-white/60 mb-1">
-                                            {item.label}
-                                        </div>
-                                        <div className="font-medium text-white">
-                                            {item.value}
-                                        </div>
-                                    </div>
-                                </motion.a>
-                            ))}
-                        </div>
-                    </motion.div>
+                    {/* Contact Methodology Grid */}
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        {contactInfo.map((item, index) => (
+                            <motion.a
+                                key={item.label}
+                                href={item.href}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="group flex flex-col gap-4 p-8 rounded-3xl bg-white shadow-xl shadow-brand-dark/[0.03] border border-brand-light/10 hover:border-brand-light/30 transition-all duration-500"
+                            >
+                                <div className="w-12 h-12 rounded-2xl bg-brand-light/10 text-brand-light flex items-center justify-center group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-500 shadow-sm">
+                                    <item.icon size={22} />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-brand-light uppercase tracking-widest mb-1">{item.label}</p>
+                                    <p className="text-brand-dark font-bold text-lg group-hover:text-brand-medium transition-colors">{item.value}</p>
+                                </div>
+                            </motion.a>
+                        ))}
+                    </div>
+                </motion.div>
 
-                    {/* Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
+                {/* Premium Form Side */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <div className="relative group/form">
+                        <div className="absolute inset-0 bg-brand-light/20 blur-[80px] opacity-0 group-hover/form:opacity-30 transition-opacity duration-700" />
+
                         <form
                             onSubmit={handleSubmit}
-                            className="p-8 md:p-10 rounded-2xl bg-brand-dark border border-brand-light/10 shadow-2xl"
+                            className="relative p-10 md:p-14 rounded-[3rem] bg-white shadow-2xl shadow-brand-dark/5 border border-brand-light/20 space-y-8"
                         >
-                            <h3 className="text-2xl font-bold text-white mb-6">
-                                Send Us a Message
-                            </h3>
+                            <div className="space-y-4">
+                                <h3 className="text-3xl font-black text-brand-dark tracking-tight">Send a Brief</h3>
+                                <p className="text-brand-medium/60 text-sm font-medium">We usually respond within 4 mountain hours.</p>
+                            </div>
 
-                            <div className="space-y-5">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                                        Full Name
-                                    </label>
-                                    <Input
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        placeholder="John Doe"
-                                        required
-                                        className="h-12"
-                                    />
-                                </div>
-
-                                <div className="grid sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                                            Email Address
-                                        </label>
-                                        <Input
-                                            id="email"
-                                            name="email"
+                            <div className="space-y-6">
+                                <div className="grid sm:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Full Name</label>
+                                        <input
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
+                                            placeholder="Pemba Sherpa"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Email</label>
+                                        <input
                                             type="email"
+                                            name="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            placeholder="john@example.com"
+                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
+                                            placeholder="hello@peak.com"
                                             required
-                                            className="h-12"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
-                                            Phone Number
-                                        </label>
-                                        <Input
-                                            id="phone"
-                                            name="phone"
-                                            type="tel"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            placeholder="+977 123 456 789"
-                                            className="h-12"
                                         />
                                     </div>
                                 </div>
 
-                                <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                                        Your Message
-                                    </label>
-                                    <Textarea
-                                        id="message"
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Message</label>
+                                    <textarea
                                         name="message"
+                                        rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        placeholder="Tell us about your dream adventure..."
-                                        rows={5}
+                                        className="w-full p-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20 resize-none"
+                                        placeholder="Tell us about the peak you want to conquer..."
                                         required
-                                        className="resize-none"
                                     />
                                 </div>
 
                                 <motion.button
                                     type="submit"
-                                    whileHover={{ scale: 1.02 }}
+                                    whileHover={{ scale: 1.02, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full h-12 bg-brand-light text-brand-dark font-bold rounded-lg hover:bg-brand-white transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={isSubmitting}
+                                    className="w-full h-16 bg-brand-dark text-white rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/20 hover:bg-brand-medium transition-all duration-300 disabled:opacity-50"
                                 >
-                                    {isSubmitting ? (
-                                        <motion.div
-                                            animate={{ rotate: 360 }}
-                                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                            className="w-5 h-5 border-2 border-brand-dark/30 border-t-brand-dark rounded-full"
-                                        />
-                                    ) : (
-                                        <>
-                                            Send Message
-                                            <Send className="h-5 w-5" />
-                                        </>
-                                    )}
+                                    {isSubmitting ? "Sending..." : "Begin Expedition"}
+                                    <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </motion.button>
                             </div>
                         </form>
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
             </div>
-        </section>
+        </Section>
     );
 }

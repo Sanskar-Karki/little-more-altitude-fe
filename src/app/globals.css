@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Palette */
-  --color-brand-dark: #213555;
-  /* Dark Blue - Main Background */
-  --color-brand-medium: #3E5879;
-  /* Slate Blue - Secondary Backgrounds/Cards */
-  --color-brand-light: #D8C4B6;
-  /* Warm Beige - Primary Actions/Highlights */
-  --color-brand-white: #F5EFE7;
-  /* Soft Cream - Text/subtle elements */
+  /* Brand Palette - Modern Blue & Mist */
+  --color-brand-dark: #201E43;
+  /* Deep Night Blue */
+  --color-brand-medium: #134B70;
+  /* Oceanic Blue */
+  --color-brand-light: #508C9B;
+  /* Glacial Teal */
+  --color-brand-white: #EEEEEE;
+  /* Arctic Mist */
 
   /* Semantic Map */
   --background: var(--color-brand-dark);
   --foreground: var(--color-brand-white);
   --primary: var(--color-brand-light);
   --secondary: var(--color-brand-medium);
-  --muted: #3E5879;
+  --muted: #134B70;
 }
 
 @theme inline {

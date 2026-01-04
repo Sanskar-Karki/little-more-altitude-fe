@@ -6,11 +6,11 @@ import { Menu, X, Mountain } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-    { label: "Destinations", href: "/destinations" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Contact Us", href: "/contact" },
+const NAV_LINKS: { label: string; href: string }[] = [
+    { label: "Destinations", href: "#" },
+    { label: "Gallery", href: "#" },
+    { label: "FAQ", href: "#" },
+    { label: "Contact Us", href: "#" },
 ];
 
 export function Navbar() {
@@ -34,7 +34,7 @@ export function Navbar() {
                     : "bg-transparent py-6"
             )}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
+            <div className="container mx-auto px-8 md:px-20 lg:px-32 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
                     <Mountain className="h-8 w-8 text-brand-light transition-transform group-hover:scale-110" />
@@ -94,7 +94,7 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <Link
-                                href="/contact"
+                                href="#"
                                 onClick={() => setIsOpen(false)}
                                 className="px-8 py-3 mt-4 rounded-full bg-brand-light text-brand-dark font-bold hover:bg-white transition-colors"
                             >
