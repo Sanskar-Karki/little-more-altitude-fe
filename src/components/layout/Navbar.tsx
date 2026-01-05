@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { label: string; href: string }[] = [
-    { label: "Destinations", href: "#" },
-    { label: "Gallery", href: "#" },
-    { label: "FAQ", href: "#" },
-    { label: "Contact Us", href: "#" },
+    { label: "Destinations", href: "/destinations" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact Us", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -55,12 +55,7 @@ export function Navbar() {
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-light transition-all duration-300 group-hover:w-full" />
                         </Link>
                     ))}
-                    <Link
-                        href="/contact"
-                        className="px-5 py-2 rounded-full bg-brand-light text-brand-dark font-semibold hover:bg-white transition-colors shadow-[0_0_15px_rgba(216,196,182,0.4)] hover:shadow-[0_0_20px_rgba(245,239,231,0.4)]"
-                    >
-                        Book Now
-                    </Link>
+
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -93,13 +88,7 @@ export function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
-                            <Link
-                                href="#"
-                                onClick={() => setIsOpen(false)}
-                                className="px-8 py-3 mt-4 rounded-full bg-brand-light text-brand-dark font-bold hover:bg-white transition-colors"
-                            >
-                                Book Now
-                            </Link>
+
                         </div>
                     </motion.div>
                 )}

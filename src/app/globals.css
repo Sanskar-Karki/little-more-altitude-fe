@@ -2,11 +2,11 @@
 
 :root {
   /* Brand Palette - Modern Blue & Mist */
-  --color-brand-dark: #201E43;
+  --color-brand-dark: #213555;
   /* Deep Night Blue */
-  --color-brand-medium: #134B70;
+  --color-brand-medium: #3E5879;
   /* Oceanic Blue */
-  --color-brand-light: #508C9B;
+  --color-brand-light: #D8C4B6;
   /* Glacial Teal */
   --color-brand-white: #EEEEEE;
   /* Arctic Mist */
@@ -33,14 +33,44 @@
   --font-sans: var(--font-sans);
 }
 
+/* Framer Motion / Scroll Setup */
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+  /* Move scrollbar to left */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  direction: ltr;
+  /* Restore text direction to left-to-right */
 }
 
-/* Framer Motion / Scroll Setup */
-html {
-  scroll-behavior: smooth;
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-medium);
+  border-radius: 10px;
+  border: 2px solid var(--color-brand-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-light);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-medium) var(--color-brand-dark);
 }

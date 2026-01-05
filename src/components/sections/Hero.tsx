@@ -3,11 +3,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import homepage from "../../assets/homepage.jpg";
+import mountainGrayscale from "../../assets/Mountain-grayscale.jpg";
+import mountainRange from "../../assets/mountain-range-1.jpg";
+
 
 const HERO_IMAGES = [
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=2076&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop"
+    homepage,
+    mountainGrayscale,
+    mountainRange,
 ];
 
 const HERO_CONTENT = [
@@ -41,17 +46,20 @@ export function Hero() {
             <AnimatePresence mode="popLayout">
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 1.1 }}
+                    initial={{ opacity: 0, scale: 1.2 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1.5 }}
+                    transition={{ duration: 1.2 }}
                     className="absolute inset-0 z-0"
                 >
-                    <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: `url(${HERO_IMAGES[index]})` }}
+                    <Image
+                        src={HERO_IMAGES[index]}
+                        alt={HERO_CONTENT[index].title}
+                        fill
+                        priority={index === 0}
+                        className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/60 to-brand-dark" /> {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/60 to-brand-dark z-10" /> {/* Overlay */}
                 </motion.div>
             </AnimatePresence>
 

@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google"; // Modern typography
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,8 +29,10 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>
   );
 }
+
