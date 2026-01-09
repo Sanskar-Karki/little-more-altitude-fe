@@ -13,8 +13,8 @@ export function Footer() {
                             <span className="text-xl font-bold">Little More Altitude</span>
                         </div>
                         <p className="text-brand-white/60 leading-relaxed">
-                            Elevate your spirit with unforgettable trekking experiences.
-                            We guide you to the peaks of the world with safety and passion.
+                            Your trusted partner for unparalleled trekking across Nepal.
+                            Built on real high-altitude experience. Go Higher. Live Deeper.
                         </p>
                     </div>
 

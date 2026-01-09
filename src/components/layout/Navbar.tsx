@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { label: string; href: string }[] = [
-    { label: "Destinations", href: "/destinations" },
+    { label: "Destinations", href: "/" },
     { label: "Gallery", href: "/gallery" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "FAQ", href: "/" },
+    { label: "Contact Us", href: "/" },
 ];
 
 export function Navbar() {

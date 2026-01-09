@@ -8,13 +8,13 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const FOUNDERS = [
     {
-        name: "Pemba Sherpa",
+        name: "Pemba N. Sherpa",
         role: "Co-Founder & Lead Expeditionist",
         bio: "Veteran of the high peaks with a vision to share the majesty of the Himalayas with every traveler.",
         image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop",
     },
     {
-        name: "Nima Tashi",
+        name: "Ngima Tashi Sherpa",
         role: "Co-Founder & Operations Chief",
         bio: "Dedicated to crafting ethical and soul-stirring journeys that respect both the land and the local culture.",
         image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop",
@@ -42,9 +42,11 @@ export function About() {
                     transition={{ delay: 0.2 }}
                     className="text-brand-medium/80 text-lg md:text-xl leading-relaxed font-medium"
                 >
-                    Little More Altitude was founded by two lifelong friends who turned their obsession
-                    with the mountains into a mission to bring the world closer to the clouds.
-                    We don't just organize treks; we share our home.
+                    Founded on the firsthand high-altitude experience of lifelong mountain companions
+                    Pemba N. Sherpa and Ngima Tashi Sherpa, born and raised on the Himalayan trails,
+                    A Little More Altitude delivers safe, authentic, and perspective-shifting trekking
+                    adventures that take you beyond breathtaking landscapes—toward deeper connection,
+                    purpose, and growth.
                 </motion.p>
             </div>
 
@@ -119,7 +121,7 @@ export function About() {
                             Our Shared <span className="text-brand-light underline decoration-brand-light/30 underline-offset-8">Vision</span>
                         </h4>
                         <p className="text-brand-medium/70 text-lg md:text-xl leading-relaxed max-w-2xl font-medium italic">
-                            "To create a world where every climber returns with more than just a certificate—they return with a different perspective on life and a soul deeply touched by the altitude."
+                            "Built on real high-altitude experience and led by experienced guides, deep local knowledge, and strong community roots— we help you Go Higher. Live Deeper."
                         </p>
                     </div>
 
@@ -128,7 +130,7 @@ export function About() {
                     <div className="flex flex-col items-center lg:items-end gap-4 shrink-0 transition-transform group-hover:scale-105 duration-500">
                         <div className="text-center lg:text-right space-y-2">
                             <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-medium to-brand-light">
-                                "The mountain decides."
+                                "Go Higher. Live Deeper"
                             </p>
                             <div className="flex items-center justify-center lg:justify-end gap-3">
                                 <div className="h-px w-8 bg-brand-light/40" />

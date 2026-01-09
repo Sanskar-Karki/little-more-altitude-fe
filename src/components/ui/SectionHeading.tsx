@@ -19,7 +19,7 @@ export function SectionHeading({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight ${dark ? 'text-white' : 'text-brand-dark'} ${className}`}
+            className={`text-4xl md:text-4xl lg:text-6xl font-black leading-[1.05] tracking-tight ${dark ? 'text-white' : 'text-brand-dark'} ${className}`}
         >
             {children}
             {gradientText && (

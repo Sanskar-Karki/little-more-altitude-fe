@@ -17,16 +17,16 @@ const HERO_IMAGES = [
 
 const HERO_CONTENT = [
     {
-        title: "Conquer Your Summit",
-        subtitle: "Experience the thrill of high altitude trekking with certified guides."
+        title: "Go Higher. Live Deeper.",
+        subtitle: "Unparalleled trekking across Nepal, from Everest Base Camp to remote Himalayan trails."
     },
     {
         title: "Walk Above the Clouds",
-        subtitle: "Discover hidden trails and breathtaking vistas in the Himalayas."
+        subtitle: "Experience high-altitude trekking led by experienced guides with deep local knowledge."
     },
     {
-        title: "Adventure Awaits",
-        subtitle: "Join us for an unforgettable journey into the wild."
+        title: "Adventure with Purpose",
+        subtitle: "Safe, authentic, and perspective-shifting adventures that take you beyond breathtaking landscapes."
     }
 ];
 

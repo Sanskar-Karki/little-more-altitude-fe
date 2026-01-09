@@ -49,9 +49,27 @@ const testimonials: Testimonial[] = [
 
 export function Testimonials() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isExpanded, setIsExpanded] = useState(false);
 
-    const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    const truncateText = (text: string, limit: number) => {
+        const words = text.trim().split(/\s+/).filter(Boolean);
+        if (words.length > limit) {
+            return words.slice(0, limit).join(' ') + '...';
+        }
+        return text;
+    };
+
+    const getWordCount = (text: string) => text.trim().split(/\s+/).filter(Boolean).length;
+
+    const next = () => {
+        setIsExpanded(false);
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    };
+
+    const prev = () => {
+        setIsExpanded(false);
+        setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    };
 
     return (
         <Section id="testimonials" background="dark">
@@ -131,9 +149,17 @@ export function Testimonials() {
                                             <Star key={i} className={`h-4 w-4 ${i < testimonials[currentIndex].rating ? 'fill-brand-light text-brand-light' : 'text-brand-white/20'}`} />
                                         ))}
                                     </div>
-                                    <p className="text-lg md:text-xl text-white leading-[1.4] font-bold italic tracking-tight">
-                                        "{testimonials[currentIndex].content}"
-                                    </p>
+                                    <div className="text-lg md:text-xl text-white leading-[1.4] font-bold italic tracking-tight pointer-events-auto">
+                                        "{isExpanded ? testimonials[currentIndex].content : truncateText(testimonials[currentIndex].content, 20)}"
+                                        {getWordCount(testimonials[currentIndex].content) > 20 && (
+                                            <button
+                                                onClick={() => setIsExpanded(!isExpanded)}
+                                                className="ml-2 text-brand-light not-italic font-black text-xs uppercase tracking-widest hover:underline cursor-pointer"
+                                            >
+                                                {isExpanded ? "Show Less" : "Read More"}
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
 
                                 <div className="pt-6 border-t border-brand-light/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
