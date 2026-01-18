@@ -45,7 +45,7 @@ export default function AboutPage() {
                         dark={false}
                     />
                     <div className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
-                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N. Sherpa and Ngima Tashi Sherpa.
+                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa and Ngima Tashi Sherpa.
                     </div>
                 </div>
 
