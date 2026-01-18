@@ -79,7 +79,7 @@ export function FAQ() {
                         >
                             <button
                                 onClick={() => toggleFAQ(item.id)}
-                                className="w-full flex items-center justify-between p-6 text-left transition-colors hover:bg-brand-medium/30"
+                                className="w-full flex items-center justify-between p-6 text-left transition-colors hover:bg-brand-medium/30 cursor-pointer"
                                 aria-expanded={openId === item.id}
                             >
                                 <span className="font-semibold text-lg text-white pr-8">

@@ -2,20 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Mountain } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { label: string; href: string }[] = [
-    { label: "Destinations", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Destinations", href: "/destinations" },
     { label: "Gallery", href: "/gallery" },
-    { label: "FAQ", href: "/" },
-    { label: "Contact Us", href: "/" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact Us", href: "/contact" },
 ];
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,17 +48,25 @@ export function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
-                    {NAV_LINKS.map((link) => (
-                        <Link
-                            key={link.label}
-                            href={link.href}
-                            className="text-brand-white/80 hover:text-brand-light font-medium transition-colors relative group"
-                        >
-                            {link.label}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-light transition-all duration-300 group-hover:w-full" />
-                        </Link>
-                    ))}
-
+                    {NAV_LINKS.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                className={cn(
+                                    "font-medium transition-colors relative group",
+                                    isActive ? "text-brand-light" : "text-brand-white/80 hover:text-brand-light"
+                                )}
+                            >
+                                {link.label}
+                                <span className={cn(
+                                    "absolute -bottom-1 left-0 h-0.5 bg-brand-light transition-all duration-300",
+                                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                                )} />
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -78,16 +89,22 @@ export function Navbar() {
                         className="md:hidden bg-brand-dark/95 backdrop-blur-xl border-b border-brand-light/20 overflow-hidden"
                     >
                         <div className="flex flex-col items-center py-8 gap-6">
-                            {NAV_LINKS.map((link) => (
-                                <Link
-                                    key={link.label}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-xl text-brand-white font-medium hover:text-brand-light transition-colors"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                            {NAV_LINKS.map((link) => {
+                                const isActive = pathname === link.href;
+                                return (
+                                    <Link
+                                        key={link.label}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={cn(
+                                            "text-xl font-medium transition-colors",
+                                            isActive ? "text-brand-light" : "text-brand-white hover:text-brand-light"
+                                        )}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                );
+                            })}
 
                         </div>
                     </motion.div>

@@ -105,7 +105,7 @@ export function WhyChooseUs() {
         : [currentIndex, (currentIndex + 1) % REASONS.length];
 
     return (
-        <Section id="why-choose-us" background="dark" className="py-18!">
+        <Section id="why-choose-us" background="white" className="py-18!">
             {/* Background decorative elements */}
             <motion.div
                 animate={{ y: [0, -20, 0], scale: [1, 1.1, 1] }}
@@ -187,13 +187,13 @@ export function WhyChooseUs() {
                     className="space-y-10 order-1 lg:order-2"
                 >
                     <div className="space-y-6">
-                        <SectionBadge dark={true}>Why Choose Us</SectionBadge>
-                        <SectionHeading gradientText="Altitude Difference.">
+                        <SectionBadge dark={false}>Why Choose Us</SectionBadge>
+                        <SectionHeading dark={false} gradientText="Altitude Difference.">
                             The Little More
                         </SectionHeading>
                         <motion.p
                             variants={itemVariants}
-                            className="text-brand-white/80 text-lg leading-relaxed max-w-xl font-medium"
+                            className="text-brand-medium/80 text-lg leading-relaxed max-w-xl font-medium"
                         >
                             Built on real high-altitude experience and deep local knowledge, we help you Go Higher and Live Deeper.
                         </motion.p>
@@ -201,7 +201,7 @@ export function WhyChooseUs() {
 
                     {/* Reasons Slider - 2-Card View with Stacking Animation */}
                     <div className="relative overflow-visible">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[360px] md:min-h-[320px] relative">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[360px] md:min-h-[320px]  relative">
                             <AnimatePresence mode="popLayout" initial={false}>
                                 {visibleIndices.map((idx, i) => {
                                     const pillar = REASONS[idx];
@@ -231,16 +231,16 @@ export function WhyChooseUs() {
                                             }}
                                             className="h-full"
                                         >
-                                            <div className="group p-8 rounded-[2rem] bg-brand-white/[0.03] border border-brand-light/10 hover:border-brand-light/30 transition-all duration-500 hover:bg-brand-white/[0.05] h-full flex flex-col backdrop-blur-sm relative">
-                                                <div className="w-14 h-14 rounded-2xl bg-brand-light/10 text-brand-light flex items-center justify-center mb-6 group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-500 shrink-0 shadow-lg">
+                                            <div className="group p-8 rounded-[2rem] bg-brand-medium/5 border border-brand-light/50 hover:border-brand-light transition-all duration-500 hover:bg-brand-medium/10 h-full flex flex-col backdrop-blur-sm relative hover:cursor-pointer ">
+                                                <div className="w-14 h-14 rounded-2xl bg-brand-light/10 text-brand-light flex items-center justify-center mb-6 group-hover:bg-brand-dark group-hover:text-brand-light transition-all duration-500 shrink-0 shadow-lg ">
                                                     <pillar.icon size={28} />
                                                 </div>
-                                                <h4 className="text-white font-bold text-xl mb-3 leading-tight">{pillar.title}</h4>
-                                                <div className="text-brand-white/60 text-sm leading-relaxed flex-grow">
+                                                <h4 className="text-brand-dark font-bold text-xl mb-3 leading-tight">{pillar.title}</h4>
+                                                <div className="text-brand-medium/70 text-sm leading-relaxed flex-grow">
                                                     {expandedIds.includes(pillar.title)
                                                         ? pillar.desc
-                                                        : truncateText(pillar.desc, 50)}
-                                                    {getWordCount(pillar.desc) > 50 && (
+                                                        : truncateText(pillar.desc, 30)}
+                                                    {getWordCount(pillar.desc) > 30 && (
                                                         <button
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
@@ -261,28 +261,28 @@ export function WhyChooseUs() {
 
                         {/* Pagination & Nav */}
                         <div className="flex items-center gap-6 mt-10">
-                            <div className="flex gap-2.5">
+                            <div className="flex gap-2.5 ">
                                 {REASONS.map((_, i) => (
                                     <button
                                         key={i}
                                         onClick={() => setCurrentIndex(i)}
-                                        className={`h-1.5 rounded-full transition-all duration-500 ${currentIndex === i
+                                        className={`h-1.5 rounded-full transition-all duration-500  ${currentIndex === i
                                             ? "w-10 bg-brand-light shadow-[0_0_15px_rgba(234,179,8,0.4)]"
                                             : "w-2 bg-brand-light/20 hover:bg-brand-light/40"
                                             }`}
                                     />
                                 ))}
                             </div>
-                            <div className="flex gap-3 ml-auto">
+                            <div className="flex gap-3 ml-auto ">
                                 <button
                                     onClick={prevSlide}
-                                    className="p-3.5 rounded-2xl bg-brand-white/5 border border-brand-light/10 hover:bg-brand-light hover:text-brand-dark transition-all duration-500 hover:scale-110 active:scale-95 group shadow-xl"
+                                    className="p-3.5 rounded-2xl bg-brand-dark/5 border border-brand-light/10 hover:bg-brand-dark hover:text-brand-light transition-all duration-500 hover:scale-110 active:scale-95 group shadow-xl cursor-pointer"
                                 >
                                     <ChevronLeft size={22} className="group-hover:-translate-x-0.5 transition-transform" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
-                                    className="p-3.5 rounded-2xl bg-brand-white/5 border border-brand-light/10 hover:bg-brand-light hover:text-brand-dark transition-all duration-500 hover:scale-110 active:scale-95 group shadow-xl"
+                                    className="p-3.5 rounded-2xl bg-brand-dark/5 border border-brand-light/10 hover:bg-brand-dark hover:text-brand-light transition-all duration-500 hover:scale-110 active:scale-95 group shadow-xl cursor-pointer"
                                 >
                                     <ChevronRight size={22} className="group-hover:translate-x-0.5 transition-transform" />
                                 </button>
@@ -293,7 +293,7 @@ export function WhyChooseUs() {
                     {/* Stats Row */}
                     <motion.div
                         variants={itemVariants}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-brand-light/10"
+                        className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-brand-light/20"
                     >
                         {STATS.map((stat, i) => (
                             <motion.div
@@ -304,10 +304,10 @@ export function WhyChooseUs() {
                                 transition={{ delay: 0.2 + (i * 0.1) }}
                                 className="space-y-1"
                             >
-                                <p className="text-3xl font-black text-white tracking-tighter">
+                                <p className="text-3xl font-black text-brand-dark tracking-tighter">
                                     <CountUp to={stat.value} suffix={stat.suffix} precision={stat.value % 1 !== 0 ? 1 : 0} />
                                 </p>
-                                <p className="text-brand-light/50 text-[10px] font-bold uppercase tracking-[0.2em] leading-tight">{stat.label}</p>
+                                <p className="text-brand-medium/50 text-[10px] font-bold uppercase tracking-[0.2em] leading-tight">{stat.label}</p>
                             </motion.div>
                         ))}
                     </motion.div>

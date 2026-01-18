@@ -9,15 +9,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const FOUNDERS = [
     {
         name: "Pemba N. Sherpa",
-        role: "Co-Founder & Lead Expeditionist",
-        bio: "Veteran of the high peaks with a vision to share the majesty of the Himalayas with every traveler.",
-        image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop",
+        role: "Director & Certified Guide",
+        bio: "High altitude filmmaker, 2x Kilimanjaro summiteer, born and raised in the mountains of Solu Khumbu.",
+        image: "/founders/pemba.png",
     },
     {
         name: "Ngima Tashi Sherpa",
-        role: "Co-Founder & Operations Chief",
-        bio: "Dedicated to crafting ethical and soul-stirring journeys that respect both the land and the local culture.",
-        image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=2080&auto=format&fit=crop",
+        role: "Director & Operations Chief",
+        bio: "12+ years of experience across Nepal’s most challenging routes. Guided with heart and Sherpa spirit.",
+        image: "/founders/tashi.png",
     }
 ];
 

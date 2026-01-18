@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar, Star, ArrowRight, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import type { Destination } from "@/types";
@@ -78,88 +78,133 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="group relative h-[450px] rounded-[2rem]  overflow-hidden  border border-brand-light/10 shadow-2xl"
+            className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-brand-light/5 shadow-2xl hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-700 hover:cursor-pointer"
         >
-            {/* Background Image with Zoom Effect */}
+            {/* Background Image with Enhanced Zoom and Pan */}
             <div className="absolute inset-0 overflow-hidden">
                 <Image
                     src={destination.image}
                     alt={destination.name}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+
+                {/* Dynamic Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/20 via-transparent to-transparent opacity-50" />
+
+                {/* Subtle Inner Glow on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_120%,rgba(216,196,182,0.15),transparent_70%)]" />
             </div>
 
-            {/* Badges */}
-            <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-10">
-                <div className="px-4 py-1.5 rounded-full bg-brand-light/90 backdrop-blur-md text-brand-dark text-xs font-black uppercase tracking-widest shadow-lg">
+            {/* Top Badges - Refined */}
+            <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-20">
+                <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="px-4 py-2 rounded-2xl bg-brand-light/20 backdrop-blur-xl border border-brand-light/30 text-brand-light text-xs font-black uppercase tracking-widest shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+                >
                     {destination.price}
-                </div>
-                {destination.rating > 4.8 && (
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold">
-                        <TrendingUp size={14} className="text-brand-light" />
-                        <span>Trending</span>
-                    </div>
-                )}
+                </motion.div>
+
+                <AnimatePresence>
+                    {destination.rating > 4.8 && (
+                        <div className="flex items-center gap-2 px-3 py-2 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 text-white text-[10px] font-black uppercase tracking-tighter">
+                            <Star size={10} className="text-brand-light fill-brand-light" />
+                            <span>Elite Choice</span>
+                        </div>
+                    )}
+                </AnimatePresence>
             </div>
 
-            {/* Content Container - Slides up on hover */}
+            {/* Main Content Area */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
-                <div className="space-y-4 transform transition-transform duration-500 group-hover:-translate-y-4">
-                    <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-brand-light/90 text-xs font-bold uppercase tracking-widest">
-                            <MapPin size={12} />
-                            <span>{destination.location}</span>
-                        </div>
-                        <h3 className="text-3xl font-black text-white leading-tight tracking-tight">
-                            {destination.name}
-                        </h3>
+                <div className="space-y-5 transform transition-transform duration-700 group-hover:-translate-y-6">
+                    {/* Location Badge */}
+                    <div className="flex items-center gap-2 text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.25em]">
+                        <span className="w-4 h-px bg-brand-light/40" />
+                        <MapPin size={10} />
+                        <span>{destination.location}</span>
                     </div>
 
-                    <div className="flex items-center gap-6 text-brand-white/70 text-sm font-medium">
+                    {/* Title with Gradient Polish */}
+                    <h3 className="text-3xl font-black text-white leading-none tracking-tight">
+                        {destination.name}
+                    </h3>
+
+                    {/* Quick Stats Strip */}
+                    <div className="flex items-center gap-5 text-brand-white/60 text-xs font-semibold">
                         <div className="flex items-center gap-2">
-                            <Calendar size={16} className="text-brand-light" />
+                            <Calendar size={14} className="text-brand-light/60" />
                             <span>{destination.duration}</span>
                         </div>
+                        <div className="w-1 h-1 rounded-full bg-brand-light/30" />
                         <div className="flex items-center gap-2">
-                            <Star size={16} className="text-brand-light fill-brand-light" />
-                            <span>{destination.rating}</span>
+                            <div className="flex items-center gap-0.5">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star
+                                        key={i}
+                                        size={10}
+                                        className={`${i < Math.floor(destination.rating) ? 'text-brand-light fill-brand-light' : 'text-white/20'}`}
+                                    />
+                                ))}
+                            </div>
+                            <span className="text-white font-bold">{destination.rating}</span>
                         </div>
                     </div>
 
-                    {/* Hidden Description or Additional Info - Revealed on Hover */}
-                    <div className="max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
-                        <div className="pt-4 flex items-center justify-between border-t border-brand-light/10 mt-4">
-                            <span className="px-3 py-1 rounded-lg bg-brand-light/10 border border-brand-light/20 text-brand-light text-[10px] font-bold uppercase tracking-widest">
-                                {destination.difficulty}
-                            </span>
-                            <button className="flex items-center gap-2 text-white font-bold text-sm group/btn">
-                                Explore Details
-                                <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
-                            </button>
+                    {/* Hover Reveal Details - Enhanced */}
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100">
+                        <div className="overflow-hidden">
+                            <div className="pt-6 flex items-center justify-between border-t border-brand-light/10 mt-2">
+                                <div className="space-y-1">
+                                    <p className="text-[10px] text-brand-light/60 uppercase tracking-widest font-bold">Intensity</p>
+                                    <p className="text-white text-xs font-black uppercase">{destination.difficulty}</p>
+                                </div>
+                                <motion.button
+                                    whileHover={{ x: 5 }}
+                                    className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white text-brand-dark font-black text-[10px] uppercase tracking-widest hover:bg-brand-light transition-colors shadow-xl"
+                                >
+                                    View Expedition
+                                    <ArrowRight size={14} />
+                                </motion.button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Glassmorphism Border Overlay */}
-            <div className="absolute inset-0 border border-white/0 group-hover:border-white/10 transition-colors duration-500 pointer-events-none rounded-[2.5rem]" />
+            {/* Edge Shine Effect */}
+            <div className="absolute inset-0 border-[1.5px] border-white/0 group-hover:border-white/10 transition-all duration-700 pointer-events-none rounded-[2.5rem]" />
         </motion.div>
     );
 }
 
-export function Destinations() {
+export function Destinations({ limit, background = "white" }: { limit?: number; background?: "white" | "dark" }) {
+    const displayedDestinations = limit ? destinations.slice(0, limit) : destinations;
+    const isDark = background === "dark";
+
     return (
-        <Section id="destinations" background="dark" container={false} className="relative overflow-hidden">
-            {/* Background Decorative Rings */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 border border-brand-light/5 rounded-full pointer-events-none" />
-            <div className="absolute top-1/2 -left-48 w-72 h-72 bg-brand-light/5 blur-[100px] rounded-full pointer-events-none" />
+        <Section id="destinations" background={background} container={false} className="relative overflow-hidden">
+            {/* Sophisticated Background Elements */}
+            {!isDark && (
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-brand-light/10 blur-[120px] rounded-full mix-blend-multiply animate-pulse-slow" />
+                    <div className="absolute top-[20%] -right-[10%] w-[50%] h-[50%] bg-brand-medium/5 blur-[140px] rounded-full mix-blend-multiply" />
+                    <div className="absolute -bottom-[10%] left-[20%] w-[30%] h-[30%] bg-brand-light/10 blur-[100px] rounded-full mix-blend-multiply animate-pulse" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40" />
+                </div>
+            )}
+
+            {isDark && (
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-1/2 -left-48 w-72 h-72 bg-brand-light/5 blur-[100px] rounded-full" />
+                </div>
+            )}
 
             <div className="container relative z-10 mx-auto px-8 md:px-20 lg:px-32">
                 <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
-                    <SectionBadge dark={true}>Curated Journeys</SectionBadge>
-                    <SectionHeading gradientText="Your Next Summit.">
+                    <SectionBadge dark={isDark}>Curated Journeys</SectionBadge>
+                    <SectionHeading dark={isDark} gradientText="Your Next Summit.">
                         Explore Our World Class
                     </SectionHeading>
                     <motion.p
@@ -167,7 +212,7 @@ export function Destinations() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-brand-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium"
+                        className={`${isDark ? 'text-brand-white/60' : 'text-brand-dark/60'} text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium`}
                     >
                         From the soaring peaks of the Himalayas to the rugged paths of Patagonia,
                         every destination is hand-selected for its soul-stirring beauty.
@@ -175,7 +220,7 @@ export function Destinations() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                    {destinations.map((destination, index) => (
+                    {displayedDestinations.map((destination, index) => (
                         <DestinationCard
                             key={destination.id}
                             destination={destination}
@@ -185,20 +230,20 @@ export function Destinations() {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
                     className="mt-20 text-center"
                 >
-                    <button className="group relative px-10 py-5 bg-transparent border-2 border-brand-light/30 text-white rounded-full text-lg font-bold overflow-hidden transition-all hover:border-brand-light">
+                    <button className={`group relative px-10 py-5 bg-transparent border-2 ${isDark ? 'border-brand-light/30 text-white hover:border-brand-light' : 'border-brand-dark/10 text-brand-dark hover:border-brand-medium'} rounded-full text-lg font-bold overflow-hidden transition-all hover:cursor-pointer`}>
                         <span className="relative z-10 flex items-center gap-3">
                             View More Expeditions
                             <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
-                        <div className="absolute inset-0 bg-brand-light translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0" />
+                        <div className={`absolute inset-0 ${isDark ? 'bg-brand-light/20' : 'bg-brand-medium/10'} translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0`} />
                     </button>
-                    <p className="mt-6 text-brand-white/40 text-sm font-medium tracking-wide">
+                    <p className={`mt-6 ${isDark ? 'text-brand-white/40' : 'text-brand-dark/40'} text-sm font-medium tracking-wide`}>
                         Over 40+ custom routes available upon request
                     </p>
                 </motion.div>
