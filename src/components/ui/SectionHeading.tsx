@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 interface SectionHeadingProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     gradientText?: string;
     className?: string;
     dark?: boolean;
@@ -24,7 +24,7 @@ export function SectionHeading({
             {children}
             {gradientText && (
                 <>
-                    {" "}<br className="hidden md:block" />
+                    {children && <><br className="hidden md:block" />{" "}</>}
                     <span className={`text-transparent bg-clip-text bg-gradient-to-r ${dark ? 'from-brand-light to-brand-white' : 'from-brand-medium to-brand-light'}`}>
                         {gradientText}
                     </span>

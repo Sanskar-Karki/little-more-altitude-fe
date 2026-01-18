@@ -151,8 +151,8 @@ export function Gallery() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="space-y-3 max-w-2xl">
                         <SectionBadge>Our Gallery</SectionBadge>
-                        <SectionHeading gradientText="Captured.">
-                            Himalayan Stories
+                        <SectionHeading gradientText="Captured. " >
+                            <span className="text-brand-dark/80"> Himalayan Stories</span>
                         </SectionHeading>
                         <p className="text-brand-dark/60 text-lg font-medium leading-relaxed">
                             A glimpse into the extraordinary landscapes, vibrant cultures, and

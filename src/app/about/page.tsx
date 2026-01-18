@@ -38,14 +38,15 @@ export default function AboutPage() {
 
             {/* Meet the Founders */}
             <Section id="founders" background="white">
-                <div className="text-center mb-20">
-                    <SectionBadge>The Visionaries</SectionBadge>
-                    <SectionHeading dark={false} gradientText="Meet the Founders">
-                        The Hearts Behind
-                    </SectionHeading>
-                    <p className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
+                <div className="text-center mb-10">
+                    <SectionHeading
+                        className="text-brand-dark/80 text-3xl md:text-5xl max-w-3xl mx-auto font-bold mb-2"
+                        gradientText="Meet the Founders"
+                        dark={false}
+                    />
+                    <div className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
                         Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N. Sherpa and Ngima Tashi Sherpa.
-                    </p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
