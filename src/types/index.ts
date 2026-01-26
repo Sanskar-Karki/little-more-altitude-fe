@@ -56,4 +56,5 @@ export interface Destination {
     rating: number;
     price: string;
     image: string;
+    slug?: string;
 }

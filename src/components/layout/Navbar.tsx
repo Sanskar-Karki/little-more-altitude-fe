@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS: { label: string; href: string }[] = [
     { label: "About Us", href: "/about" },
-    { label: "Destinations", href: "/destinations" },
+    { label: "Trekking", href: "/trekking" },
+    { label: "Expedition", href: "/expedition" },
     { label: "Gallery", href: "/gallery" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact Us", href: "/contact" },
@@ -28,13 +29,17 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const isHomePage = pathname === "/";
+
     return (
         <nav
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
                 scrolled
                     ? "bg-brand-dark/80 backdrop-blur-md border-brand-light/20 py-4 shadow-lg"
-                    : "bg-transparent py-6"
+                    : isHomePage
+                        ? "bg-transparent py-6"
+                        : "bg-brand-dark py-6"
             )}
         >
             <div className="container mx-auto px-8 md:px-20 lg:px-32 flex items-center justify-between">
