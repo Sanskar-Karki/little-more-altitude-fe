@@ -36,7 +36,7 @@ export default function PembaDetailPage() {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="hidden lg:block pb-4 text-right"
                         >
-                            <p className="text-brand-white/60 text-lg md:text-xl font-medium italic max-w-6xl ml-auto">
+                            <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto">
                                 "The mountains didn't just raise me; they defined my entire way of seeing the world."
                             </p>
                         </motion.div>
@@ -105,7 +105,7 @@ export default function PembaDetailPage() {
                                     <p>
                                         This unique upbringing—spanning the raw simplicity of a Sherpa childhood and the fast-paced life of a modern filmmaker—has given Pemba a distinct perspective. He doesn't just guide; he captures the soul of the journey. Whether he's navigating a complex mountain pass or looking through a camera lens, his objective is the same: to tell a story of authentic Himalayan life.
                                     </p>
-                                    <p className="bg-brand-medium/5 p-10 rounded-[3rem] border-l-8 border-brand-light italic text-2xl font-black text-brand-dark leading-relaxed">
+                                    <p className="bg-brand-medium/5 p-10 rounded-[3rem] border-l-8 border-brand-light text-2xl font-black text-brand-dark leading-relaxed">
                                         "A Little More Altitude isn't just a business; it's a bridge between my heritage and your curiosity."
                                     </p>
                                     <p>
@@ -157,7 +157,7 @@ export default function PembaDetailPage() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(216,196,182,0.05),transparent_70%)]" />
                 <div className="container relative z-10 mx-auto px-8">
                     <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
-                    <p className="text-3xl md:text-5xl font-black text-white italic max-w-4xl mx-auto leading-tight tracking-tight">
+                    <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
                         "The altitude is just a number. It's the depth of the experience that truly counts toward the summit of one's soul."
                     </p>
                 </div>

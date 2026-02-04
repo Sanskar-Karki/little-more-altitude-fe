@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Mountain, MapPin, Trophy, Shield, ArrowRight, Clock, Zap, Gauge } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mountain, MapPin, Trophy, Shield, ArrowRight, Clock, Zap, Gauge, Target, Compass, Users } from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
+import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -17,22 +17,22 @@ const expeditions = [
         duration: "65 Days",
         difficulty: "Extreme",
         technicalLevel: "High",
-        price: "Contact for Elite Pricing",
+        price: "Elite Pricing",
         image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-        tag: "The Ultimate Summit",
+        tag: "THE ULTIMATE SUMMIT",
         description: "Stand on top of the world. Our South Col route expedition offers the most comprehensive support system ever engineered for Everest."
     },
     {
         id: 2,
-        name: "Mount Kilimanjaro",
+        name: "Kilimanjaro",
         elevation: "5,895m",
         location: "Moshi, Tanzania",
         duration: "9 Days",
-        difficulty: "Moderate-Plus",
+        difficulty: "Moderate+",
         technicalLevel: "Low",
-        price: "$3,850",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-        tag: "Seven Summits",
+        price: "$3,850+",
+        image: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1200&q=80",
+        tag: "SEVEN SUMMITS",
         description: "The Lemosho Route. Traverse through five distinct eco-systems to reach the highest point in Africa under the expert guidance of our summit leads."
     },
     {
@@ -43,134 +43,190 @@ const expeditions = [
         duration: "45 Days",
         difficulty: "Extreme",
         technicalLevel: "Moderate",
-        price: "$14,500",
+        price: "$14,500+",
         image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=1200&q=80",
-        tag: "The Spirit Mountain",
+        tag: "THE SPIRIT MOUNTAIN",
         description: "Often the first 8000m peak for aspiring Everest climbers. Experience the raw power of the Himalayas on the world's 8th highest mountain."
     }
 ];
 
 function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
+    const isEven = index % 2 === 0;
+
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
-            className="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[3rem] bg-brand-dark/40 border border-brand-light/10 mb-16 backdrop-blur-sm shadow-2xl"
+            initial={{ opacity: 0, y: 100, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-32 last:mb-0"
         >
-            {/* Visual Side */}
-            <div className="lg:col-span-6 relative h-[400px] lg:h-[600px] overflow-hidden">
-                <Image
-                    src={exp.image}
-                    alt={exp.name}
-                    fill
-                    className="object-cover transition-transform duration-[2s] group-hover:scale-110"
-                    priority={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
-                />
+            <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
 
-                {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-transparent to-transparent hidden lg:block opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent lg:hidden opacity-60" />
+                {/* Visual Side - Tech Card */}
+                <div className="w-full lg:w-1/2">
+                    <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group cursor-none">
+                        <Image
+                            src={exp.image}
+                            alt={exp.name}
+                            fill
+                            className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/20 opacity-60" />
 
-                <div className="absolute top-8 left-8">
-                    <div className="px-5 py-2 rounded-full bg-brand-light/20 backdrop-blur-md border border-brand-light/30 text-brand-light text-[10px] font-black uppercase tracking-[0.3em] shadow-xl">
-                        {exp.tag}
+                        {/* Floating HUD Elements */}
+                        <div className="absolute top-8 left-8 right-8 flex justify-between items-start">
+                            <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-2">
+                                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                                <span className="text-[10px] font-mono font-bold text-white tracking-widest uppercase">Live Status</span>
+                            </div>
+                            <div className="text-right hidden sm:block">
+                                <p className="text-[10px] font-mono text-white/50 tracking-widest">ELEVATION_PROFILE</p>
+                                <p className="text-xl font-black text-white tracking-tight">{exp.elevation}</p>
+                            </div>
+                        </div>
+
+                        {/* Bottom Stats Overlay */}
+                        <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                            <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                                {[
+                                    { label: "Duration", value: exp.duration },
+                                    { label: "Difficulty", value: exp.difficulty },
+                                    { label: "Price", value: exp.price }
+                                ].map((stat) => (
+                                    <div key={stat.label}>
+                                        <p className="text-[9px] font-black text-white/40 uppercase tracking-widest mb-1">{stat.label}</p>
+                                        <p className="text-sm md:text-base font-bold text-white">{stat.value}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="absolute bottom-8 left-8 lg:hidden">
-                    <h3 className="text-3xl font-black text-white italic tracking-tighter">
-                        {exp.name}
-                    </h3>
-                </div>
-            </div>
+                {/* Content Side */}
+                <div className="w-full lg:w-1/2 space-y-10 text-center lg:text-left">
+                    <div className="space-y-4">
+                        <div className={`flex items-center gap-4 ${isEven ? 'justify-start' : 'justify-end lg:justify-start'} justify-center`}>
+                            <div className="px-4 py-1 rounded-full border border-brand-light/30 text-brand-light text-[10px] font-black uppercase tracking-[0.3em]">
+                                Phase 0{index + 1}
+                            </div>
+                            <div className="h-px w-20 bg-white/10 hidden sm:block" />
+                        </div>
 
-            {/* Content Side */}
-            <div className="lg:col-span-6 p-10 lg:p-16 flex flex-col justify-center bg-brand-dark/20">
-                <div className="space-y-5">
-                    <div className="hidden lg:flex items-center gap-3 text-brand-light/40 font-black text-[9px] uppercase tracking-[0.4em]">
-                        <span className="w-8 h-px bg-brand-light/20" />
-                        <Mountain size={12} />
-                        <span>High Altitude Series</span>
+                        <h3 className="text-6xl md:text-8xl font-black text-white tracking-tighter italic leading-[0.85] uppercase">
+                            {exp.name}
+                        </h3>
                     </div>
 
-                    <h3 className="hidden lg:block text-5xl md:text-6xl font-black text-white tracking-tighter italic leading-none">
-                        {exp.name}
-                        <span className="block text-brand-light text-2xl not-italic mt-2 opacity-70 font-medium tracking-normal">
-                            {exp.elevation}
-                        </span>
-                    </h3>
-
-                    <p className="text-brand-white/50 text-base md:text-lg leading-relaxed font-medium max-w-lg">
+                    <p className="text-brand-white/50 text-xl font-medium leading-relaxed max-w-lg mx-auto lg:mx-0 border-l-2 border-brand-light/20 pl-6 text-left">
                         {exp.description}
                     </p>
-                </div>
 
-                <div className="grid grid-cols-2 gap-x-10 gap-y-8 py-10 border-y border-white/5 mt-8">
-                    {[
-                        { icon: Clock, label: "Window", value: exp.duration },
-                        { icon: Gauge, label: "Difficulty", value: exp.difficulty },
-                        { icon: MapPin, label: "Region", value: exp.location },
-                        { icon: Zap, label: "Investment", value: exp.price, color: "text-brand-light" }
-                    ].map((stat) => (
-                        <div key={stat.label} className="space-y-1">
-                            <div className="flex items-center gap-2 opacity-40">
-                                <stat.icon size={12} />
-                                <p className="text-[8px] uppercase tracking-[0.2em] font-black">{stat.label}</p>
+                    <div className={`flex items-center gap-8 ${isEven ? 'justify-start' : 'justify-end lg:justify-start'} justify-center pt-4`}>
+                        <Link href={`/expedition/${exp.name.toLowerCase().replace(/ /g, "-")}`}>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-brand-light text-brand-dark px-10 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs flex items-center gap-4 hover:bg-white transition-colors"
+                            >
+                                <span>Details</span>
+                                <ArrowRight size={16} />
+                            </motion.button>
+                        </Link>
+                        <div className="flex flex-col items-start gap-1 opacity-50">
+                            <span className="text-[9px] font-mono text-white/60 tracking-widest uppercase">Technical Level</span>
+                            <div className="flex gap-1">
+                                {[...Array(exp.technicalLevel === "High" ? 5 : 3)].map((_, i) => (
+                                    <div key={i} className="w-1.5 h-4 bg-brand-light/50 rounded-full skew-x-[-12deg]" />
+                                ))}
                             </div>
-                            <p className={`font-bold text-base ${stat.color || "text-white"}`}>{stat.value}</p>
                         </div>
-                    ))}
-                </div>
-
-                <div className="flex items-center gap-6 pt-8">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 bg-white text-brand-dark rounded-full font-black uppercase tracking-widest text-[9px] hover:bg-brand-light transition-all flex items-center gap-3 shadow-2xl shadow-black/40"
-                    >
-                        Expedition Dossier <ArrowRight size={14} />
-                    </motion.button>
+                    </div>
                 </div>
             </div>
-
-            <div className="absolute inset-0 border border-white/5 rounded-[3rem] pointer-events-none" />
         </motion.div>
     );
 }
 
-
 export function Expedition() {
     return (
-        <Section id="expeditions" background="dark" container={false} className="relative overflow-hidden py-32">
-            {/* Background Polish */}
-            <div className="absolute inset-0 pointer-events-none opacity-20">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(216,196,182,0.1)_0%,transparent_50%)]" />
-                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(216,196,182,0.05)_0%,transparent_50%)]" />
+        <Section id="expeditions" background="dark" container={false} className="relative py-24">
+            {/* Atmospheric Polish */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-brand-dark via-brand-light/5 to-transparent opacity-20" />
+                <div className="absolute bottom-0 right-0 w-2/3 h-[800px] bg-[radial-gradient(circle_at_80%_70%,rgba(216,196,182,0.1)_0%,transparent_50%)]" />
             </div>
 
             <div className="container relative z-10 mx-auto px-8 md:px-20 lg:px-32">
-                <div className="max-w-4xl mx-auto text-center mb-32 space-y-6">
-                    <SectionBadge dark>World-Class Alpinism</SectionBadge>
-                    <SectionHeading dark gradientText="The High Frontier.">
-                        Elite Expeditions
-                    </SectionHeading>
-                    <p className="text-brand-white/40 text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-                        Precision-engineered logistics for the world's most demanding peaks.
-                        Where experience meets mountain mastery.
-                    </p>
+                <div className="h-screen min-h-[600px] flex flex-col justify-center items-center relative mb-24">
+                    {/* Decorative Vertical Line */}
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        whileInView={{ height: "100px", opacity: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-brand-light/50 to-transparent hidden lg:block"
+                    />
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="max-w-4xl mx-auto text-center space-y-8 relative z-10"
+                    >
+                        <div className="flex flex-col items-center gap-4">
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                            >
+                                <SectionBadge dark>Elite Mountaineering</SectionBadge>
+                            </motion.div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <SectionHeading dark gradientText="Summit Peaks.">
+                                Premier Expeditions
+                            </SectionHeading>
+                        </div>
+
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.4, duration: 1 }}
+                            className="text-brand-white/40 text-lg md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
+                        >
+                            Precision logistics for the world's most formidable peaks.<br className="hidden md:block" />
+                            Engineering success where the air is thin and focus is absolute.
+                        </motion.p>
+
+                        {/* Scroll Indicator */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8, duration: 1 }}
+                            className="pt-16 flex flex-col items-center gap-4 opacity-50"
+                        >
+                            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-brand-light">Scroll to Ascend</p>
+                            <div className="w-5 h-9 border border-brand-light/30 rounded-full flex justify-center p-1">
+                                <motion.div
+                                    animate={{ y: [0, 12, 0] }}
+                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    className="w-0.5 h-2 bg-brand-light/80 rounded-full"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
 
-                <div className="space-y-12">
+                <div className="relative pb-24">
                     {expeditions.map((exp, index) => (
                         <ExpeditionCard key={exp.id} exp={exp} index={index} />
                     ))}
                 </div>
-
-
             </div>
         </Section>
     );
 }
+

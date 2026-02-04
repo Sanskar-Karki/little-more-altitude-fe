@@ -149,12 +149,12 @@ export function Testimonials() {
                                             <Star key={i} className={`h-4 w-4 ${i < testimonials[currentIndex].rating ? 'fill-brand-light text-brand-light' : 'text-brand-white/20'}`} />
                                         ))}
                                     </div>
-                                    <div className="text-lg md:text-xl text-white leading-[1.4] font-bold italic tracking-tight pointer-events-auto">
+                                    <div className="text-lg md:text-xl text-white leading-[1.4] font-bold tracking-tight pointer-events-auto">
                                         "{isExpanded ? testimonials[currentIndex].content : truncateText(testimonials[currentIndex].content, 20)}"
                                         {getWordCount(testimonials[currentIndex].content) > 20 && (
                                             <button
                                                 onClick={() => setIsExpanded(!isExpanded)}
-                                                className="ml-2 text-brand-light not-italic font-black text-xs uppercase tracking-widest hover:underline cursor-pointer"
+                                                className="ml-2 text-brand-light font-black text-xs uppercase tracking-widest hover:underline cursor-pointer"
                                             >
                                                 {isExpanded ? "Show Less" : "Read More"}
                                             </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Linkedin, Mail, Mountain } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
@@ -18,6 +19,12 @@ const FOUNDERS = [
         role: "Director & Operations Chief",
         bio: "12+ years of experience across Nepal’s most challenging routes. Guided with heart and Sherpa spirit.",
         image: "/founders/tashi.png",
+    },
+    {
+        name: "Lakpa Sherpa",
+        role: "Base Camp Manager & Logistics",
+        bio: "Master of high-altitude logistics and expedition support. Ensuring the heartbeat of our teams stays strong in the most remote camps.",
+        image: "https://images.unsplash.com/photo-1585016495481-91613a3bc4bc?auto=format&fit=crop&w=800&q=80",
     }
 ];
 
@@ -43,14 +50,14 @@ export function About() {
                     className="text-brand-medium/80 text-lg md:text-xl leading-relaxed font-medium"
                 >
                     Founded on the firsthand high-altitude experience of lifelong mountain companions
-                    Pemba N. Sherpa and Ngima Tashi Sherpa, born and raised on the Himalayan trails,
+                    Pemba N. Sherpa, Ngima Tashi Sherpa, and Lakpa Sherpa, born and raised on the Himalayan trails,
                     A Little More Altitude delivers safe, authentic, and perspective-shifting trekking
                     adventures that take you beyond breathtaking landscapes—toward deeper connection,
                     purpose, and growth.
                 </motion.p>
             </div>
 
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
                 {FOUNDERS.map((founder, idx) => (
                     <motion.div
                         key={founder.name}
@@ -61,10 +68,12 @@ export function About() {
                         className="group relative"
                     >
                         <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border border-brand-light/10 shadow-2xl max-w-sm mx-auto">
-                            <img
+                            <Image
                                 src={founder.image}
                                 alt={founder.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                unoptimized={founder.image.startsWith("http")}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
@@ -120,7 +129,7 @@ export function About() {
                         <h4 className="text-brand-dark font-black text-3xl md:text-4xl leading-tight">
                             Our Shared <span className="text-brand-light underline decoration-brand-light/30 underline-offset-8">Vision</span>
                         </h4>
-                        <p className="text-brand-medium/70 text-lg md:text-xl leading-relaxed max-w-2xl font-medium italic">
+                        <p className="text-brand-medium/70 text-lg md:text-xl leading-relaxed max-w-2xl font-medium">
                             "Built on real high-altitude experience and led by experienced guides, deep local knowledge, and strong community roots— we help you Go Higher. Live Deeper."
                         </p>
                     </div>

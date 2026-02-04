@@ -115,7 +115,7 @@ export function Nepal() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-4">
-                                        <p className="text-brand-light text-3xl font-black italic">1953</p>
+                                        <p className="text-brand-light text-3xl font-black">1953</p>
                                         <p className="text-white/60 text-[8px] uppercase tracking-[0.3em] font-bold">First Summit</p>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@ export function Nepal() {
                                     <div className="flex gap-1">
                                         {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1 h-3 bg-brand-light rounded-full" />)}
                                     </div>
-                                    <p className="text-white font-black text-lg italic tracking-tighter">ELITE</p>
+                                    <p className="text-white font-black text-lg tracking-tighter">ELITE</p>
                                     <p className="text-white/40 text-[7px] uppercase font-bold tracking-[0.25em]">Difficulty</p>
                                 </div>
                             </motion.div>

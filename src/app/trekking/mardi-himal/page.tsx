@@ -16,7 +16,8 @@ import {
     Wind,
     Sun,
     Bird,
-    Navigation
+    Navigation,
+    Activity
 } from "lucide-react";
 import Image from "next/image";
 
@@ -279,50 +280,168 @@ export default function MardiHimalPage() {
             </Section>
 
             {/* Itinerary Section */}
-            <Section id="itinerary" background="dark" className="py-32">
-                <div className="max-w-4xl mx-auto space-y-20">
-                    <div className="text-center space-y-6">
+            <Section id="itinerary" background="dark" className="py-24">
+                <div className="max-w-7xl mx-auto space-y-16">
+                    <div className="text-center space-y-4">
                         <SectionBadge dark>The Journey</SectionBadge>
                         <SectionHeading dark gradientText="Day by Day.">
                             Detailed Itinerary
                         </SectionHeading>
+                        <p className="text-brand-white/50 text-base max-w-2xl mx-auto">
+                            Experience every moment of your adventure through the Annapurna region
+                        </p>
                     </div>
 
-                    <div className="space-y-12">
+                    {/* Two Column Grid - Compact Design */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                         {ITINERARY.map((day, idx) => (
                             <motion.div
                                 key={day.day}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="group flex gap-8 md:gap-12"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: idx * 0.05 }}
+                                className="group relative"
                             >
-                                <div className="flex flex-col items-center shrink-0">
-                                    <div className="w-16 h-16 rounded-full border-2 border-brand-light/30 flex items-center justify-center text-brand-light font-black group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-500">
-                                        {day.day}
-                                    </div>
-                                    {idx !== ITINERARY.length - 1 && (
-                                        <div className="w-px h-full bg-gradient-to-b from-brand-light/30 to-transparent my-4" />
-                                    )}
-                                </div>
+                                {/* Compact Glassmorphic Card */}
+                                <div className="relative h-full p-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-brand-light/40 transition-all duration-500 overflow-hidden hover:bg-white/[0.07]">
+                                    {/* Top Gradient Accent */}
+                                    <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-light via-brand-light/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                <div className="pb-12 space-y-4">
-                                    <div className="space-y-1">
-                                        <p className="text-brand-light text-[10px] font-black uppercase tracking-[0.4em]">
-                                            {day.location}
-                                        </p>
-                                        <h3 className="text-3xl font-black text-white italic tracking-tighter group-hover:translate-x-2 transition-transform duration-500">
-                                            {day.title}
-                                        </h3>
+                                    {/* Hover Glow */}
+                                    <div className="absolute -inset-px bg-gradient-to-br from-brand-light/10 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 -z-10" />
+
+                                    {/* Compact Day Badge - Updated */}
+                                    <div className="absolute -top-3 -right-3 px-4 py-2 rounded-2xl bg-gradient-to-br from-brand-light to-brand-light/80 flex flex-col items-center justify-center shadow-xl shadow-brand-light/20 group-hover:scale-105 transition-all duration-500 z-10 border border-white/20">
+                                        <span className="text-[1rem] font-black text-brand-dark leading-none uppercase tracking-widest mt-2 mr-2">
+                                            Day
+                                        </span>
+                                        <span className="text-xl font-black text-brand-dark leading-none mt-0.5">
+                                            {day.day < 10 ? `0${day.day}` : day.day}
+                                        </span>
                                     </div>
-                                    <p className="text-brand-white/40 text-lg leading-relaxed max-w-2xl">
-                                        {day.desc}
-                                    </p>
+
+                                    {/* Compact Content Layout */}
+                                    <div className="space-y-3 pr-8">
+                                        {/* Inline Location & Title */}
+                                        <div className="space-y-2">
+                                            {/* Location Badge - Smaller */}
+                                            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-light/10 border border-brand-light/20">
+                                                <MapPin className="text-brand-light" size={12} />
+                                                <span className="text-brand-light text-[10px] font-bold uppercase tracking-wider">
+                                                    {day.location}
+                                                </span>
+                                            </div>
+
+                                            {/* Title - More Compact */}
+                                            <h3 className="text-xl font-black text-white tracking-tight leading-tight group-hover:text-brand-light transition-colors duration-500">
+                                                {day.title}
+                                            </h3>
+                                        </div>
+
+                                        {/* Description - Smaller Text */}
+                                        <p className="text-brand-white/60 text-sm leading-relaxed font-medium line-clamp-3">
+                                            {day.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Bottom Accent Line */}
+                                    <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brand-light to-transparent group-hover:w-full transition-all duration-700" />
                                 </div>
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Premium Journey Summary Dashboard */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-16 group relative"
+                    >
+                        {/* Background Glow */}
+                        <div className="absolute -inset-2 bg-gradient-to-r from-brand-light/10 via-transparent to-brand-light/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+                        <div className="relative p-10 rounded-[2.5rem] bg-brand-dark/40 border border-white/10 backdrop-blur-2xl overflow-hidden shadow-2xl">
+                            {/* Subtle Topographic Background Pattern */}
+                            <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <pattern id="topo" width="100" height="100" patternUnits="userSpaceOnUse">
+                                            <path d="M0 50 Q 25 25, 50 50 T 100 50" fill="none" stroke="white" strokeWidth="1" />
+                                            <path d="M0 70 Q 25 45, 50 70 T 100 70" fill="none" stroke="white" strokeWidth="1" opacity="0.5" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#topo)" />
+                                </svg>
+                            </div>
+
+                            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+                                {/* Stat 1: Duration */}
+                                <div className="md:col-span-3 space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-12 h-12 rounded-2xl bg-brand-light/10 border border-brand-light/20 flex items-center justify-center text-brand-light">
+                                            <Calendar size={20} />
+                                        </div>
+                                        <div className="space-y-0.5">
+                                            <p className="text-brand-light/50 text-[10px] font-black uppercase tracking-[0.2em]">Total Duration</p>
+                                            <p className="text-3xl font-black text-white italic tracking-tighter">8 DAYS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Main Timeline: Progress */}
+                                <div className="md:col-span-6 space-y-6">
+                                    <div className="flex justify-between items-end mb-2">
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-2 h-2 rounded-full bg-brand-light animate-pulse" />
+                                            <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Base Camp</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Summit</span>
+                                            <Mountain size={14} className="text-brand-light" />
+                                        </div>
+                                    </div>
+
+                                    <div className="relative h-3 rounded-full bg-white/5 border border-white/5 p-0.5 overflow-hidden">
+                                        <motion.div
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: "100%" }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 1.5, ease: "circOut" }}
+                                            className="h-full rounded-full bg-gradient-to-r from-brand-light via-brand-light/80 to-brand-light shadow-[0_0_20px_rgba(234,179,8,0.3)] relative"
+                                        >
+                                            {/* Animated Flowing Light */}
+                                            <motion.div
+                                                animate={{ x: ["0%", "200%"] }}
+                                                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                                                className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"
+                                            />
+                                        </motion.div>
+                                    </div>
+
+                                    <div className="flex justify-between text-[9px] font-bold text-brand-light/30 uppercase tracking-[0.3em]">
+                                        <span>Kathmandu</span>
+                                        <span className="text-brand-light/60">Stage-by-Stage Journey</span>
+                                        <span>Departure</span>
+                                    </div>
+                                </div>
+
+                                {/* Stat 2: Challenge */}
+                                <div className="md:col-span-3">
+                                    <div className="flex items-center justify-end gap-3 text-right">
+                                        <div className="space-y-0.5">
+                                            <p className="text-brand-light/50 text-[10px] font-black uppercase tracking-[0.2em]">Elevation Gain</p>
+                                            <p className="text-3xl font-black text-white italic tracking-tighter">3,100M</p>
+                                        </div>
+                                        <div className="w-12 h-12 rounded-2xl bg-brand-light/10 border border-brand-light/20 flex items-center justify-center text-brand-light">
+                                            <Activity size={20} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </Section>
 

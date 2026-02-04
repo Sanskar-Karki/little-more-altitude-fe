@@ -22,6 +22,13 @@ const FOUNDERS = [
         bio: "12+ years of experience across Nepal’s most challenging routes. Guided with heart and Sherpa spirit.",
         image: "/founders/tashi.png",
         href: "/about/tashi"
+    },
+    {
+        name: "Pema Sherpa",
+        role: "Base Camp Manager & Logistics",
+        bio: "Master of high-altitude logistics and expedition support. Ensuring the heartbeat of our teams stays strong in the most remote camps.",
+        image: "https://images.unsplash.com/photo-1585016495481-91613a3bc4bc?auto=format&fit=crop&w=800&q=80",
+        href: "/about/pema"
     }
 ];
 
@@ -45,11 +52,11 @@ export default function AboutPage() {
                         dark={false}
                     />
                     <div className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
-                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa and Ngima Tashi Sherpa.
+                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa, Ngima Tashi Sherpa, and Pema Sherpa.
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
                     {FOUNDERS.map((founder) => (
                         <Link key={founder.name} href={founder.href}>
                             <motion.div
@@ -62,6 +69,7 @@ export default function AboutPage() {
                                         alt={founder.name}
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        unoptimized
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
@@ -119,7 +127,7 @@ export default function AboutPage() {
                         Guided by Roots, <br />
                         <span className="text-brand-light">Inspired by Altitude.</span>
                     </h2>
-                    <p className="text-brand-white/70 text-xl leading-relaxed italic">
+                    <p className="text-brand-white/70 text-xl leading-relaxed">
                         "We started A Little More Altitude to share everything we’ve learned from a lifetime in the Himalayas—our challenges, adventures, and deep connection to the mountains... giving every traveler the best Himalayan adventure possible."
                     </p>
 
