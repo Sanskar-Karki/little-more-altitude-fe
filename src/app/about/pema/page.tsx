@@ -41,7 +41,7 @@ export default function PemaDetailPage() {
 
                 {/* Animated Mountain Line Overlay */}
                 <MountainLine
-                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20 "
+                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20"
                     color="var(--color-brand-light)"
                     duration={3}
                 />
