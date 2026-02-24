@@ -58,9 +58,9 @@ export default function ExpeditionPage() {
                                 </span>
                             </div>
 
-                            <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-black text-white tracking-tighter italic leading-none mb-4">
+                            <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-black text-white tracking-tighter leading-none mb-4">
                                 BEYOND <br />
-                                <span className="text-brand-light not-italic uppercase text-[0.45em] tracking-[0.2em] block mt-4">The Limits.</span>
+                                <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-4">The Limits.</span>
                             </h1>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -102,7 +102,7 @@ export default function ExpeditionPage() {
                                         <stat.icon size={12} />
                                         <span className="text-[9px] font-black uppercase tracking-widest leading-none">{stat.label}</span>
                                     </div>
-                                    <div className="text-2xl lg:text-3xl font-black text-white tracking-tighter italic leading-none">
+                                    <div className="text-2xl lg:text-3xl font-black text-white tracking-tighter leading-none">
                                         {isNaN(Number(stat.value)) ? stat.value : <CountUp to={Number(stat.value)} suffix={stat.suffix} />}
                                     </div>
                                 </div>
@@ -171,9 +171,9 @@ export default function ExpeditionPage() {
                         <div className="space-y-8">
                             <div className="space-y-6">
                                 <SectionBadge className="text-brand-light">The Selection Process</SectionBadge>
-                                <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter italic leading-[0.9] uppercase">
+                                <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] uppercase">
                                     THE BASE OF <br />
-                                    <span className="text-brand-light not-italic">SUCCESS</span>
+                                    <span className="text-brand-light">SUCCESS</span>
                                 </h2>
                                 <p className="text-brand-white/50 text-lg font-medium leading-relaxed max-w-lg">
                                     Precision training meets elite performance management. We ensure you are ready for the world's most unforgiving environments.
@@ -220,7 +220,7 @@ export default function ExpeditionPage() {
                                             <Users size={24} />
                                         </div>
                                         <div>
-                                            <p className="text-brand-dark font-black text-2xl leading-none italic tracking-tighter">1:1 RATIO</p>
+                                            <p className="text-brand-dark font-black text-2xl leading-none tracking-tighter">1:1 RATIO</p>
                                             <p className="text-brand-dark/60 text-[9px] font-bold uppercase tracking-widest mt-1">Elite Private Guiding</p>
                                         </div>
                                     </div>
@@ -238,9 +238,9 @@ export default function ExpeditionPage() {
                     <div className="inline-block px-8 py-3 rounded-full bg-white/[0.03] border border-white/10 text-brand-light text-[11px] font-black uppercase tracking-[0.4em] mb-12">
                         Commit to Excellence
                     </div>
-                    <h2 className="text-6xl md:text-[7rem] font-black text-white tracking-tighter leading-[0.85] italic mb-12">
+                    <h2 className="text-6xl md:text-[7rem] font-black text-white tracking-tighter leading-[0.85] mb-12">
                         YOUR PEAK <br />
-                        <span className="text-brand-light not-italic uppercase text-[0.45em] tracking-[0.3em] block mt-8">Awaits.</span>
+                        <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-8">Awaits.</span>
                     </h2>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-8">

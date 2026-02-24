@@ -19,7 +19,7 @@ const REASONS = [
     {
         icon: Star,
         title: "Founder-Led Leadership",
-        desc: "Your trek is led by Pemba & Tashi—professional guides born on Himalayan trails. We don't just organize; we lead.",
+        desc: "Your trek is led by Pemba, Tashi & Pema—professional guides born on Himalayan trails. We don't just organize; we lead.",
         size: "large",
         accent: "bg-amber-400"
     },
@@ -134,12 +134,12 @@ export function WhyChooseUs() {
                                         <div className="w-16 h-16 rounded-2xl bg-brand-light flex items-center justify-center text-brand-dark shadow-xl">
                                             <Star size={32} strokeWidth={2.5} />
                                         </div>
-                                        <h3 className="text-3xl font-black italic tracking-tighter">
+                                        <h3 className="text-3xl font-black tracking-tighter">
                                             FOUNDER-LED <br />
-                                            <span className="text-brand-light not-italic uppercase text-xl tracking-[0.3em]">Leadership</span>
+                                            <span className="text-brand-light uppercase text-xl tracking-[0.3em]">Leadership</span>
                                         </h3>
                                         <p className="text-white/60 text-lg max-w-md font-medium leading-relaxed">
-                                            Lead by Pemba & Tashi—professional Himalayan guides. We carry the equipment, the knowledge, and the responsibility to get you there and back safely.
+                                            Lead by Pemba, Tashi & Pema—professional Himalayan guides. We carry the equipment, the knowledge, and the responsibility to get you there and back safely.
                                         </p>
                                     </div>
                                     <div className="pt-8 flex items-center gap-4">

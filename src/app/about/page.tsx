@@ -24,9 +24,9 @@ const FOUNDERS = [
         href: "/about/tashi"
     },
     {
-        name: "Pema Sherpa",
-        role: "Base Camp Manager & Logistics",
-        bio: "Master of high-altitude logistics and expedition support. Ensuring the heartbeat of our teams stays strong in the most remote camps.",
+        name: "Pema Thilen Sherpa",
+        role: "Founder & U.S. Army Reserve Soldier",
+        bio: "Himalayan Sherpa and U.S. Army Reserve Soldier. Combining deep-rooted mountain wisdom with military-grade discipline and safety standards.",
         image: "https://images.unsplash.com/photo-1585016495481-91613a3bc4bc?auto=format&fit=crop&w=800&q=80",
         href: "/about/pema"
     }
@@ -36,8 +36,7 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-brand-dark overflow-hidden">
             {/* Hero Section */}
-            <section className="relative h-[10vh] flex items-center justify-center overflow-hidden">
-
+            <section className="relative h-[90px] flex items-center justify-center overflow-hidden">
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-dark to-transparent" />
             </section>
 
@@ -52,7 +51,7 @@ export default function AboutPage() {
                         dark={false}
                     />
                     <div className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
-                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa, Ngima Tashi Sherpa, and Pema Sherpa.
+                        Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa, Ngima Tashi Sherpa, and Pema Thilen Sherpa.
                     </div>
                 </div>
 

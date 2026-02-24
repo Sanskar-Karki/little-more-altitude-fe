@@ -58,16 +58,16 @@ export default function NotFound() {
                             <Compass className="animate-spin-slow" size={24} />
                             <span className="text-[12px] font-black uppercase tracking-[0.5em]">System Status: Drifted</span>
                         </div>
-                        <h1 className="text-[12rem] md:text-[20rem] font-black leading-none tracking-tighter text-white/5 italic">
+                        <h1 className="text-[12rem] md:text-[20rem] font-black leading-none tracking-tighter text-white/5">
                             404
                         </h1>
                     </div>
 
                     {/* Message */}
                     <div className="space-y-6 -mt-24 md:-mt-40 relative z-30">
-                        <h2 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase leading-[0.85]">
+                        <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]">
                             LOST IN THE <br />
-                            <span className="text-brand-light not-italic">WHITEOUT.</span>
+                            <span className="text-brand-light">WHITEOUT.</span>
                         </h2>
                         <p className="text-brand-white/40 text-xl md:text-2xl font-medium leading-relaxed max-w-xl">
                             The trail you're looking for has been buried in a storm.
@@ -90,7 +90,7 @@ export default function NotFound() {
 
                         <div className="flex items-center gap-4 text-white/20">
                             <div className="w-12 h-px bg-white/20" />
-                            <span className="text-[10px] font-black uppercase tracking-widest italic">Signal Lost at High Altitude</span>
+                            <span className="text-[10px] font-black uppercase tracking-widest">Signal Lost at High Altitude</span>
                         </div>
                     </div>
                 </motion.div>

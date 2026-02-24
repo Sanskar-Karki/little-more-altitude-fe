@@ -48,9 +48,9 @@ export default function TrekkingPage() {
                         </div>
                         <div className="flex flex-col justify-center space-y-10">
                             <div className="space-y-4">
-                                <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter italic">
+                                <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter">
                                     THE SLOW <br />
-                                    <span className="text-brand-medium not-italic">JOURNEY.</span>
+                                    <span className="text-brand-medium">JOURNEY.</span>
                                 </h2>
                                 <p className="text-brand-dark/60 text-lg leading-relaxed">
                                     We believe trekking isn't just about the destination, but the rhythm of the path.

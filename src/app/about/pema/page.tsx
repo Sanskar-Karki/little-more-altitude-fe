@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Award, ChevronLeft, Mountain, Mail, Linkedin, Instagram, Quote, Shield, Zap } from "lucide-react";
+import { Mail, Linkedin, Instagram, Quote, Shield, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionBadge } from "@/components/ui/SectionBadge";
+import { MountainLine } from "@/components/ui/MountainLine";
 
-export default function LakpaDetailPage() {
+export default function PemaDetailPage() {
     return (
         <main className="min-h-screen bg-brand-white">
             {/* Immersive Hero Section */}
@@ -18,10 +19,10 @@ export default function LakpaDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true}>Expedition Logistics Chief</SectionBadge>
+                            <SectionBadge dark={true}>U.S. Army Reserve Soldier & Guide</SectionBadge>
                             <h1 className="text-xl md:text-4xl font-black text-white mt-2 tracking-tighter leading-[0.85]">
-                                Lakpa
-                                <span className="text-brand-light pl-1">Sherpa</span>
+                                Pema Thilen
+                                <span className="text-brand-light pl-2">Sherpa</span>
                             </h1>
                         </motion.div>
 
@@ -31,12 +32,20 @@ export default function LakpaDetailPage() {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="hidden lg:block pb-4 text-right"
                         >
-                            <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto italic">
-                                "The heartbeat of an expedition isn't found at the summit, but in the precision of the camp below."
+                            <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto">
+                                "The mission is simple but deeply personal—to provide U.S. travelers with a safe, authentic, and unforgettable way to experience Nepal."
                             </p>
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Animated Mountain Line Overlay */}
+                <MountainLine
+                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20 "
+                    color="var(--color-brand-light)"
+                    duration={3}
+                />
+
             </div>
 
             {/* Content Section with Negative Margin */}
@@ -55,7 +64,7 @@ export default function LakpaDetailPage() {
                                 <div className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
                                         src="https://images.unsplash.com/photo-1585016495481-91613a3bc4bc?auto=format&fit=crop&w=800&q=80"
-                                        alt="Lakpa Sherpa"
+                                        alt="Pema Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"
                                         unoptimized
@@ -65,12 +74,12 @@ export default function LakpaDetailPage() {
 
                                 <div className="grid grid-cols-2 gap-3 max-w-[340px] mx-auto lg:mx-0">
                                     <div className="p-6 rounded-[2rem] bg-brand-dark text-white flex flex-col justify-center items-center text-center">
-                                        <p className="text-3xl font-black text-brand-light tracking-tighter">15+</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">High Camps</p>
+                                        <p className="text-3xl font-black text-brand-light tracking-tighter">USA</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">Army Reserve</p>
                                     </div>
                                     <div className="p-6 rounded-[2rem] bg-white border border-brand-light/20 flex flex-col justify-center items-center text-center shadow-lg">
                                         <p className="text-3xl font-black text-brand-dark tracking-tighter">100%</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">Supply Rate</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">Safety Standards</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -82,29 +91,29 @@ export default function LakpaDetailPage() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
                                         <div className="h-px w-12 bg-brand-light" />
-                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">Logistic Mastery</span>
+                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">A Legacy of Discipline</span>
                                     </div>
                                     <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tight">
-                                        The Architect of <br />
-                                        <span className="text-brand-medium">Remote Operations.</span>
+                                        Where Heritage Meets <br />
+                                        <span className="text-brand-medium">World-Class Professionalism.</span>
                                     </h2>
                                 </div>
 
                                 <div className="space-y-8 text-brand-dark/80 text-xl leading-[1.8] font-medium">
                                     <p className="first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
-                                        While others dream of the summit, Lakpa dreams of the lines that get them there. Born in the shadow of Everest, Lakpa understood early on that a mountain is only as conquerable as the supplies that sustain the climbers.
+                                        Pema Thilen Sherpa was born and raised in the heart of the Himalayas, where the mountains are not a destination but a way of life. Growing up in remote high-altitude terrain, he learned early the values that define true mountain people—resilience, responsibility, humility, and care for others. These lessons, shaped by thin air and hard-earned experience, became the foundation of his life in the mountains.
                                     </p>
                                     <p>
-                                        As the Logistics Chief for A Little More Altitude, Lakpa manages the complex web of high-altitude supply chains. From coordinating rescue-ready oxygen reserves to managing the delicate balance of nutrition and fuel at 7,000 meters, his work is the invisible shield that protects our teams.
+                                        As his journey expanded beyond Nepal, Pema went on to serve as a U.S. Army Reserve Soldier, where military training further strengthened his commitment to discipline, safety, integrity, and leadership. The structure and professionalism of military service blended naturally with his Sherpa heritage, reinforcing the standards he already lived by in the mountains—planning with precision, leading with accountability, and never compromising on safety.
                                     </p>
                                     <p>
-                                        Lakpa's expertise isn't just in management; it's in problem-solving in environments where a 10-degree drop or a localized storm can change everything. His meticulous approach ensures that every Base Camp feels like a fortress of safety and every high camp is prepared for the unexpected.
+                                        Today, Pema stands at the intersection of two worlds. As a Sherpa who knows the Himalayas intimately and a U.S. service member who understands American expectations, he offers travelers something rare: a trekking experience built on genuine local expertise and world-class professionalism. Every journey he designs is carefully organized, every team is trained to high standards, and every guest is treated with respect, care, and responsibility.
                                     </p>
                                     <p className="bg-brand-medium/5 p-10 rounded-[3rem] border-l-8 border-brand-light text-2xl font-black text-brand-dark leading-relaxed">
-                                        "My metric of success is the silent efficiency of a camp that has everything it needs before it knows it needs it."
+                                        "Pema doesn’t just lead treks—he invites visitors into his Himalayan home, with trust, honor, and pride."
                                     </p>
                                     <p>
-                                        Today, Lakpa continues to innovate high-altitude logistics, integrating modern tracking tech with traditional Sherpa survival instincts. He is the guardian of the camp, the master of the manifests, and a vital pillar of the team.
+                                        Guided by real Sherpa roots and upheld by the integrity of military service, Pema is dedicated to providing U.S. travelers with a safe, authentic, and unforgettable way to experience Nepal. He bridges the gap between the rugged Himalayan trails and the expectations of international travelers, ensuring every step is taken with honor and precision.
                                     </p>
                                 </div>
                             </div>
@@ -153,7 +162,7 @@ export default function LakpaDetailPage() {
                 <div className="container relative z-10 mx-auto px-8">
                     <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
                     <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
-                        "Pre-elevation is just logistics. The true height is reached when every camp is a home and every climber is safe."
+                        "Real Sherpa roots, upheld by the integrity of military service. We invite you into our Himalayan home."
                     </p>
                 </div>
             </div>

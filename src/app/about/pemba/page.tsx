@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
+import { MountainLine } from "@/components/ui/MountainLine";
 
 export default function PembaDetailPage() {
     return (
@@ -42,6 +43,13 @@ export default function PembaDetailPage() {
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Animated Mountain Line Overlay */}
+                <MountainLine
+                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20"
+                    color="var(--color-brand-light)"
+                    duration={3}
+                />
             </div>
 
             {/* Content Section with Negative Margin */}

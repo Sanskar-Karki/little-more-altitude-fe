@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, MapPin, Award, ChevronLeft, Mountain, Mail, Linkedin, Instagram, Compass, Users } from "lucide-react";
+import { Heart, MapPin, Award, ChevronLeft, Mountain, Mail, Linkedin, Instagram, Compass, Users, Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { SectionBadge }
-    from "@/components/ui/SectionBadge";
+import { SectionBadge } from "@/components/ui/SectionBadge";
+import { MountainLine } from "@/components/ui/MountainLine";
 
 export default function TashiDetailPage() {
     return (
@@ -41,6 +41,13 @@ export default function TashiDetailPage() {
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Animated Mountain Line Overlay */}
+                <MountainLine
+                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20"
+                    color="var(--color-brand-light)"
+                    duration={3}
+                />
             </div>
 
             {/* Content Section with Negative Margin */}
@@ -155,10 +162,10 @@ export default function TashiDetailPage() {
             </section>
 
             {/* Topographic Background Pattern Footer */}
-            <div className="py-24 bg-brand-medium text-center overflow-hidden relative">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(216,196,182,0.1),transparent_70%)]" />
+            <div className="py-24 bg-brand-dark text-center overflow-hidden relative">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(216,196,182,0.05),transparent_70%)]" />
                 <div className="container relative z-10 mx-auto px-8">
-                    <Compass className="mx-auto text-brand-light/30 mb-10 animate-spin-slow" size={64} />
+                    <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
                     <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
                         "The mountain only cares if you respect its rhythm. I guide to help you find that rhythm within yourself."
                     </p>

@@ -111,7 +111,7 @@ function TrekCard({ trek, index }: { trek: Destination; index: number }) {
                             <span>{trek.location}</span>
                         </div>
 
-                        <h3 className="text-3xl font-black text-white leading-tight tracking-tighter italic">
+                        <h3 className="text-3xl font-black text-white leading-tight tracking-tighter">
                             {trek.name}
                         </h3>
 

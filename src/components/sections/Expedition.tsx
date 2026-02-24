@@ -114,7 +114,7 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
                             <div className="h-px w-20 bg-white/10 hidden sm:block" />
                         </div>
 
-                        <h3 className="text-6xl md:text-8xl font-black text-white tracking-tighter italic leading-[0.85] uppercase">
+                        <h3 className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-[0.85] uppercase">
                             {exp.name}
                         </h3>
                     </div>

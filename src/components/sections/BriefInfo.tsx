@@ -30,8 +30,9 @@ export function BriefInfo() {
                             <Mountain className="absolute -right-8 -bottom-8 h-48 w-58 text-brand-dark/[0.03] -z-10 group-hover:scale-110 transition-transform duration-700" />
                             <p className="text-brand-medium/80 text-lg md:text-xl leading-relaxed font-medium">
                                 Founded on the firsthand high-altitude experience of lifelong mountain companions
-                                <span className="text-brand-dark font-bold ml-1">Pemba Nurbu Sherpa</span> and
-                                <span className="text-brand-dark font-bold ml-1">Ngima Tashi Sherpa</span>, born and raised on the Himalayan trails,<br /><br />
+                                <span className="text-brand-dark font-bold ml-1">Pemba N. Sherpa</span>,
+                                <span className="text-brand-dark font-bold ml-1">Ngima Tashi Sherpa</span>, and
+                                <span className="text-brand-dark font-bold ml-1">Pema Thilen Sherpa</span>, born and raised on the Himalayan trails,<br /><br />
                                 <span className="text-brand-medium font-bold ml-1">A Little More Altitude</span> delivers safe, authentic, and perspective-shifting trekking adventures
                                 that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.
                             </p>

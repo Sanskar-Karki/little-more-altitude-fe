@@ -140,7 +140,7 @@ export default function ExpeditionDetail() {
                         className="space-y-6"
                     >
                         <SectionBadge dark>Expedition Profile</SectionBadge>
-                        <h1 className="text-7xl md:text-9xl font-black tracking-tighter italic uppercase leading-none">
+                        <h1 className="text-7xl md:text-9xl font-black tracking-tighter uppercase leading-none">
                             {data.name}
                         </h1>
                         <div className="flex flex-wrap justify-center gap-6 md:gap-12 pt-8">
@@ -195,7 +195,7 @@ export default function ExpeditionDetail() {
                                 {data.stats.map((stat: any, i: number) => (
                                     <div key={i} className="bg-brand-dark/50 p-8 space-y-2 backdrop-blur-sm hover:bg-white/5 transition-colors">
                                         <p className="text-xs uppercase tracking-[0.2em] text-brand-light/70">{stat.label}</p>
-                                        <p className="text-3xl font-black italic tracking-tight">{stat.value}</p>
+                                        <p className="text-3xl font-black tracking-tight">{stat.value}</p>
                                     </div>
                                 ))}
                             </div>
@@ -226,7 +226,7 @@ export default function ExpeditionDetail() {
 
                         {/* Right: Itinerary Timeline */}
                         <div className="relative border-l border-white/10 pl-12 space-y-16">
-                            <h3 className="text-3xl font-black italic uppercase tracking-tight mb-8 text-white/20">Operational Timeline</h3>
+                            <h3 className="text-3xl font-black uppercase tracking-tight mb-8 text-white/20">Operational Timeline</h3>
 
                             {data.itinerary.map((item: any, i: number) => (
                                 <motion.div
