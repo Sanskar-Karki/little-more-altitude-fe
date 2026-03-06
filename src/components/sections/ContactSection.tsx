@@ -65,13 +65,7 @@ export function ContactSection() {
     };
 
     return (
-        <Section id="contact" background="white">
-            {/* Arctic Decorative Background */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
-                style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #134B70 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-light/10 blur-[100px] rounded-full" />
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-medium/5 blur-[100px] rounded-full" />
-
+        <Section id="contact" background="white" className="bg-transparent! overflow-visible">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
 
                 {/* Contact Info Side */}

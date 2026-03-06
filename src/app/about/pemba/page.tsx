@@ -15,7 +15,7 @@ export default function PembaDetailPage() {
             <div className="relative h-[40vh] w-full overflow-hidden bg-brand-dark">
                 {/* Grand Header Overlay */}
 
-                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end pb-24 relative z-20">
+                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end pb-28 relative z-20">
 
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
@@ -67,10 +67,11 @@ export default function PembaDetailPage() {
                             >
                                 <div className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
-                                        src="/founders/pemba.png"
+                                        src="/pemba.jpg"
                                         alt="Pemba N. Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"
+                                        unoptimized
                                     />
                                     {/* Subtle Overlay on image */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-60" />

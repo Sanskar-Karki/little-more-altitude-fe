@@ -1,7 +1,7 @@
 "use client";
 
 import { Variants, motion } from "framer-motion";
-import { Shield, Compass, Star, Heart, Leaf, Award, TrendingUp, Sparkles, Map, Mountain } from "lucide-react";
+import { Shield, Compass, Star, Heart, Leaf, Award, TrendingUp, Sparkles, Map, Mountain, Users, Calendar, Trophy } from "lucide-react";
 import { CountUp } from "@/components/ui/CountUp";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,10 +9,9 @@ import { Section } from "@/components/ui/Section";
 import Image from "next/image";
 
 const STATS = [
-    { label: "Years Experience", value: 15, suffix: "+", icon: Award },
-    { label: "Happy Trekkers", value: 2.5, suffix: "k", icon: Heart },
-    { label: "Routes Explored", value: 40, suffix: "+", icon: Compass },
-    { label: "Safety Rating", value: 100, suffix: "%", icon: Shield },
+    { label: "Clients Guided", value: 150, suffix: "+", icon: Users },
+    { label: "Years of Experience", value: 10, suffix: "+", icon: Calendar },
+    { label: "Overall Success Rate", value: 97, suffix: "%", icon: Trophy },
 ];
 
 const REASONS = [
@@ -255,7 +254,7 @@ export function WhyChooseUs() {
                     viewport={{ once: true }}
                     className="mt-20 md:mt-32 pt-12 border-t border-brand-light/20"
                 >
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
                         {STATS.map((stat, i) => (
                             <div key={i} className="flex flex-col md:flex-row items-center gap-5 group">
                                 <div className="p-4 rounded-2xl bg-brand-medium/5 text-brand-dark group-hover:bg-brand-dark group-hover:text-brand-light transition-all duration-500 shadow-lg">

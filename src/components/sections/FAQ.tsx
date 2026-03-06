@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import type { FAQItem } from "@/types";
@@ -40,6 +40,10 @@ const faqItems: FAQItem[] = [
 
 export function FAQ() {
     const [openId, setOpenId] = useState<number | null>(1);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const toggleFAQ = (id: number) => {
         setOpenId(openId === id ? null : id);

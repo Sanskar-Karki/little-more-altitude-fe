@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { BriefInfo } from "@/components/sections/BriefInfo";
 import { Nepal } from "@/components/sections/Nepal";
-import { Stats } from "@/components/sections/Stats";
 import { TopDestinations } from "@/components/sections/TopDestinations";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <BriefInfo />
       <Nepal />
-      <Stats />
       <TopDestinations />
       <WhyChooseUs />
       <Testimonials />

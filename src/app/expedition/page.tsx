@@ -79,8 +79,8 @@ export default function ExpeditionPage() {
                     </motion.div>
                 </div>
 
-                {/* Decorative Elements */}
-                <div className="absolute left-10 bottom-40 hidden xl:flex flex-col items-center gap-12 opacity-30">
+                {/* Decorative Elements */}f
+                <div className="absolute left-10 bottom-20 hidden xl:flex flex-col items-center gap-12 opacity-30">
                     <p className="vertical-text text-[10px] font-black text-white tracking-[0.6em] uppercase">
                         EST. HIGH ALTITUDE PROTOCOL
                     </p>

@@ -7,6 +7,7 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Map, Compass, Wind, Sun } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Nepal() {
     const containerRef = useRef(null);
@@ -77,9 +78,12 @@ export function Nepal() {
                             </div>
 
                             <div className="pt-4">
-                                <button className="inline-flex items-center gap-3 text-brand-light text-sm font-bold tracking-widest uppercase border-b border-brand-light/20 pb-2 hover:border-brand-light transition-all cursor-pointer">
+                                <Link
+                                    href="/trekking"
+                                    className="inline-flex items-center gap-3 text-brand-light text-sm font-bold tracking-widest uppercase border-b border-brand-light/20 pb-2 hover:border-brand-light transition-all cursor-pointer"
+                                >
                                     Explore the Region <span>→</span>
-                                </button>
+                                </Link>
                             </div>
                         </motion.div>
 
