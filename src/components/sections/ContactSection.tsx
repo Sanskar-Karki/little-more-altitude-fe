@@ -12,25 +12,25 @@ const contactInfo = [
     {
         icon: Mail,
         label: "Email Us",
-        value: "hello@littlemorealtitude.com",
-        href: "mailto:hello@littlemorealtitude.com",
+        value: "alittlemorealtitude25@gmail.com",
+        href: "mailto:alittlemorealtitude25@gmail.com",
     },
     {
         icon: Phone,
         label: "Call Us",
-        value: "+977 123 456 789",
-        href: "tel:+977123456789",
+        value: "+977 9823288095",
+        href: "tel:+9779823288095",
     },
     {
         icon: MapPin,
         label: "Visit Us",
-        value: "Kathmandu, Nepal",
+        value: "Boudha, Kathmandu, Nepal",
         href: "#",
     },
     {
         icon: Clock,
         label: "Working Hours",
-        value: "Mon-Fri: 9AM - 6PM",
+        value: "Sunday-Friday: 6AM - 6PM",
         href: "#",
     },
 ];
@@ -65,7 +65,7 @@ export function ContactSection() {
     };
 
     return (
-        <Section id="contact" background="white" className="bg-transparent! overflow-visible">
+        <Section id="contact" background="white" className="overflow-visible">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
 
                 {/* Contact Info Side */}
@@ -102,8 +102,8 @@ export function ContactSection() {
                                     <item.icon size={22} />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-black text-brand-light uppercase tracking-widest mb-1">{item.label}</p>
-                                    <p className="text-brand-dark font-bold text-lg group-hover:text-brand-medium transition-colors">{item.value}</p>
+                                    <p className="text-[10px] font-black text-brand-medium/50 uppercase tracking-widest mb-1">{item.label}</p>
+                                    <p className="text-brand-dark font-bold text-lg group-hover:text-brand-medium transition-colors text-sm">{item.value}</p>
                                 </div>
                             </motion.a>
                         ))}
@@ -132,32 +132,32 @@ export function ContactSection() {
                             <div className="space-y-6">
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Full Name</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Full Name</label>
                                         <input
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
                                             className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
-                                            placeholder="Pemba Sherpa"
+                                            placeholder="John Doe"
                                             required
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Email</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Email</label>
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
                                             className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
-                                            placeholder="hello@peak.com"
+                                            placeholder="johndoe@peak.com"
                                             required
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-bold text-brand-medium/60 uppercase tracking-widest ml-1">Message</label>
+                                    <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Message</label>
                                     <textarea
                                         name="message"
                                         rows={4}

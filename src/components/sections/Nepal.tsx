@@ -23,7 +23,7 @@ export function Nepal() {
 
     return (
         <Section id="about-nepal" background="dark" className="py-0! overflow-hidden bg-[#0A0F1A]">
-            <div ref={containerRef} className="relative min-h-[110vh] flex items-center py-24 md:py-32">
+            <div ref={containerRef} className="relative min-h-[100vh] lg:min-h-[110vh] flex items-center py-16 md:py-32">
                 {/* Background Text - Simplified for performance */}
                 <motion.div
                     style={{ y: ySlow }}
@@ -32,8 +32,8 @@ export function Nepal() {
                     HIMALAYA
                 </motion.div>
 
-                <div className="container mx-auto px-8 md:px-20 lg:px-32 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div className="container mx-auto px-6 md:px-20 lg:px-32 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                         {/* Content Side */}
                         <motion.div
@@ -45,10 +45,10 @@ export function Nepal() {
                         >
                             <div className="space-y-5">
                                 <SectionBadge dark>The Sacred Peaks</SectionBadge>
-                                <SectionHeading dark gradientText="Himalayas.">
+                                <SectionHeading dark gradientText="Himalayas." className="text-3xl sm:text-4xl md:text-5xl lg:text-3rem">
                                     Nepal: Heart of the
                                 </SectionHeading>
-                                <p className="text-brand-white/70 text-lg md:text-xl leading-relaxed font-medium max-w-xl">
+                                <p className="text-brand-white/70 text-base md:text-xl leading-relaxed font-medium max-w-xl">
                                     Nepal is the heart of the Himalayas, home to the world’s highest peaks,
                                     ancient cultures, and some of the finest trekking routes on Earth.
                                 </p>
@@ -60,7 +60,7 @@ export function Nepal() {
                                     { icon: Wind, title: "Pure Spirit", desc: "A land where spirituality meets the sky.", color: "text-blue-400" },
                                     { icon: Sun, title: "Golden Trails", desc: "Ancient routes carved by history.", color: "text-amber-400" },
                                     { icon: Compass, title: "Beyond Horizons", desc: "From jungles to the death zone.", color: "text-emerald-400" },
-                                    { icon: Map, title: "Legendary Peaks", desc: "8 of the world's 14 highest summits.", color: "text-brand-light" }
+                                    { icon: Map, title: "Legendary Peaks", desc: "8 of the global 14 highest summits.", color: "text-brand-light" }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={item.title}
@@ -107,7 +107,7 @@ export function Nepal() {
                             {/* Smaller Foreground Image */}
                             <motion.div
                                 style={{ y: yFast }}
-                                className="absolute bottom-10 left-0 w-[60%] aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl z-30 border border-white/10 will-change-transform"
+                                className="absolute bottom-4 left-0 w-[55%] md:w-[60%] aspect-square rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-30 border border-white/10 will-change-transform"
                             >
                                 <Image
                                     src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=800&q=80"

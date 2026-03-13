@@ -42,7 +42,11 @@ export function FAQ() {
     const [openId, setOpenId] = useState<number | null>(1);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // Use a small timeout to ensure the scroll happens after the browser's default scroll restoration
+        const timer = setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }, 100);
+        return () => clearTimeout(timer);
     }, []);
 
     const toggleFAQ = (id: number) => {
@@ -50,7 +54,7 @@ export function FAQ() {
     };
 
     return (
-        <section id="faq" className="py-24 bg-brand-dark">
+        <section id="faq" className="py-12 sm:py-24 bg-brand-dark">
             <div className="container mx-auto px-6">
                 {/* Header */}
                 <motion.div

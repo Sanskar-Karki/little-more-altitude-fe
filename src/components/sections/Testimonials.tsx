@@ -79,7 +79,7 @@ export function Testimonials() {
             <Mountain className="absolute bottom-10 right-10 w-96 h-96 text-white/[0.02] -z-0 pointer-events-none" />
 
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
+            <div className="text-center max-w-3xl mx-auto my-10 space-y-4">
                 <SectionBadge dark={true}>Testimonials</SectionBadge>
                 <SectionHeading gradientText="Summit.">
                     Voices of the
@@ -115,9 +115,9 @@ export function Testimonials() {
                         className="relative p-6 md:p-10 rounded-[2rem] bg-brand-white/[0.02] backdrop-blur-xl shadow-2xl border border-brand-light/10 overflow-hidden cursor-grab active:cursor-grabbing group/card"
                     >
                         {/* Giant Decorative Quote */}
-                        <Quote className="absolute top-2 right-2 h-18 w-18 text-brand-light/[0.03] -z-10 group-hover/card:rotate-16 transition-transform duration-700" />
+                        <Quote className="absolute top-2 right-2 h-12 w-12 md:h-18 md:w-18 text-brand-light/[0.03] -z-10 group-hover/card:rotate-16 transition-transform duration-700" />
 
-                        <div className="flex flex-col md:flex-row items-center md:items-start gap-12 pointer-events-none select-none relative z-10">
+                        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 pointer-events-none select-none relative z-10">
                             {/* Avatar & Social Proof */}
                             <div className="flex flex-col items-center gap-6 shrink-0">
                                 <motion.div
@@ -149,12 +149,12 @@ export function Testimonials() {
                                             <Star key={i} className={`h-4 w-4 ${i < testimonials[currentIndex].rating ? 'fill-brand-light text-brand-light' : 'text-brand-white/20'}`} />
                                         ))}
                                     </div>
-                                    <div className="text-lg md:text-xl text-white leading-[1.4] font-bold tracking-tight pointer-events-auto">
-                                        "{isExpanded ? testimonials[currentIndex].content : truncateText(testimonials[currentIndex].content, 20)}"
-                                        {getWordCount(testimonials[currentIndex].content) > 20 && (
+                                    <div className="text-base md:text-xl text-white leading-[1.5] font-bold tracking-tight pointer-events-auto">
+                                        "{isExpanded ? testimonials[currentIndex].content : truncateText(testimonials[currentIndex].content, 18)}"
+                                        {getWordCount(testimonials[currentIndex].content) > 18 && (
                                             <button
                                                 onClick={() => setIsExpanded(!isExpanded)}
-                                                className="ml-2 text-brand-light font-black text-xs uppercase tracking-widest hover:underline cursor-pointer"
+                                                className="ml-2 text-brand-light font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer"
                                             >
                                                 {isExpanded ? "Show Less" : "Read More"}
                                             </button>
@@ -164,10 +164,10 @@ export function Testimonials() {
 
                                 <div className="pt-6 border-t border-brand-light/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                     <div>
-                                        <div className="font-black text-xl text-white tracking-wide">
+                                        <div className="font-black text-lg md:text-xl text-white tracking-wide">
                                             {testimonials[currentIndex].name}
                                         </div>
-                                        <div className="text-brand-light font-bold text-xs uppercase tracking-[0.2em] mt-1 opacity-80">
+                                        <div className="text-brand-light font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mt-1 opacity-80">
                                             {testimonials[currentIndex].role}
                                         </div>
                                     </div>

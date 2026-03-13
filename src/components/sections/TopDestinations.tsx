@@ -5,45 +5,52 @@ import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Mountain } from "lucide-react";
+import abcsun from "../../../public/Images/HomePageImage/abcsun.jpg";
+import Manaslu from "../../../public/Images/HomePageImage/Manaslu.jpg";
+import ebc from "../../../public/Images/HomePageImage/ebc.jpg";
 
 const TOP_DESTINATIONS = [
     {
         id: "4000m",
-        name: "Langtang Valley",
-        location: "Rasua, Nepal",
+        name: "Annapurna Base Camp",
+        location: "Annapurna Region, Nepal",
         height: "4,000m+",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
-        tag: "Classic Trek"
+        image: abcsun,
+        tag: "Classic Adventure",
+        slug: "/trekking/annapurna-base-camp"
     },
     {
         id: "5000m",
-        name: "Everest Base Camp",
-        location: "Solu-Khumbu, Nepal",
+        name: "Manaslu Circuit",
+        location: "Manaslu Region, Nepal",
         height: "5,000m+",
-        image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=800&q=80",
-        tag: "Bucket List"
+        image: Manaslu,
+        tag: "Untouched Trails",
+        slug: "/trekking/manaslu-circuit"
     },
     {
         id: "6000m",
-        name: "Island Peak",
-        location: "Khumbu Region, Nepal",
+        name: "Everest Experience",
+        location: "Solu-Khumbu, Nepal",
         height: "6,000m+",
-        image: "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=800&q=80",
-        tag: "Climbing Adventure"
+        image: ebc,
+        tag: "Peak of The World",
+        slug: "/expedition/mount-everest"
     }
 ];
 
 export function TopDestinations() {
     return (
         <Section id="top-destinations" background="white">
-            <div className="container mx-auto px-8 md:px-20 lg:px-32">
-                <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
+            <div className="container mx-auto px-6 md:px-20 lg:px-32">
+                <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20 space-y-4 md:space-y-6">
                     <SectionBadge>Elite Picks</SectionBadge>
                     <SectionHeading dark={false} gradientText="By Altitude.">
                         Top Destinations
                     </SectionHeading>
-                    <p className="text-brand-medium/60 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
+                    <p className="text-brand-medium/60 text-base md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
                         Carefully selected adventures categorized by their majestic heights,
                         offering challenges and rewards for every level of explorer.
                     </p>
@@ -59,41 +66,43 @@ export function TopDestinations() {
                             transition={{ duration: 0.8, delay: idx * 0.2 }}
                             className="group relative"
                         >
-                            <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-brand-light/20 shadow-xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-700">
-                                <Image
-                                    src={dest.image}
-                                    alt={dest.name}
-                                    fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80" />
+                            <Link href={dest.slug}>
+                                <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-brand-light/20 shadow-xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-700 cursor-pointer">
+                                    <Image
+                                        src={dest.image}
+                                        alt={dest.name}
+                                        fill
+                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/10 to-transparent opacity-90" />
 
-                                <div className="absolute top-6 left-6">
-                                    <div className="px-4 py-2 rounded-2xl bg-brand-light/20 backdrop-blur-md border border-brand-light/30 text-brand-light text-xs font-black uppercase tracking-widest">
-                                        {dest.height}
+                                    <div className="absolute top-6 left-6">
+                                        <div className="px-4 py-2 rounded-2xl bg-brand-light/20 backdrop-blur-md border border-brand-light/30 text-brand-light text-xs font-black uppercase tracking-widest">
+                                            {dest.height}
+                                        </div>
+                                    </div>
+
+                                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 space-y-2 md:space-y-3">
+                                        <div className="flex items-center gap-2 text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.25em]">
+                                            <Mountain size={10} />
+                                            <span>{dest.tag}</span>
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                                            {dest.name}
+                                        </h3>
+                                        <p className="text-brand-white/60 text-xs md:text-sm font-medium">
+                                            {dest.location}
+                                        </p>
+
+                                        <div className="pt-4 overflow-hidden h-0 group-hover:h-12 transition-all duration-500">
+                                            <div className="flex items-center gap-2 text-brand-light text-sm font-bold group/btn">
+                                                Discover More
+                                                <ArrowUpRight size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div className="absolute inset-0 flex flex-col justify-end p-8 space-y-3">
-                                    <div className="flex items-center gap-2 text-brand-light/80 text-[10px] font-bold uppercase tracking-[0.25em]">
-                                        <Mountain size={10} />
-                                        <span>{dest.tag}</span>
-                                    </div>
-                                    <h3 className="text-2xl font-black text-white leading-tight">
-                                        {dest.name}
-                                    </h3>
-                                    <p className="text-brand-white/60 text-sm font-medium">
-                                        {dest.location}
-                                    </p>
-
-                                    <div className="pt-4 overflow-hidden h-0 group-hover:h-12 transition-all duration-500">
-                                        <button className="flex items-center gap-2 text-brand-light text-sm font-bold group/btn">
-                                            Discover More
-                                            <ArrowUpRight size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

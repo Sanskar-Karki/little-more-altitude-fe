@@ -11,16 +11,16 @@ export default function PemaDetailPage() {
     return (
         <main className="min-h-screen bg-brand-white">
             {/* Immersive Hero Section */}
-            <div className="relative h-[40vh] w-full overflow-hidden bg-brand-dark">
-                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end pb-28 relative z-20">
+            <div className="relative h-[45vh] md:h-[40vh] w-full overflow-hidden bg-brand-dark">
+                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end sm:pb-28 pb-52 relative z-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true}>U.S. Army Reserve Soldier & Guide</SectionBadge>
-                            <h1 className="text-xl md:text-4xl font-black text-white mt-2 tracking-tighter leading-[0.85]">
+                            <SectionBadge dark={true}>Director & US Army Reserve Soldier</SectionBadge>
+                            <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Pema Thilen
                                 <span className="text-brand-light pl-2">Sherpa</span>
                             </h1>
@@ -61,13 +61,14 @@ export default function PemaDetailPage() {
                                 transition={{ duration: 0.8 }}
                                 className="sticky top-32 space-y-8"
                             >
-                                <div className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
+                                <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
                                         src="/pema.jpg"
                                         alt="Pema Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"
-                                        unoptimized
+                                        sizes="(max-width: 768px) 90vw, 340px"
+                                        priority
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-60" />
                                 </div>
@@ -93,14 +94,14 @@ export default function PemaDetailPage() {
                                         <div className="h-px w-12 bg-brand-light" />
                                         <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">A Legacy of Discipline</span>
                                     </div>
-                                    <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
                                         Where Heritage Meets <br />
                                         <span className="text-brand-medium">World-Class Professionalism.</span>
                                     </h2>
                                 </div>
 
-                                <div className="space-y-8 text-brand-dark/80 text-xl leading-[1.8] font-medium">
-                                    <p className="first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
+                                <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
+                                    <p className="first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
                                         Pema Thilen Sherpa was born and raised in the heart of the Himalayas, where the mountains are not a destination but a way of life. Growing up in remote high-altitude terrain, he learned early the values that define true mountain people—resilience, responsibility, humility, and care for others. These lessons, shaped by thin air and hard-earned experience, became the foundation of his life in the mountains.
                                     </p>
                                     <p>
@@ -109,7 +110,7 @@ export default function PemaDetailPage() {
                                     <p>
                                         Today, Pema stands at the intersection of two worlds. As a Sherpa who knows the Himalayas intimately and a U.S. service member who understands American expectations, he offers travelers something rare: a trekking experience built on genuine local expertise and world-class professionalism. Every journey he designs is carefully organized, every team is trained to high standards, and every guest is treated with respect, care, and responsibility.
                                     </p>
-                                    <p className="bg-brand-medium/5 p-10 rounded-[3rem] border-l-8 border-brand-light text-2xl font-black text-brand-dark leading-relaxed">
+                                    <p className="bg-brand-medium/5 p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border-l-8 border-brand-light text-xl md:text-2xl font-black text-brand-dark leading-relaxed">
                                         "Pema doesn’t just lead treks—he invites visitors into his Himalayan home, with trust, honor, and pride."
                                     </p>
                                     <p>

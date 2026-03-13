@@ -5,7 +5,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 
 export function WhatsAppButton() {
     // Replace with actual phone number
-    const whatsappNumber = "9768990584";
+    const whatsappNumber = "9823288095";
     const message = "Hello! I'm interested in booking a trek with Little More Altitude.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 

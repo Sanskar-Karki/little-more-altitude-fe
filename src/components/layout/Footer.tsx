@@ -36,15 +36,15 @@ export function Footer() {
                         <ul className="space-y-4 text-brand-white/70">
                             <li className="flex items-center gap-3">
                                 <MapPin size={18} className="text-brand-light" />
-                                <span>123 Basecamp St, Kathmandu, Nepal</span>
+                                <span>Boudha, Kathmandu, Nepal</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} className="text-brand-light" />
-                                <span>+977 123 456 789</span>
+                                <span>+977 9823288095</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} className="text-brand-light" />
-                                <span>hello@littlemorealtitude.com</span>
+                                <span>alittlemorealtitude25@gmail.com</span>
                             </li>
                         </ul>
                     </div>

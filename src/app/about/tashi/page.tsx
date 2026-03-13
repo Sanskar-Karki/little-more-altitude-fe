@@ -12,9 +12,9 @@ export default function TashiDetailPage() {
     return (
         <main className="min-h-screen bg-brand-white">
             {/* Immersive Hero Section */}
-            <div className="relative h-[40vh] w-full overflow-hidden bg-brand-dark">
+            <div className="relative h-[45vh] md:h-[40vh] w-full overflow-hidden bg-brand-dark">
 
-                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end pb-28 relative z-20">
+                <div className="container mx-auto px-8 md:px-20 lg:px-32 h-full flex flex-col justify-end sm:pb-28 pb-52 relative z-20">
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
                         <motion.div
@@ -22,8 +22,8 @@ export default function TashiDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true}>Director & Operations Chief</SectionBadge>
-                            <h1 className="text-xl md:text-4xl font-black text-white mt-2  tracking-tighter leading-[0.85]">
+                            <SectionBadge dark={true}>Director & Certified Guide</SectionBadge>
+                            <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Ngima Tashi
                                 <span className="text-brand-light pl-1">Sherpa</span>
                             </h1>
@@ -63,13 +63,15 @@ export default function TashiDetailPage() {
                                 transition={{ duration: 0.8 }}
                                 className="sticky top-32 space-y-8"
                             >
-                                <div className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
+                                <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
-                                        src="/tashi.jpg"
+                                        src="/tashi.jpeg"
                                         alt="Ngima Tashi Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"
-                                        unoptimized
+                                        sizes="(max-width: 768px) 90vw, 340px"
+                                        priority
+                                        quality={85}
                                     />
                                     {/* Subtle Overlay on image */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 to-transparent opacity-60" />
@@ -96,14 +98,14 @@ export default function TashiDetailPage() {
                                         <div className="h-px w-12 bg-brand-light" />
                                         <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">The Heart of Service</span>
                                     </div>
-                                    <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
                                         Forge in Resilience, <br />
                                         <span className="text-brand-medium">Guided by Spirit.</span>
                                     </h2>
                                 </div>
 
-                                <div className="space-y-8 text-brand-dark/80 text-xl leading-[1.8] font-medium">
-                                    <p className="first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
+                                <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
+                                    <p className="first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
                                         In the high valley of Kharikhola, Tashi Sherpa's journey was written in the dust of the mountain trails before he could even tie his boots. At just 13, he was already shouldering the physical and mental loads of high-altitude life, working as a porter during his school breaks to help his father.
                                     </p>
                                     <p>
@@ -112,11 +114,11 @@ export default function TashiDetailPage() {
                                     <p>
                                         Over 12 years, Tashi has climbed every step of the ladder—from porter to assistant guide, to leading some of the most complex treks in the Himalayas. This hard-won experience is what makes him a master of operations. He doesn't just know the maps; he knows the people, the teahouses, the hidden routes, and how to manage a team in the thin air where every decision counts.
                                     </p>
-                                    <div className="bg-brand-medium border border-brand-light/30 p-10 rounded-[3rem] text-2xl font-black text-white leading-relaxed flex items-start gap-6 shadow-2xl">
+                                    <div className="bg-brand-medium border border-brand-light/30 p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] text-xl md:text-2xl font-black text-white leading-relaxed flex flex-col md:flex-row items-center md:items-start gap-6 shadow-2xl">
                                         <div className="p-3 bg-brand-light/20 rounded-2xl">
                                             <Heart size={32} className="text-brand-light fill-brand-light" />
                                         </div>
-                                        <span>"I guide with my heart because I know how much it means to feel safe when you are miles away from the rest of the world."</span>
+                                        <span className="text-center md:text-left">"I guide with my heart because I know how much it means to feel safe when you are miles away from the rest of the world."</span>
                                     </div>
                                     <p>
                                         Tashi's philosophy is simple: #GuidedWithHeart. He leads with a quiet confidence that only comes from having walked every role on the mountain. For him, a successful trek isn't just about reaching a landmark; it's about the safety, well-being, and unforgettable memories of every single guest in his care.

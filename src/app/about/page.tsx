@@ -12,22 +12,22 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 const FOUNDERS = [
     {
         name: "Pemba N. Sherpa",
-        role: "Director & Certified Guide",
+        role: "Visionary Founder & Director",
         bio: "High altitude filmmaker, 2x Kilimanjaro summiteer, born and raised in the mountains of Solu Khumbu.",
         image: "/pemba.jpg",
         href: "/about/pemba"
     },
     {
         name: "Ngima Tashi Sherpa",
-        role: "Director & Operations Chief",
+        role: "Director & Certified Guide",
         bio: "12+ years of experience across Nepal’s most challenging routes. Guided with heart and Sherpa spirit.",
         image: "/tashi.jpg",
         href: "/about/tashi"
     },
     {
         name: "Pema Thilen Sherpa",
-        role: "Founder & U.S. Army Reserve Soldier",
-        bio: "Himalayan Sherpa and U.S. Army Reserve Soldier. Combining deep-rooted mountain wisdom with military-grade discipline and safety standards.",
+        role: "Director & US Army Reserve Soldier",
+        bio: "Himalayan Sherpa & U.S Army Reserve Soldier.Combining deep-rooted mountain wisdom with military-grade discipline & safety standards.",
         image: "/pema.jpg",
         href: "/about/pema"
     }
@@ -49,7 +49,7 @@ export default function AboutPage() {
             {/* Subtle Noise Texture Overlay */}
             <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
             {/* Meet the Founders */}
-            <div className="relative bg-brand-white pt-14 md:pt-20">
+            <div className="relative bg-brand-white pt-12 md:pt-16 lg:pt-18">
                 {/* Blur gradient orbs - moved to outer parent */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                     {/* Parallax Orbs */}
@@ -81,19 +81,19 @@ export default function AboutPage() {
                 </div>
 
                 <Section id="founders" background="white" className="relative overflow-visible bg-transparent!">
-                    <div className="relative z-10 text-center mb-18">
+                    <div className="relative z-10 text-center mb-12 md:mb-14 px-4">
                         <SectionHeading
-                            className="text-brand-dark/80 text-3xl md:text-5xl max-w-3xl mx-auto font-bold mb-2"
+                            className="text-brand-dark/80 text-3xl md:text-5xl max-w-3xl mx-auto font-bold mb-3"
                             gradientText="Meet the Founders"
                             dark={false}
                         />
-                        <div className="text-brand-dark/80 text-lg md:text-2xl max-w-3xl mx-auto  font-medium">
-                            Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N Sherpa, Ngima Tashi Sherpa, and Pema Thilen Sherpa.
+                        <div className="text-brand-dark/70 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
+                            Founded on high-altitude experience and lifelong mountain companionship.
                         </div>
                     </div>
 
                     <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-                        {FOUNDERS.map((founder) => (
+                        {FOUNDERS.map((founder, idx) => (
                             <Link key={founder.name} href={founder.href}>
                                 <motion.div
                                     whileHover={{ y: -10 }}
@@ -105,17 +105,19 @@ export default function AboutPage() {
                                             alt={founder.name}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                            unoptimized
+                                            sizes="(max-width: 768px) 90vw, 33vw"
+                                            priority={idx < 2}
+                                            loading={idx < 2 ? undefined : "lazy"}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
-                                        <div className="absolute bottom-0 left-0 right-0 p-8 text-white z-10">
-                                            <p className="text-brand-light font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{founder.role}</p>
-                                            <h3 className="text-3xl font-black tracking-tight mb-2">{founder.name}</h3>
-                                            <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white z-10">
+                                            <p className="text-white/80 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{founder.role}</p>
+                                            <h3 className="text-2xl md:text-3xl font-black tracking-tight mb-2">{founder.name}</h3>
+                                            <p className="text-white/80 text-xs md:text-[13px] leading-relaxed opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 line-clamp-3 lg:line-clamp-none">
                                                 {founder.bio}
                                             </p>
-                                            <div className="mt-4 flex items-center gap-2 text-brand-light font-bold text-xs uppercase tracking-widest translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                            <div className="mt-4 flex items-center gap-2 text-brand-light font-bold text-[10px] md:text-xs uppercase tracking-widest translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500">
                                                 View Full Profile
                                                 <Compass size={14} />
                                             </div>

@@ -60,57 +60,51 @@ const galleryImages: GalleryImage[] = [
         category: "Expeditions",
         size: "large"
     },
+
     {
         id: 7,
-        src: "https://images.unsplash.com/photo-1520263115673-610416f52ab6?q=80&w=800&auto=format&fit=crop",
-        alt: "Sherpa Guidance",
-        category: "Culture",
-        size: "medium"
-    },
-    {
-        id: 8,
         src: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1200&auto=format&fit=crop",
         alt: "Starry Himalayan Night",
         category: "Landscape",
         size: "medium"
     },
     {
-        id: 9,
+        id: 8,
         src: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
         alt: "Alpine Turquoise Lake",
         category: "Landscape",
         size: "small"
     },
     {
-        id: 10,
+        id: 9,
         src: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=800&auto=format&fit=crop",
         alt: "Summit Victory",
         category: "Moments",
         size: "medium"
     },
     {
-        id: 11,
+        id: 10,
         src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=800&auto=format&fit=crop",
         alt: "Highland Yak Caravan",
         category: "Culture",
         size: "medium"
     },
     {
-        id: 12,
+        id: 11,
         src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop",
         alt: "Expedition Night Camp",
         category: "Expeditions",
         size: "small"
     },
     {
-        id: 13,
+        id: 12,
         src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
         alt: "Mountain Ridge Trek",
         category: "Expeditions",
         size: "medium"
     },
     {
-        id: 14,
+        id: 13,
         src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?q=80&w=800&auto=format&fit=crop",
         alt: "Himalayan Golden Hour",
         category: "Landscape",
@@ -145,11 +139,11 @@ export function Gallery() {
     };
 
     return (
-        <Section id="gallery" background="white">
+        <Section id="gallery" background="white" className="pt-6 md:pt-10">
             <div className="space-y-12">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                    <div className="space-y-3 max-w-2xl">
+                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                    <div className="space-y-4 max-w-2xl text-center lg:text-left">
                         <SectionBadge>Our Gallery</SectionBadge>
                         <SectionHeading gradientText="Captured. " >
                             <span className="text-brand-dark/80"> Himalayan Stories</span>
@@ -161,12 +155,12 @@ export function Gallery() {
                     </div>
 
                     {/* Category Filter Tabs */}
-                    <div className="flex flex-wrap gap-2 bg-brand-dark/5 p-1 rounded-2xl ">
+                    <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-2 bg-brand-dark/5 p-1.5 rounded-[1.5rem] md:rounded-2xl md:overflow-visible">
                         {CATEGORIES.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`relative cursor-pointer px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeCategory === cat
+                                className={`relative cursor-pointer px-4 md:px-5 py-2 md:py-2.5 rounded-xl text-[10px] md:text-sm font-black md:font-bold uppercase tracking-widest md:tracking-normal transition-all duration-300 whitespace-nowrap ${activeCategory === cat
                                     ? "text-brand-light"
                                     : "text-brand-dark/40 hover:text-brand-dark"
                                     }`}
@@ -212,7 +206,7 @@ export function Gallery() {
                                     <motion.img
                                         src={image.src}
                                         alt={image.alt}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 min-h-[300px]"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 min-h-[250px] sm:min-h-[300px]"
                                         loading="lazy"
                                     />
 
