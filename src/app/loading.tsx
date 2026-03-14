@@ -22,9 +22,9 @@ export default function Loading() {
             </div>
 
             {/* Glowing Orbs for atmosphere */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-light/10 rounded-full blur-[120px] z-0" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-brand-light/10 rounded-full blur-[100px] md:blur-[120px] z-0" />
             
-            <div className="relative z-10 flex flex-col items-center gap-10">
+            <div className="relative z-10 flex flex-col items-center gap-8 md:gap-10 w-full max-w-xs md:max-w-none">
                 {/* Logo Animation */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -40,24 +40,24 @@ export default function Loading() {
                     className="relative"
                 >
                     <div className="absolute inset-x-[-20%] inset-y-[-20%] bg-brand-light/30 blur-3xl rounded-full opacity-30" />
-                    <Mountain className="w-24 h-24 md:w-32 md:h-32 text-brand-light relative" strokeWidth={1} />
+                    <Mountain className="w-20 h-20 md:w-32 md:h-32 text-brand-light relative" strokeWidth={1} />
                 </motion.div>
 
                 {/* Text Loader */}
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-4 w-full">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="flex flex-col items-center"
+                        className="flex flex-col items-center w-full px-4"
                     >
-                        <h2 className="text-white text-2xl md:text-3xl font-black uppercase tracking-[0.4em] pl-[0.4em]">
+                        <h2 className="text-white text-lg sm:text-2xl md:text-3xl font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-center whitespace-nowrap">
                             LITTLE <span className="text-brand-light">MORE</span> ALTITUDE
                         </h2>
                     </motion.div>
                     
                     {/* Progress Bar Container */}
-                    <div className="w-56 h-[1.5px] bg-white/5 rounded-full overflow-hidden relative">
+                    <div className="w-40 sm:w-56 h-[1.5px] bg-white/5 rounded-full overflow-hidden relative">
                         <motion.div 
                             className="absolute inset-y-0 left-0 bg-brand-light shadow-[0_0_10px_rgba(216,196,182,0.8)]"
                             animate={{ 
@@ -76,7 +76,7 @@ export default function Loading() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: [0.3, 0.6, 0.3] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="text-[9px] text-brand-light/50 uppercase tracking-[0.6em] font-black mt-2 pl-[0.6em]"
+                        className="text-[8px] md:text-[9px] text-brand-light/50 uppercase tracking-[0.4em] sm:tracking-[0.6em] font-black mt-2 text-center"
                     >
                         Descending into thin air...
                     </motion.p>
@@ -88,7 +88,7 @@ export default function Loading() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.2 }}
                 transition={{ delay: 1 }}
-                className="absolute bottom-12 text-[8px] text-white uppercase tracking-[0.5em] font-bold"
+                className="absolute bottom-10 md:bottom-12 text-[7px] md:text-[8px] text-white uppercase tracking-[0.3em] md:tracking-[0.5em] font-bold text-center px-6"
             >
                 Himalayan Heritage • Professional Safety
             </motion.div>

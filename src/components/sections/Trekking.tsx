@@ -60,7 +60,7 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
 
     return (
         <Link href={slug ? `/trekking/${slug}` : "#"} className="block group">
-            <div className="relative h-[460px] rounded-[2rem] overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-brand-dark">
+            <div className="relative h-[400px] md:h-[460px] rounded-[2.5rem] md:rounded-[2rem] overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-brand-dark">
 
                 {/* Image */}
                 <div className="absolute inset-0">
@@ -136,18 +136,18 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
 
 function TrekSkeleton() {
     return (
-        <div className="relative h-[460px] rounded-[2rem] overflow-hidden bg-brand-dark/5 animate-pulse border border-brand-dark/5">
-            <div className="absolute inset-0 bg-brand-dark/10" />
+        <div className="relative h-[400px] md:h-[460px] rounded-[2.5rem] md:rounded-[2rem] overflow-hidden bg-brand-dark animate-pulse border border-white/5">
+            <div className="absolute inset-0 bg-white/5" />
             <div className="absolute top-5 left-5 right-5 flex justify-between">
-                <div className="w-24 h-6 bg-brand-dark/10 rounded-full" />
-                <div className="w-12 h-6 bg-brand-dark/10 rounded-full" />
+                <div className="w-24 h-6 bg-white/10 rounded-full" />
+                <div className="w-12 h-6 bg-white/10 rounded-full" />
             </div>
             <div className="absolute inset-x-0 bottom-0 px-6 pb-6 space-y-4">
-                <div className="w-20 h-3 bg-brand-dark/10 rounded-full" />
-                <div className="w-2/3 h-8 bg-brand-dark/10 rounded-xl" />
+                <div className="w-20 h-3 bg-white/10 rounded-full" />
+                <div className="w-2/3 h-8 bg-white/10 rounded-xl" />
                 <div className="flex justify-between items-center pt-2">
-                    <div className="w-24 h-4 bg-brand-dark/10 rounded-full" />
-                    <div className="w-24 h-10 bg-brand-dark/10 rounded-full" />
+                    <div className="w-24 h-4 bg-white/5 rounded-full" />
+                    <div className="w-24 h-10 bg-white/10 rounded-full" />
                 </div>
             </div>
         </div>
