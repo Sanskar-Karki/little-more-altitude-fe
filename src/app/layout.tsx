@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import Providers from "@/components/Providers";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -27,10 +28,12 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} font-sans antialiased bg-brand-dark text-white`}
       >
-        <Navbar />
-        {children}
-        <WhatsAppButton />
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <WhatsAppButton />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

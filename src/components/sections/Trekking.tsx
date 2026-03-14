@@ -134,6 +134,26 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
     );
 }
 
+function TrekSkeleton() {
+    return (
+        <div className="relative h-[460px] rounded-[2rem] overflow-hidden bg-brand-dark/5 animate-pulse border border-brand-dark/5">
+            <div className="absolute inset-0 bg-brand-dark/10" />
+            <div className="absolute top-5 left-5 right-5 flex justify-between">
+                <div className="w-24 h-6 bg-brand-dark/10 rounded-full" />
+                <div className="w-12 h-6 bg-brand-dark/10 rounded-full" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 px-6 pb-6 space-y-4">
+                <div className="w-20 h-3 bg-brand-dark/10 rounded-full" />
+                <div className="w-2/3 h-8 bg-brand-dark/10 rounded-xl" />
+                <div className="flex justify-between items-center pt-2">
+                    <div className="w-24 h-4 bg-brand-dark/10 rounded-full" />
+                    <div className="w-24 h-10 bg-brand-dark/10 rounded-full" />
+                </div>
+            </div>
+        </div>
+    );
+}
+
 export function Trekking({ background = "white", autoFocusSearch = false }: { background?: "white" | "dark"; autoFocusSearch?: boolean }) {
     const isDark = background === "dark";
     const [treks, setTreks] = useState<any[]>([]);
@@ -376,9 +396,10 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
 
                 {/* Grid */}
                 {loading ? (
-                    <div className="flex flex-col items-center justify-center py-40 space-y-4">
-                        <Loader2 className="w-12 h-12 text-brand-medium animate-spin" />
-                        <p className="text-brand-dark/40 font-black uppercase tracking-widest text-sm">Mapping the trails...</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[...Array(6)].map((_, i) => (
+                            <TrekSkeleton key={i} />
+                        ))}
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
