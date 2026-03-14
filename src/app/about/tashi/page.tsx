@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Heart, MapPin, Award, ChevronLeft, Mountain, Mail, Linkedin, Instagram, Compass, Users, Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { MountainLine } from "@/components/ui/MountainLine";
+import tashiImg from "./tashi.jpeg";
 
 export default function TashiDetailPage() {
     return (
@@ -44,7 +44,7 @@ export default function TashiDetailPage() {
 
                 {/* Animated Mountain Line Overlay */}
                 <MountainLine
-                    className="absolute bottom-0 left-0 w-full h-32 text-brand-light/20"
+                    className="absolute bottom-12 md:bottom-0 left-0 w-full h-32 text-brand-light/20"
                     color="var(--color-brand-light)"
                     duration={3}
                 />
@@ -65,7 +65,7 @@ export default function TashiDetailPage() {
                             >
                                 <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
-                                        src="/tashi.jpeg"
+                                        src={tashiImg}
                                         alt="Ngima Tashi Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"

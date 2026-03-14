@@ -8,27 +8,30 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import pembaImg from "./pemba/pemba.jpg";
+import tashiImg from "./tashi/tashi.jpeg";
+import pemaImg from "./pema/pema.jpg";
 
 const FOUNDERS = [
     {
         name: "Pemba N. Sherpa",
         role: "Visionary Founder & Director",
         bio: "High altitude filmmaker, 2x Kilimanjaro summiteer, born and raised in the mountains of Solu Khumbu.",
-        image: "/pemba.jpg",
+        image: pembaImg,
         href: "/about/pemba"
     },
     {
         name: "Ngima Tashi Sherpa",
         role: "Director & Certified Guide",
         bio: "12+ years of experience across Nepal’s most challenging routes. Guided with heart and Sherpa spirit.",
-        image: "/tashi.jpg",
+        image: tashiImg,
         href: "/about/tashi"
     },
     {
         name: "Pema Thilen Sherpa",
         role: "Director & US Army Reserve Soldier",
         bio: "Himalayan Sherpa & U.S Army Reserve Soldier.Combining deep-rooted mountain wisdom with military-grade discipline & safety standards.",
-        image: "/pema.jpg",
+        image: pemaImg,
         href: "/about/pema"
     }
 ];
