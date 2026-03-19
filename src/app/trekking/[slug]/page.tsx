@@ -22,7 +22,7 @@ import {
     Loader2
 } from "lucide-react";
 import Image from "next/image";
-import { getTrekBySlug, getStrapiMedia } from "@/lib/strapi";
+import { getTrekBySlug, getMediaUrl } from "@/lib/trekking";
 import Link from "next/link";
 
 export default function DynamicTrekPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -112,7 +112,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                     className="absolute inset-0 z-0"
                 >
                     <Image
-                        src={getStrapiMedia(trek.heroImage?.url) || "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=90"}
+                        src={getMediaUrl(trek.heroImage?.url) || "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=2000&q=90"}
                         alt={trek.name}
                         fill
                         className="object-cover opacity-80"
@@ -134,7 +134,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                                 <SectionBadge className="text-brand-light backdrop-blur-md bg-white/10 border-white/20">
                                     {trek.region || "Himalayas"}
                                 </SectionBadge>
-                                <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-[0.85] uppercase">
+                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] uppercase">
                                     {trek.name.split(' ').map((word: string, i: number) => (
                                         <span key={i}>
                                             {i === trek.name.split(' ').length - 1 ? (
@@ -157,14 +157,14 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                                     className="px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center gap-3"
                                 >
                                     <Mountain className="text-brand-light" size={18} />
-                                    <span className="text-white font-bold text-sm tracking-widest uppercase">{trek.maxAltitude}</span>
+                                    <span className="text-white font-bold text-xs tracking-widest uppercase">{trek.maxAltitude}</span>
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ y: -5 }}
                                     className="px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center gap-3"
                                 >
                                     <Sun className="text-amber-400" size={18} />
-                                    <span className="text-white font-bold text-sm tracking-widest uppercase">{trek.bestSeason}</span>
+                                    <span className="text-white font-bold text-xs tracking-widest uppercase">{trek.bestSeason}</span>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -244,7 +244,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
 
                     <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl group">
                         <Image
-                            src={getStrapiMedia(trek.overviewImage?.url) || "https://images.unsplash.com/photo-1682760345059-8d1aa5cfcb50?q=80&w=687&auto=format&fit=crop"}
+                            src={getMediaUrl(trek.overviewImage?.url) || "https://images.unsplash.com/photo-1682760345059-8d1aa5cfcb50?q=80&w=687&auto=format&fit=crop"}
                             alt="The Trail"
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"

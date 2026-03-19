@@ -7,9 +7,9 @@ import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
-import { getTrekkings, getStrapiMedia } from "@/lib/strapi";
+import { getTrekkings, getMediaUrl } from "@/lib/trekking";
 
-// Hardcoded treks removed, now using Strapi
+// Using local trekking data store
 
 const difficulties = ["Moderate", "Challenging", "Hard"];
 const durations = ["Short (< 10 Days)", "Medium (10-15 Days)", "Long (> 15 Days)"];
@@ -48,14 +48,14 @@ const getPageNumbers = (currentPage: number, totalPages: number) => {
 };
 
 function TrekCard({ trek, index }: { trek: any; index: number }) {
-    const isStrapi = !!trek.slug;
+    const isLocal = !!trek.slug;
     const name = trek.name;
     const location = trek.region || trek.location;
     const duration = trek.duration;
     const difficulty = trek.difficulty;
     const dailyActivity = trek.dailyActivity;
     const rating = trek.rating || 4.8;
-    const image = isStrapi ? getStrapiMedia(trek.heroImage?.url) : trek.image;
+    const image = isLocal ? getMediaUrl(trek.heroImage?.url) : trek.image;
     const slug = trek.slug;
 
     return (
