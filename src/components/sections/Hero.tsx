@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import ebc from "../../../public/Images/HomePageImage/ebc.jpg";
-import abcsun from "../../../public/Images/HomePageImage/abcsun.jpg";
-import Langtang from "../../../public/Images/HomePageImage/Langtang.jpg";
-import Manaslu from "../../../public/Images/HomePageImage/Manaslu.jpg";
-import Mardi from "../../../public/Images/HomePageImage/Mardi.jpg";
+import ebc from "../../../public/images/HomePageImage/ebc.jpg";
+import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
+import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
+import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
+import Mardi from "../../../public/images/HomePageImage/Mardi.jpg";
 
 const HERO_IMAGES = [
     abcsun,

@@ -54,7 +54,7 @@ export function BriefInfo() {
                         className="relative hidden lg:block aspect-video lg:aspect-[9/11] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl group/img order-first lg:order-last"
                     >
                         <img
-                            src="/Images/HomePageImage/MardiHimal-walk.jpg"
+                            src="/images/HomePageImage/MardiHimal-walk.jpg"
                             alt="Mount Everest and Nuptse"
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-105"
                         />
