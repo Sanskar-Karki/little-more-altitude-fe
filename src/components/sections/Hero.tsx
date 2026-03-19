@@ -23,17 +23,17 @@ const HERO_CONTENT = [
     {
         title: "Annapurna Base Camp",
         subtitle: "Witness the magnificent sunrise over the Annapurna massif.",
-        slug: "annapurna-base-camp"
+        slug: "annapurna-base-camp-trek"
     },
     {
         title: "Langtang Valley",
         subtitle: "Immerse yourself in the valley of glaciers and rich Tamang culture.",
-        slug: "langtang-trek"
+        slug: "langtang-valley-trek"
     },
     {
         title: "Manaslu Circuit",
         subtitle: "Explore the untouched beauty and rugged trails of Manaslu.",
-        slug: "manaslu-circuit"
+        slug: "manaslu-circuit-trek"
     },
     {
         title: "Mardi Himal",
@@ -43,7 +43,7 @@ const HERO_CONTENT = [
     {
         title: "Everest Base Camp",
         subtitle: "Stand in the shadow of the world's highest peak.",
-        slug: "everest-base-camp"
+        slug: "everest-base-camp-trek"
     },
 ];
 

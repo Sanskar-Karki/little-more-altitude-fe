@@ -19,7 +19,7 @@ const TOP_DESTINATIONS = [
         height: "4,000m+",
         image: abcsun,
         tag: "Classic Adventure",
-        slug: "/trekking/annapurna-base-camp"
+        slug: "/trekking/annapurna-base-camp-trek"
     },
     {
         id: "5000m",
@@ -28,7 +28,7 @@ const TOP_DESTINATIONS = [
         height: "5,000m+",
         image: Manaslu,
         tag: "Untouched Trails",
-        slug: "/trekking/manaslu-circuit"
+        slug: "/trekking/manaslu-circuit-trek"
     },
     {
         id: "6000m",
@@ -37,7 +37,7 @@ const TOP_DESTINATIONS = [
         height: "6,000m+",
         image: ebc,
         tag: "Peak of The World",
-        slug: "/expedition/mount-everest"
+        slug: "/trekking/everest-base-camp-trek"
     }
 ];
 
