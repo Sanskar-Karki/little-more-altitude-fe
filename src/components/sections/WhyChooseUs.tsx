@@ -1,7 +1,8 @@
 "use client";
 
-import { Variants, motion } from "framer-motion";
-import { Shield, Compass, Star, Heart, Leaf, Award, TrendingUp, Sparkles, Map, Mountain, Users, Calendar, Trophy } from "lucide-react";
+import { useState } from "react";
+import { Variants, motion, AnimatePresence } from "framer-motion";
+import { Shield, Compass, Heart, Leaf, Award, Star, Mountain, Map, Sparkles, ChevronDown, ChevronUp } from "lucide-react";
 import { CountUp } from "@/components/ui/CountUp";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,39 +13,52 @@ import Image from "next/image";
 
 const REASONS = [
     {
+        id: "leadership",
         icon: Star,
         title: "Founder-Led Leadership",
-        desc: "Your trek is led by Pemba, Tashi & Pema—professional guides born on Himalayan trails. We don't just organize; we lead.",
-        size: "large",
+        shortDesc: "Your trek is led by the founders themselves—Pemba and Tashi Sherpa, professional certified guides born on the trails.",
+        fullDesc: "Pemba is a high-altitude filmmaker, while Tashi brings deep knowledge of inner Himalayan culture. Together, we have trekked and completed every major region in Nepal, offering leadership rooted in firsthand experience, authenticity, and care.",
         accent: "bg-amber-400"
     },
     {
+        id: "safety",
         icon: Shield,
-        title: "Safety First",
-        desc: "Meticulous planning and personalized attention.",
-        size: "small",
+        title: "Safety-First & Focused",
+        shortDesc: "With years of high-altitude guiding experience, your safety and well-being are our highest priority.",
+        fullDesc: "We provide personalized attention, thoughtful pacing, and meticulous planning so you feel supported at every step. Our medical protocols and emergency preparedness are second to none.",
         accent: "bg-blue-400"
     },
     {
+        id: "tailored",
         icon: Compass,
-        title: "Tailored Journeys",
-        desc: "From private treks to 1:1 guidance.",
-        size: "small",
+        title: "Tailored For Explorers",
+        shortDesc: "Whether seeking group camaraderie, private intimacy, or 1:1 journey, we cater to all.",
+        fullDesc: "We provide personal guidance and close attention to detail for every explorer. Each trek is customized to your fitness level, interests, and dietary needs to ensure an unforgettable experience.",
         accent: "bg-purple-400"
     },
     {
+        id: "ethical",
         icon: Leaf,
-        title: "Ethical Tourism",
-        desc: "Fair wages, porter welfare, and environmental care.",
-        size: "small",
+        title: "Ethical & Transparent",
+        shortDesc: "We practice responsible tourism with strong porter welfare, fair wages, and environmental care.",
+        fullDesc: "Our pricing is clear and transparent with no hidden costs. We ensure every porter has proper equipment and insurance, and we maintain a leave-no-trace policy on every trail.",
         accent: "bg-emerald-400"
     },
     {
+        id: "purpose",
         icon: Heart,
         title: "Trek With Purpose",
-        desc: "10% of profits support local communities.",
-        size: "small",
+        shortDesc: "We donate 10% of our profits from every trek through the Peaks for People Foundation (PFP).",
+        fullDesc: "These contributions support needy communities beyond major touristic areas, promoting sustainable tourism and long-term community development where it is needed most.",
         accent: "bg-rose-400"
+    },
+    {
+        id: "spirit",
+        icon: Sparkles,
+        title: "Authentic Sherpa Spirit",
+        shortDesc: "Born and raised in Sherpa villages, we don't just know the trails—we live the heritage.",
+        fullDesc: "Our connection to the land, its people, and its traditions ensures your experience is as authentic as it is breathtaking. We bring the wisdom of generations to every expedition.",
+        accent: "bg-brand-medium"
     }
 ];
 
@@ -69,181 +83,127 @@ const itemVariants: Variants = {
 };
 
 export function WhyChooseUs() {
+    const [expandedId, setExpandedId] = useState<string | null>(null);
+
+    const toggleExpand = (id: string) => {
+        setExpandedId(expandedId === id ? null : id);
+    };
+
     return (
-        <Section id="why-choose-us" background="white" className="min-h-screen flex items-center  relative overflow-hidden">
-            {/* Immersive Background */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                        rotate: [0, 90, 0]
-                    }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                    className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] bg-brand-light/10 rounded-full blur-[150px]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.2, 0.4, 0.2],
-                        rotate: [0, -90, 0]
-                    }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-brand-medium/5 rounded-full blur-[120px]"
-                />
+        <Section id="why-choose-us" background="white" className="min-h-screen py-24 flex items-center relative overflow-hidden">
+            {/* Immersive Background Decor */}
+            <div className="absolute inset-0 pointer-events-none opacity-30">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-light/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-medium/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="container mx-auto px-6 relative">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                    {/* LEFT: Header & Bento Grid */}
-                    <div className="lg:col-span-12 xl:col-span-7 space-y-6">
-                        <div className="space-y-3">
+                    {/* LEFT: Header & Content */}
+                    <div className="lg:col-span-12 xl:col-span-12 space-y-12">
+                        <div className="space-y-4 text-center max-w-3xl mx-auto">
                             <SectionBadge>The Altitude Edge</SectionBadge>
-                            <SectionHeading dark={false} gradientText="Above the Rest." className="text-3xl lg:text-5xl">
+                            <SectionHeading dark={false} gradientText="Above the Rest.">
                                 Why We Stand
                             </SectionHeading>
-                            <p className="text-brand-medium/70 text-base max-w-2xl font-medium leading-relaxed">
+                            <p className="text-brand-medium/70 text-lg font-medium leading-relaxed">
                                 Born in the mountains, raised on the trails. We combine deep local heritage with world-class safety protocols to give you a journey like no other.
                             </p>
                         </div>
 
-                        {/* Bento Grid Layout */}
+                        {/* Interactive Feature Grid */}
                         <motion.div
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            className="grid grid-cols-1 md:grid-cols-6 gap-3 sm:gap-4"
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                         >
-                            {/* Feature 1: The Hero Card */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="md:col-span-4 md:row-span-2 group relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem] bg-brand-dark p-6 text-white shadow-xl"
-                            >
-                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Mountain className="w-20 h-20 md:w-[100px] md:h-[100px]" />
-                                </div>
-                                <div className="relative z-10 h-full flex flex-col justify-between">
-                                    <div className="space-y-3">
-                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-light flex items-center justify-center text-brand-dark shadow-lg">
-                                            <Star className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
-                                        </div>
-                                        <h3 className="text-xl md:text-2xl font-black tracking-tighter">
-                                            FOUNDER-LED <br />
-                                            <span className="text-brand-light uppercase text-sm md:text-base tracking-[0.3em]">Leadership</span>
-                                        </h3>
-                                        <p className="text-white/60 text-xs md:text-sm max-w-md font-medium leading-relaxed">
-                                            Lead by Pemba, Tashi & Pema—professional Himalayan guides. We carry the equipment, the knowledge, and the responsibility to get you there and back safely.
-                                        </p>
-                                    </div>
-                                    <div className="pt-4 md:pt-6 flex items-center gap-3">
-                                        <div className="flex -space-x-3">
-                                            {[1, 2, 3].map(i => (
-                                                <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-brand-dark bg-brand-medium/20" />
-                                            ))}
-                                        </div>
-                                        <p className="text-[10px] font-bold uppercase tracking-widest text-brand-light">Elite Guide Team</p>
-                                    </div>
-                                </div>
-                            </motion.div>
+                            {REASONS.map((reason, idx) => {
+                                const isExpanded = expandedId === reason.id;
+                                const isPurpose = reason.id === "purpose";
 
-                            {/* Remaining Bento Items */}
-                            {REASONS.slice(1).map((reason, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    variants={itemVariants}
-                                    className="md:col-span-2 group relative overflow-hidden rounded-[1.5rem] bg-white border border-brand-light/20 px-5 py-3 hover:border-brand-light hover:shadow-lg transition-all duration-500"
-                                >
-                                    <div className="absolute bottom-0 right-0 p-3 opacity-5 group-hover:scale-110 transition-transform">
-                                        <reason.icon size={48} />
-                                    </div>
-                                    <div className="relative z-10 space-y-3">
-                                        <div className={`w-12 h-12 rounded-xl ${reason.accent}/10 text-brand-dark flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                                            <reason.icon size={24} />
-                                        </div>
-                                        <h4 className="text-brand-dark font-black tracking-tight leading-tight">{reason.title}</h4>
-                                        <p className="text-brand-medium/60 text-xs font-medium leading-relaxed">
-                                            {reason.desc}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                return (
+                                    <motion.div
+                                        key={reason.id}
+                                        variants={itemVariants}
+                                        layout
+                                        className={`group relative overflow-hidden rounded-[2.5rem] transition-all duration-500 ${
+                                            isPurpose 
+                                            ? "bg-brand-dark text-white shadow-2xl border-2 border-brand-light/20" 
+                                            : "bg-white border border-brand-light/10 shadow-xl hover:shadow-2xl hover:border-brand-light/30"
+                                        }`}
+                                    >
+                                        <div className="p-8 md:p-10 space-y-6">
+                                            {/* Header */}
+                                            <div className="flex justify-between items-start">
+                                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${
+                                                    isPurpose ? "bg-brand-light text-brand-dark" : `${reason.accent}/10 text-brand-dark`
+                                                }`}>
+                                                    <reason.icon size={26} strokeWidth={isPurpose ? 2.5 : 2} />
+                                                </div>
+                                                {isPurpose && (
+                                                    <div className="px-4 py-1.5 rounded-full bg-brand-light/20 border border-brand-light/30 backdrop-blur-md">
+                                                        <span className="text-[10px] font-black uppercase tracking-widest text-brand-light">10% Profit Shared</span>
+                                                    </div>
+                                                )}
+                                            </div>
 
-                            {/* Stats Card Integrated into Bento */}
-                            <motion.div
-                                variants={itemVariants}
-                                className="md:col-span-2 bg-brand-light p-6 rounded-[1.5rem] flex flex-col justify-center items-center text-center group"
-                            >
-                                <Sparkles className="text-brand-dark/20 mb-2 group-hover:rotate-12 transition-transform" size={32} />
-                                <p className="text-3xl font-black text-brand-dark tracking-tighter">100%</p>
-                                <p className="text-[10px] font-black uppercase tracking-widest text-brand-dark/60">Incident Free</p>
-                            </motion.div>
+                                            {/* Text Content */}
+                                            <div className="space-y-3">
+                                                <h3 className={`text-2xl font-black tracking-tight ${isPurpose ? "text-white" : "text-brand-dark"}`}>
+                                                    {reason.title}
+                                                </h3>
+                                                <p className={`text-base font-medium leading-relaxed ${isPurpose ? "text-white/60" : "text-brand-medium/60"}`}>
+                                                    {reason.shortDesc}
+                                                </p>
+                                            </div>
+
+                                            {/* Expandable Content */}
+                                            <AnimatePresence>
+                                                {isExpanded && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: "auto", opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <div className={`pt-4 border-t ${isPurpose ? "border-white/10" : "border-brand-light/10"}`}>
+                                                            <p className={`text-base leading-relaxed font-medium ${isPurpose ? "text-white/80" : "text-brand-medium/80"}`}>
+                                                                {reason.fullDesc}
+                                                            </p>
+                                                        </div>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+
+                                            {/* Action Button */}
+                                            <button
+                                                onClick={() => toggleExpand(reason.id)}
+                                                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer ${
+                                                    isPurpose ? "text-brand-light hover:text-white" : "text-brand-medium hover:text-brand-dark"
+                                                }`}
+                                            >
+                                                {isExpanded ? (
+                                                    <>Less Info <ChevronUp size={14} /></>
+                                                ) : (
+                                                    <>More Info <ChevronDown size={14} /></>
+                                                )}
+                                            </button>
+                                        </div>
+
+                                        {/* Decorative backgrounds */}
+                                        <div className={`absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform ${isPurpose ? "text-white" : "text-brand-dark"}`}>
+                                            <reason.icon size={120} />
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </motion.div>
                     </div>
-
-                    {/* RIGHT: Visual Collage (Immersive) */}
-                    <div className="lg:col-span-12 xl:col-span-5 relative mt-12 lg:mt-0 px-4 md:px-0">
-                        <div className="relative h-[300px] sm:h-[400px] md:h-[450px] w-full max-w-[320px] sm:max-w-lg mx-auto lg:ml-auto lg:mr-0">
-
-                            {/* Main Background Image */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 1 }}
-                                className="absolute top-0 right-0 lg:-right-10 w-4/5 h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white z-10"
-                            >
-                                <Image
-                                    src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=1200&auto=format&fit=crop"
-                                    alt="Nepal Peaks"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors" />
-                            </motion.div>
-
-                            {/* Secondary Overlapping Image */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, delay: 0.3 }}
-                                className="absolute -bottom-10 sm:-bottom-30 -left-4 sm:left-10 w-3/5 h-1/2 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white z-20 group"
-                            >
-                                <Image
-                                    src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=800&auto=format&fit=crop"
-                                    alt="Trekkers"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                            </motion.div>
-
-                            {/* Experience Badge */}
-                            <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute bottom-18 sm:bottom-20 right-36 sm:right-10 lg:right-60 z-30 bg-white p-1 sm:p-3 rounded-2xl shadow-2xl border border-brand-light/30 backdrop-blur-xl"
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div className="p-3 bg-brand-dark rounded-2xl text-brand-light">
-                                        <Map size={24} />
-                                    </div>
-                                    <div>
-                                        <p className="text-xl sm:text-2xl font-black text-brand-dark leading-none">
-                                            <CountUp to={40} suffix="+" />
-                                        </p>
-                                        <p className="text-[8px] sm:text-[12px] font-bold uppercase text-brand-medium/50 tracking-widest">Active Routes</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* Decorative Elements */}
-                            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-light/20 rounded-full blur-3xl -z-10" />
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-brand-light/10 rounded-full -z-10" />
-                        </div>
-                    </div>
                 </div>
-
-
             </div>
         </Section>
     );

@@ -386,7 +386,7 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
                                     setSelectedDifficulty(null);
                                     setSelectedDuration(null);
                                 }}
-                                className={cn("text-[10px] font-black uppercase tracking-[0.15em] ml-2 transition-colors", isDark ? "text-white/40 hover:text-white" : "text-brand-dark/40 hover:text-brand-dark")}
+                                className={cn("text-[10px] font-black uppercase tracking-[0.15em] ml-2 transition-colors cursor-pointer", isDark ? "text-white/40 hover:text-white" : "text-brand-dark/40 hover:text-brand-dark")}
                             >
                                 Clear All
                             </button>

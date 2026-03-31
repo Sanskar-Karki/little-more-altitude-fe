@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Camera, MapPin, Award, ChevronLeft, Mountain, Mail, Linkedin, Instagram, Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +11,15 @@ import { MountainLine } from "@/components/ui/MountainLine";
 import pembaImg from "./pemba.jpg";
 
 export default function PembaDetailPage() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+    const backgroundOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
     return (
         <main className="min-h-screen bg-brand-white">
             {/* Immersive Hero Section */}
@@ -25,7 +35,7 @@ export default function PembaDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true}>Visionary Founder & Director</SectionBadge>
+                            <SectionBadge dark={true} icon={Mountain}>Visionary Founder & Director</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Pemba N.
                                 <span className="text-brand-light pl-1">Sherpa</span>
@@ -54,8 +64,27 @@ export default function PembaDetailPage() {
             </div>
 
             {/* Content Section with Negative Margin */}
-            <section className="relative z-20 -mt-12">
-                <div className="container mx-auto px-8 md:px-20 lg:px-32">
+            <section ref={containerRef} className="relative z-20">
+                {/* Blended Parallax Background Layer */}
+                <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden container -mx-[-300px] ">
+                    <motion.div
+                        style={{ y: backgroundY, opacity: backgroundOpacity }}
+                        className="absolute inset-0"
+                    >
+                        <Image
+                            src="/images/Trekking/Abc/abc1.jpg"
+                            alt="Himalayan Background"
+                            fill
+                            className="object-cover opacity-30"
+                            sizes="100vw"
+                        />
+                        {/* Sophisticated Blending Gradients */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-brand-white via-transparent to-brand-white/90" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-brand-white via-brand-white/20 to-transparent" />
+                    </motion.div>
+                </div>
+
+                <div className="container mx-auto px-8 md:px-20 lg:px-32 relative z-10 py-20 lg:py-32">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20">
 
                         {/* Left Column: Visual & Stats Card */}
@@ -151,10 +180,10 @@ export default function PembaDetailPage() {
                                     <Mail size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                                 <div className="flex gap-4">
-                                    <Link href="#" className="p-5 rounded-full bg-brand-light/10 text-brand-dark border border-brand-light/20 hover:bg-brand-light hover:text-white transition-all">
+                                    <Link href="https://www.linkedin.com/in/pemba-sherpa-19b4b417b/" className="p-5 rounded-full bg-brand-light/10 text-brand-dark border border-brand-light/20 hover:bg-brand-light hover:text-white transition-all">
                                         <Linkedin size={20} />
                                     </Link>
-                                    <Link href="#" className="p-5 rounded-full bg-brand-light/10 text-brand-dark border border-brand-light/20 hover:bg-brand-light hover:text-white transition-all">
+                                    <Link href="https://www.instagram.com/pembavoyages/" className="p-5 rounded-full bg-brand-light/10 text-brand-dark border border-brand-light/20 hover:bg-brand-light hover:text-white transition-all">
                                         <Instagram size={20} />
                                     </Link>
                                 </div>

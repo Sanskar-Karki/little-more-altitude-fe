@@ -9,13 +9,13 @@ import ebc from "../../../public/images/HomePageImage/ebc.jpg";
 import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
 import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
 import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
-import Mardi from "../../../public/images/HomePageImage/Mardi.jpg";
+import Mardi from "../../../public/images/HomePageImage/MardiHimal-Nepal.jpg";
 
 const HERO_IMAGES = [
     abcsun,
+    Mardi,
     Langtang,
     Manaslu,
-    Mardi,
     ebc,
 ];
 
@@ -24,6 +24,11 @@ const HERO_CONTENT = [
         title: "Annapurna Base Camp",
         subtitle: "Witness the magnificent sunrise over the Annapurna massif.",
         slug: "annapurna-base-camp-trek"
+    },
+    {
+        title: "Mardi Himal",
+        subtitle: "Discover the hidden gem of the Annapurna region.",
+        slug: "mardi-himal-trek"
     },
     {
         title: "Langtang Valley",
@@ -35,11 +40,7 @@ const HERO_CONTENT = [
         subtitle: "Explore the untouched beauty and rugged trails of Manaslu.",
         slug: "manaslu-circuit-trek"
     },
-    {
-        title: "Mardi Himal",
-        subtitle: "Discover the hidden gem of the Annapurna region.",
-        slug: "mardi-himal-trek"
-    },
+
     {
         title: "Everest Base Camp",
         subtitle: "Stand in the shadow of the world's highest peak.",

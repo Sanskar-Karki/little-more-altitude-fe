@@ -170,7 +170,9 @@ export default function ExpeditionPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
                             <div className="space-y-6">
-                                <SectionBadge className="text-brand-light">The Selection Process</SectionBadge>
+                                <div className="flex items-center gap-2 border border-brand-light w-fit px-4 py-1 rounded-full">
+                                    <p className="text-brand-light  tracking-widest uppercase">The Selection Process</p>
+                                </div>
                                 <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] uppercase">
                                     THE BASE OF <br />
                                     <span className="text-brand-light">SUCCESS</span>

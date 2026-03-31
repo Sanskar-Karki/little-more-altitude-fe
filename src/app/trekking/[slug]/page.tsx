@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState, use } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState, use, useRef } from "react";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -24,6 +24,125 @@ import {
 import Image from "next/image";
 import { getTrekBySlug, getMediaUrl } from "@/lib/trekking";
 import Link from "next/link";
+
+function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) {
+    const itineraryRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: itineraryRef,
+        offset: ["start end", "end start"]
+    });
+
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
+    return (
+        <div ref={itineraryRef} className="relative my-32 group/itinerary">
+            <div className="absolute top-0 left-0 w-full h-20 md:h-32 -translate-y-[99%] z-10 pointer-events-none">
+                <svg className="w-full h-full fill-brand-dark" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,120 L0,90 L120,110 L250,20 L380,100 L500,0 L650,110 L800,40 L950,105 L1100,5 L1250,115 L1440,30 L1440,120 Z"></path>
+                </svg>
+            </div>
+
+            {/* Parallax Background */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <motion.div
+                    style={{ y: backgroundY }}
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0 }}
+                    className="absolute inset-0 w-full h-[140%] -top-[20%]"
+                >
+                    <Image
+                        src={getMediaUrl(trek.heroImage?.url) || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80"}
+                        alt="Adventure Background"
+                        fill
+                        className="object-cover opacity-90"
+                        priority={false}
+                    />
+                    {/* Texture & Overlays */}
+                    <div className="absolute inset-0 bg-brand-dark/70 backdrop-blur-[1px]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#031536] via-[#031536]/70 to-[#031536]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.1)_100%)]" />
+                </motion.div>
+            </div>
+
+            <Section id="itinerary" background="dark" className="py-20 md:py-32 relative z-10 bg-transparent">
+                <div className="max-w-7xl mx-auto space-y-16">
+                    <div className="text-center space-y-4">
+                        <SectionBadge dark>The Journey</SectionBadge>
+                        <SectionHeading dark gradientText="Day by Day.">
+                            Detailed Itinerary
+                        </SectionHeading>
+                        <p className="text-brand-white/50 text-base max-w-2xl mx-auto">
+                            Experience every moment of your adventure through the Himalayas
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        {itinerary.map((day: any, idx: number) => {
+                            const dayNum = day.dayNumber || day.day || (idx + 1);
+                            return (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{
+                                        duration: 0.2,
+                                        delay: idx * 0.05,
+                                        ease: [0.21, 0.47, 0.32, 0.98]
+                                    }}
+                                    className="group relative"
+                                >
+                                    <div className="relative h-full overflow-hidden rounded-[2.5rem] backdrop-blur-2xl border border-white/10 p-8 pt-12 transition-all duration-700 hover:bg-white/[0.06] hover:border-brand-light/30 hover:shadow-2xl hover:shadow-brand-light/5">
+                                        <div className="absolute top-10 right-4 -translate-y-1/2">
+                                            <div className="relative">
+                                                <div className="absolute inset-0 bg-brand-light blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+                                                <div className="relative bg-gradient-to-br from-brand-light to-brand-medium px-6 py-2 rounded-full border border-white/20 shadow-xl transform transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
+                                                    <span className="text-[10px] font-black text-brand-dark uppercase tracking-[0.2em] block leading-none mb-1 opacity-70">Day</span>
+                                                    <span className="text-2xl font-black text-brand-dark leading-none">
+                                                        {dayNum < 10 ? `0${dayNum}` : dayNum}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="relative z-10 space-y-6">
+                                            <div className="space-y-3">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="h-px w-8 bg-brand-light/30 transition-all duration-700 group-hover:w-12 group-hover:bg-brand-light" />
+                                                    {day.location && (
+                                                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/10">
+                                                            <MapPin size={10} className="text-brand-light" />
+                                                            <span className="text-brand-light text-[14px] font-black uppercase tracking-widest">{day.location}</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter leading-tight group-hover:text-brand-light transition-colors duration-500">
+                                                    {day.title}
+                                                </h3>
+                                            </div>
+
+                                            <p className="text-brand-white/50 text-base leading-relaxed font-medium transition-colors duration-500 group-hover:text-brand-white/80">
+                                                {day.description}
+                                            </p>
+                                        </div>
+                                        <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-brand-light to-brand-medium w-0 transition-all duration-1000 group-hover:w-full" />
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </Section>
+            <div className="absolute bottom-0 left-0 w-full h-20 md:h-32 translate-y-[99%] z-10 rotate-180 pointer-events-none">
+                <svg className="w-full h-full fill-brand-dark" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,120 L0,85 L150,115 L300,10 L450,100 L600,35 L750,110 L900,5 L1050,115 L1200,45 L1350,105 L1440,20 L1440,120 Z"></path>
+                </svg>
+            </div>
+        </div>
+    );
+}
 
 export default function DynamicTrekPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);
@@ -255,89 +374,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
 
             {/* Itinerary Section */}
             {trek.itinerary && trek.itinerary.length > 0 && (
-                <div className="relative my-32">
-                    <div className="absolute top-0 left-0 w-full h-20 md:h-32 -translate-y-[99%] z-10 pointer-events-none">
-                        <svg className="w-full h-full fill-brand-dark" viewBox="0 0 1440 120" preserveAspectRatio="none">
-                            <path d="M0,120 L0,90 L120,110 L250,20 L380,100 L500,0 L650,110 L800,40 L950,105 L1100,5 L1250,115 L1440,30 L1440,120 Z"></path>
-                        </svg>
-                    </div>
-
-                    <Section id="itinerary" background="dark" className="py-20 md:py-32">
-                        <div className="max-w-7xl mx-auto space-y-16">
-                            <div className="text-center space-y-4">
-                                <SectionBadge dark>The Journey</SectionBadge>
-                                <SectionHeading dark gradientText="Day by Day.">
-                                    Detailed Itinerary
-                                </SectionHeading>
-                                <p className="text-brand-white/50 text-base max-w-2xl mx-auto">
-                                    Experience every moment of your adventure through the Himalayas
-                                </p>
-                            </div>
-
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                {trek.itinerary.map((day: any, idx: number) => {
-                                    const dayNum = day.dayNumber || day.day || (idx + 1);
-                                    return (
-                                        <motion.div
-                                            key={idx}
-                                            initial={{ opacity: 0, y: 30 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            transition={{
-                                                duration: 0.8,
-                                                delay: idx * 0.1,
-                                                ease: [0.21, 0.47, 0.32, 0.98]
-                                            }}
-                                            className="group relative"
-                                        >
-                                            <div className="relative h-full overflow-hidden rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-8 pt-12 transition-all duration-700 hover:bg-white/[0.06] hover:border-brand-light/30 hover:shadow-2xl hover:shadow-brand-light/5">
-                                                <div className="absolute top-10 right-4 -translate-y-1/2">
-                                                    <div className="relative">
-                                                        <div className="absolute inset-0 bg-brand-light blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
-                                                        <div className="relative bg-gradient-to-br from-brand-light to-brand-medium px-6 py-2 rounded-full border border-white/20 shadow-xl transform transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
-                                                            <span className="text-[10px] font-black text-brand-dark uppercase tracking-[0.2em] block leading-none mb-1 opacity-70">Day</span>
-                                                            <span className="text-2xl font-black text-brand-dark leading-none">
-                                                                {dayNum < 10 ? `0${dayNum}` : dayNum}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div className="relative z-10 space-y-6">
-                                                    <div className="space-y-3">
-                                                        <div className="flex items-center gap-2">
-                                                            <div className="h-px w-8 bg-brand-light/30 transition-all duration-700 group-hover:w-12 group-hover:bg-brand-light" />
-                                                            {day.location && (
-                                                                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/10">
-                                                                    <MapPin size={10} className="text-brand-light" />
-                                                                    <span className="text-brand-light text-[14px] font-black uppercase tracking-widest">{day.location}</span>
-                                                                </div>
-                                                            )}
-                                                        </div>
-
-                                                        <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter leading-tight group-hover:text-brand-light transition-colors duration-500">
-                                                            {day.title}
-                                                        </h3>
-                                                    </div>
-
-                                                    <p className="text-brand-white/50 text-base leading-relaxed font-medium transition-colors duration-500 group-hover:text-brand-white/80">
-                                                        {day.description}
-                                                    </p>
-                                                </div>
-                                                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-brand-light to-brand-medium w-0 transition-all duration-1000 group-hover:w-full" />
-                                            </div>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </Section>
-                    <div className="absolute bottom-0 left-0 w-full h-20 md:h-32 translate-y-[99%] z-10 rotate-180 pointer-events-none">
-                        <svg className="w-full h-full fill-brand-dark" viewBox="0 0 1440 120" preserveAspectRatio="none">
-                            <path d="M0,120 L0,85 L150,115 L300,10 L450,100 L600,35 L750,110 L900,5 L1050,115 L1200,45 L1350,105 L1440,20 L1440,120 Z"></path>
-                        </svg>
-                    </div>
-                </div>
+                <ItinerarySection trek={trek} itinerary={trek.itinerary} />
             )}
 
             {/* Includes/Excludes */}
