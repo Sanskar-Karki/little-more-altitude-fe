@@ -141,26 +141,30 @@ export default function AboutPage() {
                         <div className="container mx-auto px-6 md:px-20 lg:px-32 relative z-10">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 
-                                {/* Left: Text cont                                <motion.div
+                                {/* Left: Text Content */}
+                                <motion.div
                                     initial={{ opacity: 0, x: -30 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8 }}
                                     className="space-y-6 md:space-y-8 mt-6 md:mt-10"
                                 >
-                                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[0.95] md:leading-[0.9] text-brand-dark tracking-tighter">
-                                        Go Higher. <br />
-                                        <span className="text-brand-medium">Live Deeper.</span>
-                                    </h1>
+                                    <div className="space-y-4">
+                                        <SectionBadge icon={Mountain}>Rooted in Sherpa Heritage</SectionBadge>
+                                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[0.95] md:leading-[0.9] text-brand-dark tracking-tighter">
+                                            Go Higher. <br />
+                                            <span className="text-brand-medium">Live Deeper.</span>
+                                        </h1>
+                                    </div>
                                     <p className="text-brand-dark/80 text-lg md:text-xl font-medium leading-relaxed max-w-xl">
                                         A Little More Altitude is your trusted partner for unparalleled trekking across Nepal, from Everest Base Camp to remote Himalayan trails.
                                     </p>
                                     <div className="space-y-5 md:space-y-6 text-brand-dark/60 text-base md:text-lg leading-relaxed max-w-2xl border-l-2 border-brand-medium/40 pl-5 md:pl-6">
                                         <p>
-                                            Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba N. Sherpa and Ngima Tashi Sherpa, born and raised on the Himalayan trails, we deliver safe, authentic, and perspective-shifting trekking adventures that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.
+                                            Founded on the firsthand high-altitude experience of lifelong mountain companions <span className="text-brand-dark font-bold">Pemba N. Sherpa</span>, <span className="text-brand-dark font-bold">Ngima Tashi Sherpa</span>, and <span className="text-brand-dark font-bold">Pema Thilen Sherpa</span>—born and raised on the Himalayan trails—we deliver safe, authentic, and perspective-shifting trekking adventures that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.
                                         </p>
                                     </div>
-                                </motion.div>otion.div>
+                                </motion.div>
 
                                 {/* Right: Collage Images with Parallax */}
                                 <div className="relative h-[600px] md:h-[800px] hidden lg:block overflow-visible">
@@ -191,7 +195,8 @@ export default function AboutPage() {
                     </section>
 
 
-                    {/* === 3. MEET THE FOUNDERS === */}
+
+                    {/* === 2. MEET THE FOUNDERS === */}
                     <div id="founders" className="relative pb-24">
                         <div className="container mx-auto px-6 md:px-8 text-center mb-12 md:mb-16 relative z-10">
                             <SectionBadge icon={Users}><p className="text-[14px]">Our Team</p></SectionBadge>
