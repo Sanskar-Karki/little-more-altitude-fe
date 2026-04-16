@@ -147,7 +147,7 @@ export default function AboutPage() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8 }}
-                                    className="space-y-6 md:space-y-8 mt-6 md:mt-10"
+                                    className="space-y-6 md:space-y-"
                                 >
                                     <div className="space-y-4">
                                         <SectionBadge icon={Mountain}>Rooted in Sherpa Heritage</SectionBadge>
@@ -194,13 +194,65 @@ export default function AboutPage() {
 
                     </section>
 
+                    {/* === SCROLL DOWN INDICATOR === */}
+                    <div className="relative -top-70 z-10 flex flex-col items-center justify-center py-10 md:py-14 gap-3 select-none">
+                        <motion.a
+                            href="#founders"
+                            aria-label="Scroll down to meet our team"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="flex flex-col items-center gap-3 group cursor-pointer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById("founders")?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                        >
+                            {/* Label */}
+                            <motion.span
+                                animate={{ opacity: [0.5, 1, 0.5] }}
+                                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="text-[11px] md:text-xs font-black uppercase tracking-[0.3em] text-brand-medium"
+                            >
+                                Meet Our Team
+                            </motion.span>
 
+                            {/* Mouse icon */}
+                            <motion.div
+                                animate={{ y: [0, 6, 0] }}
+                                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                                className="w-6 h-10 rounded-full border-2 border-brand-medium/60 group-hover:border-brand-medium flex items-start justify-center pt-1.5 transition-colors duration-300"
+                            >
+                                <motion.div
+                                    animate={{ y: [0, 8, 0], opacity: [1, 0, 1] }}
+                                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                                    className="w-1 h-2.5 rounded-full bg-brand-medium"
+                                />
+                            </motion.div>
+
+                            {/* Stacked chevrons */}
+                            <div className="flex flex-col items-center -space-y-2.5">
+                                {[0, 0.2, 0.4].map((delay, i) => (
+                                    <motion.div
+                                        key={i}
+                                        animate={{ opacity: [0.2, 1, 0.2], y: [0, 4, 0] }}
+                                        transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut", delay }}
+                                    >
+                                        <ChevronDown
+                                            size={18}
+                                            className="text-brand-medium group-hover:text-brand-dark transition-colors duration-300"
+                                        />
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.a>
+                    </div>
 
                     {/* === 2. MEET THE FOUNDERS === */}
-                    <div id="founders" className="relative pb-24">
-                        <div className="container mx-auto px-6 md:px-8 text-center mb-12 md:mb-16 relative z-10">
+                    <div id="founders" className="relative pb-14">
+                        <div className="container mx-auto px-6 md:px-8 text-center  relative z-10">
                             <SectionBadge icon={Users}><p className="text-[14px]">Our Team</p></SectionBadge>
-                            <p className="text-brand-dark text-lg md:text-xl lg:pr-12 mx-auto mt-6 text-center max-w-3xl px-4 md:px-8" >
+                            <p className="text-brand-dark text-lg md:text-xl lg:pr-12 mx-auto my-12 text-center max-w-3xl px-4 md:px-8" >
                                 "Our vision is simple but bold: to share the best experiences we’ve gained from our own journeys, guiding trekkers not just across trails, but into the soul of the Himalayas itself."
                             </p>
                         </div>
