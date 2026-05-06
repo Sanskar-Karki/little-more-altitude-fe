@@ -7,8 +7,10 @@ import Image from "next/image";
 import { useRef } from "react";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { CountUp } from "@/components/ui/CountUp";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ExpeditionPage() {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -18,6 +20,8 @@ export default function ExpeditionPage() {
     const yValue = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
     const opacityValue = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
     const scaleValue = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
+    const preparationFeatures = t('expedition.preparation.features') as any[];
 
     return (
         <main ref={containerRef} className="min-h-screen bg-brand-dark overflow-x-hidden">
@@ -50,28 +54,27 @@ export default function ExpeditionPage() {
                         <div className="space-y-10">
                             <div className="flex items-center gap-4">
                                 <span className="px-5 py-2 rounded-full bg-brand-light text-brand-dark font-black text-[10px] uppercase tracking-[0.4em]">
-                                    6,000M SERIES
+                                    {t('expedition.hero.badge')}
                                 </span>
                                 <div className="h-px w-16 bg-brand-light/40" />
                                 <span className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
-                                    The Elite Ascent
+                                    {t('expedition.hero.eliteAscent')}
                                 </span>
                             </div>
 
                             <h1 className="text-6xl md:text-[7rem] lg:text-[8rem] font-black text-white tracking-tighter leading-none mb-4">
-                                BEYOND <br />
-                                <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-4">The Limits.</span>
+                                {t('expedition.hero.title')} <br />
+                                <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-4">{t('expedition.hero.limits')}</span>
                             </h1>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                                 <p className="text-brand-white/70 text-xl md:text-2xl font-medium leading-relaxed max-w-xl border-l-2 border-brand-light/30 pl-8">
-                                    Engineering success on the world's most formidable peaks.
-                                    Precision logistics meets absolute mountain mastery.
+                                    {t('expedition.hero.description')}
                                 </p>
 
                                 <div className="flex gap-6">
                                     <button className="group px-10 py-6 bg-brand-light text-brand-dark rounded-2xl font-black uppercase tracking-widest text-[11px] hover:bg-white transition-all flex items-center gap-4 shadow-2xl">
-                                        View Manifest <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                                        {t('expedition.hero.viewManifest')} <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                                     </button>
                                 </div>
                             </div>
@@ -79,10 +82,10 @@ export default function ExpeditionPage() {
                     </motion.div>
                 </div>
 
-                {/* Decorative Elements */}f
+                {/* Decorative Elements */}
                 <div className="absolute left-10 bottom-20 hidden xl:flex flex-col items-center gap-12 opacity-30">
                     <p className="vertical-text text-[10px] font-black text-white tracking-[0.6em] uppercase">
-                        EST. HIGH ALTITUDE PROTOCOL
+                        {t('expedition.hero.protocol')}
                     </p>
                     <div className="w-px h-24 bg-gradient-to-b from-white to-transparent" />
                 </div>
@@ -92,10 +95,10 @@ export default function ExpeditionPage() {
                     <div className="container mx-auto px-8 md:px-32 pb-16">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-8 border-t border-white/10 backdrop-blur-md bg-white/[0.02] rounded-t-[4rem] px-16">
                             {[
-                                { icon: Mountain, label: "Success Rate", value: "98", suffix: "%" },
-                                { icon: Users, label: "Guide Ratio", value: "1:1", suffix: "" },
-                                { icon: Shield, label: "Safety Index", value: "100", suffix: "%" },
-                                { icon: Target, label: "Peak Summits", value: "250", suffix: "+" }
+                                { icon: Mountain, label: t('expedition.stats.successRate'), value: "98", suffix: "%" },
+                                { icon: Users, label: t('expedition.stats.guideRatio'), value: "1:1", suffix: "" },
+                                { icon: Shield, label: t('expedition.stats.safetyIndex'), value: "100", suffix: "%" },
+                                { icon: Target, label: t('expedition.stats.peakSummits'), value: "250", suffix: "+" }
                             ].map((stat, i) => (
                                 <div key={i} className="space-y-1">
                                     <div className="flex items-center gap-3 text-brand-light/50">
@@ -141,9 +144,9 @@ export default function ExpeditionPage() {
                 <div className="flex flex-col gap-8 items-center py-10 px-3 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-2xl">
                     <div className="w-px h-8 bg-brand-light/30" />
                     {[
-                        { label: "01", name: "SUMMITS", id: "expeditions" },
-                        { label: "02", name: "PROTOCOL", id: "preparation" },
-                        { label: "03", name: "CONTACT", id: "contact" }
+                        { label: "01", name: t('expedition.nav.summits'), id: "expeditions" },
+                        { label: "02", name: t('expedition.nav.protocol'), id: "preparation" },
+                        { label: "03", name: t('expedition.nav.contact'), id: "contact" }
                     ].map((step) => (
                         <button
                             key={step.label}
@@ -171,37 +174,36 @@ export default function ExpeditionPage() {
                         <div className="space-y-8">
                             <div className="space-y-6">
                                 <div className="flex items-center gap-2 border border-brand-light w-fit px-4 py-1 rounded-full">
-                                    <p className="text-brand-light  tracking-widest uppercase">The Selection Process</p>
+                                    <p className="text-brand-light  tracking-widest uppercase">{t('expedition.preparation.badge')}</p>
                                 </div>
                                 <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] uppercase">
-                                    THE BASE OF <br />
-                                    <span className="text-brand-light">SUCCESS</span>
+                                    {t('expedition.preparation.title')} <br />
+                                    <span className="text-brand-light">{t('expedition.preparation.success')}</span>
                                 </h2>
                                 <p className="text-brand-white/50 text-lg font-medium leading-relaxed max-w-lg">
-                                    Precision training meets elite performance management. We ensure you are ready for the world's most unforgiving environments.
+                                    {t('expedition.preparation.description')}
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {[
-                                    { icon: Gauge, title: "Physical Prep", desc: "Metabolic threshold analysis." },
-                                    { icon: Zap, title: "Altitude Prep", desc: "Hypoxic simulation cycles." },
-                                    { icon: Target, title: "Mission Logic", desc: "Strategic weather routing." },
-                                    { icon: Shield, title: "Safety Ops", desc: "Closed-circuit team protocols." }
-                                ].map((item, i) => (
-                                    <div
-                                        key={i}
-                                        className="space-y-3 p-5 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-brand-light/20 transition-all duration-300 group hover:bg-white/[0.04]"
-                                    >
-                                        <div className="w-10 h-10 rounded-xl bg-brand-light/5 text-brand-light/80 flex items-center justify-center group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-300">
-                                            <item.icon size={18} />
+                                {preparationFeatures.map((item, i) => {
+                                    const icons = [Gauge, Zap, Target, Shield];
+                                    const Icon = icons[i];
+                                    return (
+                                        <div
+                                            key={i}
+                                            className="space-y-3 p-5 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-brand-light/20 transition-all duration-300 group hover:bg-white/[0.04]"
+                                        >
+                                            <div className="w-10 h-10 rounded-xl bg-brand-light/5 text-brand-light/80 flex items-center justify-center group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-300">
+                                                <Icon size={18} />
+                                            </div>
+                                            <div>
+                                                <h4 className="text-white font-bold text-sm tracking-wide uppercase mb-1">{item.title}</h4>
+                                                <p className="text-brand-white/30 text-[10px] font-medium leading-relaxed uppercase tracking-wider">{item.desc}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 className="text-white font-bold text-sm tracking-wide uppercase mb-1">{item.title}</h4>
-                                            <p className="text-brand-white/30 text-[10px] font-medium leading-relaxed uppercase tracking-wider">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                             </div>
                         </div>
 
@@ -222,8 +224,8 @@ export default function ExpeditionPage() {
                                             <Users size={24} />
                                         </div>
                                         <div>
-                                            <p className="text-brand-dark font-black text-2xl leading-none tracking-tighter">1:1 RATIO</p>
-                                            <p className="text-brand-dark/60 text-[9px] font-bold uppercase tracking-widest mt-1">Elite Private Guiding</p>
+                                            <p className="text-brand-dark font-black text-2xl leading-none tracking-tighter">{t('expedition.preparation.ratio')}</p>
+                                            <p className="text-brand-dark/60 text-[9px] font-bold uppercase tracking-widest mt-1">{t('expedition.preparation.ratioDesc')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -238,19 +240,19 @@ export default function ExpeditionPage() {
             <section id="contact" className="py-32 relative bg-brand-dark overflow-hidden">
                 <div className="container relative z-10 mx-auto px-8 text-center">
                     <div className="inline-block px-8 py-3 rounded-full bg-white/[0.03] border border-white/10 text-brand-light text-[11px] font-black uppercase tracking-[0.4em] mb-12">
-                        Commit to Excellence
+                        {t('expedition.cta.badge')}
                     </div>
                     <h2 className="text-6xl md:text-[7rem] font-black text-white tracking-tighter leading-[0.85] mb-12">
-                        YOUR PEAK <br />
-                        <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-8">Awaits.</span>
+                        {t('expedition.cta.title')} <br />
+                        <span className="text-brand-light uppercase text-[0.45em] tracking-[0.2em] block mt-8">{t('expedition.cta.awaits')}</span>
                     </h2>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                         <button className="px-16 py-8 bg-brand-light text-brand-dark rounded-2xl font-black uppercase tracking-[0.4em] text-xs hover:scale-105 transition-all shadow-2xl">
-                            Request Application
+                            {t('expedition.cta.request')}
                         </button>
                         <button className="px-12 py-8 bg-white/5 border border-white/10 text-white rounded-2xl font-black uppercase tracking-[0.4em] text-xs hover:bg-white/[0.08] transition-all">
-                            Speak with a Lead Guide
+                            {t('expedition.cta.speak')}
                         </button>
                     </div>
                 </div>

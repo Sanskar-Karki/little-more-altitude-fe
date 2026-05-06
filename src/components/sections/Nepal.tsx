@@ -8,8 +8,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Map, Compass, Wind, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Nepal() {
+    const { t } = useLanguage();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -29,7 +31,7 @@ export function Nepal() {
                     style={{ y: ySlow }}
                     className="absolute top-20 -left-10 text-[18vw] font-black text-white/[0.03] select-none whitespace-nowrap pointer-events-none tracking-tighter will-change-transform"
                 >
-                    HIMALAYA
+                    {t('nepal.badge').toUpperCase()}
                 </motion.div>
 
                 <div className="container mx-auto px-6 md:px-20 lg:px-32 relative z-10">
@@ -44,37 +46,35 @@ export function Nepal() {
                             className="space-y-10"
                         >
                             <div className="space-y-5">
-                                <SectionBadge dark>The Sacred Peaks</SectionBadge>
-                                <SectionHeading dark gradientText="Himalayas." className="text-3xl sm:text-4xl md:text-5xl lg:text-3rem">
-                                    Nepal: Heart of the
+                                <SectionBadge dark>{t('nepal.badge')}</SectionBadge>
+                                <SectionHeading dark gradientText={t('nepal.gradient')} className="text-3xl sm:text-4xl md:text-5xl lg:text-3rem">
+                                    {t('nepal.heading')}
                                 </SectionHeading>
                                 <p className="text-brand-white/70 text-base md:text-xl leading-relaxed font-medium max-w-xl">
-                                    Nepal is the heart of the Himalayas, home to the world’s highest peaks,
-                                    ancient cultures, and some of the finest trekking routes on Earth.
+                                    {t('nepal.description')}
                                 </p>
                             </div>
 
-                            {/* Multi-layered Highlights - Simplified animations */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                {[
-                                    { icon: Wind, title: "Pure Spirit", desc: "A land where spirituality meets the sky.", color: "text-blue-400" },
-                                    { icon: Sun, title: "Golden Trails", desc: "Ancient routes carved by history.", color: "text-amber-400" },
-                                    { icon: Compass, title: "Beyond Horizons", desc: "From jungles to the death zone.", color: "text-emerald-400" },
-                                    { icon: Map, title: "Legendary Peaks", desc: "8 of the global 14 highest summits.", color: "text-brand-light" }
-                                ].map((item, i) => (
-                                    <motion.div
-                                        key={item.title}
-                                        initial={{ opacity: 0, y: 15 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 + i * 0.05 }}
-                                        className="group p-5 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-brand-light/30 transition-colors duration-300"
-                                    >
-                                        <item.icon className={`mb-3 w-6 h-6 ${item.color}`} />
-                                        <h4 className="text-white font-bold text-base mb-1">{item.title}</h4>
-                                        <p className="text-brand-white/50 text-xs leading-relaxed">{item.desc}</p>
-                                    </motion.div>
-                                ))}
+                                {(t('nepal.highlights') as any[]).map((item, i) => {
+                                    const icons = [Wind, Sun, Compass, Map];
+                                    const colors = ["text-blue-400", "text-amber-400", "text-emerald-400", "text-brand-light"];
+                                    const Icon = icons[i];
+                                    return (
+                                        <motion.div
+                                            key={item.title}
+                                            initial={{ opacity: 0, y: 15 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.1 + i * 0.05 }}
+                                            className="group py-4 transition-colors duration-300"
+                                        >
+                                            <Icon className={`mb-4 w-6 h-6 ${colors[i]} opacity-80 group-hover:opacity-100 transition-opacity`} />
+                                            <h4 className="text-white font-black text-base uppercase tracking-wider mb-2">{item.title}</h4>
+                                            <p className="text-brand-white/40 text-[13px] leading-relaxed group-hover:text-brand-white/60 transition-colors">{item.desc}</p>
+                                        </motion.div>
+                                    );
+                                })}
                             </div>
 
                             <div className="pt-4">
@@ -82,7 +82,7 @@ export function Nepal() {
                                     href="/trekking"
                                     className="inline-flex items-center gap-3 text-brand-light text-sm font-bold tracking-widest uppercase border-b border-brand-light/20 pb-2 hover:border-brand-light transition-all cursor-pointer"
                                 >
-                                    Explore the Region <span>→</span>
+                                    {t('nepal.exploreRegion')} <span>→</span>
                                 </Link>
                             </div>
                         </motion.div>
@@ -120,7 +120,7 @@ export function Nepal() {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-4">
                                         <p className="text-brand-light text-3xl font-black">1953</p>
-                                        <p className="text-white/60 text-[8px] uppercase tracking-[0.3em] font-bold">First Summit</p>
+                                        <p className="text-white/60 text-[8px] uppercase tracking-[0.3em] font-bold">{t('nepal.firstSummit')}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -136,8 +136,8 @@ export function Nepal() {
                                     <div className="flex gap-1">
                                         {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1 h-3 bg-brand-light rounded-full" />)}
                                     </div>
-                                    <p className="text-white font-black text-lg tracking-tighter">ELITE</p>
-                                    <p className="text-white/40 text-[7px] uppercase font-bold tracking-[0.25em]">Difficulty</p>
+                                    <p className="text-white font-black text-lg tracking-tighter">{t('nepal.elite')}</p>
+                                    <p className="text-white/40 text-[7px] uppercase font-bold tracking-[0.25em]">{t('nepal.difficulty')}</p>
                                 </div>
                             </motion.div>
 

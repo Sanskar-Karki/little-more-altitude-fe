@@ -6,21 +6,24 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Mountain, Instagram, Facebook, Twitter, ArrowRight, MapPin, Mail, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-const NAV_LINKS = [
-    { label: "Home", href: "/", icon: Home, mobileOnly: true },
-    { label: "About Us", href: "/about", icon: Mountain },
-    { label: "Trekking", href: "/trekking", icon: ArrowRight },
-    { label: "Expedition", href: "/expedition", icon: ArrowRight },
-    { label: "Gallery", href: "/gallery", icon: ArrowRight },
-    { label: "FAQ", href: "/faq", icon: ArrowRight },
-    { label: "Contact Us", href: "/contact", icon: Mail },
-];
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 
 export function Navbar() {
+    const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+
+    const NAV_LINKS = [
+        { label: t('nav.home'), href: "/", icon: Home, mobileOnly: true },
+        { label: t('nav.about'), href: "/about", icon: Mountain },
+        { label: t('nav.trekking'), href: "/trekking", icon: ArrowRight },
+        { label: t('nav.expedition'), href: "/expedition", icon: ArrowRight },
+        { label: t('nav.gallery'), href: "/gallery", icon: ArrowRight },
+        { label: t('nav.faq'), href: "/faq", icon: ArrowRight },
+        { label: t('nav.contact'), href: "/contact", icon: Mail },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -88,16 +91,20 @@ export function Navbar() {
                             </Link>
                         );
                     })}
+                    <LanguageSwitcher />
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden text-white p-2 focus:outline-none"
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                <div className="flex items-center gap-4 md:hidden">
+                    <LanguageSwitcher />
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="text-white p-2 focus:outline-none"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {/* Modern Mobile Menu Overlay */}
@@ -157,11 +164,11 @@ export function Navbar() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3 text-white/50">
                                         <MapPin size={18} className="text-brand-light" />
-                                        <span className="text-sm font-medium">Boudha, Kathmandu, Nepal</span>
+                                        <span className="text-sm font-medium">{t('common.address')}</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-white/50">
                                         <Mail size={18} className="text-brand-light" />
-                                        <span className="text-sm font-medium">alittlemorealtitude25@gmail.com</span>
+                                        <span className="text-sm font-medium">{t('common.email')}</span>
                                     </div>
                                 </div>
 

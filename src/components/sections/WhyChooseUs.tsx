@@ -8,6 +8,7 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/ui/Section";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 
 
@@ -83,6 +84,7 @@ const itemVariants: Variants = {
 };
 
 export function WhyChooseUs() {
+    const { t } = useLanguage();
     const [expandedId, setExpandedId] = useState<string | null>(null);
 
     const toggleExpand = (id: string) => {
@@ -103,12 +105,12 @@ export function WhyChooseUs() {
                     {/* LEFT: Header & Content */}
                     <div className="lg:col-span-12 xl:col-span-12 space-y-12">
                         <div className="space-y-4 text-center max-w-3xl mx-auto">
-                            <SectionBadge>The Altitude Edge</SectionBadge>
-                            <SectionHeading dark={false} gradientText="Above the Rest.">
-                                Why We Stand
+                            <SectionBadge>{t('whyChooseUs.badge')}</SectionBadge>
+                            <SectionHeading dark={false} gradientText={t('whyChooseUs.gradient')}>
+                                {t('whyChooseUs.heading')}
                             </SectionHeading>
                             <p className="text-brand-medium/70 text-lg font-medium leading-relaxed">
-                                Born in the mountains, raised on the trails. We combine deep local heritage with world-class safety protocols to give you a journey like no other.
+                                {t('whyChooseUs.subheading')}
                             </p>
                         </div>
 
@@ -118,86 +120,45 @@ export function WhyChooseUs() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
                         >
-                            {REASONS.map((reason, idx) => {
-                                const isExpanded = expandedId === reason.id;
+                            {REASONS.map((reason) => {
                                 const isPurpose = reason.id === "purpose";
 
                                 return (
                                     <motion.div
                                         key={reason.id}
                                         variants={itemVariants}
-                                        layout
-                                        className={`group relative overflow-hidden rounded-[2.5rem] transition-all duration-500 ${
+                                        className={`group relative p-8 md:p-10 rounded-[2rem] border transition-all duration-300 ${
                                             isPurpose 
-                                            ? "bg-brand-dark text-white shadow-2xl border-2 border-brand-light/20" 
-                                            : "bg-white border border-brand-light/10 shadow-xl hover:shadow-2xl hover:border-brand-light/30"
+                                            ? "bg-brand-dark border-brand-light/20 shadow-2xl" 
+                                            : "bg-white border-brand-light/10 shadow-sm hover:shadow-xl hover:border-brand-medium/20"
                                         }`}
                                     >
-                                        <div className="p-8 md:p-10 space-y-6">
-                                            {/* Header */}
-                                            <div className="flex justify-between items-start">
-                                                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 ${
-                                                    isPurpose ? "bg-brand-light text-brand-dark" : `${reason.accent}/10 text-brand-dark`
-                                                }`}>
-                                                    <reason.icon size={26} strokeWidth={isPurpose ? 2.5 : 2} />
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 ${
+                                            isPurpose ? "bg-brand-light text-brand-dark" : "bg-brand-light/10 text-brand-medium"
+                                        }`}>
+                                            <reason.icon size={24} />
+                                        </div>
+
+                                        <div className="space-y-4">
+                                            <h3 className={`text-xl md:text-2xl font-black tracking-tight ${isPurpose ? "text-white" : "text-brand-dark"}`}>
+                                                {t(`whyChooseUs.reasons.${reason.id}.title`)}
+                                            </h3>
+                                            <p className={`text-sm md:text-base leading-relaxed ${isPurpose ? "text-white/60" : "text-brand-medium/60"}`}>
+                                                {t(`whyChooseUs.reasons.${reason.id}.shortDesc`)}
+                                            </p>
+                                        </div>
+
+                                        {isPurpose && (
+                                            <div className="mt-8 pt-8 border-t border-white/10">
+                                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/20">
+                                                    <span className="text-[9px] font-black uppercase tracking-widest text-brand-light">
+                                                        {t('whyChooseUs.profitShared')}
+                                                    </span>
                                                 </div>
-                                                {isPurpose && (
-                                                    <div className="px-4 py-1.5 rounded-full bg-brand-light/20 border border-brand-light/30 backdrop-blur-md">
-                                                        <span className="text-[10px] font-black uppercase tracking-widest text-brand-light">10% Profit Shared</span>
-                                                    </div>
-                                                )}
                                             </div>
-
-                                            {/* Text Content */}
-                                            <div className="space-y-3">
-                                                <h3 className={`text-2xl font-black tracking-tight ${isPurpose ? "text-white" : "text-brand-dark"}`}>
-                                                    {reason.title}
-                                                </h3>
-                                                <p className={`text-base font-medium leading-relaxed ${isPurpose ? "text-white/60" : "text-brand-medium/60"}`}>
-                                                    {reason.shortDesc}
-                                                </p>
-                                            </div>
-
-                                            {/* Expandable Content */}
-                                            <AnimatePresence>
-                                                {isExpanded && (
-                                                    <motion.div
-                                                        initial={{ height: 0, opacity: 0 }}
-                                                        animate={{ height: "auto", opacity: 1 }}
-                                                        exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                                                        className="overflow-hidden"
-                                                    >
-                                                        <div className={`pt-4 border-t ${isPurpose ? "border-white/10" : "border-brand-light/10"}`}>
-                                                            <p className={`text-base leading-relaxed font-medium ${isPurpose ? "text-white/80" : "text-brand-medium/80"}`}>
-                                                                {reason.fullDesc}
-                                                            </p>
-                                                        </div>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
-
-                                            {/* Action Button */}
-                                            <button
-                                                onClick={() => toggleExpand(reason.id)}
-                                                className={`flex items-center gap-2 text-xs font-black uppercase tracking-widest transition-all duration-300 cursor-pointer ${
-                                                    isPurpose ? "text-brand-light hover:text-white" : "text-brand-medium hover:text-brand-dark"
-                                                }`}
-                                            >
-                                                {isExpanded ? (
-                                                    <>Less Info <ChevronUp size={14} /></>
-                                                ) : (
-                                                    <>More Info <ChevronDown size={14} /></>
-                                                )}
-                                            </button>
-                                        </div>
-
-                                        {/* Decorative backgrounds */}
-                                        <div className={`absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform ${isPurpose ? "text-white" : "text-brand-dark"}`}>
-                                            <reason.icon size={120} />
-                                        </div>
+                                        )}
                                     </motion.div>
                                 );
                             })}

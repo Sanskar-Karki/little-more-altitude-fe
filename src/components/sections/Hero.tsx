@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 import ebc from "../../../public/images/HomePageImage/ebc.jpg";
 import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
 import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
@@ -19,37 +20,19 @@ const HERO_IMAGES = [
     ebc,
 ];
 
-const HERO_CONTENT = [
-    {
-        title: "Annapurna Base Camp",
-        subtitle: "Witness the magnificent sunrise over the Annapurna massif.",
-        slug: "annapurna-base-camp-trek"
-    },
-    {
-        title: "Mardi Himal",
-        subtitle: "Discover the hidden gem of the Annapurna region.",
-        slug: "mardi-himal-trek"
-    },
-    {
-        title: "Langtang Valley",
-        subtitle: "Immerse yourself in the valley of glaciers and rich Tamang culture.",
-        slug: "langtang-valley-trek"
-    },
-    {
-        title: "Manaslu Circuit",
-        subtitle: "Explore the untouched beauty and rugged trails of Manaslu.",
-        slug: "manaslu-circuit-trek"
-    },
-
-    {
-        title: "Everest Base Camp",
-        subtitle: "Stand in the shadow of the world's highest peak.",
-        slug: "everest-base-camp-trek"
-    },
-];
-
 export function Hero() {
+    const { t } = useLanguage();
     const [index, setIndex] = useState(0);
+
+    const SLUGS = [
+        "annapurna-base-camp-trek",
+        "mardi-himal-trek",
+        "langtang-valley-trek",
+        "manaslu-circuit-trek",
+        "everest-base-camp-trek"
+    ];
+
+    const translatedContent = t('hero.content') as { title: string, subtitle: string }[];
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -75,7 +58,7 @@ export function Hero() {
                 >
                     <Image
                         src={HERO_IMAGES[index]}
-                        alt={HERO_CONTENT[index].title}
+                        alt={translatedContent[index].title}
                         fill
                         priority={index === 0}
                         className="object-cover"
@@ -96,10 +79,10 @@ export function Hero() {
                         className="max-w-4xl mx-auto space-y-6"
                     >
                         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight drop-shadow-xl">
-                            {HERO_CONTENT[index].title}
+                            {translatedContent[index].title}
                         </h1>
                         <p className="text-lg md:text-2xl text-brand-white/90 font-light max-w-2xl mx-auto drop-shadow-lg px-4 md:px-0">
-                            {HERO_CONTENT[index].subtitle}
+                            {translatedContent[index].subtitle}
                         </p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -107,9 +90,9 @@ export function Hero() {
                             transition={{ delay: 0.6 }}
                             className="pt-8 "
                         >
-                            <Link href={HERO_CONTENT[index].slug.startsWith('/') ? HERO_CONTENT[index].slug : `/trekking/${HERO_CONTENT[index].slug}`}>
+                            <Link href={SLUGS[index].startsWith('/') ? SLUGS[index] : `/trekking/${SLUGS[index]}`}>
                                 <button className="group relative inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-brand-light text-brand-dark rounded-full text-base md:text-lg font-bold overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(80,140,155,0.4)] hover:cursor-pointer">
-                                    <span className="relative z-10">Start Your Journey</span>
+                                    <span className="relative z-10">{t('hero.cta')}</span>
                                     <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </Link>

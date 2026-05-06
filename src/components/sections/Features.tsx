@@ -5,44 +5,26 @@ import { ShieldCheck, UserCheck, HeartHandshake, MountainSnow } from "lucide-rea
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const FEATURES = [
-    {
-        icon: ShieldCheck,
-        title: "Safety First",
-        description: "Our guides are certified in First Aid and mountaineering safety. Your well-being is our priority."
-    },
-    {
-        icon: UserCheck,
-        title: "Experienced Guides",
-        description: "Local Sherpa guides with decades of experience on the highest peaks of the Himalayas."
-    },
-    {
-        icon: HeartHandshake,
-        title: "Sustainable Travel",
-        description: "We practice Leave No Trace principles and support local communities in trekking regions."
-    },
-    {
-        icon: MountainSnow,
-        title: "Tailored Itineraries",
-        description: "From beginner hikes to expedition-style climbs, we customize trips to your fitness level."
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Features() {
+    const { t } = useLanguage();
+
+    const FEATURES = (t('features.list') as any[]).map((feature, idx) => {
+        const icons = [ShieldCheck, UserCheck, HeartHandshake, MountainSnow];
+        return {
+            ...feature,
+            icon: icons[idx]
+        };
+    });
+
     return (
         <Section id="features" background="white" container={false} className="relative">
-            {/* Blending Gradients - Full Width */}
-            {/*
-            <div className="absolute top-0 left-0 w-full h-80 bg-gradient-to-b from-brand-dark via-brand-dark/60 to-transparent z-10 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-80 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent z-10 pointer-events-none" />
-            */}
-            {/* Centered Content */}
             <div className="container mx-auto px-8 md:px-20 lg:px-32 relative z-20 ">
                 <div className="text-center mb-20 space-y-4">
-                    <SectionBadge>Innovation in Travel</SectionBadge>
-                    <SectionHeading dark={false} gradientText="Advantage.">
-                        The Altitude
+                    <SectionBadge>{t('features.badge')}</SectionBadge>
+                    <SectionHeading dark={false} gradientText={t('features.gradient')}>
+                        {t('features.heading')}
                     </SectionHeading>
                 </div>
 
@@ -74,7 +56,7 @@ export function Features() {
                                 </h3>
 
                                 <p className="text-brand-medium/70 leading-relaxed font-medium text-sm">
-                                    {feature.description}
+                                    {feature.desc}
                                 </p>
 
                                 {/* Modern Bottom Accent */}
@@ -88,7 +70,7 @@ export function Features() {
                                         />
                                     </div>
                                     <span className="text-[0.8rem] font-bold text-brand-light uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-50 hover:cursor-pointer">
-                                        Explore More
+                                        {t('features.exploreMore')}
                                     </span>
                                 </div>
                             </div>

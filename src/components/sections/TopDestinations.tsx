@@ -10,66 +10,47 @@ import { ArrowUpRight, Mountain } from "lucide-react";
 import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
 import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
 import ebc from "../../../public/images/HomePageImage/ebc.jpg";
-
-const TOP_DESTINATIONS = [
-    {
-        id: "4000m",
-        name: "Annapurna Base Camp",
-        location: "Annapurna Region, Nepal",
-        height: "4,000m+",
-        image: abcsun,
-        tag: "Classic Adventure",
-        slug: "/trekking/annapurna-base-camp-trek"
-    },
-    {
-        id: "5000m",
-        name: "Manaslu Circuit",
-        location: "Manaslu Region, Nepal",
-        height: "5,000m+",
-        image: Manaslu,
-        tag: "Untouched Trails",
-        slug: "/trekking/manaslu-circuit-trek"
-    },
-    {
-        id: "6000m",
-        name: "Everest Experience",
-        location: "Solu-Khumbu, Nepal",
-        height: "6,000m+",
-        image: ebc,
-        tag: "Peak of The World",
-        slug: "/trekking/everest-base-camp-trek"
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function TopDestinations() {
+    const { t } = useLanguage();
+    const destinations = t('topDestinations.list') as any[];
+    
+    const IMAGES = [abcsun, Manaslu, ebc];
+    const HEIGHTS = ["4,000m+", "5,000m+", "6,000m+"];
+    const SLUGS = [
+        "/trekking/annapurna-base-camp-trek",
+        "/trekking/manaslu-circuit-trek",
+        "/trekking/everest-base-camp-trek"
+    ];
+
     return (
         <Section id="top-destinations" background="white">
             <div className="container mx-auto px-6 md:px-20 lg:px-32">
                 <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20 space-y-4 md:space-y-6">
-                    <SectionBadge>Elite Picks</SectionBadge>
-                    <SectionHeading dark={false} gradientText="By Altitude.">
-                        Top Destinations
+                    <SectionBadge>{t('topDestinations.badge')}</SectionBadge>
+                    <SectionHeading dark={false} gradientText={t('topDestinations.gradient')}>
+                        {t('topDestinations.heading')}
                     </SectionHeading>
                     <p className="text-brand-medium/60 text-base md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
-                        Carefully selected adventures categorized by their majestic heights,
-                        offering challenges and rewards for every level of explorer.
+                        {t('topDestinations.description')}
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    {TOP_DESTINATIONS.map((dest, idx) => (
+                    {destinations.map((dest, idx) => (
                         <motion.div
-                            key={dest.id}
+                            key={idx}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: idx * 0.2 }}
                             className="group relative"
                         >
-                            <Link href={dest.slug}>
+                            <Link href={SLUGS[idx]}>
                                 <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-brand-light/20 shadow-xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-700 cursor-pointer">
                                     <Image
-                                        src={dest.image}
+                                        src={IMAGES[idx]}
                                         alt={dest.name}
                                         fill
                                         className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -78,7 +59,7 @@ export function TopDestinations() {
 
                                     <div className="absolute top-6 left-6">
                                         <div className="px-4 py-2 rounded-2xl bg-brand-light/20 backdrop-blur-md border border-brand-light/30 text-brand-light text-xs font-black uppercase tracking-widest">
-                                            {dest.height}
+                                            {HEIGHTS[idx]}
                                         </div>
                                     </div>
 
@@ -96,7 +77,7 @@ export function TopDestinations() {
 
                                         <div className="pt-4 overflow-hidden h-0 group-hover:h-12 transition-all duration-500">
                                             <div className="flex items-center gap-2 text-brand-light text-sm font-bold group/btn">
-                                                Discover More
+                                                {t('topDestinations.discoverMore')}
                                                 <ArrowUpRight size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                                             </div>
                                         </div>

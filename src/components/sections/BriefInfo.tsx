@@ -6,14 +6,17 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Mountain, Users, Calendar, Trophy } from "lucide-react";
 import { CountUp } from "@/components/ui/CountUp";
-
-const STATS = [
-    { label: "Clients Guided", value: 150, suffix: "+", icon: Users },
-    { label: "Years of Experience", value: 10, suffix: "+", icon: Calendar },
-    { label: "Overall Success Rate", value: 97, suffix: "%", icon: Trophy },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function BriefInfo() {
+    const { t } = useLanguage();
+
+    const STATS = [
+        { label: t('briefInfo.stats.clients'), value: 150, suffix: "+", icon: Users },
+        { label: t('briefInfo.stats.years'), value: 10, suffix: "+", icon: Calendar },
+        { label: t('briefInfo.stats.success'), value: 97, suffix: "%", icon: Trophy },
+    ];
+
     return (
         <Section id="info" background="white" className="overflow-hidden">
             <div className="container mx-auto px-6 md:px-20 lg:px-32">
@@ -27,21 +30,15 @@ export function BriefInfo() {
                         className="space-y-8"
                     >
                         <div className="space-y-4">
-                            <SectionBadge>Our Legacy</SectionBadge>
-                            <SectionHeading dark={false} gradientText="Experience.">
-                                The Little More
+                            <SectionBadge>{t('briefInfo.badge')}</SectionBadge>
+                            <SectionHeading dark={false} gradientText={t('briefInfo.gradient')}>
+                                {t('briefInfo.heading')}
                             </SectionHeading>
                         </div>
-
-                        <div className="relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] bg-brand-dark/10 border border-brand-dark/10 overflow-hidden group hover:bg-brand-dark/15 transition-all duration-500">
-                            <Mountain className="absolute -right-8 -bottom-8 h-32 w-40 md:h-48 md:w-58 text-brand-dark/[0.03] -z-10 group-hover:scale-110 transition-transform duration-700" />
-                            <p className="text-brand-medium/80 text-base md:text-lg leading-relaxed font-medium">
-                                Founded on the firsthand high-altitude experience of lifelong mountain companions
-                                <span className="text-brand-dark font-bold ml-1">Pemba N. Sherpa</span>,
-                                <span className="text-brand-dark font-bold ml-1">Ngima Tashi Sherpa</span>, and
-                                <span className="text-brand-dark font-bold ml-1">Pema Thilen Sherpa</span>, born and raised on the Himalayan trails,<br className="hidden md:block" /><br className="hidden md:block" />
-                                <span className="text-brand-medium font-bold ml-1">A Little More Altitude</span> delivers safe, authentic, and perspective-shifting trekking adventures
-                                that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.
+ 
+                        <div className="relative pl-6 md:pl-10 border-l-2 border-brand-medium/20">
+                            <p className="text-brand-medium/80 text-base md:text-xl lg:text-2xl leading-relaxed font-medium">
+                                {t('briefInfo.description')}
                             </p>
                         </div>
                     </motion.div>

@@ -7,9 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { MountainLine } from "@/components/ui/MountainLine";
+import { useLanguage } from "@/context/LanguageContext";
 import tashiImg from "./tashi.jpeg";
 
 export default function TashiDetailPage() {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -32,7 +34,7 @@ export default function TashiDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true} icon={Award}>Director & Certified Guide</SectionBadge>
+                            <SectionBadge dark={true} icon={Award}>{t('about.founders')[1].role}</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Ngima Tashi
                                 <span className="text-brand-light pl-1">Sherpa</span>
@@ -134,24 +136,11 @@ export default function TashiDetailPage() {
                                 </div>
 
                                 <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
-                                    <p className="first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
-                                        In the high valley of Kharikhola, Tashi Sherpa's journey was written in the dust of the mountain trails before he could even tie his boots. At just 13, he was already shouldering the physical and mental loads of high-altitude life, working as a porter during his school breaks to help his father.
-                                    </p>
-                                    <p>
-                                        Life took a sharp turn when Tashi was 15. The untimely loss of his father left him as the sudden pillar of his family. He didn't just inherit a responsibility; he inherited a legacy. Tourism was the only door open, and he stepped through it with an unmatched level of determination. Every climb was for survival, but every step was for growth.
-                                    </p>
-                                    <p>
-                                        Over 12 years, Tashi has climbed every step of the ladder—from porter to assistant guide, to leading some of the most complex treks in the Himalayas. This hard-won experience is what makes him a master of operations. He doesn't just know the maps; he knows the people, the teahouses, the hidden routes, and how to manage a team in the thin air where every decision counts.
-                                    </p>
-                                    <div className="bg-brand-medium border border-brand-light/30 p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] text-xl md:text-2xl font-black text-white leading-relaxed flex flex-col md:flex-row items-center md:items-start gap-6 shadow-2xl">
-                                        <div className="p-3 bg-brand-light/20 rounded-2xl">
-                                            <Heart size={32} className="text-brand-light fill-brand-light" />
-                                        </div>
-                                        <span className="text-center md:text-left">"I guide with my heart because I know how much it means to feel safe when you are miles away from the rest of the world."</span>
-                                    </div>
-                                    <p>
-                                        Tashi's philosophy is simple: #GuidedWithHeart. He leads with a quiet confidence that only comes from having walked every role on the mountain. For him, a successful trek isn't just about reaching a landmark; it's about the safety, well-being, and unforgettable memories of every single guest in his care.
-                                    </p>
+                                    {t('about.founders')[1].bio.split('\n\n').map((paragraph: string, idx: number) => (
+                                        <p key={idx} className={idx === 0 ? "first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium" : ""}>
+                                            {paragraph}
+                                        </p>
+                                    ))}
                                 </div>
                             </div>
 

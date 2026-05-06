@@ -7,35 +7,10 @@ import type { ContactFormData } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const contactInfo = [
-    {
-        icon: Mail,
-        label: "Email Us",
-        value: "alittlemorealtitude25@gmail.com",
-        href: "mailto:alittlemorealtitude25@gmail.com",
-    },
-    {
-        icon: Phone,
-        label: "Call Us",
-        value: "+977 9823288095",
-        href: "tel:+9779823288095",
-    },
-    {
-        icon: MapPin,
-        label: "Visit Us",
-        value: "Boudha, Kathmandu, Nepal",
-        href: "#",
-    },
-    {
-        icon: Clock,
-        label: "Working Hours",
-        value: "Sunday-Friday: 6AM - 6PM",
-        href: "#",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ContactSection() {
+    const { t } = useLanguage();
     const [formData, setFormData] = useState<ContactFormData>({
         name: "",
         email: "",
@@ -43,6 +18,33 @@ export function ContactSection() {
         message: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const contactInfo = [
+        {
+            icon: Mail,
+            label: t('contactSection.info.email'),
+            value: "alittlemorealtitude25@gmail.com",
+            href: "mailto:alittlemorealtitude25@gmail.com",
+        },
+        {
+            icon: Phone,
+            label: t('contactSection.info.call'),
+            value: "+977 9823288095",
+            href: "tel:+9779823288095",
+        },
+        {
+            icon: MapPin,
+            label: t('contactSection.info.visit'),
+            value: t('common.address'),
+            href: "#",
+        },
+        {
+            icon: Clock,
+            label: t('contactSection.info.hours'),
+            value: t('contactSection.info.hoursValue'),
+            href: "#",
+        },
+    ];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData((prev) => ({
@@ -58,7 +60,7 @@ export function ContactSection() {
         // Simulate form submission
         await new Promise((resolve) => setTimeout(resolve, 1500));
 
-        alert("Message sent! We'll get back to you within 24 hours.");
+        alert(t('contactSection.form.success'));
 
         setFormData({ name: "", email: "", phone: "", message: "" });
         setIsSubmitting(false);
@@ -77,12 +79,12 @@ export function ContactSection() {
                     className="space-y-12"
                 >
                     <div className="space-y-6">
-                        <SectionBadge>Contact Us</SectionBadge>
-                        <SectionHeading dark={false} gradientText="Next Summit.">
-                            Let's Map Your
+                        <SectionBadge>{t('contactSection.badge')}</SectionBadge>
+                        <SectionHeading dark={false} gradientText={t('contactSection.gradient')}>
+                            {t('contactSection.heading')}
                         </SectionHeading>
                         <p className="text-xl text-brand-medium/70 font-medium max-w-xl leading-relaxed">
-                            Whether you're seeking a soul-stirring solo trek or a group expedition, our team of high-altitude experts is ready to guide you.
+                            {t('contactSection.description')}
                         </p>
                     </div>
 
@@ -125,46 +127,46 @@ export function ContactSection() {
                             className="relative p-10 md:p-14 rounded-[3rem] bg-white shadow-2xl shadow-brand-dark/5 border border-brand-light/20 space-y-8"
                         >
                             <div className="space-y-4">
-                                <h3 className="text-3xl font-black text-brand-dark tracking-tight">Send a Brief</h3>
-                                <p className="text-brand-medium/60 text-sm font-medium">We usually respond within 4 mountain hours.</p>
+                                <h3 className="text-3xl font-black text-brand-dark tracking-tight">{t('contactSection.form.title')}</h3>
+                                <p className="text-brand-medium/60 text-sm font-medium">{t('contactSection.form.subheading')}</p>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Full Name</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.name')}</label>
                                         <input
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
                                             className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
-                                            placeholder="John Doe"
+                                            placeholder={t('contactSection.form.placeholderName')}
                                             required
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Email</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.email')}</label>
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
                                             className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
-                                            placeholder="johndoe@peak.com"
+                                            placeholder={t('contactSection.form.placeholderEmail')}
                                             required
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">Message</label>
+                                    <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.message')}</label>
                                     <textarea
                                         name="message"
                                         rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
                                         className="w-full p-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20 resize-none"
-                                        placeholder="Tell us about the peak you want to conquer..."
+                                        placeholder={t('contactSection.form.placeholderMessage')}
                                         required
                                     />
                                 </div>
@@ -176,7 +178,7 @@ export function ContactSection() {
                                     disabled={isSubmitting}
                                     className="w-full h-16 bg-brand-dark text-white rounded-2xl font-black text-lg flex items-center justify-center gap-3 shadow-xl shadow-brand-dark/20 hover:bg-brand-medium transition-all duration-300 disabled:opacity-50"
                                 >
-                                    {isSubmitting ? "Sending..." : "Begin Expedition"}
+                                    {isSubmitting ? t('contactSection.form.sending') : t('contactSection.form.submit')}
                                     <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </motion.button>
                             </div>

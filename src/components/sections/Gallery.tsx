@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface GalleryImage {
     id: number;
@@ -15,109 +16,115 @@ interface GalleryImage {
     size: "small" | "medium" | "large";
 }
 
-const CATEGORIES = ["All", "Expeditions", "Culture", "Landscape", "Moments"];
-
 const galleryImages: GalleryImage[] = [
     {
         id: 1,
         src: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=1200&auto=format&fit=crop",
         alt: "Majestic Everest Peak",
-        category: "Landscape",
+        category: "landscape",
         size: "large"
     },
     {
         id: 2,
         src: "https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=800&auto=format&fit=crop",
         alt: "Trekkers on the Trail",
-        category: "Expeditions",
+        category: "expeditions",
         size: "medium"
     },
     {
         id: 3,
         src: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?q=80&w=800&auto=format&fit=crop",
         alt: "Mountain Village Life",
-        category: "Culture",
+        category: "culture",
         size: "small"
     },
     {
         id: 4,
         src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
         alt: "Basecamp Sunrise",
-        category: "Moments",
+        category: "moments",
         size: "medium"
     },
     {
         id: 5,
         src: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?q=80&w=800&auto=format&fit=crop",
         alt: "Sacred Prayer Flags",
-        category: "Culture",
+        category: "culture",
         size: "small"
     },
     {
         id: 6,
         src: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1200&auto=format&fit=crop",
         alt: "Glacial Expedition",
-        category: "Expeditions",
+        category: "expeditions",
         size: "large"
     },
-
     {
         id: 7,
         src: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1200&auto=format&fit=crop",
         alt: "Starry Himalayan Night",
-        category: "Landscape",
+        category: "landscape",
         size: "medium"
     },
     {
         id: 8,
         src: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
         alt: "Alpine Turquoise Lake",
-        category: "Landscape",
+        category: "landscape",
         size: "small"
     },
     {
         id: 9,
         src: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=800&auto=format&fit=crop",
         alt: "Summit Victory",
-        category: "Moments",
+        category: "moments",
         size: "medium"
     },
     {
         id: 10,
         src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=800&auto=format&fit=crop",
         alt: "Highland Yak Caravan",
-        category: "Culture",
+        category: "culture",
         size: "medium"
     },
     {
         id: 11,
         src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop",
         alt: "Expedition Night Camp",
-        category: "Expeditions",
+        category: "expeditions",
         size: "small"
     },
     {
         id: 12,
         src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
         alt: "Mountain Ridge Trek",
-        category: "Expeditions",
+        category: "expeditions",
         size: "medium"
     },
     {
         id: 13,
         src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?q=80&w=800&auto=format&fit=crop",
         alt: "Himalayan Golden Hour",
-        category: "Landscape",
+        category: "landscape",
         size: "medium"
     }
 ];
 
 export function Gallery() {
+    const { t } = useLanguage();
     const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
-    const [activeCategory, setActiveCategory] = useState("All");
+    const [activeCategory, setActiveCategory] = useState("all");
+
+    const CATEGORIES = [
+        { id: "all", label: t('gallery.categories.all') },
+        { id: "expeditions", label: t('gallery.categories.expeditions') },
+        { id: "culture", label: t('gallery.categories.culture') },
+        { id: "landscape", label: t('gallery.categories.landscape') },
+        { id: "moments", label: t('gallery.categories.moments') },
+    ];
 
     const filteredImages = useMemo(() => {
-        if (activeCategory === "All") return galleryImages;
+        if (activeCategory === "all") return galleryImages;
         return galleryImages.filter(img => img.category === activeCategory);
     }, [activeCategory]);
 
@@ -144,13 +151,12 @@ export function Gallery() {
                 {/* Header Section */}
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
                     <div className="space-y-4 max-w-2xl text-center lg:text-left">
-                        <SectionBadge>Our Gallery</SectionBadge>
-                        <SectionHeading gradientText="Captured. " >
-                            <span className="text-brand-dark/80"> Himalayan Stories</span>
+                        <SectionBadge>{t('gallery.badge')}</SectionBadge>
+                        <SectionHeading gradientText={t('gallery.gradient')} >
+                            <span className="text-brand-dark/80"> {t('gallery.heading')}</span>
                         </SectionHeading>
                         <p className="text-brand-dark/60 text-lg font-medium leading-relaxed">
-                            A glimpse into the extraordinary landscapes, vibrant cultures, and
-                            challenging expeditions that define our journeys.
+                            {t('gallery.description')}
                         </p>
                     </div>
 
@@ -158,21 +164,21 @@ export function Gallery() {
                     <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-2 bg-brand-dark/5 p-1.5 rounded-[1.5rem] md:rounded-2xl md:overflow-visible">
                         {CATEGORIES.map((cat) => (
                             <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
-                                className={`relative cursor-pointer px-4 md:px-5 py-2 md:py-2.5 rounded-xl text-[10px] md:text-sm font-black md:font-bold uppercase tracking-widest md:tracking-normal transition-all duration-300 whitespace-nowrap ${activeCategory === cat
+                                key={cat.id}
+                                onClick={() => setActiveCategory(cat.id)}
+                                className={`relative cursor-pointer px-4 md:px-5 py-2 md:py-2.5 rounded-xl text-[10px] md:text-sm font-black md:font-bold uppercase tracking-widest md:tracking-normal transition-all duration-300 whitespace-nowrap ${activeCategory === cat.id
                                     ? "text-brand-light"
                                     : "text-brand-dark/40 hover:text-brand-dark"
                                     }`}
                             >
-                                {activeCategory === cat && (
+                                {activeCategory === cat.id && (
                                     <motion.div
                                         layoutId="activeCategory"
                                         className="absolute inset-0 bg-brand-dark rounded-xl shadow-lg"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
-                                <span className="relative z-10">{cat}</span>
+                                <span className="relative z-10">{cat.label}</span>
                             </button>
                         ))}
                     </div>
@@ -218,12 +224,12 @@ export function Gallery() {
                                             className="space-y-2"
                                         >
                                             <span className="px-3 py-1 rounded-full bg-brand-light/20 backdrop-blur-md text-brand-light text-[10px] font-black uppercase tracking-widest border border-brand-light/30">
-                                                {image.category}
+                                                {t(`gallery.categories.${image.category}`)}
                                             </span>
                                             <h3 className="text-white font-bold text-xl">{image.alt}</h3>
                                             <div className="pt-4 flex items-center text-brand-light gap-2 font-bold text-xs uppercase tracking-wider">
                                                 <Maximize2 size={16} />
-                                                <span>View Details</span>
+                                                <span>{t('gallery.viewDetails')}</span>
                                             </div>
                                         </motion.div>
                                     </div>
@@ -290,7 +296,7 @@ export function Gallery() {
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                                         <div className="space-y-3">
                                             <span className="px-4 py-1.5 rounded-full bg-brand-light text-brand-dark text-[10px] font-black uppercase tracking-[0.2em]">
-                                                {selectedImage.category}
+                                                {t(`gallery.categories.${selectedImage.category}`)}
                                             </span>
                                             <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
                                                 {selectedImage.alt}

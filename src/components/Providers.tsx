@@ -2,9 +2,11 @@
 
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
+import { LanguageProvider } from '@/context/LanguageContext';
+
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
+    <LanguageProvider>
       {children}
       <ProgressBar
         height="3px"
@@ -12,7 +14,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         options={{ showSpinner: false }}
         shallowRouting
       />
-    </>
+    </LanguageProvider>
   );
 };
 

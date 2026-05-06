@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Mountain, Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
+    const { t } = useLanguage();
     return (
         <footer className="bg-brand-dark border-t border-brand-light/10 pt-16 pb-8 text-brand-white">
             <div className="container mx-auto px-8 md:px-20 lg:px-32">
@@ -13,30 +17,29 @@ export function Footer() {
                             <span className="text-xl font-bold">Little More Altitude</span>
                         </div>
                         <p className="text-brand-white/60 leading-relaxed">
-                            Your trusted partner for unparalleled trekking across Nepal.
-                            Built on real high-altitude experience. Go Higher. Live Deeper.
+                            {t('footer.tagline')}
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-brand-light">Explore</h4>
+                        <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.explore')}</h4>
                         <ul className="space-y-3 text-brand-white/70">
-                            <li><Link href="/trekking" className="hover:text-white transition-colors">Trekking</Link></li>
-                            <li><Link href="/expedition" className="hover:text-white transition-colors">Expedition</Link></li>
-                            <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
-                            <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                            <li><Link href="/trekking" className="hover:text-white transition-colors">{t('nav.trekking')}</Link></li>
+                            <li><Link href="/expedition" className="hover:text-white transition-colors">{t('nav.expedition')}</Link></li>
+                            <li><Link href="/gallery" className="hover:text-white transition-colors">{t('nav.gallery')}</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition-colors">{t('nav.about')}</Link></li>
+                            <li><Link href="/faq" className="hover:text-white transition-colors">{t('nav.faq')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-brand-light">Contact</h4>
+                        <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.contact')}</h4>
                         <ul className="space-y-4 text-brand-white/70">
                             <li className="flex items-center gap-3">
                                 <MapPin size={18} className="text-brand-light" />
-                                <span>Boudha, Kathmandu, Nepal</span>
+                                <span>{t('common.address')}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} className="text-brand-light" />
@@ -51,16 +54,16 @@ export function Footer() {
 
                     {/* Newsletter */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-brand-light">Stay Updated</h4>
-                        <p className="text-brand-white/60 mb-4">Subscribe for latest treks and offers.</p>
+                        <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.stayUpdated')}</h4>
+                        <p className="text-brand-white/60 mb-4">{t('footer.subscribeText')}</p>
                         <form className="flex gap-2">
                             <input
                                 type="email"
-                                placeholder="Email address"
+                                placeholder={t('footer.emailPlaceholder')}
                                 className="bg-brand-medium/30 border border-brand-light/20 rounded-xl px-4 py-2 w-full focus:outline-none focus:border-brand-light text-white"
                             />
                             <button className="bg-brand-light hover:bg-brand-white text-brand-dark px-6 py-2 rounded-xl transition-all font-bold shadow-[0_4px_15px_rgba(80,140,155,0.3)] hover:shadow-[0_4px_25px_rgba(80,140,155,0.5)]">
-                                Go
+                                {t('footer.go')}
                             </button>
                         </form>
                     </div>
@@ -68,7 +71,7 @@ export function Footer() {
 
                 <div className="border-t border-brand-light/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-brand-white/40 text-sm">
-                        © {new Date().getFullYear()} Little More Altitude. All rights reserved.
+                        © {new Date().getFullYear()} Little More Altitude. {t('footer.rights')}
                     </p>
                     <div className="flex gap-6 text-brand-white/60">
                         <a href="#" className="hover:text-brand-light transition-colors"><Facebook size={20} /></a>

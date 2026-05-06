@@ -10,7 +10,10 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { MountainLine } from "@/components/ui/MountainLine";
 import pembaImg from "./pemba.jpg";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function PembaDetailPage() {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -35,7 +38,7 @@ export default function PembaDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true} icon={Mountain}>Visionary Founder & Director</SectionBadge>
+                            <SectionBadge dark={true} icon={Mountain}>{t('about.founders')[0].role}</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Pemba N.
                                 <span className="text-brand-light pl-1">Sherpa</span>
@@ -137,21 +140,11 @@ export default function PembaDetailPage() {
                                 </div>
 
                                 <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
-                                    <p className="first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium">
-                                        Pemba Sherpa was born into the silence of the Mera Peak region, in the remote village of Cherem. Growing up without the distractions of modern life—roads, electricity, or schools—he learned to read the rhythm of the weather and the heartbeat of the mountains long before he could read a book.
-                                    </p>
-                                    <p>
-                                        The Himalayas were his first classroom. At just seven years old, he made the life-changing journey to Kathmandu, a transition that tested his resilience. But he never truly left the peaks; every school holiday was spent following in the footsteps of his father, a master mountaineering guide, absorbing the skills that can only be taught through lived experience.
-                                    </p>
-                                    <p>
-                                        This unique upbringing—spanning the raw simplicity of a Sherpa childhood and the fast-paced life of a modern filmmaker—has given Pemba a distinct perspective. He doesn't just guide; he captures the soul of the journey. Whether he's navigating a complex mountain pass or looking through a camera lens, his objective is the same: to tell a story of authentic Himalayan life.
-                                    </p>
-                                    <p className="bg-brand-medium/5 p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border-l-8 border-brand-light text-xl md:text-2xl font-black text-brand-dark leading-relaxed">
-                                        "A Little More Altitude isn't just a business; it's a bridge between my heritage and your curiosity."
-                                    </p>
-                                    <p>
-                                        Today, Pemba balances his time between leading high-altitude expeditions and documenting the human spirit in extreme environments. His mission is to provide trekkers with more than just a path; it's about a deep, soulful connection to the land he calls home.
-                                    </p>
+                                    {t('about.founders')[0].bio.split('\n\n').map((paragraph: string, idx: number) => (
+                                        <p key={idx} className={idx === 0 ? "first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium" : ""}>
+                                            {paragraph}
+                                        </p>
+                                    ))}
                                 </div>
                             </div>
 

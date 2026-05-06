@@ -3,53 +3,42 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, Quote, Mountain, Instagram } from "lucide-react";
-import type { Testimonial } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const testimonials: Testimonial[] = [
-    {
-        id: 1,
-        name: "Sarah Mitchell",
-        role: "Adventure Enthusiast",
-        content: "The Everest Base Camp trek was a life-changing experience. The guides were incredibly knowledgeable and supportive, making sure everyone felt safe and motivated throughout the journey.",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-        rating: 5,
-        socialHandle: "@sarah_peaks",
-    },
-    {
-        id: 2,
-        name: "Michael Chen",
-        role: "Photographer",
-        content: "As a photographer, I've traveled to many places, but the views on the Annapurna Circuit were unparalleled. SummitTrek's attention to detail and timing for the best shots was impressive.",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-        rating: 5,
-        socialHandle: "@mchen_clicks",
-    },
-    {
-        id: 3,
-        name: "Emma Rodriguez",
-        role: "First-time Trekker",
-        content: "I was nervous about my first high-altitude trek, but the team made me feel confident and prepared. The experience exceeded all my expectations - I'm already planning my next adventure!",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
-        rating: 5,
-        socialHandle: "@emma_wanders",
-    },
-    {
-        id: 4,
-        name: "David Thompson",
-        role: "Corporate Executive",
-        content: "Organized our company retreat with SummitTrek. The team-building aspects combined with the adventure created bonds that have strengthened our workplace culture immensely.",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
-        rating: 5,
-        socialHandle: "@david_biz_adv",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Testimonials() {
+    const { t } = useLanguage();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const translatedTestimonials = t('testimonials.list') as any[];
+    
+    // Mapping static data like avatars to translated content
+    const testimonials = translatedTestimonials.map((item, idx) => {
+        const staticData = [
+            {
+                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+                rating: 5,
+                socialHandle: "@sarah_peaks",
+            },
+            {
+                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+                rating: 5,
+                socialHandle: "@mchen_clicks",
+            },
+            {
+                avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
+                rating: 5,
+                socialHandle: "@emma_wanders",
+            }
+        ];
+        return {
+            ...item,
+            ...staticData[idx % staticData.length]
+        };
+    });
 
     const truncateText = (text: string, limit: number) => {
         const words = text.trim().split(/\s+/).filter(Boolean);
@@ -80,9 +69,9 @@ export function Testimonials() {
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto my-10 space-y-4">
-                <SectionBadge dark={true}>Testimonials</SectionBadge>
-                <SectionHeading gradientText="Summit.">
-                    Voices of the
+                <SectionBadge dark={true}>{t('testimonials.badge')}</SectionBadge>
+                <SectionHeading gradientText={t('testimonials.gradient')}>
+                    {t('testimonials.heading')}
                 </SectionHeading>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -91,8 +80,7 @@ export function Testimonials() {
                     transition={{ delay: 0.2 }}
                     className="text-lg text-brand-white/70 font-medium"
                 >
-                    Real stories from adventurers who have touched the sky
-                    with us.
+                    {t('testimonials.subheading')}
                 </motion.p>
             </div>
 
@@ -137,7 +125,7 @@ export function Testimonials() {
 
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light/10 border border-brand-light/20">
                                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                    <span className="text-[10px] font-bold text-brand-light uppercase tracking-wider">Verified Journey</span>
+                                    <span className="text-[10px] font-bold text-brand-light uppercase tracking-wider">{t('testimonials.verified')}</span>
                                 </div>
                             </div>
 
@@ -156,7 +144,7 @@ export function Testimonials() {
                                                 onClick={() => setIsExpanded(!isExpanded)}
                                                 className="ml-2 text-brand-light font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer"
                                             >
-                                                {isExpanded ? "Show Less" : "Read More"}
+                                                {isExpanded ? t('testimonials.showLess') : t('testimonials.readMore')}
                                             </button>
                                         )}
                                     </div>

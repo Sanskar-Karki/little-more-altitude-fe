@@ -4,39 +4,42 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { CountUp } from "@/components/ui/CountUp";
 import { Users, Calendar, Trophy } from "lucide-react";
-
-const STATS = [
-    {
-        label: "Clients Guided",
-        value: 150,
-        suffix: "+",
-        icon: Users,
-        color: "brand-light"
-    },
-    {
-        label: "Years of Experience",
-        value: 10,
-        suffix: "+",
-        icon: Calendar,
-        color: "brand-medium"
-    },
-    {
-        label: "Overall Success Rate",
-        value: 97,
-        suffix: "%",
-        icon: Trophy,
-        color: "brand-light"
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Stats() {
+    const { t } = useLanguage();
+
+    const STATS = [
+        {
+            label: t('stats.clients'),
+            value: 150,
+            suffix: "+",
+            icon: Users,
+            color: "brand-light"
+        },
+        {
+            label: t('stats.years'),
+            value: 10,
+            suffix: "+",
+            icon: Calendar,
+            color: "brand-medium"
+        },
+        {
+            label: t('stats.success'),
+            value: 97,
+            suffix: "%",
+            icon: Trophy,
+            color: "brand-light"
+        }
+    ];
+
     return (
         <Section id="stats" background="dark" className="py-24">
             <div className="container mx-auto px-8 md:px-20 lg:px-32">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {STATS.map((stat, idx) => (
                         <motion.div
-                            key={stat.label}
+                            key={idx}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

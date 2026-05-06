@@ -1,56 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mountain, MapPin, Trophy, Shield, ArrowRight, Clock, Zap, Gauge, Target, Compass, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-
-const expeditions = [
-    {
-        id: 1,
-        name: "Mount Everest",
-        elevation: "8,848m",
-        location: "Solu-Khumbu, Nepal",
-        duration: "65 Days",
-        difficulty: "Extreme",
-        technicalLevel: "High",
-        price: "Elite Pricing",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-        tag: "THE ULTIMATE SUMMIT",
-        description: "Stand on top of the world. Our South Col route expedition offers the most comprehensive support system ever engineered for Everest."
-    },
-    {
-        id: 2,
-        name: "Kilimanjaro",
-        elevation: "5,895m",
-        location: "Moshi, Tanzania",
-        duration: "9 Days",
-        difficulty: "Moderate+",
-        technicalLevel: "Low",
-        price: "$3,850+",
-        image: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1200&q=80",
-        tag: "SEVEN SUMMITS",
-        description: "The Lemosho Route. Traverse through five distinct eco-systems to reach the highest point in Africa under the expert guidance of our summit leads."
-    },
-    {
-        id: 3,
-        name: "Manaslu",
-        elevation: "8,163m",
-        location: "Gorkha, Nepal",
-        duration: "45 Days",
-        difficulty: "Extreme",
-        technicalLevel: "Moderate",
-        price: "$14,500+",
-        image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=1200&q=80",
-        tag: "THE SPIRIT MOUNTAIN",
-        description: "Often the first 8000m peak for aspiring Everest climbers. Experience the raw power of the Himalayas on the world's 8th highest mountain."
-    }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
+    const { t } = useLanguage();
     const isEven = index % 2 === 0;
 
     return (
@@ -78,10 +38,10 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
                         <div className="absolute top-8 left-8 right-8 flex justify-between items-start">
                             <div className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-2">
                                 <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                                <span className="text-[10px] font-mono font-bold text-white tracking-widest uppercase">Live Status</span>
+                                <span className="text-[10px] font-mono font-bold text-white tracking-widest uppercase">{t('expedition.section.liveStatus')}</span>
                             </div>
                             <div className="text-right hidden sm:block">
-                                <p className="text-[10px] font-mono text-white/50 tracking-widest">ELEVATION_PROFILE</p>
+                                <p className="text-[10px] font-mono text-white/50 tracking-widest">{t('expedition.section.elevationProfile')}</p>
                                 <p className="text-xl font-black text-white tracking-tight">{exp.elevation}</p>
                             </div>
                         </div>
@@ -90,9 +50,9 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
                         <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
                             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
                                 {[
-                                    { label: "Duration", value: exp.duration },
-                                    { label: "Difficulty", value: exp.difficulty },
-                                    { label: "Price", value: exp.price }
+                                    { label: t('expedition.section.duration'), value: exp.duration },
+                                    { label: t('expedition.section.difficulty'), value: exp.difficulty },
+                                    { label: t('expedition.section.price'), value: exp.price }
                                 ].map((stat) => (
                                     <div key={stat.label}>
                                         <p className="text-[9px] font-black text-white/40 uppercase tracking-widest mb-1">{stat.label}</p>
@@ -130,14 +90,14 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-brand-light text-brand-dark px-10 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs flex items-center gap-4 hover:bg-white transition-colors"
                             >
-                                <span>Details</span>
+                                <span>{t('expedition.section.details')}</span>
                                 <ArrowRight size={16} />
                             </motion.button>
                         </Link>
                         <div className="flex flex-col items-start gap-1 opacity-50">
-                            <span className="text-[9px] font-mono text-white/60 tracking-widest uppercase">Technical Level</span>
+                            <span className="text-[9px] font-mono text-white/60 tracking-widest uppercase">{t('expedition.section.technicalLevel')}</span>
                             <div className="flex gap-1">
-                                {[...Array(exp.technicalLevel === "High" ? 5 : 3)].map((_, i) => (
+                                {[...Array(exp.technicalLevel === "High" || exp.technicalLevel === "Élevé" || exp.technicalLevel === "Alto" ? 5 : 3)].map((_, i) => (
                                     <div key={i} className="w-1.5 h-4 bg-brand-light/50 rounded-full skew-x-[-12deg]" />
                                 ))}
                             </div>
@@ -150,6 +110,9 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
 }
 
 export function Expedition() {
+    const { t } = useLanguage();
+    const expeditions = t('expedition.list') as any[];
+
     return (
         <Section id="expeditions" background="dark" container={false} className="relative py-24">
             {/* Atmospheric Polish */}
@@ -181,13 +144,13 @@ export function Expedition() {
                                 whileInView={{ scale: 1 }}
                                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                             >
-                                <SectionBadge dark>Elite Mountaineering</SectionBadge>
+                                <SectionBadge dark>{t('expedition.section.badge')}</SectionBadge>
                             </motion.div>
                         </div>
 
                         <div className="space-y-2">
-                            <SectionHeading dark gradientText="Summit Peaks.">
-                                Premier Expeditions
+                            <SectionHeading dark gradientText={t('expedition.section.gradient')}>
+                                {t('expedition.section.heading')}
                             </SectionHeading>
                         </div>
 
@@ -197,8 +160,7 @@ export function Expedition() {
                             transition={{ delay: 0.4, duration: 1 }}
                             className="text-brand-white/40 text-lg md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
                         >
-                            Precision logistics for the world's most formidable peaks.<br className="hidden md:block" />
-                            Engineering success where the air is thin and focus is absolute.
+                            {t('expedition.section.description')}
                         </motion.p>
 
                         {/* Scroll Indicator */}
@@ -208,7 +170,7 @@ export function Expedition() {
                             transition={{ delay: 0.8, duration: 1 }}
                             className="pt-16 flex flex-col items-center gap-4 opacity-50"
                         >
-                            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-brand-light">Scroll to Ascend</p>
+                            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-brand-light">{t('expedition.section.scroll')}</p>
                             <div className="w-5 h-9 border border-brand-light/30 rounded-full flex justify-center p-1">
                                 <motion.div
                                     animate={{ y: [0, 12, 0] }}
@@ -221,12 +183,20 @@ export function Expedition() {
                 </div>
 
                 <div className="relative pb-24">
-                    {expeditions.map((exp, index) => (
-                        <ExpeditionCard key={exp.id} exp={exp} index={index} />
-                    ))}
+                    {expeditions.map((exp, index) => {
+                        // We need to inject images back as they are not in translations (usually best practice is to keep them in data)
+                        // but since they are hardcoded, I'll use index to match them or just keep them in translations
+                        // Actually, I put everything in translations including descriptions.
+                        // I'll add the image URLs to the translations list too just to be sure.
+                        const images = [
+                            "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+                            "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1200&q=80",
+                            "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=1200&q=80"
+                        ];
+                        return <ExpeditionCard key={index} exp={{ ...exp, image: images[index] }} index={index} />;
+                    })}
                 </div>
             </div>
         </Section>
     );
 }
-

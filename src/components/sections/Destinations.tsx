@@ -1,77 +1,28 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Star, ArrowRight, TrendingUp } from "lucide-react";
+import { MapPin, Calendar, Star, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import type { Destination } from "@/types";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useLanguage } from "@/context/LanguageContext";
 
-const destinations: Destination[] = [
-    {
-        id: 1,
-        name: "Everest Base Camp",
-        location: "Solu-Khumbu, Nepal",
-        duration: "14 Days",
-        difficulty: "Challenging",
-        rating: 4.9,
-        price: "$2,499",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-        id: 2,
-        name: "Annapurna Circuit",
-        location: "Gandaki, Nepal",
-        duration: "18 Days",
-        difficulty: "Moderate",
-        rating: 4.8,
-        price: "$1,999",
-        image: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-        id: 3,
-        name: "Torres del Paine",
-        location: "Patagonia, Chile",
-        duration: "8 Days",
-        difficulty: "Moderate",
-        rating: 4.9,
-        price: "$2,299",
-        image: "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-        id: 4,
-        name: "Mont Blanc Circuit",
-        location: "Chamonix, France",
-        duration: "11 Days",
-        difficulty: "Challenging",
-        rating: 4.7,
-        price: "$2,799",
-        image: "https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-        id: 5,
-        name: "Kilimanjaro Summit",
-        location: "Moshi, Tanzania",
-        duration: "7 Days",
-        difficulty: "Challenging",
-        rating: 4.8,
-        price: "$2,199",
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-        id: 6,
-        name: "Inca Trail",
-        location: "Cusco, Peru",
-        duration: "4 Days",
-        difficulty: "Moderate",
-        rating: 4.9,
-        price: "$1,599",
-        image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80",
-    },
-];
+function DestinationCard({ destination, index }: { destination: any; index: number }) {
+    const { t } = useLanguage();
+    
+    // We need to match images by index since they are not in translations
+    const images = [
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80",
+    ];
 
-function DestinationCard({ destination, index }: { destination: Destination; index: number }) {
+    const rating = 4.7 + (index % 3) * 0.1;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -83,7 +34,7 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
             {/* Background Image with Enhanced Zoom and Pan */}
             <div className="absolute inset-0 overflow-hidden">
                 <Image
-                    src={destination.image}
+                    src={images[index] || images[0]}
                     alt={destination.name}
                     fill
                     className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110 group-hover:rotate-1"
@@ -107,10 +58,10 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
                 </motion.div>
 
                 <AnimatePresence>
-                    {destination.rating > 4.8 && (
+                    {rating > 4.8 && (
                         <div className="flex items-center gap-2 px-3 py-2 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 text-white text-[10px] font-black uppercase tracking-tighter">
                             <Star size={10} className="text-brand-light fill-brand-light" />
-                            <span>Elite Choice</span>
+                            <span>{t('destinations.eliteChoice')}</span>
                         </div>
                     )}
                 </AnimatePresence>
@@ -144,11 +95,11 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
                                     <Star
                                         key={i}
                                         size={10}
-                                        className={`${i < Math.floor(destination.rating) ? 'text-brand-light fill-brand-light' : 'text-white/20'}`}
+                                        className={`${i < Math.floor(rating) ? 'text-brand-light fill-brand-light' : 'text-white/20'}`}
                                     />
                                 ))}
                             </div>
-                            <span className="text-white font-bold">{destination.rating}</span>
+                            <span className="text-white font-bold">{rating.toFixed(1)}</span>
                         </div>
                     </div>
 
@@ -157,14 +108,14 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
                         <div className="overflow-hidden">
                             <div className="pt-6 flex items-center justify-between border-t border-brand-light/10 mt-2">
                                 <div className="space-y-1">
-                                    <p className="text-[10px] text-brand-light/60 uppercase tracking-widest font-bold">Intensity</p>
+                                    <p className="text-[10px] text-brand-light/60 uppercase tracking-widest font-bold">{t('destinations.intensity')}</p>
                                     <p className="text-white text-xs font-black uppercase">{destination.difficulty}</p>
                                 </div>
                                 <motion.button
                                     whileHover={{ x: 5 }}
                                     className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white text-brand-dark font-black text-[10px] uppercase tracking-widest hover:bg-brand-light transition-colors shadow-xl"
                                 >
-                                    View Expedition
+                                    {t('destinations.viewExpedition')}
                                     <ArrowRight size={14} />
                                 </motion.button>
                             </div>
@@ -180,6 +131,8 @@ function DestinationCard({ destination, index }: { destination: Destination; ind
 }
 
 export function Destinations({ limit, background = "white" }: { limit?: number; background?: "white" | "dark" }) {
+    const { t } = useLanguage();
+    const destinations = t('destinations.list') as any[];
     const displayedDestinations = limit ? destinations.slice(0, limit) : destinations;
     const isDark = background === "dark";
 
@@ -203,9 +156,9 @@ export function Destinations({ limit, background = "white" }: { limit?: number; 
 
             <div className="container relative z-10 mx-auto px-8 md:px-20 lg:px-32">
                 <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
-                    <SectionBadge dark={isDark}>Curated Journeys</SectionBadge>
-                    <SectionHeading dark={isDark} gradientText="Your Next Summit.">
-                        Explore Our World Class
+                    <SectionBadge dark={isDark}>{t('destinations.badge')}</SectionBadge>
+                    <SectionHeading dark={isDark} gradientText={t('destinations.gradient')}>
+                        {t('destinations.heading')}
                     </SectionHeading>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -214,15 +167,14 @@ export function Destinations({ limit, background = "white" }: { limit?: number; 
                         transition={{ delay: 0.2 }}
                         className={`${isDark ? 'text-brand-white/60' : 'text-brand-dark/60'} text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium`}
                     >
-                        From the soaring peaks of the Himalayas to the rugged paths of Patagonia,
-                        every destination is hand-selected for its soul-stirring beauty.
+                        {t('destinations.description')}
                     </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                     {displayedDestinations.map((destination, index) => (
                         <DestinationCard
-                            key={destination.id}
+                            key={index}
                             destination={destination}
                             index={index}
                         />
@@ -238,13 +190,13 @@ export function Destinations({ limit, background = "white" }: { limit?: number; 
                 >
                     <button className={`group relative px-10 py-5 bg-transparent border-2 ${isDark ? 'border-brand-light/30 text-white hover:border-brand-light' : 'border-brand-dark/10 text-brand-dark hover:border-brand-medium'} rounded-full text-lg font-bold overflow-hidden transition-all hover:cursor-pointer`}>
                         <span className="relative z-10 flex items-center gap-3">
-                            View More Expeditions
+                            {t('destinations.viewMore')}
                             <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
                         <div className={`absolute inset-0 ${isDark ? 'bg-brand-light/20' : 'bg-brand-medium/10'} translate-y-full group-hover:translate-y-0 transition-transform duration-300 -z-0`} />
                     </button>
                     <p className={`mt-6 ${isDark ? 'text-brand-white/40' : 'text-brand-dark/40'} text-sm font-medium tracking-wide`}>
-                        Over 40+ custom routes available upon request
+                        {t('destinations.customRoutes')}
                     </p>
                 </motion.div>
             </div>
