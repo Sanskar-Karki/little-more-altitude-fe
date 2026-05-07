@@ -1131,81 +1131,8 @@ export const translations = {
         {
           question: "¿Qué equipo debo llevar?",
           answer: "Proporcionamos una lista de empaque completa al realizar la reserva."
-        },
-        {
-          question: "¿Cómo garantizan la seguridad?",
-          answer: "La seguridad es nuestra máxima prioridad. Todos nuestros guías están certificados."
-        },
-        {
-          question: "¿Qué está incluido en el paquete?",
-          answer: "Nuestros paquetes suelen incluir traslados al aeropuerto, alojamiento y comidas."
-        },
-        {
-          question: "¿Puedo personalizar mi itinerario?",
-          answer: "¡Absolutamente! Nos especializamos en itinerarios personalizados."
-        },
-        {
-          question: "¿Cuál es su política de cancelación?",
-          answer: "Las cancelaciones realizadas más de 60 días antes de la salida reciben un reembolso completo."
         }
       ]
-    },
-    stats: {
-      clients: "Clientes Guiados",
-      years: "Años de Experiencia",
-      success: "Tasa de Éxito Global"
-    },
-    testimonials: {
-      badge: "Testimonios",
-      heading: "Voces de la",
-      gradient: "Cumbre.",
-      subheading: "Historias reales de aventureros que han tocado el cielo con nosotros.",
-      verified: "Viaje Verificado",
-      readMore: "Leer más",
-      showLess: "Mostrar menos",
-      list: [
-        {
-          name: "Sarah Mitchell",
-          role: "Entusiasta de la Aventura",
-          content: "El trek al campamento base del Everest fue una experiencia que me cambió la vida. Los guías fueron increíblemente expertos."
-        },
-        {
-          name: "Michael Chen",
-          role: "Photógrafo",
-          content: "Como fotógrafo, he viajado a muchos lugares, pero las vistas en el Circuito del Annapurna fueron inigualables."
-        },
-        {
-          name: "Emma Rodriguez",
-          role: "Senderista por primera vez",
-          content: "Estaba nerviosa por mi primer trek de alta altitud, pero el equipo me hizo sentir segura."
-        }
-      ]
-    },
-    contactSection: {
-      badge: "Contáctenos",
-      heading: "Tracemos Su",
-      gradient: "Próxima Cumbre.",
-      description: "Ya sea que busque un trek en solitario o una expedición grupal, nuestro equipo de expertos está listo para guiarlo.",
-      info: {
-        email: "Envíenos un correo",
-        call: "Llámenos",
-        visit: "Visítenos",
-        hours: "Horas de trabajo",
-        hoursValue: "Domingo-Viernes: 6AM - 6PM"
-      },
-      form: {
-        title: "Envíe un mensaje",
-        subheading: "Normalmente respondemos en 4 horas de montaña.",
-        name: "Nombre completo",
-        email: "Correo",
-        message: "Message",
-        placeholderName: "John Doe",
-        placeholderEmail: "johndoe@peak.com",
-        placeholderMessage: "Cuéntanos sobre el pico que quieres conquistar...",
-        submit: "Comenzar Expedición",
-        sending: "Enviando...",
-        success: "¡Mensaje enviado! Nos pondremos en contacto contigo en 24 horas."
-      }
     },
     about: {
       badge: "Arraigado en la herencia Sherpa",
