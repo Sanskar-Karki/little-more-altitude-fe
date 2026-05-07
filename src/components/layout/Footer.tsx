@@ -16,7 +16,7 @@ export function Footer() {
                             <Mountain className="h-8 w-8 text-brand-light" />
                             <span className="text-xl font-bold">Little More Altitude</span>
                         </div>
-                        <p className="text-brand-white/60 leading-relaxed">
+                        <p className="text-brand-white/80 leading-relaxed">
                             {t('footer.tagline')}
                         </p>
                     </div>
@@ -24,7 +24,7 @@ export function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.explore')}</h4>
-                        <ul className="space-y-3 text-brand-white/70">
+                        <ul className="space-y-3 text-brand-white/90">
                             <li><Link href="/trekking" className="hover:text-white transition-colors">{t('nav.trekking')}</Link></li>
                             <li><Link href="/expedition" className="hover:text-white transition-colors">{t('nav.expedition')}</Link></li>
                             <li><Link href="/gallery" className="hover:text-white transition-colors">{t('nav.gallery')}</Link></li>
@@ -36,7 +36,7 @@ export function Footer() {
                     {/* Contact */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.contact')}</h4>
-                        <ul className="space-y-4 text-brand-white/70">
+                        <ul className="space-y-4 text-brand-white/90">
                             <li className="flex items-center gap-3">
                                 <MapPin size={18} className="text-brand-light" />
                                 <span>{t('common.address')}</span>
@@ -55,7 +55,7 @@ export function Footer() {
                     {/* Newsletter */}
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.stayUpdated')}</h4>
-                        <p className="text-brand-white/60 mb-4">{t('footer.subscribeText')}</p>
+                        <p className="text-brand-white/80 mb-4">{t('footer.subscribeText')}</p>
                         <form className="flex gap-2">
                             <input
                                 type="email"
@@ -70,10 +70,10 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-brand-light/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-brand-white/40 text-sm">
+                    <p className="text-brand-white/60 text-sm">
                         © {new Date().getFullYear()} Little More Altitude. {t('footer.rights')}
                     </p>
-                    <div className="flex gap-6 text-brand-white/60">
+                    <div className="flex gap-6 text-brand-white/80">
                         <a href="#" className="hover:text-brand-light transition-colors"><Facebook size={20} /></a>
                         <a href="#" className="hover:text-brand-light transition-colors"><Instagram size={20} /></a>
                         <a href="#" className="hover:text-brand-light transition-colors"><Twitter size={20} /></a>

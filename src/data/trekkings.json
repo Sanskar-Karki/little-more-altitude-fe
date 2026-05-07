@@ -51,33 +51,33 @@
       },
       {
         "day": 2,
-        "title": "Drive from Kathmandu to Pokhara",
+        "title": "Kathmandu → Pokhara",
         "location": "Pokhara (822m)",
-        "description": "A scenic drive through river valleys and hills takes you to Pokhara, the gateway to the Annapurna region."
+        "description": "A scenic drive through river valleys and rolling hills brings you to Pokhara, the gateway to the Annapurna region, where mountain views set the tone for the adventure ahead."
       },
       {
         "day": 3,
-        "title": "Drive to Siddhing and Trek to Low Camp",
+        "title": "Pokhara → Siddhing → Low Camp",
         "location": "Siddhing (1,700m) → Low Camp (2,970m)",
-        "description": "Drive to Siddhing and begin trekking through terraced farmland and forest trails to reach Low Camp."
+        "description": "After a drive to Siddhing, the trek begins through terraced farmland and dense forests, gradually climbing to Low Camp surrounded by peaceful mountain landscapes."
       },
       {
         "day": 4,
-        "title": "Trek from Low Camp to High Camp",
-        "location": "High Camp (3,580m)",
-        "description": "A ridge walk through rhododendron forests opens up to panoramic mountain views as you reach High Camp."
+        "title": "Low Camp → High Camp",
+        "location": "Low Camp (2,970m) → High Camp (3,580m)",
+        "description": "Today’s trek follows a ridge trail through rhododendron forests, opening up to breathtaking views of Machhapuchhre, Annapurna South, and the surrounding peaks as you reach High Camp."
       },
       {
         "day": 5,
-        "title": "Hike to Viewpoint and Trek to Rest Camp",
-        "location": "Mardi Himal Viewpoint (4,500m) → Rest Camp (2,600m)",
-        "description": "Early morning hike to the viewpoint for sunrise over Machapuchare and Annapurna ranges. After breakfast, descend to Rest Camp."
+        "title": "High Camp → Viewpoint → Rest Camp",
+        "location": "Viewpoint (4,500m) → Rest Camp (2,600m)",
+        "description": "An early morning hike leads to the Mardi Himal Viewpoint for a spectacular sunrise over the Himalayas. After returning to High Camp for breakfast, the trail descends through alpine terrain to Rest Camp."
       },
       {
         "day": 6,
-        "title": "Trek to Kalimati and Drive to Pokhara",
-        "location": "Kalimati (1,800m) → Pokhara (822m)",
-        "description": "Trek through lush forests and bird-rich trails to Kalimati, followed by a scenic drive back to Pokhara."
+        "title": "Rest Camp → Kalimati → Pokhara",
+        "location": "Kalimati (1,800m) via Forest Camp",
+        "description": "The final day takes you through lush forests rich in birdlife, passing Forest Camp before reaching Kalimati, from where we drive back to Pokhara."
       },
       {
         "day": 7,
@@ -98,7 +98,7 @@
     "slug": "everest-base-camp-trek",
     "region": "Khumbu Region",
     "location": "Lukla / Namche",
-    "tagline": "The ultimate Himalayan adventure to the base of the world’s highest peak, rich in culture and breathtaking mountain views.",
+    "tagline": "Explore the Heart of the Himalayas on the Iconic Everest Base Camp Trek",
     "images": {
       "mainImages": [
         "/images/Trekking/Ebc/ebc3.jpg"
@@ -107,136 +107,138 @@
         "/images/Trekking/Ebc/ebc2.jpg"
       ]
     },
-    "overview": "The Everest Base Camp trek is the world’s most iconic multi-day adventure. Journey deep into the heart of the Himalayas as the trail climbs to high altitudes, unveiling breathtaking views of Mount Everest and surrounding peaks. Experience the rich Sherpa culture of the Khumbu region with its monasteries, prayer flags, and traditional villages. From Lukla, the trail follows the Dudh Kosi Valley to Namche Bazaar, then continues through Tengboche, Dingboche, and beyond to Kala Patthar and Everest Base Camp. This unforgettable journey blends raw natural beauty with cultural immersion.",
+    "overview": "The Everest Base Camp trek is the world’s most iconic multi-day adventure—and for good reason. Journey deep into the heart of the Himalayas as the trail climbs to 5,643 meters above sea level, unveiling breathtaking, close-up views of the world’s highest peak. Along the way, immerse yourself in the rich Sherpa culture of the Khumbu region—prayer flags fluttering in the wind, ancient monasteries, and mountain villages that feel timeless. Every step of this legendary trek offers raw beauty, deep connection, and memories that will stay with you long after the journey ends. The Everest Base Camp trek is a once-in-a-lifetime adventure, combining stunning Himalayan landscapes with a deep immersion into Sherpa culture. With guides born and raised in the Everest region, A Little More Altitude ensures every step is safe, meaningful, and unforgettable.",
     "keyInformation": {
-      "maximumAltitude": "5,643m (Kala Patthar)",
+      "maximumAltitude": "5,643m",
       "duration": "12–16 days",
       "difficulty": "Moderate to Strenuous",
       "bestSeason": "Spring (March–May) & Autumn (September–November)",
       "dailyWalkingHours": "5–7 hours"
     },
     "includes": [
-      "Airport pick-up and drop-off services",
-      "Hotel accommodation in Kathmandu (4 nights, twin sharing, bed & breakfast)",
+      "Airport pick-up and drop-off facility",
+      "Hotel accommodation in Kathmandu (4 nights, bed & breakfast, twin bedroom)",
       "Welcome dinner in Kathmandu",
-      "Sagarmatha National Park permits and TIMS card",
-      "Domestic flights Kathmandu–Lukla–Kathmandu",
-      "Three meals a day during trekking (Breakfast, Lunch, Dinner)",
-      "Accommodation in lodges/tea houses during the trek",
-      "Professional guide and porter (1 porter per 2 trekkers)",
-      "Staff salary, insurance, and allowances",
-      "Trekking map of Everest region",
-      "Comprehensive medical kit"
+      "Sagarmatha National Park permits, TIMS permit, and conservation entry fees",
+      "Insurance for all involved",
+      "Everest region Trekking map",
+      "Domestic flights from Kathmandu to Lukla and back",
+      "Personal baggage up to 15kg carried by porters",
+      "Three meals a day with tea and coffee during the trek",
+      "Accommodation at hotels and lodges during the trek",
+      "Porters (1 porter for 2 trekkers)",
+      "Staff salary and allowance",
+      "Comprehensive Medical kits"
     ],
     "excludes": [
-      "International airfare",
-      "Nepal entry visa fees",
-      "Lunch and dinner in Kathmandu",
-      "Extra nights in Kathmandu (early arrival/late departure)",
-      "Travel insurance and emergency evacuation costs",
-      "Personal expenses (Wi-Fi, phone, laundry, charging, hot showers)",
-      "Beverages (boiled water, soft drinks, alcohol)",
+      "International airfare and personal transportation",
+      "Nepal entry visa fee",
+      "Lunch and dinner in Kathmandu (except welcome dinner)",
+      "Extra nights' accommodation in Kathmandu",
+      "Medical insurance and emergency rescue evacuation cost",
+      "Personal expenses (Telephone, internet, battery recharge, shower, laundry)",
+      "Alcoholic beverages, boiled water, soft drinks",
       "Personal trekking gear and equipment",
-      "Additional porter cost (USD 30 per day)",
-      "Tips for guides and staff",
-      "Any services not mentioned in the Includes section"
+      "Additional porter cost ($30 USD per day)",
+      "Tips for guides, porters and staff",
+      "Any other item not listed in the Includes section"
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Arrival in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Arrival at Tribhuvan International Airport and transfer to the hotel."
+        "description": "Arrival at Tribhuvan International Airport, Kathmandu and transfer to the hotel."
       },
       {
         "day": 2,
-        "title": "Preparation Day in Kathmandu",
+        "title": "Preparation Day",
         "location": "Kathmandu (1,400m)",
-        "description": "Gear check, safety briefing, and preparation for the trek followed by a team dinner."
+        "description": "Preparation day in Kathmandu, gear check and safety/trip briefing, before a team meal."
       },
       {
         "day": 3,
         "title": "Flight to Lukla and Trek to Phakding",
         "location": "Lukla (2,846m) → Phakding (2,610m)",
-        "description": "Flight to Lukla followed by a short trek to Phakding through scenic landscapes."
+        "description": "Flight to Lukla at 2846m and then a stunning short trek to Phakding that takes three to four hours."
       },
       {
         "day": 4,
-        "title": "Trek from Phakding to Namche Bazaar",
-        "location": "Namche Bazaar (3,440m)",
-        "description": "Trek crossing suspension bridges including Hillary Bridge before reaching Namche Bazaar."
+        "title": "Trek to Namche Bazaar",
+        "location": "Phakding (2,610m) → Namche Bazaar (3,440m)",
+        "description": "A five to six-hour trek from Phakding to Namche, crossing the famous Hillary Bridge with a nice climb into Namche Bazaar for a team dinner."
       },
       {
         "day": 5,
-        "title": "Acclimatization Day in Namche",
+        "title": "Acclimatisation in Namche",
         "location": "Namche Bazaar (3,440m)",
-        "description": "Short hike to Everest View Hotel and visit Sagarmatha National Park Museum."
+        "description": "Acclimatisation day in Namche, including a short two to three-hour hike to Everest View Hotel, and then a visit to Sagarmatha National Park Museum for one to two hours."
       },
       {
         "day": 6,
-        "title": "Trek from Namche to Debuche",
-        "location": "Debuche (3,820m)",
-        "description": "Trek via Tengboche Monastery with panoramic mountain views."
+        "title": "Trek to Debuche",
+        "location": "Namche (3,440m) → Debuche (3,820m)",
+        "description": "A four to six-hour trek from Namche to Debuche via a visit to Tengboche Monastery, as well as an hour lunch stop."
       },
       {
         "day": 7,
-        "title": "Trek from Debuche to Dingboche",
-        "location": "Debuche (3,820m)",
-        "description": "Trek via Tengboche Monastery with panoramic mountain views."
+        "title": "Trek to Dingboche",
+        "location": "Debuche (3,820m) → Dingboche (4,410m)",
+        "description": "Trek from Debuche to Dingboche for four to six hours, as well as a lunch stop."
       },
       {
         "day": 8,
-        "title": "Trek from Debuche to Dingboche",
+        "title": "Acclimatisation in Dingboche",
         "location": "Dingboche (4,410m)",
-        "description": "Gradual ascent through alpine landscapes to Dingboche."
+        "description": "Acclimatisation day in Dingboche, including a four to five-hour hike up to Nagarjun Hill hours with an incredible view of Ama Dablam. This is followed by team dinner and rest in Dingboche."
       },
       {
         "day": 9,
-        "title": "Acclimatization Day in Dingboche",
-        "location": "Dingboche (4,410m)",
-        "description": "Hike to Nagarjun Hill for stunning views of Ama Dablam and surrounding peaks."
+        "title": "Trek to Lobouche",
+        "location": "Dingboche (4,410m) → Lobouche (4,940m)",
+        "description": "A four to six-hour trek from Dingboche to Lobouche via Thukla Everest Memorial Pass, including an hour lunch stop."
       },
       {
         "day": 10,
-        "title": "Trek from Dingboche to Lobuche",
-        "location": "Lobuche (4,940m)",
-        "description": "Trek via Thukla Pass and Everest Memorial sites."
+        "title": "Gorak Shep and Everest Base Camp",
+        "location": "Gorak Shep (5,164m) → EBC (5,364m)",
+        "description": "An early morning trek from Lobuche to Gorak Shep and Everest Base Camp, before heading back to Gorak Shep for an overnight stay. This stage takes six to eight hours."
       },
       {
         "day": 11,
-        "title": "Everest Base Camp Trek",
-        "location": "Gorak Shep (5,164m) → Everest Base Camp (5,364m)",
-        "description": "Trek to Everest Base Camp and return to Gorak Shep for overnight stay."
+        "title": "Kala Patthar and Trek to Pheriche",
+        "location": "Kala Patthar (5,643m) → Pheriche (4,371m)",
+        "description": "An early morning hike to Kalapathar and trek to Pheriche. This takes four to six hours, with a lunch stop of approximately one hour."
       },
       {
         "day": 12,
-        "title": "Kala Patthar and Trek to Pheriche",
-        "location": "Kala Patthar (5,643m) → Pheriche (4,371m)",
-        "description": "Early morning hike to Kala Patthar for sunrise views of Everest before descending."
+        "title": "Trek to Namche Bazaar",
+        "location": "Pheriche (4,371m) → Namche Bazaar (3,440m)",
+        "description": "A six to eight-hour trek from Pheriche to Namche, with an hour lunch stop."
       },
       {
         "day": 13,
-        "title": "Trek from Pheriche to Namche",
-        "location": "Namche Bazaar (3,440m)",
-        "description": "Long descent back through familiar trails to Namche Bazaar."
+        "title": "Trek to Lukla",
+        "location": "Namche (3,440m) → Lukla (2,846m)",
+        "description": "Trek from Namche to Lukla for four to six hours, with a lunch break of one hour. You will spend the night in Lukla, one of the world's highest-altitude airports."
       },
       {
         "day": 14,
-        "title": "Trek from Namche to Lukla",
-        "location": "Lukla (2,846m)",
-        "description": "Final trekking day returning to Lukla."
+        "title": "Fly to Kathmandu",
+        "location": "Kathmandu (1,400m)",
+        "description": "Fly back to Kathmandu and relax and unwind from a memorable trip."
       },
       {
         "day": 15,
-        "title": "Fly Back to Kathmandu",
+        "title": "Leisure Day in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Flight back to Kathmandu and rest."
+        "description": "Leisure day in Kathmandu sightseeing and exploring."
       },
       {
         "day": 16,
         "title": "Departure",
         "location": "Kathmandu (1,400m)",
-        "description": "Transfer to the airport for departure."
+        "description": "Departure day and drop off at Tribhuvan International Airport."
       }
     ]
   },
@@ -245,7 +247,7 @@
     "slug": "manaslu-circuit-trek",
     "region": "Manaslu Region",
     "location": "Jagat / Samagaun",
-    "tagline": "A remote and adventurous Himalayan journey circling Mount Manaslu through untouched landscapes and rich mountain culture.",
+    "tagline": "Journey Through the Remote Himalayas on the Epic Manaslu Circuit Trek.",
     "images": {
       "mainImages": [
         "/images/Trekking/Manaslu/manaslu2.jpg"
@@ -254,119 +256,119 @@
         "/images/Trekking/Manaslu/manaslu4.jpg"
       ]
     },
-    "overview": "The Manaslu Circuit Trek is a thrilling journey through one of Nepal’s most remote and untouched regions, circling Mount Manaslu (8,163m), the world’s eighth-highest peak. Starting from Jagat after a scenic drive from Kathmandu, the trail passes through traditional villages, ancient monasteries, and diverse landscapes ranging from lush forests to high alpine terrain. Trekkers experience rich Gurung and Tibetan-influenced cultures while enjoying views of Manaslu, Himalchuli, and Ngadi Chuli. The highlight of the trek is crossing the Larkya La Pass (5,160m), offering breathtaking panoramic Himalayan views before descending to Bhimtang and continuing through peaceful valleys to Tilije. This trek combines adventure, culture, and natural beauty in a truly unforgettable Himalayan experience.",
+    "overview": "The Manaslu Circuit Trek is a thrilling journey through one of Nepal’s most remote and untouched regions, circling the majestic Manaslu (8,163m), the world’s eighth-highest peak. With guides born and raised in the Himalayas, we take you through traditional villages, ancient monasteries, lush forests, and high alpine landscapes, offering an authentic glimpse into local culture and mountain life. The highlight of the trek is the Larkya La Pass at 5,160m, offering awe-inspiring 360-degree views of snow-capped peaks and glaciers. After crossing the pass, you descend into Bimtang, a peaceful high-altitude village surrounded by majestic mountains. The journey continues through Tilije, passing tranquil valleys and rivers, completing 14 days of adventure that combines high-altitude trekking, cultural immersion, and the stunning natural beauty of the Manaslu region.",
     "keyInformation": {
-      "maximumAltitude": "5,160m (Larkya La Pass)",
+      "maximumAltitude": "5,160m",
       "duration": "14–18 days",
       "difficulty": "Moderate to Strenuous",
       "bestSeason": "Spring and Autumn",
       "dailyWalkingHours": "5–7 hours"
     },
     "includes": [
-      "Airport arrival and departure transfers (private vehicle)",
-      "Kathmandu – Jagat / Besisahar – Kathmandu transportation",
-      "All trekking permits and national park fees",
+      "International arrival and departure transfers in private vehicle",
+      "Kathmandu - Jagat / Besi Sahar - Kathmandu transfer in private vehicle",
+      "Trek permit fees and NP fees required for the trek",
       "Accommodation in tea houses during the trek",
-      "Full board meals during trekking (Breakfast, Lunch, Dinner)",
-      "English-speaking experienced guide and porter",
-      "Staff salary, insurance, and logistics support",
-      "Duffel bag (kitbag)",
-      "All applicable government taxes"
+      "Meals on full board basis during the trek (Breakfast, lunch, and dinner)",
+      "English speaking local expert guide and porter on the trek",
+      "Salary and insurance for staffs",
+      "Kitbags (Duffel Bag)",
+      "All government taxes"
     ],
     "excludes": [
-      "International airfare and Nepal visa fee",
-      "Accommodation and meals in Kathmandu",
-      "Soft drinks and alcoholic beverages",
-      "Entrance fees for heritage sites and monasteries",
-      "Personal trekking gear and equipment",
-      "Personal expenses (Wi-Fi, calls, charging, laundry, showers, tips)",
-      "Travel insurance and emergency evacuation",
-      "Any services not mentioned in the Includes section"
+      "International airfare and Nepal entry visa fee",
+      "Accommodation, lunch, and dinner in Kathmandu",
+      "Soft drinks and alcoholic beverages like Coke, Beer, Mineral water",
+      "Entrance fees for heritage sites, monasteries, and museum",
+      "Personal trekking gears and equipment",
+      "Personal nature expenses like phone calls, Wi-Fi, gadget charging, laundry, shower, gratitude",
+      "Insurance and emergency rescue evacuation",
+      "Any items not mentioned in the Service included section"
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Arrival in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Arrive in Kathmandu and transfer to your hotel. Meet the team and prepare for the trek."
+        "description": "Arrive in Kathmandu and transfer to your hotel. Meet the team, relax, and prepare for the journey ahead."
       },
       {
         "day": 2,
         "title": "Drive from Kathmandu to Jagat",
         "location": "Jagat (1,340m)",
-        "description": "A scenic drive through hills, rivers, and rural villages to the starting point of the trek."
+        "description": "A scenic drive through hills, rivers, and rural villages brings us to Jagat, the starting point of our trek."
       },
       {
         "day": 3,
         "title": "Trek from Jagat to Deng",
         "location": "Deng (1,860m)",
-        "description": "Follow the Budhi Gandaki River, crossing suspension bridges and passing waterfalls and villages."
+        "description": "The trek begins along the Budhi Gandaki River, passing suspension bridges, waterfalls, and traditional villages."
       },
       {
         "day": 4,
         "title": "Trek from Deng to Namrung",
         "location": "Namrung (2,630m)",
-        "description": "Gradual ascent through forests and stone villages into the upper Manaslu region."
+        "description": "Today’s trail climbs steadily through forests and stone villages as we enter the upper Manaslu region."
       },
       {
         "day": 5,
         "title": "Trek from Namrung to Lho / Shyala",
         "location": "Lho / Shyala (3,180m)",
-        "description": "Enjoy spectacular views of Mount Manaslu while trekking through alpine villages."
+        "description": "Enjoy spectacular views of Manaslu and surrounding peaks while trekking through beautiful alpine villages."
       },
       {
         "day": 6,
-        "title": "Trek from Lho / Shyala to Samagaun via Pungyen Gompa",
+        "title": "Trek from Lho/Shyala to Samagaun",
         "location": "Samagaun (3,530m)",
-        "description": "A culturally rich day visiting Pungyen Gompa before reaching Samagaun."
+        "description": "A scenic and culturally rich day visiting Pungyen Gompa before reaching the peaceful village of Samagaun."
       },
       {
         "day": 7,
         "title": "Acclimatization Day in Samagaun",
         "location": "Samagaun (3,530m)",
-        "description": "Rest and adapt to altitude with optional hikes to Manaslu Base Camp or Birendra Lake."
+        "description": "Rest and adapt to the altitude with optional hikes to Manaslu Base Camp or Birendra Lake."
       },
       {
         "day": 8,
         "title": "Trek from Samagaun to Samdo",
         "location": "Samdo (3,860m)",
-        "description": "A short and scenic trek through open landscapes toward the Tibetan border."
+        "description": "A short and gentle trek through open landscapes as we approach the Tibetan border region."
       },
       {
         "day": 9,
         "title": "Trek from Samdo to Dharmasala",
         "location": "Dharmasala / Larkya Phedi (4,460m)",
-        "description": "Gradual ascent through high alpine terrain to the base of Larkya La Pass."
+        "description": "Gradual ascent through high alpine terrain leads us to Dharmasala, the base of Larkya La Pass."
       },
       {
         "day": 10,
         "title": "Cross Larkya La Pass and Trek to Bhimtang",
         "location": "Larkya La Pass (5,160m) → Bhimtang (3,720m)",
-        "description": "Cross the highest point of the trek with breathtaking views before descending to Bhimtang."
+        "description": "The most challenging and rewarding day, crossing Larkya La Pass with breathtaking Himalayan views before descending to Bhimtang."
       },
       {
         "day": 11,
         "title": "Trek from Bhimtang to Tilije",
         "location": "Tilije (2,300m)",
-        "description": "Descend through forests and alpine meadows into warmer valleys."
+        "description": "Descend through rhododendron forests and alpine meadows into warmer valleys and villages."
       },
       {
         "day": 12,
-        "title": "Trek and Drive from Tilije to Besisahar",
+        "title": "Trek & Drive from Tilije to Besisahar",
         "location": "Besisahar (760m)",
-        "description": "Short trek followed by a scenic drive out of the mountains."
+        "description": "A short walk to the road followed by a scenic drive out of the mountains."
       },
       {
         "day": 13,
         "title": "Drive from Besisahar to Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Return to Kathmandu and reflect on the journey."
+        "description": "Return to Kathmandu, reflecting on an unforgettable Himalayan journey."
       },
       {
         "day": 14,
         "title": "Departure",
         "location": "Kathmandu (1,400m)",
-        "description": "Transfer to the airport for your onward journey."
+        "description": "Transfer to the airport for your onward journey home."
       }
     ]
   },
@@ -375,7 +377,7 @@
     "slug": "langtang-valley-trek",
     "region": "Langtang Region",
     "location": "Khangjim / Kyangjin Gompa",
-    "tagline": "A peaceful Himalayan trek close to Kathmandu, rich in culture, forests, and stunning mountain views.",
+    "tagline": "A breathtaking journey through glaciers, Himalayan peaks, and rich flora and fauna.",
     "images": {
       "mainImages": [
         "/images/Trekking/Langtang/Langtang7.jpg"
@@ -384,101 +386,101 @@
         "/images/Trekking/Langtang/Langtang2.jpg"
       ]
     },
-    "overview": "Langtang Valley, located north of Kathmandu within Langtang National Park, is known for its dense forests, glaciers, and Himalayan peaks including Langtang Lirung (7,345m). This moderately easy trek follows the Langtang River through rhododendron forests, waterfalls, and traditional villages inhabited by people of Tibetan origin. The journey leads to Kyangjin Gompa, where trekkers can explore ancient monasteries, yak pastures, and one of Nepal’s oldest cheese factories. Optional hikes to Kyangjin Ri or Tsergo Ri offer breathtaking panoramic views, making this trek a perfect blend of nature, culture, and accessibility.",
+    "overview": "Langtang Valley, north of Kathmandu in Langtang National Park, spans 1,710 sq km of dense forest. The area is famous for the Langtang Lirung (7,345m), glaciers, Himalayan peaks, and rich flora and fauna. Rated as an easy family trek, it has no difficult climbs or extreme cold. Trek along the Langtang River through rhododendron forests to Kyanjin Gompa, passing waterfalls, wild bee hives, and high yak pastures. Visit one of Nepal’s oldest Swiss cheese factories and the ancient Kyanjin Gompa. A walk to Khyimsung Glacier offers a memorable experience. The local people are mostly of Tibetan origin",
     "keyInformation": {
-      "maximumAltitude": "4,984m (Tsergo Ri)",
-      "duration": "10–11 days",
+      "maximumAltitude": "4,900 meters (Tsergo ri)",
+      "duration": "10 Days",
       "difficulty": "Moderate",
       "bestSeason": "Spring and Autumn",
       "dailyWalkingHours": "5–7 hours"
     },
     "includes": [
-      "Airport arrival and departure transfers (private vehicle)",
-      "Kathmandu – Khangjim – Kathmandu transportation",
-      "All trekking permits and national park fees",
-      "Accommodation in tea houses during the trek",
-      "Full board meals during trekking (Breakfast, Lunch, Dinner)",
-      "English-speaking experienced guide and porter",
-      "Staff salary, insurance, and logistics support",
-      "Duffel bag (kitbag)",
-      "All applicable government taxes"
+      "International arrival and departure transfers in private vehicle.",
+      "Kathmandu - Khangjim - Kathmandu transfer in private vehicle.",
+      "Trek permit fees and NP fees required for the trek.",
+      "Accommodation in tea houses during the trek.",
+      "Meals on full board basis during the trek (Breakfast, lunch, and dinner)",
+      "English speaking local expert guide and porter on the trek.",
+      "Salary and insurance for staffs.",
+      "Kitbags (Duffel Bag)",
+      "All government taxes."
     ],
     "excludes": [
-      "International airfare and Nepal visa fee",
-      "Accommodation and meals in Kathmandu",
-      "Soft drinks and alcoholic beverages",
-      "Entrance fees for heritage sites and monasteries",
-      "Personal trekking gear and equipment",
-      "Personal expenses (Wi-Fi, calls, charging, laundry, showers, tips)",
-      "Travel insurance and emergency evacuation",
-      "Any services not mentioned in the Includes section"
+      "International airfare and Nepal entry visa fee",
+      "Accommodation, lunch, and dinner in Kathmandu",
+      "Soft drinks and alcoholic beverages like Coke, Beer, Mineral water",
+      "Entrance fees for heritage sites, monasteries, and museum",
+      "Personal trekking gears and equipment",
+      "Personal nature expenses like phone calls, Wi-Fi, gadget charging, laundry, shower, gratitude",
+      "Insurance and emergency rescue evacuation",
+      "Any items not mentioned in \"Service included the section\""
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Drive to Khangjim",
         "location": "Khangjim (2,284m)",
-        "description": "Scenic drive from Kathmandu via Trishuli Bazaar and Syafrubesi with views of rivers, terraces, and rural villages."
+        "description": "Duration: 7–8 hours. Begin with a scenic drive from Kathmandu to Khangjim, passing through Trishuli Bazaar and Syafrubesi. The route offers beautiful river valleys, terraced fields, and glimpses of rural life before reaching the trailhead."
       },
       {
         "day": 2,
         "title": "Trek to Lama Hotel",
         "location": "Lama Hotel (2,380m)",
-        "description": "Gradual ascent through rhododendron and oak forests, crossing suspension bridges to reach Lama Hotel."
+        "description": "Duration: 6–7 hours. The trek starts with a gradual ascent through rhododendron and oak forests, crossing suspension bridges and traditional villages. Arrive at Lama Hotel, a serene settlement surrounded by dense forest."
       },
       {
         "day": 3,
         "title": "Trek to Langtang Village",
         "location": "Langtang Village (3,430m)",
-        "description": "Follow the Langtang River through forests into a wide valley with views of Langtang Lirung."
+        "description": "Trekking Hours: 6–7 hours. Follow the Langtang River upstream through lush forests until the valley opens wide. The trail offers stunning views of Langtang Lirung and leads to Langtang Village, rebuilt after the Devastating earthquake in 2015."
       },
       {
         "day": 4,
-        "title": "Acclimatization Day in Langtang",
+        "title": "Acclimatization Day in Langtang Village",
         "location": "Langtang Village (3,430m)",
-        "description": "Rest day with optional hikes and visits to yak pastures for acclimatization."
+        "description": "Spend a full day acclimatizing to the altitude. Optional short hikes around the village or visits to local yak pastures help the body adjust while providing cultural and scenic insight."
       },
       {
         "day": 5,
         "title": "Trek to Kyangjin Gompa",
         "location": "Kyangjin Gompa (3,870m)",
-        "description": "Scenic walk through meadows and mani walls to the spiritual center of the valley."
+        "description": "Trekking Hours: 3–4 hours. A gentle and scenic walk-through meadows, prayer wheels, and mani walls brings you to Kyangjin Gompa, the spiritual heart of the region. Enjoy panoramic views and the peaceful atmosphere of the valley."
       },
       {
         "day": 6,
         "title": "Hike to Kyangjin Ri or Tsergo Ri",
         "location": "Kyangjin Ri (4,773m) / Tsergo Ri (4,984m)",
-        "description": "Climb to a high viewpoint for 360-degree Himalayan views including Langtang Lirung and Dorje Lakpa."
+        "description": "Trekking Hours: Kyangjin Ri: 5–7 hours round trip Tsergo Ri: 8–10 hours round trip Climb to one of the high viewpoints for remarkable 360° views of Langtang Lirung, Dorje Lakpa, and surrounding snow peaks. This is one of the most rewarding days of the trek."
       },
       {
         "day": 7,
         "title": "Exploration Day in Kyangjin Gompa",
         "location": "Kyangjin Gompa (3,870m)",
-        "description": "Optional visits to monastery, glacier viewpoint, or the local yak cheese factory."
+        "description": "A flexible day for recovery and exploration. Options include visiting the local monastery, walking to the glacier viewpoint or touring the famous yak cheese factory. This additional day enhances acclimatization and enjoyment."
       },
       {
         "day": 8,
         "title": "Trek Back to Lama Hotel",
         "location": "Lama Hotel (2,380m)",
-        "description": "Descend through forests and river valleys enjoying a different perspective of the landscape."
+        "description": "Trekking Hours: 6–7 hours. Descend through the Langtang Valley, retracing your steps past meadows, forests, and rivers. The downhill walk is comfortable and offers a different perspective of the landscape."
       },
       {
         "day": 9,
         "title": "Trek to Khangjim",
         "location": "Khangjim (2,284m)",
-        "description": "Continue descending through forests and villages to reach the trail end near Syafrubesi."
+        "description": "Trekking Hours: 5–6 hours. Continue descending through dense forests and traditional settlements until you arrive at Syafrubesi, marking the end of the trekking trail."
       },
       {
         "day": 10,
-        "title": "Drive Back to Kathmandu",
+        "title": "Drive to Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Return to Kathmandu by road after completing the trek."
+        "description": "Duration: 6–7 hours. Return to Kathmandu by road, concluding your journey through one of Nepal’s most culturally rich and naturally beautiful valleys."
       },
       {
         "day": 11,
-        "title": "Departure",
+        "title": "Depart Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Transfer to the airport for your onward journey after enjoying final moments in Kathmandu."
+        "description": "It's time to say farewell to Nepal. Enjoy your last moments in Kathmandu with breakfast in a café, a final stroll through the narrow alleys and temples, and some final souvenir shopping. A driver will be waiting for you at your hotel to take you to the airport for your return flight home. It's best to be at the airport at least two hours prior to departure."
       }
     ]
   },
@@ -496,94 +498,95 @@
         "/images/Trekking/Abc/abc2.jpg"
       ]
     },
-    "overview": "The Annapurna Base Camp Trek is a journey into the heart of the Himalayas, where every step feels intimate and unforgettable. The trail winds through terraced fields, rhododendron forests, and traditional Gurung villages before opening into the Annapurna Sanctuary—a natural amphitheater surrounded by peaks like Annapurna I, Machapuchare, Hiunchuli, and Annapurna South. Reaching base camp at 4,130m, trekkers experience breathtaking sunrises and serene mountain landscapes. This trek offers a perfect balance of cultural immersion, comfort, and high-altitude adventure without extreme difficulty.",
+    "overview": "The Annapurna Base Camp Trek is a journey into the heart of the Himalayas, where every step feels intimate, powerful, and unforgettable. The trail weaves through terraced fields, lush rhododendron forests, and warm Gurung villages before opening into the dramatic Annapurna Sanctuary—a natural amphitheater surrounded by towering giants like Annapurna I, Machapuchare, Hiunchuli, and Annapurna South. Reaching base camp at 4,130m, you stand encircled by snow-covered peaks, witnessing golden sunrises and silent Himalayan nights that leave a lasting imprint on the soul. What makes this trek truly special is its perfect balance of culture, comfort, and high-mountain adventure—offering deep immersion without extreme difficulty. The Annapurna Base Camp Trek isn’t just about reaching a destination; it’s about feeling the mountains breathe around you and carrying that connection long after the journey ends.",
     "keyInformation": {
-      "maximumAltitude": "4,130m (Annapurna Base Camp)",
+      "maximumAltitude": "4,130m",
       "duration": "7–10 days",
       "difficulty": "Moderate",
       "bestSeason": "Spring (March–May) & Autumn (September–November)",
       "dailyWalkingHours": "5–7 hours"
     },
     "includes": [
-      "Airport pick-up and drop-off services",
-      "Hotel accommodation in Kathmandu (4 nights, bed & breakfast)",
-      "Welcome dinner in Kathmandu",
-      "ACAP permits and TIMS card",
-      "Domestic flights Kathmandu–Pokhara–Kathmandu",
-      "Three meals a day during trekking (Breakfast, Lunch, Dinner)",
-      "Accommodation in tea houses during the trek",
-      "Professional guide and porter (1 porter per 2 trekkers)",
-      "Staff salary, insurance, and allowances",
-      "Trekking map of Annapurna region",
-      "Comprehensive medical kit"
+      "Arrival and departure: We offer a pick-and-drop facility from the airport to your hotel, and vice versa",
+      "Hotel accommodation in Kathmandu: Four nights hotel in Kathmandu on bed & breakfast basis — in a twin bedroom",
+      "Welcome dinner: One welcome dinner in Kathmandu",
+      "Permits: ACAP, and the TIMS permit and conservation entry fees",
+      "Insurance: Insurance for all involved",
+      "Trekking map: Annapurna region Trekking map",
+      "Member transportation: Domestic flights from Kathmandu to Pokhara and back",
+      "Member luggage: Up to 15kg per member for personal baggage during the trek carrying by porters",
+      "Lodging and food: Three meals a day (including tea and coffee) along with accessible accommodation at hotels and lodges during the trek",
+      "Porter: Porters (two trekkers: one porter) during the trek",
+      "Staff salary and allowance",
+      "Comprehensive Medical kits"
     ],
     "excludes": [
-      "International airfare",
-      "Nepal entry visa fees",
-      "Lunch and dinner in Kathmandu",
-      "Extra nights in Kathmandu",
-      "Travel insurance and emergency evacuation",
-      "Personal expenses (Wi-Fi, phone, laundry, charging, showers)",
-      "Beverages (water, soft drinks, alcohol)",
+      "Air fare: International flight fare, and personal transportation beyond the aforementioned programmes",
+      "Nepal entry visa fee",
+      "Lunch and dinner in Kathmandu: Lunch and dinner during the stay in Kathmandu, as well as in the case of early return from trekking than the scheduled itinerary",
+      "Extra night in Kathmandu: Extra nights’ accommodation in Kathmandu. in case of early arrival or late departure than the scheduled itinerary",
+      "Rescue evacuation: Medical insurance and emergency rescue evacuation cost if required, including rescue, repatriation, medication, medical tests and hospitalization costs.",
+      "Personal expenses: Telephone, internet, battery recharge, shower, laundry, any alcoholic beverages",
+      "Boiled water, beer, Coke, and clothing, packing Items or bags, personal medical kit and insurance",
       "Personal trekking gear and equipment",
-      "Additional porter cost (USD 30 per day)",
-      "Tips for guides and staff",
-      "Any services not mentioned in the Includes section"
+      "$30 USD for extra porter per day",
+      "Tips: Tips for guides, porters and staff",
+      "Any other item not listed in the “Price Includes” section"
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Arrival in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Arrive in Kathmandu and transfer to your hotel. Explore or relax depending on arrival time."
+        "description": "Arrive in Nepal’s vibrant capital and transfer to your hotel. Depending on arrival time, explore the lively streets, heritage sites, or relax after your journey."
       },
       {
         "day": 2,
-        "title": "Fly to Pokhara and Drive to Ghandruk",
-        "location": "Ghandruk (1,940m)",
-        "description": "Scenic flight to Pokhara followed by a drive to Ghandruk, a traditional Gurung village with mountain views."
+        "title": "Fly to Pokhara – Drive to Ghandruk",
+        "location": "Pokhara (850m) → Ghandruk (1,940m)",
+        "description": "Enjoy a scenic flight to Pokhara, followed by a drive to the traditional Gurung village of Ghandruk. Walk through stone-paved alleys and enjoy stunning views of Annapurna South and Machhapuchhre."
       },
       {
         "day": 3,
         "title": "Trek from Ghandruk to Chhomrong",
-        "location": "Chhomrong (2,170m)",
-        "description": "Descend through farmland and cross suspension bridges before climbing to Chhomrong."
+        "location": "Ghandruk (1,940m) → Chhomrong (2,170m)",
+        "description": "Descend through terraced farmlands and cross suspension bridges before climbing to Chhomrong, the gateway to Annapurna Sanctuary with panoramic mountain views."
       },
       {
         "day": 4,
         "title": "Trek from Chhomrong to Dovan",
-        "location": "Dovan (2,505m)",
-        "description": "Trek through bamboo and rhododendron forests along the Modi Khola river."
+        "location": "Chhomrong (2,170m) → Dovan (2,505m)",
+        "description": "The trail passes through dense bamboo and rhododendron forests, following the Modi Khola upstream as the landscape gradually becomes more alpine and remote."
       },
       {
         "day": 5,
         "title": "Trek to Annapurna Base Camp via Machhapuchhre Base Camp",
-        "location": "ABC (4,130m) via MBC (3,720m)",
-        "description": "Walk into the Annapurna Sanctuary reaching base camp surrounded by Himalayan peaks."
+        "location": "MBC (3,720m) → ABC (4,130m)",
+        "description": "A highlight day of the trek. Walk into the Annapurna Sanctuary, stopping at Machhapuchhre Base Camp before reaching Annapurna Base Camp, surrounded by towering Himalayan peaks."
       },
       {
         "day": 6,
         "title": "Trek from Annapurna Base Camp to Bamboo",
-        "location": "Bamboo (2,350m)",
-        "description": "Enjoy sunrise at base camp before descending through valleys and forests."
+        "location": "ABC (4,130m) → Bamboo (2,350m)",
+        "description": "Wake early for a magical sunrise over the Annapurna range, then descend through glacial valleys and forests to Bamboo."
       },
       {
         "day": 7,
         "title": "Trek from Bamboo to Jhinu Danda",
-        "location": "Jhinu Danda (1,780m)",
-        "description": "Descend through forests and relax in natural hot springs."
+        "location": "Bamboo (2,350m) → Jhinu Danda (1,780m)",
+        "description": "Retrace your steps through lush forests to Jhinu Danda, where you can relax your muscles in the natural hot springs beside the river."
       },
       {
         "day": 8,
-        "title": "Drive to Pokhara and Fly to Kathmandu",
-        "location": "Kathmandu (1,400m)",
-        "description": "Return via Pokhara with a scenic flight back to Kathmandu."
+        "title": "Drive to Pokhara – Fly to Kathmandu",
+        "location": "Jhinu Danda (1,780m) → Kathmandu (1,400m)",
+        "description": "After breakfast, drive back to Pokhara and take a scenic flight to Kathmandu, marking the end of your trekking adventure and farewell dinner in Kathmandu"
       },
       {
         "day": 9,
-        "title": "Departure",
+        "title": "Final Departure",
         "location": "Kathmandu (1,400m)",
-        "description": "Transfer to the airport for your onward journey."
+        "description": "Departure to your home country, carrying unforgettable memories from the Himalayas."
       }
     ]
   },
@@ -601,130 +604,131 @@
         "/images/Trekking/Abcc/abcc4.jpg"
       ]
     },
-    "overview": "The Annapurna Circuit Trek is an adventure of a lifetime, taking you from lush subtropical valleys to rugged high-altitude landscapes. Walk through rhododendron and pine forests, charming Gurung and Manangi villages, and past turquoise glacial lakes. Cross the legendary Thorong La Pass at 5,416m and witness breathtaking views of Tilicho Lake, one of the highest lakes in the world. Each day brings unique challenges, culture, and scenery, making this trek a perfect balance of adventure, natural beauty, and cultural immersion.",
+    "overview": "Embarking on the Annapurna Circuit Trek is an adventure of a lifetime. From lush subtropical valleys to rugged high-altitude landscapes, this trek offers unparalleled Himalayan vistas, cultural encounters with local Gurung and Manangi communities, and the thrill of crossing the mighty Thorong La Pass at 5,416 meters. One of the highlights of this trek is Tilicho Lake, one of the highest lakes in the world, nestled at 4,920 meters amidst towering peaks—a serene and breathtaking spectacle that feels like a hidden gem in the mountains. Along the way, trekkers also witness turquoise glacial lakes, soaring peaks, and serene villages that seem frozen in time. Each day brings a new challenge, new views, and memories that last forever—a true celebration of nature and human endurance.",
     "keyInformation": {
-      "maximumAltitude": "5,416m (Thorong La Pass)",
+      "maximumAltitude": "5,416m",
       "duration": "15 days",
       "difficulty": "Moderate to Challenging",
       "bestSeason": "Spring (March–May) & Autumn (September–November)",
       "dailyWalkingHours": "5–8 hours"
     },
     "includes": [
-      "Airport pick-up and drop-off services",
-      "Hotel accommodation in Kathmandu (4 nights, bed & breakfast)",
-      "Welcome dinner in Kathmandu",
-      "ACAP and TIMS permits and conservation entry fees",
-      "Domestic flights Kathmandu–Pokhara–Kathmandu",
-      "Three meals a day during trekking (Breakfast, Lunch, Dinner)",
-      "Accommodation in tea houses and lodges during the trek",
-      "Professional guide and porter (1 porter per 2 trekkers)",
-      "Staff salary, insurance, and allowances",
-      "Trekking map of the Annapurna region",
-      "Comprehensive medical kit"
+      "Arrival and departure: We offer a pick-and-drop facility from the airport to your hotel, and vice versa",
+      "Hotel accommodation in Kathmandu: Four nights hotel in Kathmandu on bed & breakfast basis — in a twin bedroom",
+      "Welcome dinner: One welcome dinner in Kathmandu",
+      "Permits: ACAP and the TIMS permit and conservation entry fees",
+      "Insurance: Insurance for all involved",
+      "Trekking map: Annapurna region Trekking map",
+      "Member transportation: Domestic flights from Kathmandu to Pokhara and back",
+      "Member luggage: Up to 15kg per member for personal baggage during the trek carrying by porters",
+      "Lodging and food: Three meals a day (including tea and coffee) along with accessible accommodation at hotels and lodges during the trek",
+      "Porter: Porters (two trekkers: one porter) during the trek",
+      "Staff salary and allowance",
+      "Comprehensive Medical kits"
     ],
     "excludes": [
-      "International airfare",
-      "Nepal entry visa fees",
-      "Lunch and dinner in Kathmandu (except welcome dinner)",
-      "Extra nights in Kathmandu for early arrival/late departure",
-      "Emergency rescue or evacuation costs",
-      "Personal expenses (Wi-Fi, phone, laundry, charging, showers)",
-      "Beverages (water, soft drinks, alcohol)",
+      "Air fare: International flight fare, and personal transportation beyond the aforementioned programmes",
+      "Nepal entry visa fee",
+      "Lunch and dinner in Kathmandu: Lunch and dinner during the stay in Kathmandu, as well as in the case of early return from trekking than the scheduled itinerary",
+      "Extra night in Kathmandu: Extra nights’ accommodation in Kathmandu. in case of early arrival or late departure than the scheduled itinerary",
+      "Rescue evacuation: Medical insurance and emergency rescue evacuation cost if required, including rescue, repatriation, medication, medical tests and hospitalization costs.",
+      "Personal expenses: Telephone, internet, battery recharge, shower, laundry, any alcoholic beverages",
+      "Boiled water, beer, Coke, and clothing, packing Items or bags, personal medical kit and insurance",
       "Personal trekking gear and equipment",
-      "Additional porter cost (USD 30 per day)",
-      "Tips for guides, porters, and staff",
-      "Any services not mentioned in the Includes section"
+      "$30 USD for extra porter per day",
+      "Tips: Tips for guides, porters and staff",
+      "Any other item not listed in the “Price Includes” section"
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Arrival in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Arrive in Kathmandu and transfer to your hotel. Welcome dinner and trek briefing."
+        "description": "Arrive in Nepal’s vibrant capital, transfer to your hotel, and prepare for the adventure ahead. Welcome dinner & briefing about the trek."
       },
       {
         "day": 2,
         "title": "Kathmandu to Dharapani",
         "location": "Dharapani (1,960m)",
-        "description": "Drive through scenic valleys, rivers, and terraced fields into the Annapurna region."
+        "description": "Drive through scenic valleys, rivers, and terraced fields, entering the Annapurna region with your first taste of Himalayan landscapes. (8–9 hrs.)"
       },
       {
         "day": 3,
         "title": "Dharapani to Chame",
         "location": "Chame (2,710m)",
-        "description": "Trek through pine forests and small villages with views of Annapurna II and Lamjung Himal."
+        "description": "Trek through pine forests and small villages, with views of Annapurna II and Lamjung Himal along the trail. (5–6 hrs.)"
       },
       {
         "day": 4,
         "title": "Chame to Pisang",
         "location": "Pisang (3,115m)",
-        "description": "Climb gradually through terraced fields to Pisang, with dramatic cliffs and Pisang Peak as backdrop."
+        "description": "Climb gradually through terraced fields to the traditional village of Pisang, with dramatic cliffs and the Pisang Peak backdrop. (4–5 hrs.)"
       },
       {
         "day": 5,
         "title": "Pisang to Manang",
         "location": "Manang (3,540m)",
-        "description": "Enter high Himalayas, walking past dry landscapes and prayer wheels, opening up to Manang valley."
+        "description": "Enter the high Himalayas, walking past dry landscapes and prayer wheels, with Manang valley opening up before you. (6–7 hrs.)"
       },
       {
         "day": 6,
         "title": "Acclimatization in Manang",
         "location": "Manang (3,540m)",
-        "description": "Rest day for altitude adjustment. Optional short hikes to nearby viewpoints and glaciers."
+        "description": "Take a rest day to adjust to altitude. Optional short hikes to nearby viewpoints and glaciers, enjoying panoramic mountain vistas."
       },
       {
         "day": 7,
         "title": "Manang to Tilicho Base Camp",
         "location": "Tilicho Base Camp (4,150m)",
-        "description": "Trek along rugged trails through rocky terrain to the base of Tilicho Lake."
+        "description": "Trek along rugged trails through rocky terrain to the base of Tilicho Lake, surrounded by towering Himalayan peaks. (5–6 hrs.)"
       },
       {
         "day": 8,
         "title": "Tilicho Lake Hike & Trek to Shree Kharka",
-        "location": "Shree Kharka (4,000m approx.)",
-        "description": "Hike to Tilicho Lake, then descend to Shree Kharka for overnight stay."
+        "location": "Tilicho Lake (4,920m) → Shree Kharka",
+        "description": "Hike to the stunning Tilicho Lake, one of the highest lakes in the world, then descend to Shree Kharka for overnight. (7–8 hrs.)"
       },
       {
         "day": 9,
         "title": "Shree Kharka to Thorong Phedi",
         "location": "Thorong Phedi (4,500m)",
-        "description": "Trek through high-altitude landscapes preparing for Thorong La Pass."
+        "description": "Trek through high-altitude landscapes, stone walls, and small villages, preparing for the challenge of Thorong La Pass. (7–8 hrs.)"
       },
       {
         "day": 10,
         "title": "Thorong Phedi – Thorong La Pass to Muktinath",
-        "location": "Muktinath (3,802m)",
-        "description": "Early morning ascent to Thorong La Pass. Descend to the sacred town of Muktinath."
+        "location": "Thorong La Pass (5,416m) → Muktinath (3,802m)",
+        "description": "Early morning ascent to the legendary Thorong La Pass. Enjoy panoramic views and descend to the sacred town of Muktinath. (7–9 hrs.)"
       },
       {
         "day": 11,
         "title": "Muktinath to Tatopani",
         "location": "Tatopani (1,300m)",
-        "description": "Drive through deep valleys to Tatopani, known for natural hot springs."
+        "description": "Drive through deep valleys to Tatopani, known for its natural hot springs—perfect to relax aching muscles. (5–6 hrs.)"
       },
       {
         "day": 12,
         "title": "Tatopani to Ghorepani",
         "location": "Ghorepani (2,870m)",
-        "description": "Trek through rhododendron forests and villages, climbing gradually to Ghorepani."
+        "description": "Trek through rhododendron forests and charming villages, climbing gradually to the hilltop village of Ghorepani. (7–8 hrs.)"
       },
       {
         "day": 13,
-        "title": "Poon Hill Sunrise and Trek to Pokhara",
-        "location": "Pokhara (850m)",
-        "description": "Early morning hike to Poon Hill for sunrise, descend to Nayapul, and drive to Pokhara."
+        "title": "Poon Hill – Nayapul – Pokhara",
+        "location": "Poon Hill (3,210m) → Pokhara (850m)",
+        "description": "Early morning hike to Poon Hill for a breathtaking sunrise over Annapurna and Dhaulagiri ranges. Descend to Nayapul and drive to lakeside Pokhara. (7–8 hrs.)"
       },
       {
         "day": 14,
         "title": "Pokhara to Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Return via scenic drive or flight to Kathmandu. Farewell dinner."
+        "description": "Take a scenic flight to Kathmandu, marking the end of your trekking adventure and farewell dinner in Kathmandu. (6–7 hrs.)"
       },
       {
         "day": 15,
         "title": "Departure from Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Transfer to the airport for your onward journey."
+        "description": "Transfer to the airport for your final flight home, carrying unforgettable memories of the Annapurna Circuit."
       }
     ]
   },
@@ -742,112 +746,113 @@
         "/images/Trekking/Gokyo/Gokyo1.jpg"
       ]
     },
-    "overview": "The Gokyo Valley Trek is a quieter alternative to the classic Everest Base Camp route, taking you deep into the Everest region. Explore alpine landscapes, turquoise glacial lakes, and traditional Sherpa villages while enjoying panoramic views of Everest, Cho Oyu, Lhotse, Makalu, and the massive Ngozumpa Glacier. The trek highlights the ascent of Gokyo Ri, one of the best viewpoints in the Himalayas, combining cultural immersion with spectacular natural scenery.",
+    "overview": "The Gokyo Valley Trek is a stunning alternative to the classic Everest Base Camp route, taking you deep into the heart of the Everest region while offering quieter trails, pristine alpine landscapes, and breathtaking turquoise glacial lakes. This trek showcases panoramic views of Everest, Cho Oyu, Lhotse, Makalu, and the massive Ngozumpa Glacier, combined with rich Sherpa culture and traditional mountain villages. The highlight of the trek is the ascent of Gokyo Ri, one of the best viewpoints in the Himalayas.",
     "keyInformation": {
-      "maximumAltitude": "5,357m (Gokyo Ri)",
+      "maximumAltitude": "5,357m",
       "duration": "12–14 days",
       "difficulty": "Moderate",
       "bestSeason": "Spring (March–May) & Autumn (September–November)",
       "dailyWalkingHours": "5–7 hours"
     },
     "includes": [
-      "Airport pick-up and drop-off services",
-      "Hotel accommodation in Kathmandu (4 nights, bed & breakfast)",
-      "Welcome dinner in Kathmandu",
-      "TIMS card and Sagarmatha National Park entry permits",
-      "Domestic flights Kathmandu–Lukla–Kathmandu",
-      "Three meals a day during trekking (Breakfast, Lunch, Dinner)",
-      "Accommodation in tea houses during the trek",
-      "Professional guide and porter (1 porter per 2 trekkers)",
-      "Staff salary, insurance, and allowances",
-      "Trekking map of the Everest region",
-      "Comprehensive medical kit"
+      "Arrival and departure: We offer a pick-and-drop facility from the airport to your hotel, and vice versa",
+      "Hotel accommodation in Kathmandu: Four nights hotel in Kathmandu on bed & breakfast basis — in a twin bedroom",
+      "Welcome dinner: One welcome dinner in Kathmandu",
+      "Permits: Sagarmatha National Park permits, TIMS permit, and conservation entry fees",
+      "Insurance: Insurance for all involved",
+      "Trekking map: Everest region Trekking map",
+      "Member transportation: Domestic flights from Kathmandu to Pokhara and back",
+      "Member luggage: Up to 15kg per member for personal baggage during the trek carrying by porters",
+      "Lodging and food: Three meals a day (including tea and coffee) along with accessible accommodation at hotels and lodges during the trek",
+      "Porter: Porters (two trekkers: one porter) during the trek",
+      "Staff salary and allowance",
+      "Comprehensive Medical kits"
     ],
     "excludes": [
-      "International airfare",
-      "Nepal entry visa fees",
-      "Lunch and dinner in Kathmandu (except welcome dinner)",
-      "Extra nights in Kathmandu for early arrival/late departure",
-      "Emergency rescue or evacuation costs",
-      "Personal expenses (Wi-Fi, phone, laundry, charging, showers)",
-      "Beverages (water, soft drinks, alcohol)",
+      "Air fare: International flight fare, and personal transportation beyond the aforementioned programmes",
+      "Nepal entry visa fee",
+      "Lunch and dinner in Kathmandu: Lunch and dinner during the stay in Kathmandu, as well as in the case of early return from trekking than the scheduled itinerary",
+      "Extra night in Kathmandu: Extra nights’ accommodation in Kathmandu. in case of early arrival or late departure than the scheduled itinerary",
+      "Rescue evacuation: Medical insurance and emergency rescue evacuation cost if required, including rescue, repatriation, medication, medical tests and hospitalization costs.",
+      "Personal expenses: Telephone, internet, battery recharge, shower, laundry, any alcoholic beverages",
+      "Boiled water, beer, Coke, and clothing, packing Items or bags, personal medical kit and insurance",
       "Personal trekking gear and equipment",
-      "Additional porter cost (USD 30 per day)",
-      "Tips for guides, porters, and staff",
-      "Any services not mentioned in the Includes section"
+      "$30 USD for extra porter per day",
+      "Tips: Tips for guides, porters and staff",
+      "Any other item not listed in the “Price Includes” section"
     ],
     "itinerary": [
       {
         "day": 1,
         "title": "Arrival in Kathmandu",
         "location": "Kathmandu (1,400m)",
-        "description": "Arrive in Kathmandu, get welcomed, and briefed about the trek. Time to rest or explore the city."
+        "description": "Arrive in Kathmandu, where you’ll be welcomed and briefed about the trek. Time to rest, explore the city, and prepare for the journey ahead."
       },
       {
         "day": 2,
         "title": "Flight to Lukla & Trek to Phakding",
-        "location": "Phakding (2,610m)",
-        "description": "Scenic mountain flight to Lukla, then easy trek along Sherpa villages and Dudh Koshi River to Phakding."
+        "location": "Lukla (2,846m) → Phakding (2,610m)",
+        "description": "A scenic mountain flight takes you to Lukla. From here, the trek begins with an easy walk through Sherpa villages and along the Dudh Koshi River to reach Phakding."
       },
       {
         "day": 3,
         "title": "Trek from Phakding to Namche Bazaar",
-        "location": "Namche Bazaar (3,440m)",
-        "description": "Follow the river, cross suspension bridges, and climb gradually to Namche Bazaar, the vibrant hub of the Khumbu region."
+        "location": "Phakding (2,610m) → Namche Bazaar (3,440m)",
+        "description": "The trail follows the river, crosses suspension bridges, and gradually climbs to Namche Bazaar, the vibrant capital of the Khumbu region."
       },
       {
         "day": 4,
-        "title": "Acclimatization in Namche Bazaar",
+        "title": "Acclimatization Day in Namche Bazaar",
         "location": "Namche Bazaar (3,440m)",
-        "description": "Rest and acclimatization day with optional short hikes and sightseeing around Namche."
+        "description": "A rest and acclimatization day with short hikes and sightseeing around Namche, helping your body adjust to altitude."
       },
       {
         "day": 5,
         "title": "Trek from Namche Bazaar to Dole",
-        "location": "Dole (4,030m)",
-        "description": "Leave the main Everest trail for the quieter Gokyo route, trekking through forests and alpine terrain."
+        "location": "Namche Bazaar (3,440m) → Dole (4,030m)",
+        "description": "Leaving the main Everest trail, we head toward the quieter Gokyo route, trekking through forests and alpine terrain to the peaceful village of Dole."
       },
       {
         "day": 6,
         "title": "Trek from Dole to Machhermo",
-        "location": "Machhermo (4,470m)",
-        "description": "Ascend gradually through open valleys and yak pastures, enjoying mountain views before reaching Machhermo."
+        "location": "Dole (4,030m) → Machhermo (4,470m)",
+        "description": "The trail ascends gradually through open valleys and yak pastures, offering beautiful mountain views before reaching Machhermo."
       },
       {
         "day": 7,
         "title": "Trek from Machhermo to Gokyo",
-        "location": "Gokyo (4,750m)",
-        "description": "Reach Gokyo Valley, passing turquoise glacial lakes with views of Ngozumpa Glacier and surrounding peaks."
+        "location": "Machhermo (4,470m) → Gokyo (4,750m)",
+        "description": "Today we reach Gokyo Valley, passing beside the stunning turquoise glacial lakes with views of the Ngozumpa Glacier and surrounding peaks."
       },
       {
         "day": 8,
         "title": "Free Day in Gokyo – Hike to Gokyo Ri",
-        "location": "Gokyo (4,750m)",
-        "description": "Early morning hike to Gokyo Ri for panoramic Himalayan views, followed by a relaxing day in Gokyo."
+        "location": "Gokyo (4,750m) → Gokyo Ri (5,357m)",
+        "description": "An early morning hike to Gokyo Ri rewards you with one of the best panoramic views in the Himalayas before spending the rest of the day relaxing in Gokyo."
       },
       {
         "day": 9,
         "title": "Trek from Gokyo to Dole",
-        "location": "Dole (4,030m)",
-        "description": "Descend through familiar alpine landscapes back to Dole."
+        "location": "Gokyo (4,750m) → Dole (4,030m)",
+        "description": "We retrace our steps, descending through familiar trails and alpine landscapes back to Dole."
       },
       {
         "day": 10,
         "title": "Trek from Dole to Namche Bazaar",
-        "location": "Namche Bazaar (3,440m)",
-        "description": "Continue downhill and rejoin the main Everest trail, returning to Namche Bazaar."
+        "location": "Dole (4,030m) → Namche Bazaar (3,440m)",
+        "description": "Continuing downhill, we rejoin the main trail and return to the lively hub of Namche Bazaar."
       },
       {
         "day": 11,
         "title": "Trek from Namche Bazaar to Lukla",
-        "location": "Lukla (2,860m)",
-        "description": "Final trekking day through villages and suspension bridges to Lukla, celebrating completion of the trek."
+        "location": "Namche Bazaar (3,440m) → Lukla (2,846m)",
+        "description": "The final trekking day takes us back through villages and suspension bridges to Lukla, where we celebrate the completion of the trek."
       },
       {
         "day": 12,
         "title": "Flight from Lukla to Kathmandu",
-        "location": "Kathmandu (1,400m)",
-        "description": "Morning flight back to Kathmandu, marking the end of an unforgettable Himalayan journey."
+        "location": "Lukla (2,846m) → Kathmandu (1,400m)",
+        "description": "An early morning flight returns us to Kathmandu, marking the end of an unforgettable Himalayan journey."
       }
     ]
   }

@@ -83,7 +83,7 @@ export function ContactSection() {
                         <SectionHeading dark={false} gradientText={t('contactSection.gradient')}>
                             {t('contactSection.heading')}
                         </SectionHeading>
-                        <p className="text-xl text-brand-medium/70 font-medium max-w-xl leading-relaxed">
+                        <p className="text-lg text-brand-dark/80 font-medium max-w-xl leading-relaxed">
                             {t('contactSection.description')}
                         </p>
                     </div>
@@ -100,12 +100,12 @@ export function ContactSection() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="group flex flex-col gap-4 p-8 rounded-3xl bg-white shadow-xl shadow-brand-dark/[0.03] border border-brand-light/10 hover:border-brand-light/30 transition-all duration-500"
                             >
-                                <div className="w-12 h-12 rounded-2xl bg-brand-light/10 text-brand-light flex items-center justify-center group-hover:bg-brand-light group-hover:text-brand-dark transition-all duration-500 shadow-sm">
+                                <div className="w-12 h-12 rounded-2xl bg-brand-medium/10 text-brand-medium flex items-center justify-center group-hover:bg-brand-medium group-hover:text-white transition-all duration-500 shadow-sm">
                                     <item.icon size={22} />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-black text-brand-medium/50 uppercase tracking-widest mb-1">{item.label}</p>
-                                    <p className="text-brand-dark font-bold text-lg group-hover:text-brand-medium transition-colors text-sm">{item.value}</p>
+                                    <p className="text-[10px] font-black text-brand-medium tracking-widest mb-1 uppercase">{item.label}</p>
+                                    <p className="text-brand-dark font-bold text-md group-hover:text-brand-medium transition-colors">{item.value}</p>
                                 </div>
                             </motion.a>
                         ))}
@@ -128,30 +128,30 @@ export function ContactSection() {
                         >
                             <div className="space-y-4">
                                 <h3 className="text-3xl font-black text-brand-dark tracking-tight">{t('contactSection.form.title')}</h3>
-                                <p className="text-brand-medium/60 text-sm font-medium">{t('contactSection.form.subheading')}</p>
+                                <p className="text-brand-medium font-medium">{t('contactSection.form.subheading')}</p>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.name')}</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/70 uppercase tracking-widest ml-1">{t('contactSection.form.name')}</label>
                                         <input
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
-                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
+                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/10 border border-brand-medium/20 focus:border-brand-medium focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/50"
                                             placeholder={t('contactSection.form.placeholderName')}
                                             required
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.email')}</label>
+                                        <label className="text-[10px] font-bold text-brand-dark/70 uppercase tracking-widest ml-1">{t('contactSection.form.email')}</label>
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20"
+                                            className="w-full h-14 px-6 rounded-2xl bg-brand-light/10 border border-brand-medium/20 focus:border-brand-medium focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/50"
                                             placeholder={t('contactSection.form.placeholderEmail')}
                                             required
                                         />
@@ -159,13 +159,13 @@ export function ContactSection() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-bold text-brand-dark/40 uppercase tracking-widest ml-1">{t('contactSection.form.message')}</label>
+                                    <label className="text-[10px] font-bold text-brand-dark/70 uppercase tracking-widest ml-1">{t('contactSection.form.message')}</label>
                                     <textarea
                                         name="message"
                                         rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="w-full p-6 rounded-2xl bg-brand-light/5 border border-brand-light/10 focus:border-brand-light focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/20 resize-none"
+                                        className="w-full p-6 rounded-2xl bg-brand-light/10 border border-brand-medium/20 focus:border-brand-medium focus:bg-white transition-all outline-none font-medium text-brand-dark placeholder:text-brand-medium/50 resize-none"
                                         placeholder={t('contactSection.form.placeholderMessage')}
                                         required
                                     />

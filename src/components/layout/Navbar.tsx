@@ -65,7 +65,7 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-8 cursor-pointer">
                     {NAV_LINKS.filter(l => !l.mobileOnly).map((link) => {
                         const isActive = pathname === link.href;
                         return (
@@ -79,14 +79,14 @@ export function Navbar() {
                                     }
                                 }}
                                 className={cn(
-                                    "font-medium transition-colors relative group",
+                                    "font-medium transition-colors relative group ",
                                     isActive ? "text-brand-light" : "text-brand-white/80 hover:text-brand-light"
                                 )}
                             >
                                 {link.label}
                                 <span className={cn(
                                     "absolute -bottom-1 left-0 h-0.5 bg-brand-light transition-all duration-300",
-                                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                                    isActive ? "w-full" : "w-0 group-hover:w-full cursor-pointer"
                                 )} />
                             </Link>
                         );
@@ -95,7 +95,7 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="flex items-center gap-4 md:hidden">
+                <div className="flex items-center gap-4 md:hidden cursor-pointer">
                     <LanguageSwitcher />
                     <button
                         onClick={() => setIsOpen(!isOpen)}
