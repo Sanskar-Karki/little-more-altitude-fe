@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, Quote, Mountain, Instagram } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, Mountain, Instagram, Facebook } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -21,22 +21,30 @@ export function Testimonials() {
             {
                 avatar: "/images/Testimonial/Mark.JPG",
                 rating: 5,
-                socialHandle: "@marc_expeditions",
+                socialHandle: "Marc Duynslaeger",
+                socialLink: "https://www.facebook.com/marc.duynslaeger",
+                socialType: "facebook"
             },
             {
                 avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
                 rating: 5,
                 socialHandle: "@sarah_peaks",
+                socialLink: "#",
+                socialType: "instagram"
             },
             {
                 avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
                 rating: 5,
                 socialHandle: "@mchen_clicks",
+                socialLink: "#",
+                socialType: "instagram"
             },
             {
                 avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
                 rating: 5,
                 socialHandle: "@emma_wanders",
+                socialLink: "#",
+                socialType: "instagram"
             }
         ];
         return {
@@ -166,11 +174,17 @@ export function Testimonials() {
                                     </div>
                                     {testimonials[currentIndex].socialHandle && (
                                         <a
-                                            href="#"
+                                            href={testimonials[currentIndex].socialLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 text-brand-white/40 hover:text-brand-light transition-colors pointer-events-auto"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            <Instagram size={16} />
+                                            {testimonials[currentIndex].socialType === 'facebook' ? (
+                                                <Facebook size={16} />
+                                            ) : (
+                                                <Instagram size={16} />
+                                            )}
                                             <span className="text-xs font-bold">{testimonials[currentIndex].socialHandle}</span>
                                         </a>
                                     )}
