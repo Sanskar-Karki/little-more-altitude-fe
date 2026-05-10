@@ -77,9 +77,9 @@ export const translations = {
           fullDesc: "Our pricing is clear and transparent with no hidden costs. We ensure every porter has proper equipment and insurance, and we maintain a leave-no-trace policy on every trail."
         },
         purpose: {
-          title: "Trek With Purpose",
-          shortDesc: "We donate 10% of our profits from every trek through the Peaks for People Foundation (PFP).",
-          fullDesc: "These contributions support needy communities beyond major touristic areas, promoting sustainable tourism and long-term community development where it is needed most."
+          title: "Trek With Purpose — Giving Back",
+          shortDesc: "To give back to the mountains and the people who make these journeys possible, we donate 10% of our profits from every trek.",
+          fullDesc: "These contributions support needy communities beyond major touristic areas, helping promote sustainable tourism and long-term community development where it is needed most."
         },
         spirit: {
           title: "Authentic Sherpa Spirit",
@@ -605,9 +605,9 @@ export const translations = {
           fullDesc: "Nos tarifs sont clairs et sans frais cachés. Nous assurons un équipement et une assurance pour chaque porteur."
         },
         purpose: {
-          title: "Voyager avec un But",
-          shortDesc: "Nous donnons 10% de nos bénéfices à la fondation Peaks for People (PFP).",
-          fullDesc: "Ces contributions soutiennent les communautés dans le besoin au-delà des zones touristiques majeures."
+          title: "Trekker avec un but — Redonner",
+          shortDesc: "Pour redonner aux montagnes et aux personnes qui rendent ces voyages possibles, nous donnons 10 % de nos bénéfices sur chaque trek.",
+          fullDesc: "Ces contributions soutiennent les communautés nécessiteuses au-delà des principales zones touristiques, aidant à promouvoir un tourisme durable et un développement communautaire à long terme là où c'est le plus nécessaire."
         },
         spirit: {
           title: "Esprit Sherpa Authentique",

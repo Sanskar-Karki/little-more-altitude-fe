@@ -8,14 +8,17 @@ import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLanguage } from "@/context/LanguageContext";
+import { useToast } from "@/components/ui/Toast";
 
 export function ContactSection() {
     const { t } = useLanguage();
-    const [formData, setFormData] = useState<ContactFormData>({
+    const { toast } = useToast();
+    const [formData, setFormData] = useState<ContactFormData & { botField?: string }>({
         name: "",
         email: "",
         phone: "",
         message: "",
+        botField: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -55,15 +58,37 @@ export function ContactSection() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
+        // Simple client-side validation
+        if (!formData.name || !formData.email || !formData.message) {
+            toast("Please fill in all required fields.", "error");
+            return;
+        }
+
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        alert(t('contactSection.form.success'));
-
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        setIsSubmitting(false);
+            if (response.ok) {
+                toast(t('contactSection.form.success'), "success");
+                setFormData({ name: "", email: "", phone: "", message: "", botField: "" });
+            } else {
+                const data = await response.json();
+                toast(data.error || "Something went wrong. Please try again later.", "error");
+            }
+        } catch (error) {
+            console.error("Form submission error:", error);
+            toast("Failed to connect to the server. Please check your internet connection.", "error");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -130,6 +155,16 @@ export function ContactSection() {
                                 <h3 className="text-3xl font-black text-brand-dark tracking-tight">{t('contactSection.form.title')}</h3>
                                 <p className="text-brand-medium font-medium">{t('contactSection.form.subheading')}</p>
                             </div>
+
+                            {/* Honeypot field for bot protection */}
+                            <input
+                                type="text"
+                                name="botField"
+                                value={formData.botField}
+                                onChange={handleChange}
+                                className="hidden"
+                                autoComplete="off"
+                            />
 
                             <div className="space-y-6">
                                 <div className="grid sm:grid-cols-2 gap-6">
