@@ -19,6 +19,11 @@ export function Testimonials() {
     const testimonials = translatedTestimonials.map((item, idx) => {
         const staticData = [
             {
+                avatar: "/images/Testimonial/Mark.JPG",
+                rating: 5,
+                socialHandle: "@marc_expeditions",
+            },
+            {
                 avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
                 rating: 5,
                 socialHandle: "@sarah_peaks",

@@ -1,4 +1,4 @@
-export type Language = 'en' | 'fr' | 'es';
+export type Language = 'en' | 'fr' | 'es' | 'de';
 
 export const translations = {
   en: {
@@ -33,6 +33,10 @@ export const translations = {
         {
           title: "Everest Base Camp",
           subtitle: "Stand in the shadow of the world's highest peak.",
+        },
+        {
+          title: "Pikey Peak & Dudh Kunda",
+          subtitle: "A spiritual journey to sacred lakes and panoramic viewpoints.",
         },
       ]
     },
@@ -305,7 +309,8 @@ export const translations = {
         challenging: "Challenging",
         hard: "Hard",
         "moderate to strenuous": "Moderate to Strenuous",
-        "moderate to challenging": "Moderate to Challenging"
+        "moderate to challenging": "Moderate to Challenging",
+        "easy to moderate": "Easy to Moderate"
       },
       emptyState: {
         title: "PATHS HIDDEN IN CLOUDS",
@@ -318,6 +323,37 @@ export const translations = {
         results: "results"
       },
       explore: "Explore"
+    },
+    trekkingDetails: {
+      loading: "Scaling the heights...",
+      notFound: "Trek Not Found",
+      notFoundDesc: "The trail you're looking for seems to be hidden in the mist.",
+      backToAll: "Back to All Treks",
+      theJourney: "The Journey",
+      dayByDay: "Day by Day.",
+      detailedItinerary: "Detailed Itinerary",
+      itinerarySubtitle: "Experience every moment of your adventure through the Himalayas",
+      day: "Day",
+      overview: "Overview",
+      theUltimate: "The Ultimate",
+      experience: "Experience.",
+      birdSpotting: "Spot rare Himalayan bird species in lush forests.",
+      authenticCulture: "Experience authentic culture in traditional villages.",
+      package: "Package",
+      trip: "Trip",
+      includes: "Includes.",
+      information: "Information",
+      excludes: "Excludes.",
+      readyToTouch: "READY TO TOUCH",
+      theSky: "THE SKY?",
+      bookThisAdventure: "Book This Adventure",
+      stats: {
+        maxAltitude: "Max Altitude",
+        bestSeason: "Best Season",
+        duration: "Duration",
+        dailyActivity: "Daily Activity",
+        difficulty: "Difficulty"
+      }
     },
     expedition: {
       hero: {
@@ -801,7 +837,8 @@ export const translations = {
         challenging: "Stimulant",
         hard: "Difficile",
         "moderate to strenuous": "Modéré à Soutenu",
-        "moderate to challenging": "Modéré à Stimulant"
+        "moderate to challenging": "Modéré à Stimulant",
+        "easy to moderate": "Facile à Modéré"
       },
       emptyState: {
         title: "SENTIERS CACHÉS DANS LES NUAGES",
@@ -814,6 +851,37 @@ export const translations = {
         results: "résultats"
       },
       explore: "Explorer"
+    },
+    trekkingDetails: {
+      loading: "Atteindre les sommets...",
+      notFound: "Trek Introuvable",
+      notFoundDesc: "Le sentier que vous recherchez semble être caché dans la brume.",
+      backToAll: "Retour à tous les treks",
+      theJourney: "Le Voyage",
+      dayByDay: "Jour après jour.",
+      detailedItinerary: "Itinéraire Détaillé",
+      itinerarySubtitle: "Vivez chaque moment de votre aventure à travers l'Himalaya",
+      day: "Jour",
+      overview: "Aperçu",
+      theUltimate: "L'Ultime",
+      experience: "Expérience.",
+      birdSpotting: "Observez des espèces d'oiseaux rares de l'Himalaya dans les forêts luxuriantes.",
+      authenticCulture: "Découvrez une culture authentique dans les villages traditionnels.",
+      package: "Forfait",
+      trip: "Voyage",
+      includes: "Inclus.",
+      information: "Informations",
+      excludes: "Exclus.",
+      readyToTouch: "PRÊT À TOUCHER",
+      theSky: "LE CIEL ?",
+      bookThisAdventure: "Réserver cette aventure",
+      stats: {
+        maxAltitude: "Altitude Max",
+        bestSeason: "Meilleure Saison",
+        duration: "Durée",
+        dailyActivity: "Activité Quotidienne",
+        difficulty: "Difficulté"
+      }
     },
     expedition: {
       hero: {
@@ -1219,7 +1287,8 @@ export const translations = {
         challenging: "Desafiante",
         hard: "Difícil",
         "moderate to strenuous": "Moderado a Extenuante",
-        "moderate to challenging": "Moderado a Desafiante"
+        "moderate to challenging": "Moderado a Desafiante",
+        "easy to moderate": "Fácil a Moderado"
       },
       emptyState: {
         title: "SENDEROS OCULTOS EN LAS NUBES",
@@ -1232,6 +1301,37 @@ export const translations = {
         results: "resultados"
       },
       explore: "Explorar"
+    },
+    trekkingDetails: {
+      loading: "Escalando las alturas...",
+      notFound: "Trekking no encontrado",
+      notFoundDesc: "El sendero que buscas parece estar escondido entre la niebla.",
+      backToAll: "Volver a todos los treks",
+      theJourney: "El Viaje",
+      dayByDay: "Día a día.",
+      detailedItinerary: "Itinerario Detallado",
+      itinerarySubtitle: "Vive cada momento de tu aventura por el Himalaya",
+      day: "Día",
+      overview: "Resumen",
+      theUltimate: "La máxima",
+      experience: "Experiencia.",
+      birdSpotting: "Observa especies de aves raras del Himalaya en bosques frondosos.",
+      authenticCulture: "Experimenta la cultura auténtica en aldeas tradicionales.",
+      package: "Paquete",
+      trip: "Viaje",
+      includes: "Incluye.",
+      information: "Información",
+      excludes: "Excluye.",
+      readyToTouch: "LISTO PARA TOCAR",
+      theSky: "EL CIELO?",
+      bookThisAdventure: "Reservar esta aventura",
+      stats: {
+        maxAltitude: "Altitud Máx",
+        bestSeason: "Mejor Temporada",
+        duration: "Duración",
+        dailyActivity: "Actividad Diaria",
+        difficulty: "Dificultad"
+      }
     },
     expedition: {
       hero: {
@@ -1457,5 +1557,534 @@ export const translations = {
       readMore: "Leer más",
       showLess: "Mostrar menos"
     }
+  },
+  de: {
+    nav: {
+      home: "Startseite",
+      about: "Über uns",
+      trekking: "Trekking",
+      expedition: "Expedition",
+      gallery: "Galerie",
+      faq: "FAQ",
+      contact: "Kontakt",
+    },
+    hero: {
+      cta: "Beginnen Sie Ihre Reise",
+      content: [
+        {
+          title: "Annapurna Basislager",
+          subtitle: "Erleben Sie den prachtvollen Sonnenaufgang über dem Annapurna-Massiv.",
+        },
+        {
+          title: "Mardi Himal",
+          subtitle: "Entdecken Sie das verborgene Juwel der Annapurna-Region.",
+        },
+        {
+          title: "Langtang Tal",
+          subtitle: "Tauchen Sie ein in das Tal der Gletscher und die reiche Tamang-Kultur.",
+        },
+        {
+          title: "Manaslu Runde",
+          subtitle: "Erkunden Sie die unberührte Schönheit und die rauen Pfade des Manaslu.",
+        },
+        {
+          title: "Everest Basislager",
+          subtitle: "Stehen Sie im Schatten des höchsten Gipfels der Welt.",
+        },
+      ]
+    },
+    footer: {
+      tagline: "Ihr vertrauenswürdiger Partner für unvergleichliches Trekking in ganz Nepal. Aufgebaut auf echter Hochgebirgserfahrung. Höher hinaus. Tiefer leben.",
+      explore: "Erkunden",
+      contact: "Kontakt",
+      stayUpdated: "Bleiben Sie auf dem Laufenden",
+      subscribeText: "Abonnieren Sie die neuesten Treks und Angebote.",
+      emailPlaceholder: "E-Mail-Adresse",
+      go: "Los",
+      rights: "Alle Rechte vorbehalten.",
+    },
+    whyChooseUs: {
+      badge: "Der Altitude-Vorteil",
+      heading: "Warum wir uns",
+      gradient: "von der Masse abheben.",
+      subheading: "In den Bergen geboren, auf den Pfaden aufgewachsen. Wir verbinden tiefes lokales Erbe mit erstklassigen Sicherheitsprotokollen, um Ihnen eine Reise wie keine andere zu ermöglichen.",
+      reasons: {
+        leadership: {
+          title: "Gründergeführte Leitung",
+          shortDesc: "Ihr Trek wird von den Gründern selbst geleitet – Pemba und Tashi Sherpa, zertifizierte Guides.",
+          fullDesc: "Pemba ist ein Hochgebirgs-Filmemacher, während Tashi tiefes Wissen über die innere Himalaya-Kultur einbringt. Gemeinsam haben wir jede bedeutende Region Nepals bereist."
+        },
+        safety: {
+          title: "Sicherheit an erster Stelle",
+          shortDesc: "Mit jahrelanger Erfahrung im Hochgebirge steht Ihre Sicherheit an höchster Stelle.",
+          fullDesc: "Wir bieten persönliche Aufmerksamkeit, ein bedachtes Tempo und akribische Planung, damit Sie sich bei jedem Schritt unterstützt fühlen."
+        },
+        tailored: {
+          title: "Maßgeschneidert für Entdecker",
+          shortDesc: "Ob Gruppenabenteuer, private Intimität oder eine 1:1-Reise, wir gehen auf alle Wünsche ein.",
+          fullDesc: "Jeder Trek wird an Ihr Fitnesslevel, Ihre Interessen und Ernährungsbedürfnisse angepasst, um ein unvergessliches Erlebnis zu gewährleisten."
+        },
+        ethical: {
+          title: "Ethisch & Transparent",
+          shortDesc: "Wir praktizieren verantwortungsbewussten Tourismus mit Fokus auf das Wohlergehen der Träger.",
+          fullDesc: "Unsere Preise sind klar und transparent ohne versteckte Kosten. Wir sorgen für angemessene Ausrüstung und Versicherung für jeden Träger."
+        },
+        purpose: {
+          title: "Trekking mit Sinn",
+          shortDesc: "Wir spenden 10% unseres Gewinns über die Peaks for People Foundation (PFP).",
+          fullDesc: "Diese Beiträge unterstützen bedürftige Gemeinschaften außerhalb der touristischen Hauptgebiete und fördern eine nachhaltige Entwicklung."
+        },
+        spirit: {
+          title: "Authentischer Sherpa-Geist",
+          shortDesc: "In Sherpa-Dörfern geboren, kennen wir nicht nur die Pfade – wir leben das Erbe.",
+          fullDesc: "Unsere Verbindung zum Land und seinen Traditionen garantiert, dass Ihre Erfahrung ebenso authentisch wie atemberaubend ist."
+        }
+      },
+      moreInfo: "Mehr Info",
+      lessInfo: "Weniger Info",
+      profitShared: "10% Gewinnbeteiligung"
+    },
+    briefInfo: {
+      badge: "Unser Erbe",
+      heading: "Das kleine Extra",
+      gradient: "Erlebnis.",
+      description: "Gegründet auf der persönlichen Hochgebirgserfahrung der lebenslangen Berggefährten Pemba Nurbu Sherpa, Ngima Tashi Sherpa und Pemba Thilen Sherpa, bietet Little More Altitude sichere, authentische und transformative Trekking-Abenteuer, die Sie über atemberaubende Landschaften hinaus zu tieferer Verbindung und persönlichem Wachstum führen.",
+      stats: {
+        clients: "Geführte Kunden",
+        years: "Jahre Erfahrung",
+        success: "Gesamterfolgsquote"
+      }
+    },
+    nepal: {
+      badge: "Die heiligen Gipfel",
+      heading: "Nepal: Herz des",
+      gradient: "Himalayas.",
+      description: "Nepal ist das Herz des Himalayas, Heimat der höchsten Gipfel der Welt, alter Kulturen und einiger der schönsten Trekkingrouten der Erde.",
+      highlights: [
+        { title: "Reiner Geist", desc: "Ein Land, in dem Spiritualität auf den Himmel trifft." },
+        { title: "Goldene Pfade", desc: "Alte Routen, geformt von der Geschichte." },
+        { title: "Jenseits der Horizonte", desc: "Vom Dschungel bis zur Todeszone." },
+        { title: "Legendäre Gipfel", desc: "8 der weltweit 14 höchsten Gipfel." }
+      ],
+      exploreRegion: "Region erkunden",
+      firstSummit: "Erster Gipfel",
+      difficulty: "Schwierigkeit",
+      elite: "ELITE"
+    },
+    features: {
+      badge: "Innovation im Reisen",
+      heading: "Der Altitude",
+      gradient: "Vorteil.",
+      exploreMore: "Mehr erkunden",
+      list: [
+        { title: "Sicherheit zuerst", desc: "Unsere Guides sind in Erster Hilfe und Bergsicherheit zertifiziert." },
+        { title: "Erfahrene Guides", desc: "Lokale Sherpa-Guides mit jahrzehntelanger Erfahrung." },
+        { title: "Nachhaltiges Reisen", desc: "Wir praktizieren das 'Leave No Trace'-Prinzip." },
+        { title: "Maßgeschneiderte Routen", desc: "Wir passen Reisen an Ihr Fitnesslevel an." }
+      ]
+    },
+    faq: {
+      badge: "Support-Center",
+      heading: "Häufig gestellte Fragen",
+      gradient: "Alles, was Sie wissen müssen.",
+      subheading: "Finden Sie Antworten auf häufige Fragen zu unseren Expeditionen, Sicherheitsmaßnahmen und dem Buchungsprozess.",
+      items: [
+        {
+          question: "Welches Fitnesslevel ist für das Trekking erforderlich?",
+          answer: "Unsere Treks reichen von anfängerfreundlich bis anspruchsvoll. Wir empfehlen regelmäßiges Cardio-Training wie Wandern oder Joggen für mindestens 2-3 Monate vor dem Trek."
+        },
+        {
+          question: "Welche Ausrüstung muss ich mitbringen?",
+          answer: "Wir stellen bei Buchung eine umfassende Packliste zur Verfügung. Wichtig sind feste Wanderschuhe, Kleidung im Schichtsystem und ein hochwertiger Schlafsack."
+        },
+        {
+          question: "Wie gewährleisten Sie die Sicherheit während der Treks?",
+          answer: "Sicherheit hat oberste Priorität. Alle Guides sind in Wildnis-Erster-Hilfe zertifiziert und führen Notfall-Kommunikationsgeräte mit sich."
+        },
+        {
+          question: "Was ist im Trekking-Paket enthalten?",
+          answer: "Unsere Pakete beinhalten in der Regel Flughafentransfers, Unterkunft, Mahlzeiten während des Treks, erfahrene Guides und Träger sowie Genehmigungen."
+        },
+        {
+          question: "Kann ich meine Trekking-Route anpassen?",
+          answer: "Absolut! Wir sind auf maßgeschneiderte Routen spezialisiert, egal ob Sie die Reise verlängern oder mehrere Treks kombinieren möchten."
+        },
+        {
+          question: "Wie sehen Ihre Stornierungsbedingungen aus?",
+          answer: "Stornierungen bis zu 60 Tage vor Abreise erhalten eine volle Rückerstattung abzüglich der Bearbeitungsgebühren."
+        }
+      ]
+    },
+    stats: {
+      clients: "Geführte Kunden",
+      years: "Jahre Erfahrung",
+      success: "Gesamterfolgsquote"
+    },
+    testimonials: {
+      badge: "Referenzen",
+      heading: "Stimmen vom",
+      gradient: "Gipfel.",
+      subheading: "Echte Geschichten von Abenteurern, die mit uns den Himmel berührt haben.",
+      verified: "Verifizierte Reise",
+      readMore: "Mehr lesen",
+      showLess: "Weniger anzeigen",
+      list: [
+        {
+          name: "Marc Duynslaeger",
+          role: "Himalaya-Entdecker",
+          content: "Der absolute Gipfel der Himalaya-Führung. Wenn Sie die absolute Spitze des Himalaya-Trekkings suchen, sind Sie bei Little More Altitude genau richtig. Was sie wirklich auszeichnet, ist die Fähigkeit, atemberaubende verborgene Schätze zu entdecken, die andere völlig übersehen. Ein prächtiger Botschafter nepalesischer Gastfreundschaft!"
+        },
+        {
+          name: "Sarah Mitchell",
+          role: "Abenteuer-Enthusiastin",
+          content: "Der Everest Basislager Trek war eine lebensverändernde Erfahrung. Die Guides waren unglaublich sachkundig und unterstützend."
+        },
+        {
+          name: "Michael Chen",
+          role: "Fotograf",
+          content: "Als Fotograf habe ich viele Orte bereist, aber die Aussichten auf der Annapurna-Runde waren unvergleichlich. Die Liebe zum Detail war beeindruckend."
+        },
+        {
+          name: "Emma Rodriguez",
+          role: "Trekking-Neuling",
+          content: "Ich war nervös wegen meines ersten Hochgebirgs-Treks, aber das Team gab mir Sicherheit. Die Erfahrung hat alle Erwartungen übertroffen!"
+        }
+      ]
+    },
+    contactSection: {
+      badge: "Kontakt",
+      heading: "Planen wir Ihren",
+      gradient: "nächsten Gipfel.",
+      description: "Ob Sie einen Solo-Trek oder eine Gruppenexpedition suchen, unser Team von Hochgebirgsexperten ist bereit, Sie zu führen.",
+      info: {
+        email: "E-Mail schreiben",
+        call: "Anrufen",
+        visit: "Besuchen Sie uns",
+        hours: "Arbeitszeiten",
+        hoursValue: "Sonntag-Freitag: 6:00 - 18:00 Uhr"
+      },
+      form: {
+        title: "Kurze Nachricht",
+        subheading: "Wir antworten normalerweise innerhalb von 4 Stunden.",
+        name: "Vollständiger Name",
+        email: "E-Mail",
+        message: "Nachricht",
+        placeholderName: "Max Mustermann",
+        placeholderEmail: "max@peak.com",
+        placeholderMessage: "Erzählen Sie uns von dem Gipfel, den Sie bezwingen möchten...",
+        submit: "Expedition starten",
+        sending: "Wird gesendet...",
+        success: "Nachricht gesendet! Wir melden uns innerhalb von 24 Stunden."
+      }
+    },
+    about: {
+      badge: "In der Sherpa-Tradition verwurzelt",
+      heading: "Höher hinaus.",
+      gradient: "Tiefer leben.",
+      subheading: "Höher hinaus. Tiefer leben — mit A Little More Altitude",
+      description: "Little More Altitude ist Ihr vertrauenswürdiger Partner für unvergleichliches Trekking in ganz Nepal, vom ikonischen Everest Basislager bis zu entlegenen Pfaden. Wir helfen Ihnen, höher hinauszugehen und tiefer zu leben.",
+      meetTeam: "Unser Team treffen",
+      vision: "Unsere Vision ist einfach, aber mutig: die besten Erfahrungen zu teilen und Trecker nicht nur über Pfade, sondern in die Seele des Himalayas zu führen.",
+      teamBadge: "Unser Team",
+      cta: "Begleiten Sie uns beim nächsten Abenteuer",
+      founders: [
+        {
+          name: "Pemba N. Sherpa",
+          role: "Visionärer Gründer & Direktor",
+          bio: "Pemba Sherpa wurde im entlegenen Dorf Cherem in der Mera-Peak-Region von Solu Khumbu, Nepal, geboren, wo es keine modernen Einrichtungen gab und das Leben vollständig von den Bergen geprägt war. Er wuchs ohne Straßen, Elektrizität oder einfachen Zugang zu Bildung auf. Der Himalaya wurde sein erstes Klassenzimmer und lehrte ihn von klein auf Widerstandsfähigkeit, Demut und tiefen Respekt vor der Natur.\n\nIm Alter von nur sieben Jahren zog Pemba auf der Suche nach besseren Bildungschancen nach Kathmandu – eine Reise, die von Kampf, Anpassung und Entschlossenheit geprägt war. Schon damals folgte er den Fußstapfen seines Vaters, eines professionellen Bergführers, und erlernte bergsteigerische Fähigkeiten, Disziplin und Verantwortung lange vor den meisten Kindern in seinem Alter.\n\nWährend seiner Schulzeit wanderte Pemba durch fast jede bedeutende Himalaya-Region Nepals und balancierte sein Studium mit langen Reisen in die Hochberge. Egal wie weit er reiste, seine Verbindung zu seinen Wurzeln blieb stark. Mit jeder Expedition verliebte er sich tiefer in die Menschen, Kulturen und alten Geschichten des inneren Himalayas – eine Leidenschaft, die ihn schließlich dazu inspirierte, Filmemacher und Geschichtenerzähler zu werden.\n\nHeute, in seinen Mittzwanzigern, ist Pemba ein zertifizierter Himalaya-Guide mit über 10 Jahren professioneller Führungserfahrung und ein Filmemacher, der in mehrere Länder gereist ist, um Geschichten über Abenteuer und Menschlichkeit zu dokumentieren. Er hat auch den Mount Kilimandscharo zweimal erfolgreich bestiegen, was seine Erfahrung in Hochgebirgsumgebungen weiter gestärkt hat.\n\nDie Vision hinter A Little More Altitude ist einfach und doch zutiefst persönlich: Treckern die bestmögliche Erfahrung zu bieten, geformt durch alles, was Pemba in seinem Leben gelernt hat – als Mann, der in den Bergen geboren, durch ihre Herausforderungen aufgewachsen und durch ihre Weisheit geleitet wurde. Jede Reise ist nicht nur als Trek konzipiert, sondern als authentisches Himalaya-Erlebnis, das in Sicherheit, Kultur und bedeutungsvoller Verbindung verwurzelt ist."
+        },
+        {
+          name: "Ngima Tashi Sherpa",
+          role: "Direktor & Zertifizierter Guide",
+          bio: "Aus dem entlegenen Dorf Kharikhola stammend, ist Tashi Sherpas Reise eine Reise der Widerstandsfähigkeit, Verantwortung und einer unzerbrechlichen Bindung zu den Bergen. Er begann sein Trekking-Leben mit nur 13 Jahren und arbeitete während der Schulferien als Träger an der Seite seines Vaters. Er trug Lasten, die schwerer als sein eigenes Körpergewicht waren, wanderte tagelang über raue Pfade und schlief in einfachen Teehäusern. So lernte er schon früh die wahre Bedeutung von Ausdauer und Demut kennen.\n\nMit 15 Jahren veränderte eine Tragödie sein Leben, als sein Vater verstarb. Von einem Moment auf den anderen wurde Tashi zum Rückgrat seiner Familie und übernahm Verantwortung, der sich kein Teenager stellen sollte. Doch anstatt an der Not zu verzweiler, fand er Kraft in genau den Bergen, die ihn aufgezogen hatten. Jeder Schritt auf dem Pfad wurde sowohl zum Überleben als auch zum Ziel.\n\nTourismus war für Tashi nicht nur ein Beruf – es war eine Lebensader. Er arbeitete in jeder möglichen Saison und in allen Schulferien weiter, um seine Familie zu unterstützen, und verwandelte jahrelange Härte langsam in Meisterschaft. Im Laufe der Zeit stieg er vom Träger zum Assistenzguide und schließlich zu einem hochgeschätzten Trekking-Guide mit mehr als 12 Jahren Erfahrung auf den herausforderndsten und ikonischsten Routen Nepals auf.\n\nTashi führt mit dem tiefen Verständnis eines Menschen, der jede Ebene des Berglebens gelebt hat. Sein Wissen geht über Pfade und Höhenmeter hinaus – er versteht Wettermuster, Geländeänderungen, lokale Kulturen und die unausgesprochenen Rhythmen des Himalayas. Seine Verbindung zu den Bergen ist instinktiv und spirituell, aufgebaut durch jahrelanges Vertrauen, Respekt und gelebte Erfahrung.\n\nHeute führt Tashi mit ruhigem Selbstvertrauen, Mitgefühl und unerschütterlicher Verantwortung – und sorgt dafür, dass sich jeder Trecker sicher, unterstützt und tief mit dem Himalaya verbunden fühlt, den er sein Zuhause nennt. Seine Philosophie ist einfach und klar: #GuidedWithHeart."
+        },
+        {
+          name: "Pema Thilen Sherpa",
+          role: "Soldat der US-Armee-Reserve",
+          bio: "Pema Thilen Sherpa wurde im Herzen des Himalayas geboren und ist dort aufgewachsen, wo die Berge kein Ziel, sondern eine Lebenseinstellung sind. In dem entlegenen Hochgebirge lernte er früh die Werte kennen, die wahre Bergmenschen ausmachen: Widerstandsfähigkeit, Verantwortung, Demut und Fürsorge für andere. Diese Lektionen, geformt durch dünne Luft und hart erarbeitete Erfahrung, wurden zur Grundlage seines Lebens in den Bergen.\n\nAls seine Reise über Nepal hinausging, diente Pema als Soldat der US-Armee-Reserve, wo militärisches Training seine Verpflichtung zu Disziplin, Sicherheit, Integrität und Führung weiter stärkte. Die Struktur und Professionalität des Militärdienstes verschmolzen ganz natürlich mit seinem Sherpa-Erbe und verstärkten die Standards, nach denen er bereits in den Bergen lebte – mit Präzision planen, mit Verantwortungsbewusstsein führen und niemals Kompromisse bei der Sicherheit eingehen.\n\nHeute steht Pema an der Schnittstelle zweier Welten. Als Sherpa, der den Himalaya in- und auswendig kennt, und als US-Dienstmitglied, das die Erwartungen westlicher Reisender versteht, bietet er Reisenden etwas Seltenes: ein Trekking-Erlebnis, das auf echtem lokalem Fachwissen und erstklassiger Professionalität basiert. Jede von ihm entworfene Reise ist sorgfältig organisiert, jedes Team nach hohen Standards geschult und jeder Gast wird mit Respekt, Sorgfalt und Verantwortung behandelt.\n\nDie Mission ist einfach, aber zutiefst persönlich – Reisenden eine sichere, authentische und unvergessliche Art zu bieten, Nepal zu erleben. Geleitet von echten Sherpa-Wurzeln und gestützt auf die Integrität des Militärdienstes, führt Pema nicht nur Treks – er lädt Besucher mit Vertrauen, Ehre und Stolz in sein Zuhause im Himalaya ein."
+        }
+      ],
+      features: [
+        {
+          title: "Gründergeführte Leitung",
+          description: "Ihr Trek wird von den Gründern selbst geleitet.",
+          elaborated: "Pemba ist auch Hochgebirgs-Filmemacher, während Tashi tiefes Wissen über die Kultur einbringt."
+        },
+        {
+          title: "Sicherheit zuerst",
+          description: "Ihre Sicherheit ist unsere höchste Priorität.",
+          elaborated: "Wir bieten persönliche Aufmerksamkeit und akribische Planung bei jedem Schritt."
+        },
+        {
+          title: "Maßgeschneiderte Treks",
+          description: "Wir passen jede Reise an Ihre Ziele an.",
+          elaborated: "Jeder Trek wird individuell gestaltet, um ein unvergessliches Erlebnis zu schaffen."
+        },
+        {
+          title: "Ethisch & Verantwortungsbewusst",
+          description: "Wir praktizieren verantwortungsvollen Tourismus.",
+          elaborated: "Unser Engagement erstreckt sich auf den Umweltschutz und faire Bedingungen."
+        },
+        {
+          title: "Trekking mit Sinn",
+          description: "Wir spenden 10% unserer Gewinne.",
+          elaborated: "Diese Beiträge unterstützen bedürftige Gemeinschaften in entlegenen Regionen."
+        }
+      ]
+    },
+    gallery: {
+      badge: "Galerie",
+      heading: "Festgehalten.",
+      gradient: "Himalaya-Geschichten",
+      description: "Ein Einblick in die außergewöhnlichen Landschaften, lebendigen Kulturen und herausfordernden Expeditionen.",
+      viewDetails: "Details ansehen",
+      categories: {
+        all: "Alle",
+        expeditions: "Expeditionen",
+        culture: "Kultur",
+        landscape: "Landschaft",
+        moments: "Momente"
+      }
+    },
+    trekking: {
+      heading: "Kuratierte Treks",
+      gradient: "Schritt für Schritt.",
+      description: "Von den heiligen Pfaden von Mustang bis zu den legendären Everest-Trails.",
+      searchPlaceholder: "Suche nach Pfaden, Regionen...",
+      filters: {
+        time: "Zeit",
+        level: "Level",
+        show: "Anzeigen",
+        short: "Kurz (< 10 Tage)",
+        medium: "Mittel (10-15 Tage)",
+        long: "Lang (> 15 Tage)",
+        moderate: "Moderat",
+        challenging: "Herausfordernd",
+        hard: "Schwer",
+        "moderate to strenuous": "Moderat bis anstrengend",
+        "moderate to challenging": "Moderat bis herausfordernd",
+        "easy to moderate": "Leicht bis Mittelschwer"
+      },
+      emptyState: {
+        title: "PFADE IN WOLKEN VERBORGEN",
+        description: "Keine Treks gefunden, die Ihrer Suche entsprechen.",
+        reset: "Suche zurücksetzen"
+      },
+      pagination: {
+        showing: "Anzeige von",
+        of: "von",
+        results: "Ergebnissen"
+      },
+      explore: "Erkunden"
+    },
+    trekkingDetails: {
+      loading: "Die Höhen erklimmen...",
+      notFound: "Trek nicht gefunden",
+      notFoundDesc: "Der Pfad, den Sie suchen, scheint im Nebel verborgen zu sein.",
+      backToAll: "Zurück zu allen Treks",
+      theJourney: "Die Reise",
+      dayByDay: "Tag für Tag.",
+      detailedItinerary: "Detaillierter Reiseverlauf",
+      itinerarySubtitle: "Erleben Sie jeden Moment Ihres Abenteuers durch den Himalaya",
+      day: "Tag",
+      overview: "Überblick",
+      theUltimate: "Das ultimative",
+      experience: "Erlebnis.",
+      birdSpotting: "Beobachten Sie seltene Himalaya-Vogelarten in üppigen Wäldern.",
+      authenticCulture: "Erleben Sie authentische Kultur in traditionellen Dörfern.",
+      package: "Paket",
+      trip: "Reise",
+      includes: "Inklusive.",
+      information: "Informationen",
+      excludes: "Exklusive.",
+      readyToTouch: "BEREIT ZU BERÜHREN",
+      theSky: "DEN HIMMEL?",
+      bookThisAdventure: "Dieses Abenteuer buchen",
+      stats: {
+        maxAltitude: "Max. Höhe",
+        bestSeason: "Beste Reisezeit",
+        duration: "Dauer",
+        dailyActivity: "Tägliche Aktivität",
+        difficulty: "Schwierigkeit"
+      }
+    },
+    expedition: {
+      hero: {
+        badge: "6.000M SERIE",
+        eliteAscent: "Der Elite-Aufstieg",
+        title: "ÜBER",
+        limits: "die Grenzen.",
+        description: "Erfolg an den anspruchsvollsten Gipfeln der Welt. Präzisionslogistik trifft auf absolute Bergmeisterschaft.",
+        viewManifest: "Manifest ansehen",
+        protocol: "HOCHGEBIRGSPROTOKOLL ETABLIERT"
+      },
+      stats: {
+        successRate: "Erfolgsquote",
+        guideRatio: "Guide-Verhältnis",
+        safetyIndex: "Sicherheitsindex",
+        peakSummits: "Gipfelbesteigungen"
+      },
+      nav: {
+        summits: "GIPFEL",
+        protocol: "PROTOKOLL",
+        contact: "KONTAKT"
+      },
+      preparation: {
+        badge: "Der Auswahlprozess",
+        title: "DIE BASIS DES",
+        success: "ERFOLGS",
+        description: "Präzisionstraining trifft auf Elite-Leistungsmanagement. Wir bereiten Sie auf die unerbittlichsten Umgebungen vor.",
+        features: [
+          { title: "Physische Vorb.", desc: "Analyse der Stoffwechselschwelle." },
+          { title: "Höhenvorbereitung", desc: "Hypoxische Simulationszyklen." },
+          { title: "Missionslogik", desc: "Strategische Wetterplanung." },
+          { title: "Sicherheit", desc: "Team-Protokolle im geschlossenen Kreislauf." }
+        ],
+        ratio: "1:1 VERHÄLTNIS",
+        ratioDesc: "Elite-Privatführung"
+      },
+      cta: {
+        badge: "Engagement für Exzellenz",
+        title: "IHR GIPFEL",
+        awaits: "wartet.",
+        request: "Bewerbung anfordern",
+        speak: "Mit einem Lead Guide sprechen"
+      },
+      section: {
+        badge: "Elite-Bergsteigen",
+        heading: "Erstklassige Expeditionen",
+        gradient: "Gipfelstürmer.",
+        description: "Präzisionslogistik für die gewaltigsten Gipfel der Welt. Erfolg dort, wo die Luft dünn ist.",
+        scroll: "Scrollen zum Aufstieg",
+        liveStatus: "Live-Status",
+        elevationProfile: "HÖHENPROFIL",
+        duration: "Dauer",
+        difficulty: "Schwierigkeit",
+        price: "Preis",
+        details: "Details",
+        technicalLevel: "Technisches Niveau"
+      },
+      list: [
+        {
+          name: "Mount Everest",
+          elevation: "8.848m",
+          location: "Solu-Khumbu, Nepal",
+          duration: "65 Tage",
+          difficulty: "Extrem",
+          technicalLevel: "Hoch",
+          price: "Elite-Preise",
+          tag: "DER ULTIMATIVE GIPFEL",
+          description: "Stehen Sie auf dem Dach der Welt. Unsere Expedition über den Südsattel bietet das umfassendste Support-System."
+        },
+        {
+          name: "Kilimandscharo",
+          elevation: "5.895m",
+          location: "Moshi, Tansania",
+          duration: "9 Tage",
+          difficulty: "Moderat+",
+          technicalLevel: "Niedrig",
+          price: "$3.850+",
+          tag: "SEVEN SUMMITS",
+          description: "Die Lemosho-Route. Durchqueren Sie fünf Ökosysteme, um den höchsten Punkt Afrikas zu erreichen."
+        },
+        {
+          name: "Manaslu",
+          elevation: "8.163m",
+          location: "Gorkha, Nepal",
+          duration: "45 Tage",
+          difficulty: "Extrem",
+          technicalLevel: "Moderat",
+          price: "$14.500+",
+          tag: "DER GEISTERBERG",
+          description: "Oft der erste 8000er für angehende Everest-Bergsteiger. Erleben Sie die rohe Kraft des Himalayas."
+        }
+      ]
+    },
+    destinations: {
+      badge: "Kuratierte Reisen",
+      heading: "Entdecken Sie Weltklasse",
+      gradient: "Ihr nächster Gipfel.",
+      description: "Von den Gipfeln des Himalayas bis zur Patagonien, jedes Ziel ist handverlesen.",
+      viewMore: "Weitere Expeditionen",
+      customRoutes: "Über 40 maßgeschneiderte Routen auf Anfrage",
+      eliteChoice: "Elite-Wahl",
+      intensity: "Intensität",
+      viewExpedition: "Expedition ansehen",
+      list: [
+        {
+          name: "Everest Basislager",
+          location: "Solu-Khumbu, Nepal",
+          duration: "14 Tage",
+          difficulty: "Herausfordernd",
+          price: "$2,499"
+        },
+        {
+          name: "Annapurna Runde",
+          location: "Gandaki, Nepal",
+          duration: "18 Tage",
+          difficulty: "Moderat",
+          price: "$1,999"
+        },
+        {
+          name: "Torres del Paine",
+          location: "Patagonien, Chile",
+          duration: "8 Tage",
+          difficulty: "Moderat",
+          price: "$2,299"
+        },
+        {
+          name: "Mont Blanc Runde",
+          location: "Chamonix, Frankreich",
+          duration: "11 Tage",
+          difficulty: "Herausfordernd",
+          price: "$2,799"
+        },
+        {
+          name: "Kilimandscharo Gipfel",
+          location: "Moshi, Tansania",
+          duration: "7 Tage",
+          difficulty: "Herausfordernd",
+          price: "$2,199"
+        },
+        {
+          name: "Inka-Pfad",
+          location: "Cusco, Peru",
+          duration: "4 Tage",
+          difficulty: "Moderat",
+          price: "$1,599"
+        }
+      ]
+    },
+    topDestinations: {
+      badge: "Elite-Auswahl",
+      heading: "Top-Ziele",
+      gradient: "nach Höhe.",
+      description: "Sorgfältig ausgewählte Abenteuer, kategorisiert nach ihren majestätischen Höhen.",
+      discoverMore: "Mehr entdecken",
+      list: [
+        {
+          name: "Annapurna Basislager",
+          location: "Annapurna-Region, Nepal",
+          tag: "Klassisches Abenteuer"
+        },
+        {
+          name: "Manaslu Runde",
+          location: "Manaslu-Region, Nepal",
+          tag: "Unberührte Pfade"
+        },
+        {
+          name: "Everest-Erlebnis",
+          location: "Solu-Khumbu, Nepal",
+          tag: "Dach der Welt"
+        }
+      ]
+    },
+    common: {
+      address: "Boudha, Kathmandu, Nepal",
+      email: "alittlemorealtitude25@gmail.com",
+      readMore: "Mehr lesen",
+      showLess: "Weniger anzeigen"
+    }
   }
 };
+

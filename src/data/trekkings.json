@@ -91,7 +91,117 @@
         "location": "Kathmandu (1,400m)",
         "description": "Transfer to the airport for your onward journey."
       }
-    ]
+    ],
+    "translations": {
+      "fr": {
+        "title": "Trek du Mardi Himal",
+        "tagline": "Un trek court et panoramique offrant des vues rapprochées époustouflantes sur le Machapuchare et la chaîne des Annapurnas.",
+        "overview": "Le voyage commence par un trajet panoramique de Pokhara à Siddhing, où le sentier de randonnée monte progressivement à travers des forêts sereines et des villages de montagne traditionnels. De Siddhing à Low Camp, le chemin serpente à travers d'épaisses forêts de rhododendrons et de chênes, offrant des aperçus occasionnels de la majestueuse chaîne des Annapurnas. En continuant vers High Camp, le paysage se transforme en un environnement alpin entouré de sommets himalayens imposants. De là, une randonnée matinale au point de vue du Mardi Himal (4 500 m) récompense les randonneurs par un lever de soleil époustouflant sur le Machapuchare (Fishtail), le Hiunchuli et l'Annapurna Sud. Le voyage de retour descend par Forest Camp jusqu'à Kalimati, traversant des bois luxuriants et des vallées tranquilles riches en biodiversité avant de retourner à Pokhara.",
+        "itinerary": [
+          { "day": 1, "title": "Arrivée à Katmandou", "location": "Katmandou (1 400 m)", "description": "Arrivée à l'aéroport et transfert à votre hôtel. Repos et préparation pour le trek." },
+          { "day": 2, "title": "Katmandou → Pokhara", "location": "Pokhara (822 m)", "description": "Un trajet pittoresque à travers des vallées fluviales et des collines verdoyantes vous amène à Pokhara, la porte d'entrée de la région des Annapurnas." },
+          { "day": 3, "title": "Pokhara → Siddhing → Low Camp", "location": "Siddhing (1 700 m) → Low Camp (2 970 m)", "description": "Après un trajet jusqu'à Siddhing, le trek commence à travers des terres agricoles en terrasses et des forêts denses, montant progressivement vers Low Camp." },
+          { "day": 4, "title": "Low Camp → High Camp", "location": "Low Camp (2 970 m) → High Camp (3 580 m)", "description": "Le trek d'aujourd'hui suit un sentier de crête à travers des forêts de rhododendrons, s'ouvrant sur des vues imprenables sur le Machapuchare et l'Annapurna Sud." },
+          { "day": 5, "title": "High Camp → Point de vue → Rest Camp", "location": "Point de vue (4 500 m) → Rest Camp (2 600 m)", "description": "Une randonnée matinale mène au point de vue du Mardi Himal pour un lever de soleil spectaculaire sur l'Himalaya. Après le petit-déjeuner à High Camp, descente vers Rest Camp." },
+          { "day": 6, "title": "Rest Camp → Kalimati → Pokhara", "location": "Kalimati (1 800 m) via Forest Camp", "description": "La dernière journée vous emmène à travers des forêts luxuriantes riches en oiseaux, passant par Forest Camp avant d'atteindre Kalimati, d'où nous retournons à Pokhara." },
+          { "day": 7, "title": "Retour de Pokhara à Katmandou", "location": "Katmandou (1 400 m)", "description": "Retour à Katmandou en profitant des paysages pittoresques en chemin." },
+          { "day": 8, "title": "Départ", "location": "Katmandou (1 400 m)", "description": "Transfert à l'aéroport pour votre voyage de retour." }
+        ],
+        "includes": [
+          "Transferts d'arrivée et de départ de l'aéroport (véhicule privé)",
+          "Aller-retour Katmandou-Pokhara (vol ou voiture)",
+          "Tous les permis de trek nécessaires et frais de parc national",
+          "Hébergement dans des maisons de thé pendant le trek",
+          "Pension complète pendant le trek (Petit-déjeuner, Déjeuner, Dîner)",
+          "Guide et porteur anglophones expérimentés",
+          "Salaire du personnel, assurance et soutien logistique",
+          "Sac de sport (kitbag) pour le trek",
+          "Toutes les taxes gouvernementales applicables"
+        ],
+        "excludes": [
+          "Billet d'avion international et frais de visa pour le Népal",
+          "Hébergement et repas à Katmandou",
+          "Boissons (boissons gazeuses, alcool, eau en bouteille)",
+          "Frais d'entrée pour les sites du patrimoine, monastères et musées",
+          "Équipement de trek personnel",
+          "Dépenses personnelles (Wi-Fi, appels téléphoniques, recharge, blanchisserie, douches chaudes, pourboires)",
+          "Assurance voyage et évacuation d'urgence",
+          "Tous les services non mentionnés dans la section Inclus"
+        ]
+      },
+      "es": {
+        "title": "Trek del Mardi Himal",
+        "tagline": "Un trek corto y escénico que ofrece impresionantes vistas de cerca del Machapuchare y la cordillera del Annapurna.",
+        "overview": "El viaje comienza con un viaje escénico desde Pokhara hasta Siddhing, donde el sendero de trekking asciende gradualmente a través de bosques serenos y pueblos de montaña tradicionales. De Siddhing a Low Camp, el camino serpentea a través de densos bosques de rododendros y robles, ofreciendo vislumbres ocasionales de la majestuosa cordillera del Annapurna. Al continuar hacia High Camp, el paisaje se transforma en un entorno alpino rodeado de imponentes picos del Himalaya. Desde aquí, una caminata matutina al mirador de Mardi Himal (4,500 m) recompensa a los excursionistas con un impresionante amanecer sobre Machapuchare (Fishtail), Hiunchuli y Annapurna South. El viaje de regreso desciende a través de Forest Camp hasta Kalimati, pasando por bosques exuberantes y valles tranquilos ricos en biodiversidad antes de conducir de regreso a Pokhara.",
+        "itinerary": [
+          { "day": 1, "title": "Llegada a Katmandú", "location": "Katmandú (1,400 m)", "description": "Llegada al aeropuerto y traslado a su hotel. Descanso y preparación para el trek." },
+          { "day": 2, "title": "Katmandú → Pokhara", "location": "Pokhara (822 m)", "description": "Un viaje escénico a través de valles fluviales y colinas ondulantes lo lleva a Pokhara, la puerta de entrada a la región de los Annapurnas." },
+          { "day": 3, "title": "Pokhara → Siddhing → Low Camp", "location": "Siddhing (1,700 m) → Low Camp (2,970 m)", "description": "Después de un viaje a Siddhing, el trek comienza a través de tierras de cultivo en terrazas y densos bosques, subiendo gradualmente a Low Camp." },
+          { "day": 4, "title": "Low Camp → High Camp", "location": "Low Camp (2,970 m) → High Camp (3,580 m)", "description": "El trek de hoy sigue un sendero de cresta a través de bosques de rododendros, abriéndose a vistas impresionantes de Machhapuchhre y Annapurna Sur." },
+          { "day": 5, "title": "High Camp → Mirador → Rest Camp", "location": "Mirador (4,500 m) → Rest Camp (2,600 m)", "description": "Una caminata matutina conduce al mirador de Mardi Himal para un espectacular amanecer sobre el Himalaya. Después de regresar a High Camp para desayunar, el sendero desciende a Rest Camp." },
+          { "day": 6, "title": "Rest Camp → Kalimati → Pokhara", "location": "Kalimati (1,800 m) vía Forest Camp", "description": "El último día lo lleva a través de bosques exuberantes ricos en aves, pasando por Forest Camp antes de llegar a Kalimati, desde donde regresamos a Pokhara." },
+          { "day": 7, "title": "Regreso de Pokhara a Katmandú", "location": "Katmandú (1,400 m)", "description": "Viaje de regreso a Katmandú disfrutando de los paisajes escénicos en el camino." },
+          { "day": 8, "title": "Salida", "location": "Katmandú (1,400 m)", "description": "Traslado al aeropuerto para su viaje de regreso." }
+        ],
+        "includes": [
+          "Traslados de llegada y salida del aeropuerto (vehículo privado)",
+          "Ida y vuelta Katmandú-Pokhara (vuelo o coche)",
+          "Todos los permisos de trek necesarios y tasas de parques nacionales",
+          "Alojamiento en casas de té durante el trek",
+          "Pensión completa durante el trek (Desayuno, Almuerzo, Cena)",
+          "Guía y porteador de habla inglesa con experiencia",
+          "Salario del personal, seguros y apoyo logístico",
+          "Bolsa de lona (kitbag) para el trek",
+          "Todos los impuestos gubernamentales aplicables"
+        ],
+        "excludes": [
+          "Tarifa aérea internacional y tasas de visa para Nepal",
+          "Alojamiento y comidas en Katmandú",
+          "Bebidas (refrescos, alcohol, agua embotellada)",
+          "Tasas de entrada a sitios del patrimonio, monasterios y museos",
+          "Equipo de trekking personal",
+          "Gastos personales (Wi-Fi, llamadas telefónicas, carga, lavandería, duchas calientes, propinas)",
+          "Seguro de viaje y evacuación de emergencia",
+          "Cualquier servicio no mencionado en la sección Incluye"
+        ]
+      },
+      "de": {
+        "title": "Mardi Himal Trek",
+        "tagline": "Ein kurzer und malerischer Trek mit atemberaubenden Nahaufnahmen des Machapuchare und der Annapurna-Kette.",
+        "overview": "Die Reise beginnt mit einer malerischen Fahrt von Pokhara nach Siddhing, wo der Wanderweg allmählich durch ruhige Wälder und traditionelle Bergdörfer ansteigt. Von Siddhing zum Low Camp schlängelt sich der Pfad durch dichte Rhododendron- und Eichenwälder und bietet gelegentliche Ausblicke auf die majestätische Annapurna-Kette. Auf dem Weg zum High Camp verwandelt sich die Landschaft in eine alpine Umgebung, umgeben von gewaltigen Himalaya-Gipfeln. Von hier aus belohnt eine frühmorgendliche Wanderung zum Mardi Himal Viewpoint (4.500 m) Wanderer mit einem atemberaubenden Sonnenaufgang über Machapuchare (Fishtail), Hiunchuli und Annapurna South. Die Rückreise führt durch das Forest Camp nach Kalimati, vorbei an üppigen Wäldern und ruhigen Tälern mit reicher Artenvielfalt, bevor es zurück nach Pokhara geht.",
+        "itinerary": [
+          { "day": 1, "title": "Ankunft in Kathmandu", "location": "Kathmandu (1.400 m)", "description": "Ankunft am Flughafen und Transfer zu Ihrem Hotel. Ruhe und Vorbereitung auf den Trek." },
+          { "day": 2, "title": "Kathmandu → Pokhara", "location": "Pokhara (822 m)", "description": "Eine malerische Fahrt durch Flusstäler und sanfte Hügel bringt Sie nach Pokhara, dem Tor zur Annapurna-Region." },
+          { "day": 3, "title": "Pokhara → Siddhing → Low Camp", "location": "Siddhing (1.700 m) → Low Camp (2.970 m)", "description": "Nach einer Fahrt nach Siddhing beginnt der Trek durch terrassiertes Ackerland und dichte Wälder und steigt allmählich zum Low Camp an." },
+          { "day": 4, "title": "Low Camp → High Camp", "location": "Low Camp (2.970 m) → High Camp (3.580 m)", "description": "Die heutige Wanderung folgt einem Gratweg durch Rhododendronwälder und eröffnet atemberaubende Ausblicke auf Machhapuchhre und Annapurna South." },
+          { "day": 5, "title": "High Camp → Aussichtspunkt → Rest Camp", "location": "Aussichtspunkt (4.500 m) → Rest Camp (2.600 m)", "description": "Eine frühmorgendliche Wanderung führt zum Mardi Himal Viewpoint für einen spektakulären Sonnenaufgang über dem Himalaya. Nach der Rückkehr zum High Camp zum Frühstück führt der Weg zum Rest Camp hinunter." },
+          { "day": 6, "title": "Rest Camp → Kalimati → Pokhara", "location": "Kalimati (1.800 m) über Forest Camp", "description": "Der letzte Tag führt Sie durch üppige Wälder mit reicher Vogelwelt, vorbei am Forest Camp nach Kalimati, von wo wir zurück nach Pokhara fahren." },
+          { "day": 7, "title": "Rückkehr von Pokhara nach Kathmandu", "location": "Kathmandu (1.400 m)", "description": "Fahrt zurück nach Kathmandu, wobei Sie die malerische Landschaft genießen." },
+          { "day": 8, "title": "Abreise", "location": "Kathmandu (1.400 m)", "description": "Transfer zum Flughafen für Ihre Weiterreise." }
+        ],
+        "includes": [
+          "Flughafentransfers bei Ankunft und Abreise (Privatfahrzeug)",
+          "Kathmandu–Pokhara Hin- und Rückreise (Flug oder Fahrt)",
+          "Alle notwendigen Trekkinggenehmigungen und Nationalparkgebühren",
+          "Unterkunft in Teehäusern während des Treks",
+          "Vollpension während des Treks (Frühstück, Mittagessen, Abendessen)",
+          "Erfahrener englischsprachiger Guide und Träger",
+          "Gehalt des Personals, Versicherung und Logistikunterstützung",
+          "Duffelbag (Kitbag) für das Trekking",
+          "Alle anfallenden staatlichen Steuern"
+        ],
+        "excludes": [
+          "Internationale Flüge und Nepal-Visumgebühren",
+          "Unterkunft und Verpflegung in Kathmandu",
+          "Getränke (Erfrischungsgetränke, Alkohol, Flaschenwasser)",
+          "Eintrittsgebühren für Kulturerbestätten, Klöster und Museen",
+          "Persönliche Trekkingausrüstung",
+          "Persönliche Ausgaben (WLAN, Telefonanrufe, Aufladen, Wäsche, heiße Duschen, Trinkgelder)",
+          "Reiseversicherung und Notfallevakuierung",
+          "Alle Dienstleistungen, die nicht im Abschnitt Inklusive aufgeführt sind"
+        ]
+      }
+    }
   },
   {
     "title": "Everest Base Camp Trek",
@@ -853,6 +963,135 @@
         "title": "Flight from Lukla to Kathmandu",
         "location": "Lukla (2,846m) → Kathmandu (1,400m)",
         "description": "An early morning flight returns us to Kathmandu, marking the end of an unforgettable Himalayan journey."
+      }
+    ]
+  },
+  {
+    "title": "Pikey Peak & Dudh Kunda Trek",
+    "slug": "pikey-peak-dudh-kunda-trek",
+    "region": "Solu Khumbu Region",
+    "location": "Dhap / Phaplu",
+    "tagline": "A journey through Sherpa villages, sacred monasteries, panoramic peaks, and the holy alpine lake of Dudh Kunda.",
+    "images": {
+      "mainImages": [
+        "/images/Trekking/PikeyPeak/pickey.jpg"
+      ],
+      "overviewImages": [
+        "/images/Trekking/PikeyPeak/peak.jpg"
+      ]
+    },
+    "overview": "The Pikey Peak & Dudh Kunda Trek is a hidden-gem journey through the lesser-explored Solu Khumbu region, offering a rare blend of panoramic Himalayan views, deep Sherpa culture, and sacred alpine landscapes. From the breathtaking sunrise at Pikey Peak—widely regarded as one of the best viewpoints in lower Everest—to the spiritual serenity of the holy Dudh Kunda Lake beneath Numbur Himal, this trek takes you far beyond the crowded trails. Walking through traditional villages, ancient monasteries, high forests, and remote valleys, the journey offers an authentic mountain experience guided by Sherpa roots and local knowledge, making it ideal for trekkers seeking both adventure and cultural depth.",
+    "keyInformation": {
+      "maximumAltitude": "4,592m",
+      "duration": "14 days",
+      "difficulty": "Easy to Moderate",
+      "bestSeason": "Spring (March–May) & Autumn (September–November)",
+      "dailyWalkingHours": "4–6 hours"
+    },
+    "includes": [
+      "International arrival and departure transfers in private vehicle.",
+      "Trek permit fees and NP fees required for the trek.",
+      "Accommodation in tea houses during the trek.",
+      "Meals on full board basis during the trek (Breakfast, lunch, and dinner)",
+      "English speaking local expert guide and porter on the trek.",
+      "Salary and insurance for staffs.",
+      "Kitbags (Duffel Bag)",
+      "All government taxes."
+    ],
+    "excludes": [
+      "International airfare and Nepal entry visa fee",
+      "Accommodation, lunch, and dinner in Kathmandu",
+      "Soft drinks and alcoholic beverages like Coke, Beer, Mineral water",
+      "Entrance fees for heritage sites, monasteries, and museum",
+      "Personal trekking gears and equipment",
+      "Personal nature expenses like phone calls, Wi-Fi, gadget charging, laundry, shower, gratitude",
+      "Insurance and emergency rescue evacuation",
+      "Any items not mentioned in \"Service included the section\""
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Kathmandu",
+        "location": "Kathmandu (1,338m)",
+        "description": "Arrive in Kathmandu and transfer to your hotel. Meet the team, receive a trek briefing while soaking in the vibrant energy of Nepal’s capital."
+      },
+      {
+        "day": 2,
+        "title": "Drive from Kathmandu to Dhap",
+        "location": "Dhap (2,850m)",
+        "description": "A scenic drive through hills, rivers, and rural settlements brings you to Dhap, the gateway to the lower Solu region and the start of the trek. (7–8 hours)"
+      },
+      {
+        "day": 3,
+        "title": "Trek from Dhap to Bulbule",
+        "location": "Bulbule (2,815m)",
+        "description": "The trek begins through forests, yak pastures, and traditional villages, offering your first real taste of Sherpa mountain life. (5–6 hours)"
+      },
+      {
+        "day": 4,
+        "title": "Trek from Bulbule to Pikey Peak Base Camp",
+        "location": "Pikey Peak Base Camp (3,640m)",
+        "description": "Gradual ascent through rhododendron forests and open ridgelines leads to Pikey Base Camp with stunning Himalayan views. (5–6 hours)"
+      },
+      {
+        "day": 5,
+        "title": "Pikey Base Camp to Junbesi via Pikey Peak",
+        "location": "Pikey Peak (4,065m) → Junbesi (2,700m)",
+        "description": "Early morning hike to Pikey Peak, one of the best viewpoints in Nepal, offering sunrise views of Everest, Makalu, Lhotse, and Kanchenjunga. Descend to the beautiful Sherpa village of Junbesi. (7–8 hours)"
+      },
+      {
+        "day": 6,
+        "title": "Junbesi – Monastery Visit & Rest Day",
+        "location": "Junbesi (2,700m)",
+        "description": "Visit Thupten Choling Monastery, one of the largest monasteries in the region. A relaxed day for acclimatization, cultural immersion, and village exploration. (2–3 hours)"
+      },
+      {
+        "day": 7,
+        "title": "Drive to Taksindu & Trek to Kamu Dada",
+        "location": "Taksindu (2,900m) → Kamu Dada (3,200m)",
+        "description": "A short drive followed by a peaceful trek through forested trails leading to the quiet ridge of Kamu Dada. (3–4 hours walk)"
+      },
+      {
+        "day": 8,
+        "title": "Trek from Kamu Dada to Beni",
+        "location": "Beni (3,835m)",
+        "description": "The trail becomes more remote and rugged as you move deeper toward the sacred Dudh Kunda region, surrounded by alpine landscapes. (4–5 hours)"
+      },
+      {
+        "day": 9,
+        "title": "Hike to Dudh Kunda Lake & Return to Beni",
+        "location": "Dudh Kunda Lake (4,592m)",
+        "description": "An early start leads to Dudh Kunda, a holy glacial lake revered by both Buddhists and Hindus. Spend time at the lake before descending back to Beni. (~5 hours)"
+      },
+      {
+        "day": 10,
+        "title": "Trek from Beni to Taksindu",
+        "location": "Taksindu (2,900m)",
+        "description": "A long descent through alpine meadows and forest trails, retracing steps toward lower elevations. (6–7 hours)"
+      },
+      {
+        "day": 11,
+        "title": "Trek from Taksindu to Phaplu",
+        "location": "Phaplu (2,413m)",
+        "description": "An easy final trekking day through villages and farmland, ending at Phaplu. (~3 hours)"
+      },
+      {
+        "day": 12,
+        "title": "Drive from Phaplu to Kathmandu",
+        "location": "Kathmandu (1,338m)",
+        "description": "Drive back to Kathmandu, enjoying the changing landscapes from mountains to valleys. (8–9 hours)"
+      },
+      {
+        "day": 13,
+        "title": "Rest & Sightseeing in Kathmandu",
+        "location": "Kathmandu (1,338m)",
+        "description": "Free day to explore Kathmandu’s cultural sites, cafes, and local markets, or simply rest after the trek."
+      },
+      {
+        "day": 14,
+        "title": "Final Departure",
+        "location": "Kathmandu (1,338m)",
+        "description": "Transfer to the airport for your onward journey, carrying memories of two of Nepal’s most soulful trekking destinations."
       }
     ]
   }

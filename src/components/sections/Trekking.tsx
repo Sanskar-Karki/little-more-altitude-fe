@@ -129,7 +129,7 @@ function TrekSkeleton() {
 }
 
 export function Trekking({ background = "white", autoFocusSearch = false }: { background?: "white" | "dark"; autoFocusSearch?: boolean }) {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const isDark = background === "dark";
     const [treks, setTreks] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -162,7 +162,7 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
         async function fetchTreks() {
             setLoading(true);
             try {
-                const data = await getTrekkings();
+                const data = await getTrekkings(language);
                 setTreks(data);
             } catch (error) {
                 console.error("Failed to fetch treks:", error);
@@ -171,7 +171,7 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
             }
         }
         fetchTreks();
-    }, []);
+    }, [language]);
 
     const filteredTreks = useMemo(() => {
         return treks.filter((trek) => {

@@ -1,13 +1,15 @@
 import trekkings from '../data/trekkings.json';
 
-function transformTrek(raw: any) {
+function transformTrek(raw: any, lang: string = 'en') {
+    const translation = lang !== 'en' ? raw.translations?.[lang] : null;
+
     return {
         id: raw.slug,
-        name: raw.title,
+        name: translation?.title || raw.title,
         slug: raw.slug,
-        tagline: raw.tagline,
+        tagline: translation?.tagline || raw.tagline,
         region: raw.region || "Himalayas",
-        location: raw.location || "Nepal",
+        location: translation?.location || raw.location || "Nepal",
         heroImage: {
             url: raw.images?.mainImages?.[0] || ""
         },
@@ -17,7 +19,7 @@ function transformTrek(raw: any) {
         overviewText: [
             {
                 type: 'paragraph',
-                children: [{ text: raw.overview }]
+                children: [{ text: translation?.overview || raw.overview }]
             }
         ],
         maxAltitude: raw.keyInformation?.maximumAltitude,
@@ -25,25 +27,28 @@ function transformTrek(raw: any) {
         difficulty: raw.keyInformation?.difficulty,
         bestSeason: raw.keyInformation?.bestSeason,
         dailyActivity: raw.keyInformation?.dailyWalkingHours,
-        includes: raw.includes?.map((item: string) => ({ item })) || [],
-        excludes: raw.excludes?.map((item: string) => ({ item })) || [],
-        itinerary: raw.itinerary?.map((day: any) => ({
-            dayNumber: day.day,
-            title: day.title,
-            location: day.location,
-            description: day.description
-        })) || []
+        includes: (translation?.includes || raw.includes)?.map((item: string) => ({ item })) || [],
+        excludes: (translation?.excludes || raw.excludes)?.map((item: string) => ({ item })) || [],
+        itinerary: (translation?.itinerary || raw.itinerary)?.map((day: any, index: number) => {
+            const rawDay = raw.itinerary[index];
+            return {
+                dayNumber: day.day || rawDay?.day,
+                title: day.title || rawDay?.title,
+                location: day.location || rawDay?.location,
+                description: day.description || rawDay?.description
+            };
+        }) || []
     };
 }
 
-export async function getTrekBySlug(slug: string) {
+export async function getTrekBySlug(slug: string, lang: string = 'en') {
     const rawTrek = trekkings.find(t => t.slug === slug);
     if (!rawTrek) return null;
-    return transformTrek(rawTrek);
+    return transformTrek(rawTrek, lang);
 }
 
-export async function getTrekkings() {
-    return trekkings.map(transformTrek);
+export async function getTrekkings(lang: string = 'en') {
+    return trekkings.map(t => transformTrek(t, lang));
 }
 
 export function getMediaUrl(url: string | undefined) {

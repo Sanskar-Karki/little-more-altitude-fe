@@ -24,8 +24,10 @@ import {
 import Image from "next/image";
 import { getTrekBySlug, getMediaUrl } from "@/lib/trekking";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) {
+    const { t } = useLanguage();
     const itineraryRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: itineraryRef,
@@ -68,12 +70,12 @@ function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) 
             <Section id="itinerary" background="dark" className="py-20 md:py-32 relative z-10 bg-transparent">
                 <div className="max-w-7xl mx-auto space-y-16">
                     <div className="text-center space-y-4">
-                        <SectionBadge dark>The Journey</SectionBadge>
-                        <SectionHeading dark gradientText="Day by Day.">
-                            Detailed Itinerary
+                        <SectionBadge dark>{t("trekkingDetails.theJourney")}</SectionBadge>
+                        <SectionHeading dark gradientText={t("trekkingDetails.dayByDay")}>
+                            {t("trekkingDetails.detailedItinerary")}
                         </SectionHeading>
                         <p className="text-brand-white/50 text-base max-w-2xl mx-auto">
-                            Experience every moment of your adventure through the Himalayas
+                            {t("trekkingDetails.itinerarySubtitle")}
                         </p>
                     </div>
 
@@ -98,7 +100,7 @@ function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) 
                                             <div className="relative">
                                                 <div className="absolute inset-0 bg-brand-light blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
                                                 <div className="relative bg-gradient-to-br from-brand-light to-brand-medium px-6 py-2 rounded-full border border-white/20 shadow-xl transform transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3">
-                                                    <span className="text-[10px] font-black text-brand-dark uppercase tracking-[0.2em] block leading-none mb-1 opacity-70">Day</span>
+                                                    <span className="text-[10px] font-black text-brand-dark uppercase tracking-[0.2em] block leading-none mb-1 opacity-70">{t("trekkingDetails.day")}</span>
                                                     <span className="text-2xl font-black text-brand-dark leading-none">
                                                         {dayNum < 10 ? `0${dayNum}` : dayNum}
                                                     </span>
@@ -145,6 +147,7 @@ function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) 
 }
 
 export default function DynamicTrekPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { t, language } = useLanguage();
     const { slug } = use(params);
     const [trek, setTrek] = useState<any>(null);
     const [loading, setLoading] = useState(true);
@@ -162,29 +165,29 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
 
     useEffect(() => {
         async function fetchData() {
+            setLoading(true);
             try {
-                const data = await getTrekBySlug(slug);
-                if (!data) {
-                    setError("Trek not found");
-                } else {
+                const data = await getTrekBySlug(slug, language);
+                if (data) {
                     setTrek(data);
+                } else {
+                    setError(t("trekkingDetails.notFound"));
                 }
             } catch (err) {
-                console.error(err);
-                setError("Failed to load trek details");
+                setError("Failed to fetch trek details");
             } finally {
                 setLoading(false);
             }
         }
         fetchData();
-    }, [slug]);
+    }, [slug, language, t]);
 
     if (loading) {
         return (
             <div className="min-h-screen bg-brand-dark flex items-center justify-center">
                 <div className="text-center space-y-4">
                     <Loader2 className="w-12 h-12 text-brand-light animate-spin mx-auto" />
-                    <p className="text-white/60 font-black uppercase tracking-widest text-sm">Scaling the heights...</p>
+                    <p className="text-white/60 font-black uppercase tracking-widest text-sm">{t("trekkingDetails.loading")}</p>
                 </div>
             </div>
         );
@@ -198,11 +201,11 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                         <Mountain className="text-white/20" size={48} />
                     </div>
                     <div className="space-y-2">
-                        <h1 className="text-4xl font-black text-white tracking-tighter uppercase">{error || "Trek Not Found"}</h1>
-                        <p className="text-white/40 font-medium">The trail you're looking for seems to be hidden in the mist.</p>
+                        <h1 className="text-4xl font-black text-white tracking-tighter uppercase">{error || t("trekkingDetails.notFound")}</h1>
+                        <p className="text-white/40 font-medium">{t("trekkingDetails.notFoundDesc")}</p>
                     </div>
                     <Link href="/trekking" className="inline-block px-8 py-4 bg-brand-light text-brand-dark rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform">
-                        Back to All Treks
+                        {t("trekkingDetails.backToAll")}
                     </Link>
                 </div>
             </div>
@@ -242,7 +245,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                 </motion.div>
 
                 <div className="container relative z-10 mx-auto px-8 md:px-20 lg:px-32">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -253,13 +256,13 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                                 <SectionBadge className="text-brand-light backdrop-blur-md bg-white/10 border-white/20">
                                     {trek.region || "Himalayas"}
                                 </SectionBadge>
-                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-[0.85] uppercase">
+                                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9] uppercase">
                                     {trek.name.split(' ').map((word: string, i: number) => (
                                         <span key={i}>
                                             {i === trek.name.split(' ').length - 1 ? (
                                                 <span className="text-brand-light">{word}</span>
                                             ) : (
-                                                <>{word} <br /></>
+                                                <>{word} </>
                                             )}
                                         </span>
                                     ))}
@@ -307,11 +310,11 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                     <div className="bg-brand-dark rounded-[3.5rem] shadow-2xl overflow-hidden border border-white/5">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-x divide-y divide-white/5 lg:divide-y-0 border-white/5">
                             {[
-                                { label: "Max Altitude", value: trek.maxAltitude ? `${trek.maxAltitude.toLocaleString()}m` : "N/A", icon: Mountain },
-                                { label: "Best Season", value: trek.bestSeason || "N/A", icon: Sun },
-                                { label: "Duration", value: trek.duration || "N/A", icon: Clock },
-                                { label: "Daily Activity", value: trek.dailyActivity || "N/A", icon: Activity },
-                                { label: "Difficulty", value: trek.difficulty || "N/A", icon: Navigation },
+                                { label: t("trekkingDetails.stats.maxAltitude"), value: trek.maxAltitude ? `${trek.maxAltitude.toLocaleString()}m` : "N/A", icon: Mountain },
+                                { label: t("trekkingDetails.stats.bestSeason"), value: trek.bestSeason || "N/A", icon: Sun },
+                                { label: t("trekkingDetails.stats.duration"), value: trek.duration || "N/A", icon: Clock },
+                                { label: t("trekkingDetails.stats.dailyActivity"), value: trek.dailyActivity || "N/A", icon: Activity },
+                                { label: t("trekkingDetails.stats.difficulty"), value: trek.difficulty ? t(`trekking.filters.${trek.difficulty.toLowerCase()}`) : "N/A", icon: Navigation },
                             ].map((stat) => (
                                 <div
                                     key={stat.label}
@@ -336,9 +339,9 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="space-y-10">
                         <div className="space-y-6">
-                            <SectionBadge>Overview</SectionBadge>
-                            <SectionHeading dark={false} gradientText="Experience.">
-                                The Ultimate
+                            <SectionBadge>{t("trekkingDetails.overview")}</SectionBadge>
+                            <SectionHeading dark={false} gradientText={t("trekkingDetails.experience")}>
+                                {t("trekkingDetails.theUltimate")}
                             </SectionHeading>
                             <div className="space-y-6 text-brand-medium/80 text-lg leading-relaxed font-medium">
                                 {renderBlocks(trek.overviewText)}
@@ -350,13 +353,13 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                                 <div className="w-12 h-12 rounded-2xl bg-brand-medium/10 flex items-center justify-center shrink-0">
                                     <Bird className="text-brand-medium" />
                                 </div>
-                                <p className="text-sm font-bold opacity-60">Spot rare Himalayan bird species in lush forests.</p>
+                                <p className="text-sm font-bold opacity-60">{t("trekkingDetails.birdSpotting")}</p>
                             </div>
                             <div className="flex gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-brand-medium/10 flex items-center justify-center shrink-0">
                                     <Wind className="text-brand-medium" />
                                 </div>
-                                <p className="text-sm font-bold opacity-60">Experience authentic culture in traditional villages.</p>
+                                <p className="text-sm font-bold opacity-60">{t("trekkingDetails.authenticCulture")}</p>
                             </div>
                         </div>
                     </div>
@@ -387,9 +390,9 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                         className="space-y-12 p-12 rounded-[3.5rem] bg-green-500/5 border border-brand-dark/10"
                     >
                         <div className="space-y-4">
-                            <SectionBadge>Package</SectionBadge>
+                            <SectionBadge>{t("trekkingDetails.package")}</SectionBadge>
                             <h3 className="text-4xl font-black text-brand-dark tracking-tighter">
-                                Trip <span className="text-green-600">Includes.</span>
+                                {t("trekkingDetails.trip")} <span className="text-green-600">{t("trekkingDetails.includes")}</span>
                             </h3>
                         </div>
                         <ul className="space-y-6">
@@ -410,9 +413,9 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                         className="space-y-12 p-12 rounded-[4rem] bg-red-500/5 border border-red-500/10"
                     >
                         <div className="space-y-4">
-                            <SectionBadge>Information</SectionBadge>
+                            <SectionBadge>{t("trekkingDetails.information")}</SectionBadge>
                             <h3 className="text-4xl font-black text-brand-dark tracking-tighter">
-                                Trip <span className="text-red-500">Excludes.</span>
+                                {t("trekkingDetails.trip")} <span className="text-red-500">{t("trekkingDetails.excludes")}</span>
                             </h3>
                         </div>
                         <ul className="space-y-6">
@@ -432,11 +435,11 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                 <div className="container mx-auto px-8 text-center relative z-10">
                     <div className="max-w-4xl mx-auto space-y-10">
                         <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-tight">
-                            READY TO TOUCH <br />
-                            <span className="text-brand-light">THE SKY?</span>
+                            {t("trekkingDetails.readyToTouch")} <br />
+                            <span className="text-brand-light">{t("trekkingDetails.theSky")}</span>
                         </h2>
                         <button className="px-12 py-6 bg-brand-light text-brand-dark rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 active:scale-95 transition-all shadow-2xl flex items-center gap-4 mx-auto">
-                            Book This Adventure <ArrowRight size={20} />
+                            {t("trekkingDetails.bookThisAdventure")} <ArrowRight size={20} />
                         </button>
                     </div>
                 </div>
