@@ -24,8 +24,8 @@ export default function AboutPage() {
     const galleryCard2Y = useTransform(scrollYProgress, [0.1, 0.4], [-20, 20]);
     const galleryCard3Y = useTransform(scrollYProgress, [0.1, 0.4], [60, -20]);
 
-    const translatedFounders = t('about.founders') as any[];
-    const FOUNDERS = translatedFounders.map((founder, index) => {
+    const translatedFounders = (t('about.founders') as any[]) || [];
+    const FOUNDERS = Array.isArray(translatedFounders) ? translatedFounders.map((founder, index) => {
         const images = ["/founders/pemba1.jpg", "/founders/tashi1.jpg", "/founders/pema1.jpg"];
         const hrefs = ["/about/pemba", "/about/tashi", "/about/pema"];
         return {
@@ -33,10 +33,10 @@ export default function AboutPage() {
             image: images[index],
             href: hrefs[index]
         };
-    });
+    }) : [];
 
-    const translatedFeatures = t('about.features') as any[];
-    const WHY_US_FEATURES = translatedFeatures.map((feature, index) => {
+    const translatedFeatures = (t('about.features') as any[]) || [];
+    const WHY_US_FEATURES = Array.isArray(translatedFeatures) ? translatedFeatures.map((feature, index) => {
         const icons = [Users, Shield, MapPin, CheckCircle2, Globe];
         const ids = ["leadership", "safety", "tailored", "ethical", "giving-back"];
         return {
@@ -44,7 +44,7 @@ export default function AboutPage() {
             id: ids[index],
             icon: icons[index]
         };
-    });
+    }) : [];
 
     return (
         <main ref={containerRef} className="min-h-screen bg-brand-white overflow-hidden relative">

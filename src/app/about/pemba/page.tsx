@@ -12,6 +12,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function PembaDetailPage() {
     const { t } = useLanguage();
+    const founders = (t('about.founders') as any[]) || [];
+    const pemba = founders[0] || { role: "Founder & Lead Guide", bio: "Biography details coming soon." };
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -50,7 +52,7 @@ export default function PembaDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true} icon={Mountain}>{t('about.founders')[0].role}</SectionBadge>
+                            <SectionBadge dark={true} icon={Mountain}>{pemba.role}</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Pemba N.
                                 <span className="text-brand-light pl-1">Sherpa</span>
@@ -174,7 +176,7 @@ export default function PembaDetailPage() {
                                 </div>
 
                                 <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
-                                    {t('about.founders')[0].bio.split('\n\n').map((paragraph: string, idx: number) => (
+                                    {(pemba.bio || "").split('\n\n').map((paragraph: string, idx: number) => (
                                         <p key={idx} className={idx === 0 ? "first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium" : ""}>
                                             {paragraph}
                                         </p>

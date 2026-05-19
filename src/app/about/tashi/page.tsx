@@ -11,6 +11,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function TashiDetailPage() {
     const { t } = useLanguage();
+    const founders = (t('about.founders') as any[]) || [];
+    const tashi = founders[1] || { role: "Founder & Trek Director", bio: "Biography details coming soon." };
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -33,7 +35,7 @@ export default function TashiDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true} icon={Award}>{t('about.founders')[1].role}</SectionBadge>
+                            <SectionBadge dark={true} icon={Award}>{tashi.role}</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Ngima Tashi
                                 <span className="text-brand-light pl-1">Sherpa</span>
@@ -135,7 +137,7 @@ export default function TashiDetailPage() {
                                 </div>
 
                                 <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
-                                    {t('about.founders')[1].bio.split('\n\n').map((paragraph: string, idx: number) => (
+                                    {(tashi.bio || "").split('\n\n').map((paragraph: string, idx: number) => (
                                         <p key={idx} className={idx === 0 ? "first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium" : ""}>
                                             {paragraph}
                                         </p>

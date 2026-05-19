@@ -257,15 +257,18 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                                     {trek.region || "Himalayas"}
                                 </SectionBadge>
                                 <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-tighter leading-[0.9] uppercase">
-                                    {trek.name.split(' ').map((word: string, i: number) => (
-                                        <span key={i}>
-                                            {i === trek.name.split(' ').length - 1 ? (
-                                                <span className="text-brand-light">{word}</span>
-                                            ) : (
-                                                <>{word} </>
-                                            )}
-                                        </span>
-                                    ))}
+                                    {(trek.name || "Adventure").split(' ').map((word: string, i: number) => {
+                                        const words = (trek.name || "Adventure").split(' ');
+                                        return (
+                                            <span key={i}>
+                                                {i === words.length - 1 ? (
+                                                    <span className="text-brand-light">{word}</span>
+                                                ) : (
+                                                    <>{word} </>
+                                                )}
+                                            </span>
+                                        );
+                                    })}
                                 </h1>
                             </div>
 

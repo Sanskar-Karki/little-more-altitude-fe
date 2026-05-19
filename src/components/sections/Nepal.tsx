@@ -95,7 +95,7 @@ export function Nepal() {
                                 className="absolute top-0 right-0 w-[85%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl z-20 border border-white/5 will-change-transform"
                             >
                                 <Image
-                                    src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80"
+                                    src="/images/HomePageImage/MardiHimal-Nepal.jpg"
                                     alt="Nepal Landscape"
                                     fill
                                     className="object-cover"
@@ -110,7 +110,7 @@ export function Nepal() {
                                 className="absolute bottom-4 left-0 w-[55%] md:w-[60%] aspect-square rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-30 border border-white/10 will-change-transform"
                             >
                                 <Image
-                                    src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=800&q=80"
+                                    src="/images/HomePageImage/ebc1.jpg"
                                     alt="Nepal Culture"
                                     fill
                                     className="object-cover"

@@ -11,6 +11,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function PemaDetailPage() {
     const { t } = useLanguage();
+    const founders = (t('about.founders') as any[]) || [];
+    const pema = founders[2] || { role: "Founder & US Operations Director", bio: "Biography details coming soon." };
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -31,7 +33,7 @@ export default function PemaDetailPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <SectionBadge dark={true} icon={Shield}>{t('about.founders')[2].role}</SectionBadge>
+                            <SectionBadge dark={true} icon={Shield}>{pema.role}</SectionBadge>
                             <h1 className="text-3xl md:text-5xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
                                 Pema Thilen
                                 <span className="text-brand-light pl-2">Sherpa</span>
@@ -133,7 +135,7 @@ export default function PemaDetailPage() {
                                 </div>
 
                                 <div className="space-y-6 md:space-y-8 text-brand-dark/80 text-lg md:text-xl leading-[1.7] md:leading-[1.8] font-medium">
-                                    {t('about.founders')[2].bio.split('\n\n').map((paragraph: string, idx: number) => (
+                                    {(pema.bio || "").split('\n\n').map((paragraph: string, idx: number) => (
                                         <p key={idx} className={idx === 0 ? "first-letter:text-5xl md:first-letter:text-7xl first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-brand-medium" : ""}>
                                             {paragraph}
                                         </p>
