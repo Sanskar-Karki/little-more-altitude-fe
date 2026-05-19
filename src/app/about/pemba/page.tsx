@@ -8,8 +8,6 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { MountainLine } from "@/components/ui/MountainLine";
-import pembaImg from "./pemba.jpg";
-
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PembaDetailPage() {
@@ -17,11 +15,25 @@ export default function PembaDetailPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start end", "end start"]
+        offset: ["start start", "end end"]
     });
 
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
     const backgroundOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+    // Editorial scroll-linked cross-fade for Pemba's photos
+    const img1Opacity = useTransform(scrollYProgress, [0, 0.35, 0.45], [1, 1, 0]);
+    const img2Opacity = useTransform(scrollYProgress, [0.35, 0.45, 0.7, 0.8], [0, 1, 1, 0]);
+    const img3Opacity = useTransform(scrollYProgress, [0.7, 0.8, 1], [0, 1, 1]);
+
+    // Premium cinematic scale & position transformations
+    const img1Scale = useTransform(scrollYProgress, [0, 0.35, 0.45], [1, 1, 0.95]);
+    const img2Scale = useTransform(scrollYProgress, [0.35, 0.45, 0.7, 0.8], [1.05, 1, 1, 0.95]);
+    const img3Scale = useTransform(scrollYProgress, [0.7, 0.8, 1], [1.05, 1, 1]);
+
+    const img1Y = useTransform(scrollYProgress, [0, 0.35, 0.45], [0, 0, -15]);
+    const img2Y = useTransform(scrollYProgress, [0.35, 0.45, 0.7, 0.8], [15, 0, 0, -15]);
+    const img3Y = useTransform(scrollYProgress, [0.7, 0.8, 1], [15, 0, 0]);
 
     return (
         <main className="min-h-screen bg-brand-white">
@@ -98,18 +110,40 @@ export default function PembaDetailPage() {
                                 transition={{ duration: 0.8 }}
                                 className="sticky top-32 space-y-8"
                             >
-                                <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
-                                    <Image
-                                        src={pembaImg}
-                                        alt="Pemba N. Sherpa"
-                                        fill
-                                        className="object-cover transition-all duration-1000 group-hover:scale-110"
-                                        sizes="(max-width: 768px) 90vw, 340px"
-                                        priority
-                                        quality={85}
-                                    />
+                                <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0 bg-brand-dark/10">
+                                    <motion.div style={{ opacity: img1Opacity, scale: img1Scale, y: img1Y }} className="absolute inset-0 z-[3]">
+                                        <Image
+                                            src="/founders/pemba1.jpg"
+                                            alt="Pemba N. Sherpa - Portrait"
+                                            fill
+                                            className="object-cover transition-all duration-1000 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 90vw, 340px"
+                                            priority
+                                            quality={85}
+                                        />
+                                    </motion.div>
+                                    <motion.div style={{ opacity: img2Opacity, scale: img2Scale, y: img2Y }} className="absolute inset-0 z-[2]">
+                                        <Image
+                                            src="/founders/pemba2.jpg"
+                                            alt="Pemba N. Sherpa - Expedition"
+                                            fill
+                                            className="object-cover transition-all duration-1000 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 90vw, 340px"
+                                            quality={85}
+                                        />
+                                    </motion.div>
+                                    <motion.div style={{ opacity: img3Opacity, scale: img3Scale, y: img3Y }} className="absolute inset-0 z-[1]">
+                                        <Image
+                                            src="/founders/pemba3.jpg"
+                                            alt="Pemba N. Sherpa - Summit"
+                                            fill
+                                            className="object-cover transition-all duration-1000 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 90vw, 340px"
+                                            quality={85}
+                                        />
+                                    </motion.div>
                                     {/* Subtle Overlay on image */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-60" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-60 pointer-events-none z-10" />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-3 max-w-[340px] mx-auto lg:mx-0">

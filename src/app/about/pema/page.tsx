@@ -7,8 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { MountainLine } from "@/components/ui/MountainLine";
-import pemaImg from "./pema.jpg";
-
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PemaDetailPage() {
@@ -97,7 +95,7 @@ export default function PemaDetailPage() {
                             >
                                 <div className="relative aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group max-w-[340px] mx-auto lg:mx-0">
                                     <Image
-                                        src={pemaImg}
+                                        src="/founders/pema1.jpg"
                                         alt="Pema Sherpa"
                                         fill
                                         className="object-cover transition-all duration-1000 group-hover:scale-110"

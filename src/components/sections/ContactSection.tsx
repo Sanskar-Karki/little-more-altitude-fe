@@ -58,7 +58,7 @@ export function ContactSection() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         // Simple client-side validation
         if (!formData.name || !formData.email || !formData.message) {
             toast("Please fill in all required fields.", "error");

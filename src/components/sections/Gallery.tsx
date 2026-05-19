@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -19,94 +20,241 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=1200&auto=format&fit=crop",
-        alt: "Majestic Everest Peak",
+        src: "/gallery/DSC08099.jpeg",
+        alt: "Majestic Snow-Capped Himalayan Peak",
         category: "landscape",
         size: "large"
     },
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1533130061792-64b345e4a833?q=80&w=800&auto=format&fit=crop",
-        alt: "Trekkers on the Trail",
+        src: "/gallery/DSC08161.jpeg",
+        alt: "Trekkers Traversing a Ridge",
         category: "expeditions",
         size: "medium"
     },
     {
         id: 3,
-        src: "https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?q=80&w=800&auto=format&fit=crop",
-        alt: "Mountain Village Life",
+        src: "/gallery/IMG_1115.jpg",
+        alt: "Stunning Sunbeams over Mountain Valleys",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 4,
+        src: "/gallery/IMG_4172.jpg",
+        alt: "Traditional Stone Village in the Himalayas",
         category: "culture",
         size: "small"
     },
     {
-        id: 4,
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
-        alt: "Basecamp Sunrise",
+        id: 5,
+        src: "/gallery/IMG_4343.jpg",
+        alt: "Joyful Moments on the Trekking Trail",
         category: "moments",
         size: "medium"
     },
     {
-        id: 5,
-        src: "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?q=80&w=800&auto=format&fit=crop",
-        alt: "Sacred Prayer Flags",
-        category: "culture",
-        size: "small"
-    },
-    {
         id: 6,
-        src: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1200&auto=format&fit=crop",
-        alt: "Glacial Expedition",
-        category: "expeditions",
+        src: "/gallery/IMG_4345.jpg",
+        alt: "Breathtaking Alpine Panorama",
+        category: "landscape",
         size: "large"
     },
     {
         id: 7,
-        src: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1200&auto=format&fit=crop",
-        alt: "Starry Himalayan Night",
-        category: "landscape",
-        size: "medium"
-    },
-    {
-        id: 8,
-        src: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
-        alt: "Alpine Turquoise Lake",
-        category: "landscape",
+        src: "/gallery/IMG_4617.jpg",
+        alt: "Ancient Buddhist Stupa and Prayer Flags",
+        category: "culture",
         size: "small"
     },
     {
+        id: 8,
+        src: "/gallery/IMG_4627.jpg",
+        alt: "Expedition Group Prepared for Ascent",
+        category: "expeditions",
+        size: "medium"
+    },
+    {
         id: 9,
-        src: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=800&auto=format&fit=crop",
-        alt: "Summit Victory",
+        src: "/gallery/IMG_4643.jpg",
+        alt: "A Serene High-Altitude Turquoise Lake",
+        category: "landscape",
+        size: "large"
+    },
+    {
+        id: 10,
+        src: "/gallery/IMG_5030.jpg",
+        alt: "Celebrating reaching the High Pass",
         category: "moments",
         size: "medium"
     },
     {
-        id: 10,
-        src: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=800&auto=format&fit=crop",
-        alt: "Highland Yak Caravan",
-        category: "culture",
-        size: "medium"
-    },
-    {
         id: 11,
-        src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=800&auto=format&fit=crop",
-        alt: "Expedition Night Camp",
-        category: "expeditions",
+        src: "/gallery/IMG_5158.jpg",
+        alt: "Himalayan Culture and Local Heritage",
+        category: "culture",
         size: "small"
     },
     {
         id: 12,
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
-        alt: "Mountain Ridge Trek",
+        src: "/gallery/IMG_5205.jpg",
+        alt: "Climbing through Glacier Icefalls",
         category: "expeditions",
-        size: "medium"
+        size: "large"
     },
     {
         id: 13,
-        src: "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?q=80&w=800&auto=format&fit=crop",
-        alt: "Himalayan Golden Hour",
+        src: "/gallery/IMG_6265.jpg",
+        alt: "Sunset Glow over Annapurna Massif",
         category: "landscape",
         size: "medium"
+    },
+    {
+        id: 14,
+        src: "/gallery/IMG_6376.jpg",
+        alt: "Local Warmth and Hospitality in Tea House",
+        category: "culture",
+        size: "small"
+    },
+    {
+        id: 15,
+        src: "/gallery/IMG_7169.jpg",
+        alt: "Shared Laughter at Basecamp",
+        category: "moments",
+        size: "medium"
+    },
+    {
+        id: 16,
+        src: "/gallery/IMG_7290.jpg",
+        alt: "Dramatic Clouds hovering over Peaks",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 17,
+        src: "/gallery/IMG_7292.jpg",
+        alt: "Steep Climbing Trail to the Summit",
+        category: "expeditions",
+        size: "small"
+    },
+    {
+        id: 18,
+        src: "/gallery/IMG_7303.jpg",
+        alt: "Mani Stone Inscriptions on the Trail",
+        category: "culture",
+        size: "medium"
+    },
+    {
+        id: 19,
+        src: "/gallery/okok.jpg",
+        alt: "Chasing the Golden Hour on Top",
+        category: "moments",
+        size: "large"
+    },
+    {
+        id: 20,
+        src: "/gallery/oooo.jpg",
+        alt: "Epic Mountain Range Horizon",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 21,
+        src: "/gallery/opp.jpg",
+        alt: "Trekking through Deep Snow Fields",
+        category: "expeditions",
+        size: "small"
+    },
+    {
+        id: 22,
+        src: "/gallery/ppp.jpg",
+        alt: "Colorful Prayer Wheels at Monastery",
+        category: "culture",
+        size: "medium"
+    },
+    {
+        id: 23,
+        src: "/gallery/DSC00183.jpg",
+        alt: "Breathtaking snow-dusted alpine valley and ridges",
+        category: "landscape",
+        size: "large"
+    },
+    {
+        id: 24,
+        src: "/gallery/DSC00200.jpg",
+        alt: "Grand panorama of the frozen Himalayan peaks",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 25,
+        src: "/gallery/DSC00326.jpg",
+        alt: "Trekking group enjoying the majestic scenery",
+        category: "moments",
+        size: "medium"
+    },
+    {
+        id: 26,
+        src: "/gallery/DSC08043.jpg",
+        alt: "Trekkers ascending a high snow-covered slope",
+        category: "expeditions",
+        size: "large"
+    },
+    {
+        id: 27,
+        src: "/gallery/DSC08119.jpg",
+        alt: "Dramatic sunbeams kissing the sharp Himalayan ridges",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 28,
+        src: "/gallery/DSC08142.jpg",
+        alt: "Navigating deep snow trails in extreme altitudes",
+        category: "expeditions",
+        size: "small"
+    },
+    {
+        id: 29,
+        src: "/gallery/DSC08233.jpg",
+        alt: "Trekkers passing traditional mountain stone structures",
+        category: "culture",
+        size: "medium"
+    },
+    {
+        id: 30,
+        src: "/gallery/IMG_4643 (2).jpg",
+        alt: "Serene alpine valley under clear skies",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 31,
+        src: "/gallery/IMG_5572 (1).jpg",
+        alt: "Experiencing the rustic charm of highland teahouses",
+        category: "moments",
+        size: "small"
+    },
+    {
+        id: 32,
+        src: "/gallery/MardiHimal-Nepal-230.jpg",
+        alt: "Stunning views from Mardi Himal Viewpoint",
+        category: "landscape",
+        size: "medium"
+    },
+    {
+        id: 33,
+        src: "/gallery/MardiHimal-Nepal-246.jpg",
+        alt: "Climbing up the scenic ridges of Mardi Himal",
+        category: "expeditions",
+        size: "large"
+    },
+    {
+        id: 34,
+        src: "/gallery/Cover_photo_for_Mardi_himal .jpg",
+        alt: "Golden sunset over Mardi Himal base camp",
+        category: "landscape",
+        size: "large"
     }
 ];
 
@@ -152,11 +300,15 @@ export function Gallery() {
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
                     <div className="space-y-4 max-w-2xl text-center lg:text-left">
                         <SectionBadge>{t('gallery.badge')}</SectionBadge>
-                        <SectionHeading gradientText={t('gallery.gradient')} >
+                        <SectionHeading dark={false} gradientText={t('gallery.gradient')} >
                             <span className="text-brand-dark/80"> {t('gallery.heading')}</span>
                         </SectionHeading>
+
                         <p className="text-brand-dark/60 text-lg font-medium leading-relaxed">
                             {t('gallery.description')}
+                        </p>
+                        <p className="text-brand-dark font-bold text-lg">
+                            • High borosilicate glass (heat &amp; cold resistant)
                         </p>
                     </div>
 
@@ -205,14 +357,16 @@ export function Gallery() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.4 }}
-                                    className={`relative group cursor-pointer overflow-hidden rounded-[2rem] bg-brand-dark/5 ${image.size === 'large' ? 'md:row-span-2' : ''
+                                    className={`relative group cursor-pointer overflow-hidden rounded-[2rem] bg-brand-dark/5 min-h-[250px] sm:min-h-[300px] ${image.size === 'large' ? 'md:row-span-2' : ''
                                         }`}
                                     onClick={() => openLightbox(image)}
                                 >
-                                    <motion.img
+                                    <Image
                                         src={image.src}
                                         alt={image.alt}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 min-h-[250px] sm:min-h-[300px]"
+                                        fill
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         loading="lazy"
                                     />
 
@@ -247,62 +401,69 @@ export function Gallery() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-brand-dark/98 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+                        className="fixed inset-0 z-[100] bg-brand-dark/98 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 pt-20 md:pt-28 group"
                         onClick={closeLightbox}
                     >
                         {/* Close Button */}
                         <button
                             onClick={closeLightbox}
-                            className="absolute cursor-pointer top-8 right-8 z-[110] p-4 rounded-full bg-white/5 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 hover:rotate-90"
+                            className="absolute cursor-pointer top-20 md:top-24 right-4 md:right-8 z-[110] p-3 md:p-4 rounded-full bg-white/10 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 hover:rotate-90"
                         >
                             <X size={24} />
                         </button>
 
                         {/* Navigation */}
-                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4 md:px-8 pointer-events-none">
+                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-2 md:px-8 pointer-events-none z-[105]">
                             <button
                                 onClick={prevImage}
-                                className="pointer-events-auto p-4 rounded-full bg-white/5 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:opacity-100 md:translate-x-0 cursor-pointer"
+                                className="pointer-events-auto p-3 md:p-4 rounded-full bg-white/10 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 md:-translate-x-full md:group-hover:translate-x-0 md:opacity-0 md:group-hover:opacity-100 cursor-pointer backdrop-blur-md"
                             >
-                                <ChevronLeft size={32} />
+                                <ChevronLeft size={28} className="md:w-8 md:h-8" />
                             </button>
                             <button
                                 onClick={nextImage}
-                                className="pointer-events-auto p-4 rounded-full bg-white/5 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:opacity-100 md:translate-x-0 cursor-pointer"
+                                className="pointer-events-auto p-3 md:p-4 rounded-full bg-white/10 text-white hover:bg-brand-light hover:text-brand-dark transition-all duration-300 md:translate-x-full md:group-hover:translate-x-0 md:opacity-0 md:group-hover:opacity-100 cursor-pointer backdrop-blur-md"
                             >
-                                <ChevronRight size={32} />
+                                <ChevronRight size={28} className="md:w-8 md:h-8" />
                             </button>
                         </div>
 
                         {/* Image Container */}
-                        <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center gap-8">
+                        <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center z-[101]">
                             <motion.div
                                 key={selectedImage.id}
                                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                                className="relative rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/10"
+                                className="relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col h-full max-h-[85vh] md:max-h-[90vh] w-full bg-black/40"
                                 onClick={(e) => e.stopPropagation()}
                             >
-                                <img
-                                    src={selectedImage.src}
-                                    alt={selectedImage.alt}
-                                    className="max-w-full max-h-[70vh] object-contain"
-                                />
+                                <div className="flex-1 min-h-0 w-full flex flex-col p-2 md:p-4">
+                                    <div className="relative flex-1 w-full h-full">
+                                        <Image
+                                            src={selectedImage.src}
+                                            alt={selectedImage.alt}
+                                            fill
+                                            sizes="100vw"
+                                            className="object-contain rounded-xl"
+                                            priority
+                                        />
+                                    </div>
+                                </div>
 
                                 {/* Info Panel */}
-                                <div className="bg-brand-dark/80 backdrop-blur-md p-8 md:p-10 border-t border-white/5 w-full">
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                                        <div className="space-y-3">
-                                            <span className="px-4 py-1.5 rounded-full bg-brand-light text-brand-dark text-[10px] font-black uppercase tracking-[0.2em]">
+                                <div className="bg-brand-dark/90 backdrop-blur-md p-6 md:p-10 border-t border-white/5 w-full shrink-0">
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
+                                        <div className="space-y-2 md:space-y-3">
+                                            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-brand-light text-brand-dark text-[10px] font-black uppercase tracking-[0.2em]">
                                                 {t(`gallery.categories.${selectedImage.category}`)}
                                             </span>
-                                            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                                            <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-white leading-tight line-clamp-2">
                                                 {selectedImage.alt}
                                             </h2>
                                         </div>
-                                        <div className="text-brand-white/40 font-bold tracking-widest text-xl">
+                                        <div className="text-brand-white/40 font-bold tracking-widest text-lg md:text-xl shrink-0">
                                             {currentIndex + 1} <span className="text-brand-light/30">/</span> {filteredImages.length}
                                         </div>
                                     </div>

@@ -7,10 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { useLanguage } from "@/context/LanguageContext";
-import pembaImg from "./pemba/pemba.jpg";
-import tashiImg from "./tashi/tashi.jpeg";
-import pemaImg from "./pema/pema.jpg";
-
 export default function AboutPage() {
     const { t } = useLanguage();
     const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
@@ -30,7 +26,7 @@ export default function AboutPage() {
 
     const translatedFounders = t('about.founders') as any[];
     const FOUNDERS = translatedFounders.map((founder, index) => {
-        const images = [pembaImg, tashiImg, pemaImg];
+        const images = ["/founders/pemba1.jpg", "/founders/tashi1.jpg", "/founders/pema1.jpg"];
         const hrefs = ["/about/pemba", "/about/tashi", "/about/pema"];
         return {
             ...founder,
@@ -97,19 +93,19 @@ export default function AboutPage() {
                                         style={{ y: galleryCard1Y }}
                                         className="absolute top-[-20px] right-0 w-[40%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-20"
                                     >
-                                        <Image src="/images/Trekking/Abc/abc3.jpg" alt="Mountain Expedition" fill className="object-cover" />
+                                        <Image src="/founders/pemba2.jpg" alt="Mountain Expedition" fill className="object-cover" />
                                     </motion.div>
                                     <motion.div
                                         style={{ y: galleryCard2Y }}
                                         className="absolute top-[20%] left-20 w-[45%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-10"
                                     >
-                                        <Image src="/images/Trekking/Abc/abc2.jpg" alt="Founder guiding" fill className="object-cover" />
+                                        <Image src="/founders/group1.jpg" alt="Founder guiding" fill className="object-cover" />
                                     </motion.div>
                                     <motion.div
                                         style={{ y: galleryCard3Y }}
                                         className="absolute top-[280px] right-[0%] w-[40%] aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-30"
                                     >
-                                        <Image src="/images/Trekking/Abc/abc5.jpg" alt="Cultural connection" fill className="object-cover" />
+                                        <Image src="/founders/pemba5.jpg" alt="Cultural connection" fill className="object-cover" />
                                     </motion.div>
                                 </div>
                             </div>

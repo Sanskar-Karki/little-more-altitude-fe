@@ -348,20 +348,7 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div className="flex gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-brand-medium/10 flex items-center justify-center shrink-0">
-                                    <Bird className="text-brand-medium" />
-                                </div>
-                                <p className="text-sm font-bold opacity-60">{t("trekkingDetails.birdSpotting")}</p>
-                            </div>
-                            <div className="flex gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-brand-medium/10 flex items-center justify-center shrink-0">
-                                    <Wind className="text-brand-medium" />
-                                </div>
-                                <p className="text-sm font-bold opacity-60">{t("trekkingDetails.authenticCulture")}</p>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl group">

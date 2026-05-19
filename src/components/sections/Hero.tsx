@@ -10,7 +10,7 @@ import ebc from "../../../public/images/HomePageImage/ebc.jpg";
 import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
 import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
 import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
-import Mardi from "../../../public/images/HomePageImage/MardiHimal-Nepal.jpg";
+import Mardi from "../../../public/images/Trekking/Mardi/Cover_photo_for_Mardi_himal.jpg";
 
 const HERO_IMAGES = [
     abcsun,
