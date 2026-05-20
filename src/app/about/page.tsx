@@ -93,7 +93,7 @@ export default function AboutPage() {
                                         style={{ y: galleryCard1Y }}
                                         className="absolute top-[-20px] right-0 w-[40%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-20"
                                     >
-                                        <Image src="/founders/pemba2.jpg" alt="Mountain Expedition" fill className="object-cover" />
+                                        <Image src="/founders/pic1.jpg" alt="Mountain Expedition" fill className="object-cover" />
                                     </motion.div>
                                     <motion.div
                                         style={{ y: galleryCard2Y }}
@@ -105,7 +105,7 @@ export default function AboutPage() {
                                         style={{ y: galleryCard3Y }}
                                         className="absolute top-[280px] right-[0%] w-[40%] aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-30"
                                     >
-                                        <Image src="/founders/pemba5.jpg" alt="Cultural connection" fill className="object-cover" />
+                                        <Image src="/founders/pic2.jpg" alt="Cultural connection" fill className="object-cover" />
                                     </motion.div>
                                 </div>
                             </div>
