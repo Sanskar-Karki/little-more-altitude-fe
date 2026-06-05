@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import ebc from "../../../public/images/HomePageImage/ebc.jpg";
 import abcsun from "../../../public/images/Trekking/Abc/annapurna cover.jpg";
 import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
-import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
+import Manaslu from "../../../public/images/HomePageImage/MANASLU-circuit.png";
 import Mardi from "../../../public/images/Trekking/Mardi/MardiHimalCover.jpg";
 
 const HERO_IMAGES = [
@@ -78,10 +78,10 @@ export function Hero() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="max-w-4xl mx-auto space-y-6"
                     >
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight drop-shadow-xl">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight drop-shadow-xl font-bold">
                             {translatedContent[index].title}
                         </h1>
-                        <p className="text-lg md:text-2xl text-brand-white/90 font-light max-w-2xl mx-auto drop-shadow-lg px-4 md:px-0">
+                        <p className="text-lg md:text-3xl text-brand-white/90 text-slate-900 font-semibold max-w-4xl mx-auto drop-shadow-lg px-4 md:px-0">
                             {translatedContent[index].subtitle}
                         </p>
                         <motion.div

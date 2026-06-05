@@ -26,24 +26,17 @@ export function Testimonials() {
                 socialType: "facebook"
             },
             {
-                avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+                avatar: "/images/Testimonial/Mary-horten.jpg",
                 rating: 5,
-                socialHandle: "@sarah_peaks",
-                socialLink: "#",
+                socialHandle: "@mary_horton",
+                socialLink: "https://www.instagram.com/",
                 socialType: "instagram"
             },
             {
-                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+                avatar: "/images/Testimonial/Pabitra-didi.jpg",
                 rating: 5,
-                socialHandle: "@mchen_clicks",
-                socialLink: "#",
-                socialType: "instagram"
-            },
-            {
-                avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
-                rating: 5,
-                socialHandle: "@emma_wanders",
-                socialLink: "#",
+                socialHandle: "@pabitra",
+                socialLink: "https://www.instagram.com/",
                 socialType: "instagram"
             }
         ];
@@ -150,12 +143,17 @@ export function Testimonials() {
                                             <Star key={i} className={`h-4 w-4 ${i < testimonials[currentIndex].rating ? 'fill-brand-light text-brand-light' : 'text-brand-white/20'}`} />
                                         ))}
                                     </div>
-                                    <div className="text-base md:text-xl text-white leading-[1.5] font-bold tracking-tight pointer-events-auto">
-                                        "{isExpanded ? testimonials[currentIndex].content : truncateText(testimonials[currentIndex].content, 18)}"
-                                        {getWordCount(testimonials[currentIndex].content) > 18 && (
+                                    <div className="text-base md:text-lg text-white leading-relaxed font-medium tracking-tight pointer-events-auto space-y-3">
+                                        {isExpanded
+                                            ? testimonials[currentIndex].content.split('\n\n').map((para: string, i: number) => (
+                                                <p key={i}>"{para}"</p>
+                                            ))
+                                            : <p>"{truncateText(testimonials[currentIndex].content.split('\n\n')[0], 30)}"</p>
+                                        }
+                                        {getWordCount(testimonials[currentIndex].content) > 30 && (
                                             <button
                                                 onClick={() => setIsExpanded(!isExpanded)}
-                                                className="ml-2 text-brand-light font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer"
+                                                className="text-brand-light font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer"
                                             >
                                                 {isExpanded ? t('testimonials.showLess') : t('testimonials.readMore')}
                                             </button>

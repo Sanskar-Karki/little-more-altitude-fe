@@ -95,7 +95,7 @@ export function Nepal() {
                                 className="absolute top-0 right-0 w-[85%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl z-20 border border-white/5 will-change-transform"
                             >
                                 <Image
-                                    src="/images/HomePageImage/MardiHimal-Nepal.jpg"
+                                    src="/images/HomePageImage/moun1.jpg"
                                     alt="Nepal Landscape"
                                     fill
                                     className="object-cover"
@@ -107,17 +107,17 @@ export function Nepal() {
                             {/* Smaller Foreground Image */}
                             <motion.div
                                 style={{ y: yFast }}
-                                className="absolute bottom-4 left-0 w-[55%] md:w-[60%] aspect-square rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-30 border border-white/10 will-change-transform"
+                                className="absolute -bottom-10 -left-10 w-[55%] md:w-[60%] aspect-square rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-30 border border-white/10 will-change-transform"
                             >
                                 <Image
-                                    src="/images/HomePageImage/ebc1.jpg"
+                                    src="/images/HomePageImage/moun2.jpg"
                                     alt="Nepal Culture"
                                     fill
                                     className="object-cover"
                                     loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute flex items-center justify-center">
                                     <div className="text-center p-4">
                                         <p className="text-brand-light text-3xl font-black">1953</p>
                                         <p className="text-white/60 text-[8px] uppercase tracking-[0.3em] font-bold">{t('nepal.firstSummit')}</p>
@@ -130,14 +130,14 @@ export function Nepal() {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="absolute top-1/4 -right-2 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] z-40 hidden xl:block shadow-2xl"
+                                className="absolute top-1/4 -right-15 bg-white/5 backdrop-blur-md border border-white/10 p-5 rounded-[2rem] z-40 hidden xl:block shadow-2xl"
                             >
                                 <div className="space-y-2">
                                     <div className="flex gap-1">
                                         {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1 h-3 bg-brand-light rounded-full" />)}
                                     </div>
                                     <p className="text-white font-black text-lg tracking-tighter">{t('nepal.elite')}</p>
-                                    <p className="text-white/40 text-[7px] uppercase font-bold tracking-[0.25em]">{t('nepal.difficulty')}</p>
+                                    <p className="text-white text-xs uppercase font-bold tracking-[0.25em]">{t('nepal.difficulty')}</p>
                                 </div>
                             </motion.div>
 

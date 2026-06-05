@@ -18,243 +18,289 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
+    // Moments
     {
         id: 1,
-        src: "/gallery/DSC08099.jpeg",
-        alt: "Majestic Snow-Capped Himalayan Peak",
-        category: "landscape",
+        src: "/gallery/moments/DSC00326.jpg",
+        alt: "Trekking group enjoying the majestic scenery",
+        category: "moments",
         size: "large"
     },
     {
         id: 2,
-        src: "/gallery/DSC08161.jpeg",
-        alt: "Trekkers Traversing a Ridge",
-        category: "expeditions",
+        src: "/gallery/moments/DSC08043.jpg",
+        alt: "Trekkers ascending a high snow-covered slope",
+        category: "moments",
         size: "medium"
     },
     {
         id: 3,
-        src: "/gallery/IMG_1115.jpg",
-        alt: "Stunning Sunbeams over Mountain Valleys",
-        category: "landscape",
+        src: "/gallery/moments/DSC08099.jpeg",
+        alt: "Majestic moment beneath a snow-capped Himalayan peak",
+        category: "moments",
         size: "medium"
     },
     {
         id: 4,
-        src: "/gallery/IMG_4172.jpg",
-        alt: "Traditional Stone Village in the Himalayas",
-        category: "culture",
+        src: "/gallery/moments/DSC08161.jpeg",
+        alt: "Trekkers traversing a high mountain ridge",
+        category: "moments",
         size: "small"
     },
     {
         id: 5,
-        src: "/gallery/IMG_4343.jpg",
-        alt: "Joyful Moments on the Trekking Trail",
+        src: "/gallery/moments/IMG_1115.jpg",
+        alt: "Stunning sunbeams over the mountain valleys",
         category: "moments",
         size: "medium"
     },
     {
         id: 6,
-        src: "/gallery/IMG_4345.jpg",
-        alt: "Breathtaking Alpine Panorama",
-        category: "landscape",
-        size: "large"
-    },
-    {
-        id: 7,
-        src: "/gallery/IMG_4617.jpg",
-        alt: "Ancient Buddhist Stupa and Prayer Flags",
-        category: "culture",
+        src: "/gallery/moments/IMG_4172.jpg",
+        alt: "A quiet moment in a traditional stone village",
+        category: "moments",
         size: "small"
     },
     {
+        id: 7,
+        src: "/gallery/moments/IMG_4343.jpg",
+        alt: "Joyful moments on the trekking trail",
+        category: "moments",
+        size: "large"
+    },
+    {
         id: 8,
-        src: "/gallery/IMG_4627.jpg",
-        alt: "Expedition Group Prepared for Ascent",
-        category: "expeditions",
+        src: "/gallery/moments/IMG_4345.jpg",
+        alt: "Breathtaking alpine panorama",
+        category: "moments",
         size: "medium"
     },
     {
         id: 9,
-        src: "/gallery/IMG_4643.jpg",
-        alt: "A Serene High-Altitude Turquoise Lake",
-        category: "landscape",
-        size: "large"
+        src: "/gallery/moments/IMG_4617.jpg",
+        alt: "Pausing by ancient prayer flags",
+        category: "moments",
+        size: "small"
     },
     {
         id: 10,
-        src: "/gallery/IMG_5030.jpg",
-        alt: "Celebrating reaching the High Pass",
+        src: "/gallery/moments/IMG_4627.jpg",
+        alt: "The group prepared for the ascent",
         category: "moments",
         size: "medium"
     },
     {
         id: 11,
-        src: "/gallery/IMG_5158.jpg",
-        alt: "Himalayan Culture and Local Heritage",
-        category: "culture",
-        size: "small"
-    },
-    {
-        id: 12,
-        src: "/gallery/IMG_5205.jpg",
-        alt: "Climbing through Glacier Icefalls",
-        category: "expeditions",
+        src: "/gallery/moments/IMG_4643.jpg",
+        alt: "Reflecting beside a serene high-altitude lake",
+        category: "moments",
         size: "large"
     },
     {
-        id: 13,
-        src: "/gallery/IMG_6265.jpg",
-        alt: "Sunset Glow over Annapurna Massif",
-        category: "landscape",
+        id: 12,
+        src: "/gallery/moments/IMG_5030.jpg",
+        alt: "Celebrating reaching the high pass",
+        category: "moments",
         size: "medium"
     },
     {
-        id: 14,
-        src: "/gallery/IMG_6376.jpg",
-        alt: "Local Warmth and Hospitality in Tea House",
-        category: "culture",
+        id: 13,
+        src: "/gallery/moments/IMG_5158.jpg",
+        alt: "Sharing the journey along the trail",
+        category: "moments",
         size: "small"
     },
     {
+        id: 14,
+        src: "/gallery/moments/IMG_5205.jpg",
+        alt: "Climbing through glacier icefalls together",
+        category: "moments",
+        size: "large"
+    },
+    {
         id: 15,
-        src: "/gallery/IMG_7169.jpg",
-        alt: "Shared Laughter at Basecamp",
+        src: "/gallery/moments/IMG_6265.jpg",
+        alt: "Sunset glow over the Annapurna massif",
         category: "moments",
         size: "medium"
     },
     {
         id: 16,
-        src: "/gallery/IMG_7290.jpg",
-        alt: "Dramatic Clouds hovering over Peaks",
-        category: "landscape",
-        size: "medium"
-    },
-    {
-        id: 17,
-        src: "/gallery/IMG_7292.jpg",
-        alt: "Steep Climbing Trail to the Summit",
-        category: "expeditions",
+        src: "/gallery/moments/IMG_6376.jpg",
+        alt: "Local warmth and hospitality in a tea house",
+        category: "moments",
         size: "small"
     },
     {
+        id: 17,
+        src: "/gallery/moments/IMG_7169.jpg",
+        alt: "Shared laughter at basecamp",
+        category: "moments",
+        size: "medium"
+    },
+    {
         id: 18,
-        src: "/gallery/IMG_7303.jpg",
-        alt: "Mani Stone Inscriptions on the Trail",
-        category: "culture",
+        src: "/gallery/moments/IMG_7290.jpg",
+        alt: "Dramatic clouds hovering over the peaks",
+        category: "moments",
         size: "medium"
     },
     {
         id: 19,
-        src: "/gallery/okok.jpg",
-        alt: "Chasing the Golden Hour on Top",
+        src: "/gallery/moments/IMG_7292.jpg",
+        alt: "On the steep climbing trail",
+        category: "moments",
+        size: "small"
+    },
+    {
+        id: 20,
+        src: "/gallery/moments/okok.jpg",
+        alt: "Chasing the golden hour on top",
         category: "moments",
         size: "large"
     },
     {
-        id: 20,
-        src: "/gallery/oooo.jpg",
-        alt: "Epic Mountain Range Horizon",
-        category: "landscape",
+        id: 21,
+        src: "/gallery/moments/oooo.jpg",
+        alt: "Taking in the epic mountain horizon",
+        category: "moments",
         size: "medium"
     },
     {
-        id: 21,
-        src: "/gallery/opp.jpg",
-        alt: "Trekking through Deep Snow Fields",
-        category: "expeditions",
+        id: 22,
+        src: "/gallery/moments/opp.jpg",
+        alt: "Trekking through deep snow fields",
+        category: "moments",
         size: "small"
     },
     {
-        id: 22,
-        src: "/gallery/ppp.jpg",
-        alt: "Colorful Prayer Wheels at Monastery",
+        id: 23,
+        src: "/gallery/moments/ppp.jpg",
+        alt: "Spinning the colorful prayer wheels",
+        category: "moments",
+        size: "medium"
+    },
+    // Culture
+    {
+        id: 24,
+        src: "/gallery/culture/DSC08119.jpg",
+        alt: "Dramatic sunbeams kissing the sharp Himalayan ridges",
         category: "culture",
         size: "medium"
     },
     {
-        id: 23,
-        src: "/gallery/DSC00183.jpg",
+        id: 25,
+        src: "/gallery/culture/DSC08142.jpg",
+        alt: "Traditional life amid extreme altitudes",
+        category: "culture",
+        size: "large"
+    },
+    {
+        id: 26,
+        src: "/gallery/culture/DSC08233.jpg",
+        alt: "Traditional mountain stone structures along the trail",
+        category: "culture",
+        size: "medium"
+    },
+    {
+        id: 27,
+        src: "/gallery/culture/gatlang-tamang-village-trek-9-days-8-night_k5ea8.jpeg",
+        alt: "Gatlang Tamang village heritage",
+        category: "culture",
+        size: "medium"
+    },
+    // Summits
+    {
+        id: 28,
+        src: "/gallery/summits/2.png",
+        alt: "Towering Himalayan summit",
+        category: "summits",
+        size: "large"
+    },
+    {
+        id: 29,
+        src: "/gallery/summits/COVER PHOTO FOR MANASLU.png",
+        alt: "Manaslu — the spirit mountain",
+        category: "summits",
+        size: "medium"
+    },
+    {
+        id: 30,
+        src: "/gallery/summits/Cover_photo_for_Mardi_himal .jpg",
+        alt: "Golden sunset over Mardi Himal base camp",
+        category: "summits",
+        size: "large"
+    },
+    {
+        id: 31,
+        src: "/gallery/summits/IMG_5572 (1).jpg",
+        alt: "Approaching the summit ridge",
+        category: "summits",
+        size: "small"
+    },
+    {
+        id: 32,
+        src: "/gallery/summits/IMG_7303.jpg",
+        alt: "High on the climbing route",
+        category: "summits",
+        size: "medium"
+    },
+    {
+        id: 33,
+        src: "/gallery/summits/Island-Peak.jpg.webp",
+        alt: "Island Peak rising above the glacier",
+        category: "summits",
+        size: "medium"
+    },
+    {
+        id: 34,
+        src: "/gallery/summits/MardiHimal-Nepal-230.jpg",
+        alt: "Stunning views from Mardi Himal viewpoint",
+        category: "summits",
+        size: "medium"
+    },
+    {
+        id: 35,
+        src: "/gallery/summits/MardiHimal-Nepal-246.jpg",
+        alt: "Climbing the scenic ridges of Mardi Himal",
+        category: "summits",
+        size: "large"
+    },
+    // Landscape
+    {
+        id: 36,
+        src: "/gallery/landscape/DSC00183.jpg",
         alt: "Breathtaking snow-dusted alpine valley and ridges",
         category: "landscape",
         size: "large"
     },
     {
-        id: 24,
-        src: "/gallery/DSC00200.jpg",
+        id: 37,
+        src: "/gallery/landscape/DSC00200.jpg",
         alt: "Grand panorama of the frozen Himalayan peaks",
         category: "landscape",
         size: "medium"
     },
     {
-        id: 25,
-        src: "/gallery/DSC00326.jpg",
-        alt: "Trekking group enjoying the majestic scenery",
-        category: "moments",
-        size: "medium"
-    },
-    {
-        id: 26,
-        src: "/gallery/DSC08043.jpg",
-        alt: "Trekkers ascending a high snow-covered slope",
-        category: "expeditions",
+        id: 38,
+        src: "/gallery/landscape/big.jpg",
+        alt: "Sweeping view across the Himalayan range",
+        category: "landscape",
         size: "large"
     },
     {
-        id: 27,
-        src: "/gallery/DSC08119.jpg",
-        alt: "Dramatic sunbeams kissing the sharp Himalayan ridges",
-        category: "landscape",
-        size: "medium"
-    },
-    {
-        id: 28,
-        src: "/gallery/DSC08142.jpg",
-        alt: "Navigating deep snow trails in extreme altitudes",
-        category: "expeditions",
-        size: "small"
-    },
-    {
-        id: 29,
-        src: "/gallery/DSC08233.jpg",
-        alt: "Trekkers passing traditional mountain stone structures",
-        category: "culture",
-        size: "medium"
-    },
-    {
-        id: 30,
-        src: "/gallery/IMG_4643 (2).jpg",
+        id: 39,
+        src: "/gallery/landscape/c68e3cfae1eb9c6d842f86a27b410bcd-v11.jpg",
         alt: "Serene alpine valley under clear skies",
         category: "landscape",
         size: "medium"
     },
     {
-        id: 31,
-        src: "/gallery/IMG_5572 (1).jpg",
-        alt: "Experiencing the rustic charm of highland teahouses",
-        category: "moments",
-        size: "small"
-    },
-    {
-        id: 32,
-        src: "/gallery/MardiHimal-Nepal-230.jpg",
-        alt: "Stunning views from Mardi Himal Viewpoint",
+        id: 40,
+        src: "/gallery/landscape/images_4d9adf24-3b7c-42.jpg",
+        alt: "Epic mountain range horizon",
         category: "landscape",
         size: "medium"
-    },
-    {
-        id: 33,
-        src: "/gallery/MardiHimal-Nepal-246.jpg",
-        alt: "Climbing up the scenic ridges of Mardi Himal",
-        category: "expeditions",
-        size: "large"
-    },
-    {
-        id: 34,
-        src: "/gallery/Cover_photo_for_Mardi_himal .jpg",
-        alt: "Golden sunset over Mardi Himal base camp",
-        category: "landscape",
-        size: "large"
     }
 ];
 
@@ -265,10 +311,10 @@ export function Gallery() {
 
     const CATEGORIES = [
         { id: "all", label: t('gallery.categories.all') },
-        { id: "expeditions", label: t('gallery.categories.expeditions') },
-        { id: "culture", label: t('gallery.categories.culture') },
-        { id: "landscape", label: t('gallery.categories.landscape') },
         { id: "moments", label: t('gallery.categories.moments') },
+        { id: "culture", label: t('gallery.categories.culture') },
+        { id: "summits", label: t('gallery.categories.summits') },
+        { id: "landscape", label: t('gallery.categories.landscape') },
     ];
 
     const filteredImages = useMemo(() => {

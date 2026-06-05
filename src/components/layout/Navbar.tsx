@@ -19,7 +19,7 @@ export function Navbar() {
         { label: t('nav.home'), href: "/", icon: Home, mobileOnly: true },
         { label: t('nav.about'), href: "/about", icon: Mountain },
         { label: t('nav.trekking'), href: "/trekking", icon: ArrowRight },
-        { label: t('nav.expedition'), href: "/expedition", icon: ArrowRight },
+        { label: "Peaks", href: "/expedition", icon: ArrowRight },
         { label: t('nav.gallery'), href: "/gallery", icon: ArrowRight },
         { label: t('nav.faq'), href: "/faq", icon: ArrowRight },
         { label: t('nav.contact'), href: "/contact", icon: Mail },

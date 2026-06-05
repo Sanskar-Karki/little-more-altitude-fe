@@ -91,19 +91,19 @@ export default function AboutPage() {
                                 <div className="relative h-[600px] md:h-[800px] hidden lg:block overflow-visible">
                                     <motion.div
                                         style={{ y: galleryCard1Y }}
-                                        className="absolute top-[-20px] right-0 w-[40%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-20"
+                                        className="absolute top-[-20px] right-0 w-[41%] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-20"
                                     >
-                                        <Image src="/founders/pic1.jpg" alt="Mountain Expedition" fill className="object-cover" />
+                                        <Image src="/founders/group2.jpg" alt="Mountain Expedition" fill className="object-cover" />
                                     </motion.div>
                                     <motion.div
                                         style={{ y: galleryCard2Y }}
-                                        className="absolute top-[20%] left-20 w-[45%] aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-10"
+                                        className="absolute top-[20%] left-[-20] w-[60%] aspect-[16/12] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-10"
                                     >
-                                        <Image src="/founders/group1.jpg" alt="Founder guiding" fill className="object-cover" />
+                                        <Image src="/founders/group1.png" alt="Founder guiding" fill className="object-cover" />
                                     </motion.div>
                                     <motion.div
                                         style={{ y: galleryCard3Y }}
-                                        className="absolute top-[280px] right-[0%] w-[40%] aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-30"
+                                        className="absolute top-[270px] right-[0%] w-[41%] aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white z-30"
                                     >
                                         <Image src="/founders/pic2.jpg" alt="Cultural connection" fill className="object-cover" />
                                     </motion.div>

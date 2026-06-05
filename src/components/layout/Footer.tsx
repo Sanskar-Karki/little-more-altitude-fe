@@ -26,7 +26,7 @@ export function Footer() {
                         <h4 className="text-lg font-semibold mb-6 text-brand-light">{t('footer.explore')}</h4>
                         <ul className="space-y-3 text-brand-white/90">
                             <li><Link href="/trekking" className="hover:text-white transition-colors">{t('nav.trekking')}</Link></li>
-                            <li><Link href="/expedition" className="hover:text-white transition-colors">{t('nav.expedition')}</Link></li>
+                            <li><Link href="/expedition" className="hover:text-white transition-colors">Peaks</Link></li>
                             <li><Link href="/gallery" className="hover:text-white transition-colors">{t('nav.gallery')}</Link></li>
                             <li><Link href="/about" className="hover:text-white transition-colors">{t('nav.about')}</Link></li>
                             <li><Link href="/faq" className="hover:text-white transition-colors">{t('nav.faq')}</Link></li>
@@ -66,6 +66,9 @@ export function Footer() {
                                 {t('footer.go')}
                             </button>
                         </form>
+                        <div className="mt-6">
+                            <Link href="/terms" className="text-sm text-brand-white/70 hover:text-brand-light transition-colors underline underline-offset-4">Terms & Policies</Link>
+                        </div>
                     </div>
                 </div>
 

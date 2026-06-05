@@ -179,22 +179,17 @@ export const translations = {
         {
           name: "Marc Duynslaeger",
           role: "Himalayan Explorer",
-          content: "The Absolute Pinnacle of Himalayan Guiding. If you are seeking the absolute pinnacle of Himalayan trekking, look no further than little more altitude. This phenomenal guiding team offers expertise that is simply legendary. What truly sets little more altitude apart is its uncanny ability to uncover breathtaking hidden gems and secluded viewpoints that others completely overlook. Whether it is their vast, encyclopedic knowledge of the terrain or their prestigious network of local connections, little more altitude provides an exclusive insider’s perspective that is second to none. I had the incredible opportunity to complete both the Gokyo and Langtang treks—two of the most famous trekking routes in Nepal—with little more altitude, and the experience felt truly different. What are often considered well-known trails were transformed into something far more personal, immersive, and unforgettable through their guidance and attention to detail. A magnificent ambassador of Nepalese hospitality, little more altitude is a true master of the craft!"
+          content: "If you are seeking the absolute pinnacle of Himalayan trekking, look no further than Little More Altitude. This phenomenal guiding team offers expertise that is simply legendary. What truly sets Little More Altitude apart is its uncanny ability to uncover breathtaking hidden gems and secluded viewpoints that others completely overlook. Whether it is their vast, encyclopedic knowledge of the terrain or their prestigious network of local connections, Little More Altitude provides an exclusive insider’s perspective that is second to none.\n\nI had the incredible opportunity to complete both the Gokyo and Langtang treks—two of the most famous trekking routes in Nepal—with Little More Altitude, and the experience felt truly different. What are often considered well-known trails were transformed into something far more personal, immersive, and unforgettable through their guidance and attention to detail.\n\nA magnificent ambassador of Nepalese hospitality, Little More Altitude is a true master of the craft!"
         },
         {
-          name: "Sarah Mitchell",
-          role: "Adventure Enthusiast",
-          content: "The Everest Base Camp trek was a life-changing experience. The guides were incredibly knowledgeable and supportive, making sure everyone felt safe and motivated throughout the journey."
+          name: "Mary Horton",
+          role: "Solo Female Trekker · Three Passes Trek",
+          content: "I completed the Three Passes Trek from mid-April to early May as a solo female traveler, and it was truly the experience of a lifetime. My trekking guide was Tashi, and my porter was Rabi. They were absolutely fantastic—always looking out for me, incredibly respectful, and soon felt more like a trail family than just a guide and porter.\n\nTashi previously worked as a trekking guide for a company, where he built years of experience and gained extensive knowledge of the Himalayas and trekking routes. Thanks to his dedication, professionalism, and expertise, he is now pursuing his dream of running his own trekking company by founding Little More Altitude Treks. Throughout the trek, their top priority was always safety and the well-being of their clients. They knew many people along the trail, were highly respected in the trekking community, and handled every situation with confidence and care.\n\nWhen I wasn’t feeling well at high altitude, Tashi carefully adjusted our itinerary and suggested a more gradual descent rather than pushing on through two additional high passes. His judgment and concern for my safety made all the difference and allowed me to continue enjoying the trek comfortably.\n\nRabi was also outstanding—hardworking, kind, and always ready with a smile and encouragement. Together, Tashi and Rabi made an incredible team.\n\nIf you’re looking for a guide who is experienced, knowledgeable, trustworthy, and genuinely cares about his clients, I cannot recommend Tashi and the Little More Altitude Treks team highly enough. This was truly the adventure of a lifetime, and I am so grateful for the memories we created on the trail. 1000/10 would recommend!"
         },
         {
-          name: "Michael Chen",
-          role: "Photographer",
-          content: "As a photographer, I've traveled to many places, but the views on the Annapurna Circuit were unparalleled. SummitTrek's attention to detail and timing for the best shots was impressive."
-        },
-        {
-          name: "Emma Rodriguez",
-          role: "First-time Trekker",
-          content: "I was nervous about my first high-altitude trek, but the team made me feel confident and prepared. The experience exceeded all my expectations - I'm already planning my next adventure!"
+          name: "Pabitra",
+          role: "Solo Trekker · ABC & Mardi Himal",
+          content: "In 2024, my friend recommended Little More Altitude Treks for a solo trip to ABC (Annapurna Base Camp) and Mardi Himal Trek. It was a great experience. I would highly recommend it to people who are thinking of going on a solo trip to ABC or Mardi Himal. Just go for it.\n\nIt’s safe, fun, has breathtaking views, and creates lifetime memories. I had a really smooth 12-day itinerary, which I really loved. Thanks to Ngima and Little More Altitude for making the itinerary run so smoothly. I really enjoyed my trek in Nepal.\n\nHope to see you soon in the coming year for EBC (Everest Base Camp). I would highly recommend Little More Altitude for trekking all over Nepal."
         }
       ]
     },
@@ -219,7 +214,7 @@ export const translations = {
         placeholderName: "John Doe",
         placeholderEmail: "johndoe@peak.com",
         placeholderMessage: "Tell us about the peak you want to conquer...",
-        submit: "Begin Expedition",
+        submit: "Book now",
         sending: "Sending...",
         success: "Message sent! We'll get back to you within 24 hours."
       }
@@ -233,7 +228,7 @@ export const translations = {
       meetTeam: "Meet Our Team",
       vision: "Our vision is simple but bold: to share the best experiences we’ve gained from our own journeys, guiding trekkers not just across trails, but into the soul of the Himalayas itself.",
       teamBadge: "Our Team",
-      cta: "Join Our Next Adventure",
+      cta: "Book your next Adventure",
       founders: [
         {
           name: "Pemba N. Sherpa",
@@ -287,10 +282,10 @@ export const translations = {
       viewDetails: "View Details",
       categories: {
         all: "All",
-        expeditions: "Expeditions",
+        moments: "Moments",
         culture: "Culture",
-        landscape: "Landscape",
-        moments: "Moments"
+        summits: "Summits",
+        landscape: "Landscape"
       }
     },
     trekking: {
@@ -710,19 +705,14 @@ export const translations = {
           content: "Le summum absolu du guidage dans l'Himalaya. Si vous recherchez le summum absolu du trekking dans l'Himalaya, ne cherchez pas plus loin que Little More Altitude. Cette équipe de guides phénoménale offre une expertise tout simplement légendaire. Ce qui distingue vraiment Little More Altitude, c'est son incroyable capacité à découvrir des joyaux cachés époustouflants et des points de vue isolés que d'autres ignorent complètement. Qu'il s'agisse de leur connaissance encyclopédique du terrain ou de leur prestigieux réseau de connexions locales, Little More Altitude offre une perspective d'initié exclusive et inégalée. J'ai eu l'incroyable opportunité de réaliser les treks de Gokyo et du Langtang—deux des itinéraires les plus célèbres du Népal—avec Little More Altitude, et l'expérience était vraiment différente. Ce qui est souvent considéré comme des sentiers bien connus a été transformé en quelque chose de beaucoup plus personnel, immersif et inoubliable grâce à leurs conseils et à leur souci du détail. Magnifique ambassadeur de l'hospitalité népalaise, Little More Altitude est un véritable maître en la matière !"
         },
         {
-          name: "Sarah Mitchell",
-          role: "Enthousiaste de l'Aventure",
-          content: "Le trek du camp de base de l'Everest a été une expérience qui a changé ma vie. Les guides étaient incroyablement compétents."
+          name: "Maryhorton",
+          role: "Trekkeuse Solo · Three Passes Trek",
+          content: "I completed the Three Passes Trek from mid-April to early May as a solo female traveler, and it was truly the experience of a lifetime. My trekking guide was Tashi, and my porter was Rabi. They were absolutely fantastic—always looking out for me, incredibly respectful, and soon felt more like a trail family than just a guide and porter. When I wasn't feeling well at high altitude, Tashi carefully adjusted our itinerary and suggested a more gradual descent rather than pushing on through two additional high passes. His judgment and concern for my safety made all the difference. Rabi was also outstanding—hardworking, kind, and always ready with a smile and encouragement. 1000/10 would recommend!"
         },
         {
-          name: "Michael Chen",
-          role: "Photographe",
-          content: "En tant que photographe, j'ai voyagé dans de nombreux endroits, mais les vues sur le circuit de l'Annapurna étaient inégalées."
-        },
-        {
-          name: "Emma Rodriguez",
-          role: "Trekkereuse débutante",
-          content: "J'étais nerveuse à l'idée de mon premier trek en haute altitude, mais l'équipe m'a mise en confiance."
+          name: "Pabitra",
+          role: "Trekker Solo · ABC & Mardi Himal",
+          content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. I had a really smooth itinerary for 12 days. Thank you to Ngima and Little More Altitude for making a really smooth itinerary for me. I would highly recommend Little More Altitude for trekking all over Nepal!"
         }
       ]
     },
@@ -815,10 +805,10 @@ export const translations = {
       viewDetails: "Voir les Détails",
       categories: {
         all: "Tout",
-        expeditions: "Expéditions",
+        moments: "Moments",
         culture: "Culture",
-        landscape: "Paysage",
-        moments: "Moments"
+        summits: "Sommets",
+        landscape: "Paysage"
       }
     },
     trekking: {
@@ -1265,10 +1255,10 @@ export const translations = {
       viewDetails: "Ver Detalles",
       categories: {
         all: "Todo",
-        expeditions: "Expediciones",
+        moments: "Momentos",
         culture: "Cultura",
-        landscape: "Paisaje",
-        moments: "Momentos"
+        summits: "Cumbres",
+        landscape: "Paisaje"
       }
     },
     trekking: {
@@ -1495,9 +1485,14 @@ export const translations = {
           content: "La cumbre absoluta del guiado en el Himalaya. Si busca la cumbre absoluta del trekking en el Himalaya, no busque más allá de Little More Altitude. Este fenomenal equipo de guías ofrece una experiencia sencillamente legendaria. Lo que realmente diferencia a Little More Altitude es su asombrosa capacidad para descubrir impresionantes joyas ocultas y miradores apartados que otros pasan por alto por completo. Ya sea por su vasto conocimiento enciclopédico del terreno o por su prestigiosa red de conexiones locales, Little More Altitude ofrece una perspectiva privilegiada exclusiva que no tiene parangón. Tuve la increíble oportunidad de realizar los trekkings de Gokyo y Langtang —dos de las rutas de trekking más famosas de Nepal— con Little More Altitude, y la experiencia fue realmente diferente. Lo que a menudo se consideran senderos conocidos se transformaron en algo mucho más personal, inmersivo e inolvidable gracias a su guía y atención al detalle. ¡Un magnífico embajador de la hospitalidad nepalesa, Little More Altitude es un verdadero maestro en su oficio!"
         },
         {
-          name: "Sarah Mitchell",
-          role: "Entusiasta de la Aventura",
-          content: "El trekking al Campamento Base del Everest fue una experiencia que me cambió la vida. Los guías fueron increíblemente expertos."
+          name: "Maryhorton",
+          role: "Trekker Solitaria · Three Passes Trek",
+          content: "I completed the Three Passes Trek from mid-April to early May as a solo female traveler, and it was truly the experience of a lifetime. My guide Tashi and porter Rabi were absolutely fantastic—always looking out for me and soon felt like trail family. When I wasn't feeling well at high altitude, Tashi carefully adjusted our itinerary for my safety. 1000/10 would recommend!"
+        },
+        {
+          name: "Pabitra",
+          role: "Trekker Solo · ABC & Mardi Himal",
+          content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. Thank you to Ngima and Little More Altitude. I would highly recommend Little More Altitude for trekking all over Nepal!"
         }
       ]
     },
@@ -1735,19 +1730,14 @@ export const translations = {
           content: "Der absolute Gipfel der Himalaya-Führung. Wenn Sie die absolute Spitze des Himalaya-Trekkings suchen, sind Sie bei Little More Altitude genau richtig. Was sie wirklich auszeichnet, ist die Fähigkeit, atemberaubende verborgene Schätze zu entdecken, die andere völlig übersehen. Ein prächtiger Botschafter nepalesischer Gastfreundschaft!"
         },
         {
-          name: "Sarah Mitchell",
-          role: "Abenteuer-Enthusiastin",
-          content: "Der Everest Basislager Trek war eine lebensverändernde Erfahrung. Die Guides waren unglaublich sachkundig und unterstützend."
+          name: "Maryhorton",
+          role: "Solo-Trekkerin · Three Passes Trek",
+          content: "I completed the Three Passes Trek from mid-April to early May as a solo female traveler, and it was truly the experience of a lifetime. My guide Tashi and porter Rabi were absolutely fantastic—always looking out for me and soon felt like trail family. When I wasn't feeling well at high altitude, Tashi carefully adjusted our itinerary for my safety. 1000/10 would recommend!"
         },
         {
-          name: "Michael Chen",
-          role: "Fotograf",
-          content: "Als Fotograf habe ich viele Orte bereist, aber die Aussichten auf der Annapurna-Runde waren unvergleichlich. Die Liebe zum Detail war beeindruckend."
-        },
-        {
-          name: "Emma Rodriguez",
-          role: "Trekking-Neuling",
-          content: "Ich war nervös wegen meines ersten Hochgebirgs-Treks, aber das Team gab mir Sicherheit. Die Erfahrung hat alle Erwartungen übertroffen!"
+          name: "Pabitra",
+          role: "Solo-Trekker · ABC & Mardi Himal",
+          content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. Thank you to Ngima and Little More Altitude. I would highly recommend Little More Altitude for trekking all over Nepal!"
         }
       ]
     },
@@ -1840,10 +1830,10 @@ export const translations = {
       viewDetails: "Details ansehen",
       categories: {
         all: "Alle",
-        expeditions: "Expeditionen",
+        moments: "Momente",
         culture: "Kultur",
-        landscape: "Landschaft",
-        moments: "Momente"
+        summits: "Gipfel",
+        landscape: "Landschaft"
       }
     },
     trekking: {

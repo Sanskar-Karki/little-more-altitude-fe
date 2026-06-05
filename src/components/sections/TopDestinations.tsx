@@ -7,8 +7,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mountain } from "lucide-react";
-import abcsun from "../../../public/images/HomePageImage/abcsun.jpg";
-import Manaslu from "../../../public/images/HomePageImage/Manaslu.jpg";
+import abcsun from "../../../public/images/HomePageImage/annapurna-base.jpg";
+import Manaslu from "../../../public/images/HomePageImage/MANASLU-circuit.png";
 import ebc from "../../../public/images/HomePageImage/ebc.jpg";
 import { useLanguage } from "@/context/LanguageContext";
 
