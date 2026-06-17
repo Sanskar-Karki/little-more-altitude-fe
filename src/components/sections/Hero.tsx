@@ -81,7 +81,7 @@ export function Hero() {
                         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight drop-shadow-xl font-bold">
                             {translatedContent[index].title}
                         </h1>
-                        <p className="text-lg md:text-3xl text-brand-white/90 text-slate-900 font-semibold max-w-4xl mx-auto drop-shadow-lg px-4 md:px-0">
+                        <p className="text-lg md:text-3xl text-white font-semibold max-w-4xl mx-auto drop-shadow-lg px-4 md:px-0">
                             {translatedContent[index].subtitle}
                         </p>
                         <motion.div
