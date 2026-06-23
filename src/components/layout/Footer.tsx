@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Mountain, Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
@@ -12,10 +13,14 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                            <Mountain className="h-8 w-8 text-brand-light" />
-                            <span className="text-xl font-bold">Little More Altitude</span>
-                        </div>
+                        <Link href="/" className="relative block h-32 w-86 my-[-10]" aria-label="Little More Altitude home">
+                            <Image
+                                src="/images/horizontal-logo-png-white.png"
+                                alt="Little More Altitude"
+                                fill
+                                className="object-fill object-left"
+                            />
+                        </Link>
                         <p className="text-brand-white/80 leading-relaxed">
                             {t('footer.tagline')}
                         </p>

@@ -38,6 +38,10 @@ export function Testimonials() {
                 socialHandle: "@pabitra",
                 socialLink: "https://www.instagram.com/",
                 socialType: "instagram"
+            },
+            {
+                avatar: "/images/Testimonial/Lawrence.jpg",
+                rating: 5
             }
         ];
         return {
@@ -119,11 +123,17 @@ export function Testimonials() {
                                     className="relative"
                                 >
                                     <div className="absolute inset-0 bg-brand-light/20 blur-xl rounded-full scale-110" />
-                                    <img
-                                        src={testimonials[currentIndex].avatar}
-                                        alt={testimonials[currentIndex].name}
-                                        className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover relative z-10 ring-4 ring-brand-light/30"
-                                    />
+                                    {testimonials[currentIndex].avatar ? (
+                                        <img
+                                            src={testimonials[currentIndex].avatar}
+                                            alt={testimonials[currentIndex].name}
+                                            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover relative z-10 ring-4 ring-brand-light/30"
+                                        />
+                                    ) : (
+                                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full relative z-10 ring-4 ring-brand-light/30 bg-brand-medium text-white flex items-center justify-center text-2xl md:text-3xl font-black">
+                                            {testimonials[currentIndex].name.charAt(0)}
+                                        </div>
+                                    )}
                                     <div className="absolute -bottom-2 right-2 bg-brand-light text-brand-dark p-2 rounded-full z-20 shadow-lg">
                                         <Star className="h-5 w-5 fill-current" />
                                     </div>

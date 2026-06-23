@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mountain } from "lucide-react";
 
 export default function Loading() {
     return (
@@ -37,25 +37,21 @@ export default function Loading() {
                         repeat: Infinity,
                         ease: "easeInOut" 
                     }}
-                    className="relative"
+                    className="relative h-24 w-72 sm:h-28 sm:w-80 md:h-42 md:w-[30rem] my-[-10]"
                 >
                     <div className="absolute inset-x-[-20%] inset-y-[-20%] bg-brand-light/30 blur-3xl rounded-full opacity-30" />
-                    <Mountain className="w-20 h-20 md:w-32 md:h-32 text-brand-light relative" strokeWidth={1} />
+                    <Image
+                        src="/images/horizontal-logo-png-white.png"
+                        alt="Little More Altitude"
+                        fill
+                        priority
+                        sizes="(min-width: 768px) 28rem, 20rem"
+                        className="relative object-contain"
+                    />
                 </motion.div>
 
                 {/* Text Loader */}
                 <div className="flex flex-col items-center gap-4 w-full">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="flex flex-col items-center w-full px-4"
-                    >
-                        <h2 className="text-white text-lg sm:text-2xl md:text-3xl font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-center whitespace-nowrap">
-                            LITTLE <span className="text-brand-light">MORE</span> ALTITUDE
-                        </h2>
-                    </motion.div>
-                    
                     {/* Progress Bar Container */}
                     <div className="w-40 sm:w-56 h-[1.5px] bg-white/5 rounded-full overflow-hidden relative">
                         <motion.div 

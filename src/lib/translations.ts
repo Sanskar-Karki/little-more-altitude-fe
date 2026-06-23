@@ -190,6 +190,11 @@ export const translations = {
           name: "Pabitra",
           role: "Solo Trekker · ABC & Mardi Himal",
           content: "In 2024, my friend recommended Little More Altitude Treks for a solo trip to ABC (Annapurna Base Camp) and Mardi Himal Trek. It was a great experience. I would highly recommend it to people who are thinking of going on a solo trip to ABC or Mardi Himal. Just go for it.\n\nIt’s safe, fun, has breathtaking views, and creates lifetime memories. I had a really smooth 12-day itinerary, which I really loved. Thanks to Ngima and Little More Altitude for making the itinerary run so smoothly. I really enjoyed my trek in Nepal.\n\nHope to see you soon in the coming year for EBC (Everest Base Camp). I would highly recommend Little More Altitude for trekking all over Nepal."
+        },
+        {
+          name: "Lawrence",
+          role: "Tsum Valley & Manaslu Circuit Trek",
+          content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
         }
       ]
     },
@@ -713,6 +718,11 @@ export const translations = {
           name: "Pabitra",
           role: "Trekker Solo · ABC & Mardi Himal",
           content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. I had a really smooth itinerary for 12 days. Thank you to Ngima and Little More Altitude for making a really smooth itinerary for me. I would highly recommend Little More Altitude for trekking all over Nepal!"
+        },
+        {
+          name: "Lawrence",
+          role: "Tsum Valley & Manaslu Circuit Trek",
+          content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
         }
       ]
     },
@@ -1493,6 +1503,11 @@ export const translations = {
           name: "Pabitra",
           role: "Trekker Solo · ABC & Mardi Himal",
           content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. Thank you to Ngima and Little More Altitude. I would highly recommend Little More Altitude for trekking all over Nepal!"
+        },
+        {
+          name: "Lawrence",
+          role: "Tsum Valley & Manaslu Circuit Trek",
+          content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
         }
       ]
     },
@@ -1738,6 +1753,11 @@ export const translations = {
           name: "Pabitra",
           role: "Solo-Trekker · ABC & Mardi Himal",
           content: "In 2024, my friend recommended Little More Altitude Treks for Solo Trip to ABC and Mardi Himal Trek. It was a great experience. It's safe, fun, breathtaking views and a lifetime memory. Thank you to Ngima and Little More Altitude. I would highly recommend Little More Altitude for trekking all over Nepal!"
+        },
+        {
+          name: "Lawrence",
+          role: "Tsum Valley & Manaslu Circuit Trek",
+          content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
         }
       ]
     },
@@ -2077,4 +2097,3 @@ export const translations = {
     }
   }
 };
-

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Mountain, Instagram, Facebook, Twitter, ArrowRight, MapPin, Mail, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,16 +35,19 @@ export function Navbar() {
     }, []);
 
     const isHomePage = pathname === "/";
+    const logoSrc = isHomePage && !scrolled && !isOpen
+        ? "/images/horizontal-logo-png-dark.png"
+        : "/images/horizontal-logo-png-white.png";
 
     return (
         <nav
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
                 (scrolled || isOpen)
-                    ? "bg-brand-dark py-3 md:py-4 shadow-lg border-brand-light/20"
+                    ? "bg-brand-dark  shadow-lg border-brand-light/20"
                     : isHomePage
-                        ? "bg-transparent py-4 md:py-6"
-                        : "bg-brand-dark py-4 md:py-6"
+                        ? "bg-transparent "
+                        : "bg-brand-dark"
             )}
         >
             <div className="container mx-auto px-5 md:px-20 lg:px-32 flex items-center justify-between">
@@ -56,12 +60,16 @@ export function Navbar() {
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }
                     }}
-                    className="flex items-center gap-2 group"
+                    className="relative block h-20 w-60 md:h-34 md:w-78 my-[-20]"
+                    aria-label="Little More Altitude home"
                 >
-                    <Mountain className="h-7 w-7 md:h-8 md:w-8 text-brand-light transition-transform group-hover:scale-110" />
-                    <span className="text-lg md:text-xl font-bold text-white tracking-wide">
-                        Little More Altitude
-                    </span>
+                    <Image
+                        src={logoSrc}
+                        alt="Little More Altitude"
+                        fill
+                        priority
+                        className="object-fill object-left "
+                    />
                 </Link>
 
                 {/* Desktop Menu */}
