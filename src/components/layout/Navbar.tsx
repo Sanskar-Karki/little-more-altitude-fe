@@ -60,7 +60,7 @@ export function Navbar() {
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }
                     }}
-                    className="relative block h-20 w-60 md:h-34 md:w-78 my-[-20]"
+                    className="relative block h-20 w-60 md:h-28 md:w-68 my-[-14]"
                     aria-label="Little More Altitude home"
                 >
                     <Image

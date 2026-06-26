@@ -44,7 +44,7 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
 
     return (
         <Link href={slug ? `/trekking/${slug}` : "#"} className="block group">
-            <div className="relative h-[400px] md:h-[460px] rounded-[2.5rem] md:rounded-[2rem] overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-brand-dark">
+            <div className="relative h-[340px] md:h-[380px] rounded-[2rem] md:rounded-[1.75rem] overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-brand-dark">
                 <div className="absolute inset-0">
                     {image && (
                         <Image
@@ -58,15 +58,15 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </div>
 
-                <div className="absolute top-5 left-5 right-5 z-10 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
                         {dailyActivity && (
-                            <span className="px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest backdrop-blur-sm border bg-white/10 border-white/20 text-white flex items-center gap-1.5">
-                                <Activity size={9} />
+                            <span className="px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest backdrop-blur-sm border bg-white/10 border-white/20 text-white flex items-center gap-1">
+                                <Activity size={8} />
                                 {dailyActivity}
                             </span>
                         )}
-                        <span className={`px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest backdrop-blur-sm border
+                        <span className={`px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest backdrop-blur-sm border
                             ${difficulty.includes("Hard") || difficulty.includes("Strenuous")
                                 ? "bg-rose-500/20 border-rose-400/40 text-white"
                                 : difficulty.includes("Challenging")
@@ -74,32 +74,32 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
                                     : "bg-emerald-500/20 border-emerald-400/40 text-white"
                             }`}
                         >
-                            {(difficulty.includes("Hard") || difficulty.includes("Strenuous")) && <Zap size={9} className="inline mr-1 mb-0.5" />}
+                            {(difficulty.includes("Hard") || difficulty.includes("Strenuous")) && <Zap size={8} className="inline mr-1 mb-0.5" />}
                             {t(`trekking.filters.${difficulty.toLowerCase()}`)}
                         </span>
                     </div>
-                    <div className="flex items-center gap-1.5 bg-black/30 backdrop-blur-sm border border-white/15 px-3 py-1.5 rounded-full">
-                        <Star size={11} className="text-amber-400 fill-amber-400" />
-                        <span className="text-white font-bold text-xs">{rating}</span>
+                    <div className="flex items-center gap-1 bg-black/30 backdrop-blur-sm border border-white/15 px-2.5 py-1 rounded-full">
+                        <Star size={10} className="text-amber-400 fill-amber-400" />
+                        <span className="text-white font-bold text-[11px]">{rating}</span>
                     </div>
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-6 space-y-3">
+                <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-5 space-y-2">
                     <div className="flex items-center gap-1.5">
-                        <MapPin size={11} className="text-brand-light shrink-0" />
-                        <span className="text-brand-light font-bold text-[10px] uppercase tracking-[0.2em] truncate">{location}</span>
+                        <MapPin size={10} className="text-brand-light shrink-0" />
+                        <span className="text-brand-light font-bold text-[9px] uppercase tracking-[0.2em] truncate">{location}</span>
                     </div>
-                    <h3 className="text-2xl font-black text-white leading-tight tracking-tight group-hover:text-brand-medium transition-colors duration-300">
+                    <h3 className="text-lg font-black text-white leading-tight tracking-tight group-hover:text-brand-medium transition-colors duration-300">
                         {name}
                     </h3>
                     <div className="flex items-center justify-between pt-1">
                         <div className="flex items-center gap-1.5">
-                            <Clock size={12} className="text-white/40" />
-                            <span className="text-white/60 text-xs font-semibold">{duration}</span>
+                            <Clock size={11} className="text-white/40" />
+                            <span className="text-white/60 text-[11px] font-semibold">{duration}</span>
                         </div>
-                        <div className="flex items-center gap-2 border border-white/20 group-hover:border-brand-medium group-hover:bg-brand-medium text-white/70 group-hover:text-white pl-4 pr-3 py-2 rounded-full transition-all duration-300">
-                            <span className="text-[10px] font-black uppercase tracking-widest">{t('trekking.explore')}</span>
-                            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                        <div className="flex items-center gap-1.5 border border-white/20 group-hover:border-brand-medium group-hover:bg-brand-medium text-white/70 group-hover:text-white pl-3 pr-2.5 py-1.5 rounded-full transition-all duration-300">
+                            <span className="text-[9px] font-black uppercase tracking-widest">{t('trekking.explore')}</span>
+                            <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                         </div>
                     </div>
                 </div>
@@ -110,18 +110,18 @@ function TrekCard({ trek, index }: { trek: any; index: number }) {
 
 function TrekSkeleton() {
     return (
-        <div className="relative h-[400px] md:h-[460px] rounded-[2.5rem] md:rounded-[2rem] overflow-hidden bg-brand-dark animate-pulse border border-white/5">
+        <div className="relative h-[340px] md:h-[380px] rounded-[2rem] md:rounded-[1.75rem] overflow-hidden bg-brand-dark animate-pulse border border-white/5">
             <div className="absolute inset-0 bg-white/5" />
-            <div className="absolute top-5 left-5 right-5 flex justify-between">
-                <div className="w-24 h-6 bg-white/10 rounded-full" />
-                <div className="w-12 h-6 bg-white/10 rounded-full" />
+            <div className="absolute top-4 left-4 right-4 flex justify-between">
+                <div className="w-20 h-5 bg-white/10 rounded-full" />
+                <div className="w-10 h-5 bg-white/10 rounded-full" />
             </div>
-            <div className="absolute inset-x-0 bottom-0 px-6 pb-6 space-y-4">
-                <div className="w-20 h-3 bg-white/10 rounded-full" />
-                <div className="w-2/3 h-8 bg-white/10 rounded-xl" />
+            <div className="absolute inset-x-0 bottom-0 px-5 pb-5 space-y-3">
+                <div className="w-16 h-2.5 bg-white/10 rounded-full" />
+                <div className="w-2/3 h-6 bg-white/10 rounded-xl" />
                 <div className="flex justify-between items-center pt-2">
-                    <div className="w-24 h-4 bg-white/5 rounded-full" />
-                    <div className="w-24 h-10 bg-white/10 rounded-full" />
+                    <div className="w-20 h-3 bg-white/5 rounded-full" />
+                    <div className="w-20 h-8 bg-white/10 rounded-full" />
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
     const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
     const [selectedDuration, setSelectedDuration] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const [treksPerPage, setTreksPerPage] = useState(6);
+    const [treksPerPage, setTreksPerPage] = useState(8);
 
     const filterSectionRef = useRef<HTMLDivElement>(null);
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -367,13 +367,13 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
                 </div>
 
                 {loading ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[...Array(6)].map((_, i) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {[...Array(8)].map((_, i) => (
                             <TrekSkeleton key={i} />
                         ))}
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {paginatedTreks.map((trek, index) => (
                             <TrekCard key={trek.id} trek={trek} index={index} />
                         ))}
@@ -419,7 +419,7 @@ export function Trekking({ background = "white", autoFocusSearch = false }: { ba
 
                                         <div className={cn("flex items-center gap-2 px-1.5 py-1 bg-white border border-brand-dark/10 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)]", isDark && "bg-brand-white/5 border-white/5")}>
                                             <span className={cn("text-[10px] font-black px-4 text-brand-dark/30 uppercase tracking-[0.2em]", isDark && "text-white/30")}>{t('trekking.filters.show')}</span>
-                                            {[6, 12, 18, 24].map((count) => (
+                                            {[8, 12, 16, 20].map((count) => (
                                                 <button
                                                     key={count}
                                                     onClick={() => setTreksPerPage(count)}

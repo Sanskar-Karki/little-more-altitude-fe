@@ -14,6 +14,7 @@ import {
     XCircle,
     MapPin,
     ArrowRight,
+    ArrowLeft,
     Wind,
     Sun,
     Bird,
@@ -25,6 +26,7 @@ import Image from "next/image";
 import { getTrekBySlug, getMediaUrl } from "@/lib/trekking";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { useRouter } from "next/navigation";
 
 function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) {
     const { t } = useLanguage();
@@ -148,6 +150,7 @@ function ItinerarySection({ trek, itinerary }: { trek: any; itinerary: any[] }) 
 
 export default function DynamicTrekPage({ params }: { params: Promise<{ slug: string }> }) {
     const { t, language } = useLanguage();
+    const router = useRouter();
     const { slug } = use(params);
     const [trek, setTrek] = useState<any>(null);
     const [loading, setLoading] = useState(true);
@@ -243,6 +246,14 @@ export default function DynamicTrekPage({ params }: { params: Promise<{ slug: st
                     <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-transparent to-brand-dark/20" />
                     <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/60 via-transparent to-transparent hidden lg:block" />
                 </motion.div>
+
+                <button
+                    onClick={() => router.back()}
+                    className="absolute top-8 left-8 md:left-20 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 hover:bg-white/20 hover:text-white transition-all duration-300 text-xs font-black uppercase tracking-widest"
+                >
+                    <ArrowLeft size={14} />
+                    {t("common.back") || "Back"}
+                </button>
 
                 <div className="container relative z-10 mx-auto px-8 md:px-20 lg:px-32">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ">

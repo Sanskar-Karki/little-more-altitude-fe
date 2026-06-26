@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, Quote, Mountain, Instagram, Facebook } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote, Instagram, Facebook } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -42,6 +42,20 @@ export function Testimonials() {
             {
                 avatar: "/images/Testimonial/Lawrence.jpg",
                 rating: 5
+            },
+            {
+                avatar: "/images/Testimonial/Slava.jpg",
+                rating: 5,
+                socialHandle: "@sabbathist",
+                socialLink: "https://www.instagram.com/sabbathist?igsh=MTNyOXZkOXRxajF6bQ==",
+                socialType: "instagram"
+            },
+            {
+                avatar: "/images/Testimonial/Larakickart.jpg",
+                rating: 5,
+                socialHandle: "@tatalienurner",
+                socialLink: "https://www.instagram.com/tatalienurner?igsh=azlqMmRvdmVhNWpx",
+                socialType: "instagram"
             }
         ];
         return {
@@ -75,7 +89,11 @@ export function Testimonials() {
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-light/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-medium/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2" />
-            <Mountain className="absolute bottom-10 right-10 w-96 h-96 text-white/[0.02] -z-0 pointer-events-none" />
+            <img
+                src="/images/logo-symbol-png.png"
+                alt=""
+                className="absolute bottom-[-70] right-[-230] w-216 h-126 opacity-50 pointer-events-none object-contain"
+            />
 
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto my-10 space-y-4">

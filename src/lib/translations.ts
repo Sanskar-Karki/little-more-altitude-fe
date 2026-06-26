@@ -195,6 +195,16 @@ export const translations = {
           name: "Lawrence",
           role: "Tsum Valley & Manaslu Circuit Trek",
           content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
+        },
+        {
+          name: "Slava",
+          role: "Manaslu Circuit Trek",
+          content: "We've made Manaslu Circuit in November 2025 in a group of three with Tashi and Pemba as our guides. It was my third time trekking in Nepal and first time with Little More Altitude. I can say that it was as easy and comfort as it can ever be. Safety and comfort was the highest level. The bureaucracy part was smooth and seamless (all the permits before and on a trek and visa paperwork). Plans were adjustable to our abilities, and I can say that it was more just a guidance - it was more like a travelling with experienced local friends. I'm sure there will be more adventures together with Tashi and Pemba in the future."
+        },
+        {
+          name: "Nat",
+          role: "Manaslu & Tsum Valley Trek",
+          content: "The Manaslu and Tsum Valley trek was incredible, but your guide really makes the experience. Tashi was not only a highly capable and professional guide with many years experience, but also made every day a laugh. Tashi took us to the best spots for 360 mountain views (Pungen Gumba was incredible!!) and planned our trek seamlessly. We always felt looked after with Tashi checking in on us and had no altitude problems with days to acclimatize before the pass. Thank you for leading us on a once in a lifetime adventure - I would definitely recommend Little More Altitude to anyone trekking in Nepal."
         }
       ]
     },
@@ -723,6 +733,16 @@ export const translations = {
           name: "Lawrence",
           role: "Tsum Valley & Manaslu Circuit Trek",
           content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
+        },
+        {
+          name: "Slava",
+          role: "Manaslu Circuit Trek",
+          content: "We've made Manaslu Circuit in November 2025 in a group of three with Tashi and Pemba as our guides. It was my third time trekking in Nepal and first time with Little More Altitude. I can say that it was as easy and comfort as it can ever be. Safety and comfort was the highest level. The bureaucracy part was smooth and seamless (all the permits before and on a trek and visa paperwork). Plans were adjustable to our abilities, and I can say that it was more just a guidance - it was more like a travelling with experienced local friends. I'm sure there will be more adventures together with Tashi and Pemba in the future."
+        },
+        {
+          name: "Nat",
+          role: "Manaslu & Tsum Valley Trek",
+          content: "The Manaslu and Tsum Valley trek was incredible, but your guide really makes the experience. Tashi was not only a highly capable and professional guide with many years experience, but also made every day a laugh. Tashi took us to the best spots for 360 mountain views (Pungen Gumba was incredible!!) and planned our trek seamlessly. We always felt looked after with Tashi checking in on us and had no altitude problems with days to acclimatize before the pass. Thank you for leading us on a once in a lifetime adventure - I would definitely recommend Little More Altitude to anyone trekking in Nepal."
         }
       ]
     },
@@ -1508,6 +1528,16 @@ export const translations = {
           name: "Lawrence",
           role: "Tsum Valley & Manaslu Circuit Trek",
           content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
+        },
+        {
+          name: "Slava",
+          role: "Manaslu Circuit Trek",
+          content: "We've made Manaslu Circuit in November 2025 in a group of three with Tashi and Pemba as our guides. It was my third time trekking in Nepal and first time with Little More Altitude. I can say that it was as easy and comfort as it can ever be. Safety and comfort was the highest level. The bureaucracy part was smooth and seamless (all the permits before and on a trek and visa paperwork). Plans were adjustable to our abilities, and I can say that it was more just a guidance - it was more like a travelling with experienced local friends. I'm sure there will be more adventures together with Tashi and Pemba in the future."
+        },
+        {
+          name: "Nat",
+          role: "Manaslu & Tsum Valley Trek",
+          content: "The Manaslu and Tsum Valley trek was incredible, but your guide really makes the experience. Tashi was not only a highly capable and professional guide with many years experience, but also made every day a laugh. Tashi took us to the best spots for 360 mountain views (Pungen Gumba was incredible!!) and planned our trek seamlessly. We always felt looked after with Tashi checking in on us and had no altitude problems with days to acclimatize before the pass. Thank you for leading us on a once in a lifetime adventure - I would definitely recommend Little More Altitude to anyone trekking in Nepal."
         }
       ]
     },
@@ -1758,6 +1788,16 @@ export const translations = {
           name: "Lawrence",
           role: "Tsum Valley & Manaslu Circuit Trek",
           content: "I had a fantastic time on the Tsum Valley and Manaslu Circuit Trek with Tashi from Little More Altitude. The landscape was incredible throughout, with luscious lowland forests, along steep cliffs, through small villages and into the high plateaus of the Tsum and Manaslu areas. Colourful specs of Tibetan Buddhism were around every corner. Tashi knew the route very well and picked all the teahouses with the best Dal Bhat for us. He encouraged us to explore and try new things and was always good for a conversation or a joke. I'd love to come back."
+        },
+        {
+          name: "Slava",
+          role: "Manaslu Circuit Trek",
+          content: "We've made Manaslu Circuit in November 2025 in a group of three with Tashi and Pemba as our guides. It was my third time trekking in Nepal and first time with Little More Altitude. I can say that it was as easy and comfort as it can ever be. Safety and comfort was the highest level. The bureaucracy part was smooth and seamless (all the permits before and on a trek and visa paperwork). Plans were adjustable to our abilities, and I can say that it was more just a guidance - it was more like a travelling with experienced local friends. I'm sure there will be more adventures together with Tashi and Pemba in the future."
+        },
+        {
+          name: "Nat",
+          role: "Manaslu & Tsum Valley Trek",
+          content: "The Manaslu and Tsum Valley trek was incredible, but your guide really makes the experience. Tashi was not only a highly capable and professional guide with many years experience, but also made every day a laugh. Tashi took us to the best spots for 360 mountain views (Pungen Gumba was incredible!!) and planned our trek seamlessly. We always felt looked after with Tashi checking in on us and had no altitude problems with days to acclimatize before the pass. Thank you for leading us on a once in a lifetime adventure - I would definitely recommend Little More Altitude to anyone trekking in Nepal."
         }
       ]
     },
