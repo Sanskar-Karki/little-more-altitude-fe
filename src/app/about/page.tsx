@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mountain, Heart, Compass, Shield, Users, Camera, MapPin, Award, ArrowRight, ChevronDown, CheckCircle2, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,96 @@ export default function AboutPage() {
     const { t } = useLanguage();
     const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const isAutoScrollingToTeam = useRef(false);
+
+    useEffect(() => {
+        let wheelDistance = 0;
+        let touchStartY: number | null = null;
+
+        const scrollToTeam = () => {
+            if (isAutoScrollingToTeam.current) return;
+            const teamSection = document.getElementById("founders");
+            if (!teamSection) return;
+            isAutoScrollingToTeam.current = true;
+            teamSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+
+        const handleScroll = () => {
+            if (!isAutoScrollingToTeam.current) return;
+            const teamSection = document.getElementById("founders");
+            if (!teamSection || teamSection.getBoundingClientRect().top <= 96) {
+                isAutoScrollingToTeam.current = false;
+            }
+        };
+
+        const handleWheel = (event: WheelEvent) => {
+            if (window.scrollY >= window.innerHeight) {
+                wheelDistance = 0;
+                return;
+            }
+
+            if (isAutoScrollingToTeam.current) {
+                if (event.deltaY < 0) {
+                    isAutoScrollingToTeam.current = false;
+                    wheelDistance = 0;
+                    return;
+                }
+                event.preventDefault();
+                return;
+            }
+
+            if (event.deltaY <= 0) {
+                wheelDistance = 0;
+                return;
+            }
+
+            event.preventDefault();
+            wheelDistance += event.deltaY;
+            if (wheelDistance >= 48) scrollToTeam();
+        };
+
+        const handleTouchStart = (event: TouchEvent) => {
+            touchStartY = window.scrollY < window.innerHeight ? event.touches.item(0)?.clientY ?? null : null;
+        };
+
+        const handleTouchMove = (event: TouchEvent) => {
+            if (touchStartY === null) return;
+            const touch = event.touches.item(0);
+            if (!touch) return;
+
+            const swipeDistance = touchStartY - touch.clientY;
+            if (isAutoScrollingToTeam.current) {
+                if (swipeDistance <= 0) {
+                    isAutoScrollingToTeam.current = false;
+                    touchStartY = touch.clientY;
+                    return;
+                }
+                event.preventDefault();
+                return;
+            }
+
+            if (window.scrollY >= window.innerHeight) return;
+            if (swipeDistance <= 0) {
+                touchStartY = touch.clientY;
+                return;
+            }
+
+            event.preventDefault();
+            if (swipeDistance >= 48) scrollToTeam();
+        };
+
+        window.addEventListener("wheel", handleWheel, { passive: false });
+        window.addEventListener("touchstart", handleTouchStart, { passive: true });
+        window.addEventListener("touchmove", handleTouchMove, { passive: false });
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("wheel", handleWheel);
+            window.removeEventListener("touchstart", handleTouchStart);
+            window.removeEventListener("touchmove", handleTouchMove);
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
@@ -147,7 +237,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* === 2. MEET THE FOUNDERS === */}
-                    <div id="founders" className="relative pb-14">
+                    <div id="founders" className="relative scroll-mt-24 pb-14">
                         <div className="container mx-auto px-6 md:px-8 text-center relative z-10">
                             <SectionBadge icon={Users}><p className="text-[14px]">{t('about.teamBadge')}</p></SectionBadge>
                             <p className="text-brand-dark text-lg md:text-xl lg:pr-12 mx-auto my-12 text-center max-w-3xl px-4 md:px-8" >

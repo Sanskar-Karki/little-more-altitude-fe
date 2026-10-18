@@ -10,11 +10,11 @@ export default function TermsPage() {
     const [activeSection, setActiveSection] = useState("terms");
 
     const sections = [
-        { id: "terms", title: "Terms & Conditions", icon: <FileText size={20} /> },
-        { id: "privacy", title: "Privacy Policy", icon: <Shield size={20} /> },
-        { id: "visa", title: "Visa Procedures", icon: <FileCheck size={20} /> },
-        { id: "service", title: "Terms of Service", icon: <Scale size={20} /> },
-        { id: "b2b", title: "B2B & Partners", icon: <Handshake size={20} /> },
+        { id: "terms", title: t('siteCopy.terms.conditions'), icon: <FileText size={20} /> },
+        { id: "privacy", title: t('siteCopy.terms.privacy'), icon: <Shield size={20} /> },
+        { id: "visa", title: t('siteCopy.terms.visa'), icon: <FileCheck size={20} /> },
+        { id: "service", title: t('siteCopy.terms.service'), icon: <Scale size={20} /> },
+        { id: "b2b", title: t('siteCopy.terms.partners'), icon: <Handshake size={20} /> },
     ];
 
     // Scroll to section handling
@@ -57,7 +57,7 @@ export default function TermsPage() {
                     {/* Sidebar Navigation */}
                     <div className="lg:w-1/4 hidden lg:block">
                         <div className="sticky top-32 backdrop-blur-xl bg-brand-medium/10 rounded-3xl p-6 border border-white/5 shadow-2xl">
-                            <h3 className="text-sm font-bold text-brand-light/60 uppercase tracking-wider mb-6 pl-4">{t('Contents')}</h3>
+                            <h3 className="text-sm font-bold text-brand-light/60 uppercase tracking-wider mb-6 pl-4">{t('siteCopy.terms.contents')}</h3>
                             <ul className="space-y-3">
                                 {sections.map((section) => (
                                     <li key={section.id}>
@@ -92,7 +92,7 @@ export default function TermsPage() {
                         {/* Terms & Conditions */}
                         <motion.section id="terms" className="scroll-mt-32" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}>
                             <div className="mt-20">
-                                <h2 className="text-4xl font-bold text-white mb-4">Terms & Conditions</h2>
+                                <h2 className="text-4xl font-bold text-white mb-4">{t('siteCopy.terms.conditions')}</h2>
                             </div>
                             <div className="prose prose-invert max-w-none text-brand-white/80 space-y-8">
                                 <p className="text-lg leading-relaxed">Before signing any adventures with us, we strongly advise you to carefully review the following terms and conditions of our company as all of our trips are conducted in the high altitudes regions of Nepal Himalaya that involve a fair amount of risk.</p>
@@ -169,7 +169,7 @@ export default function TermsPage() {
                         {/* Privacy Policy */}
                         <motion.section id="privacy" className="scroll-mt-32" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}>
                             <div className="mb-10">
-                                <h2 className="text-4xl font-bold text-white mb-4">Privacy Policy</h2>
+                                <h2 className="text-4xl font-bold text-white mb-4">{t('siteCopy.terms.privacy')}</h2>
                                 <div className="h-1 w-20 bg-brand-light rounded-full"></div>
                             </div>
                             <div className="prose prose-invert max-w-none text-brand-white/80 space-y-8">
@@ -256,7 +256,7 @@ export default function TermsPage() {
                         {/* Visa Procedures */}
                         <motion.section id="visa" className="scroll-mt-32" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}>
                             <div className="mb-10">
-                                <h2 className="text-4xl font-bold text-white mb-4">Visa Procedures</h2>
+                                <h2 className="text-4xl font-bold text-white mb-4">{t('siteCopy.terms.visa')}</h2>
                                 <div className="h-1 w-20 bg-brand-light rounded-full"></div>
                             </div>
                             <div className="prose prose-invert max-w-none text-brand-white/80 space-y-8">
@@ -351,7 +351,7 @@ export default function TermsPage() {
                         {/* Terms of Service */}
                         <motion.section id="service" className="scroll-mt-32" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}>
                             <div className="mb-10">
-                                <h2 className="text-4xl font-bold text-white mb-4">Terms of Service</h2>
+                                <h2 className="text-4xl font-bold text-white mb-4">{t('siteCopy.terms.service')}</h2>
                                 <div className="h-1 w-20 bg-brand-light rounded-full"></div>
                             </div>
                             <div className="prose prose-invert max-w-none text-brand-white/80 space-y-8">
@@ -443,7 +443,7 @@ export default function TermsPage() {
                         {/* B2B & Partners */}
                         <motion.section id="b2b" className="scroll-mt-32" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}>
                             <div className="mb-10">
-                                <h2 className="text-4xl font-bold text-white mb-4">B2B & Partners</h2>
+                                <h2 className="text-4xl font-bold text-white mb-4">{t('siteCopy.terms.partners')}</h2>
                                 <div className="h-1 w-20 bg-brand-light rounded-full"></div>
                             </div>
                             <div className="prose prose-invert max-w-none text-brand-white/80 space-y-8">

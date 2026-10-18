@@ -93,7 +93,7 @@ export function ContactSection() {
 
     return (
         <Section id="contact" background="white" className="overflow-visible">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-20 -mt-15 items-center">
 
                 {/* Contact Info Side */}
                 <motion.div

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowLeft, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface ErrorProps {
     error: Error & { digest?: string };
@@ -12,6 +13,7 @@ interface ErrorProps {
 }
 
 export default function ErrorPage({ error, reset }: ErrorProps) {
+    const { t } = useLanguage();
     useEffect(() => {
         console.error("Application runtime error caught by boundary:", error);
     }, [error]);
@@ -22,7 +24,7 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90"
-                    alt="Atmospheric Mountains"
+                    alt={t('siteCopy.trekking.region')}
                     fill
                     className="object-cover opacity-10 filter grayscale brightness-50"
                 />
@@ -66,7 +68,7 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4 text-rose-500">
                             <AlertTriangle className="animate-pulse" size={24} />
-                            <span className="text-[12px] font-black uppercase tracking-[0.5em]">Altitude Warning: Glitch Detected</span>
+                            <span className="text-[12px] font-black uppercase tracking-[0.5em]">{t('siteCopy.error.warning')}</span>
                         </div>
                         <h1 className="text-[10rem] md:text-[18rem] font-black leading-none tracking-tighter text-white/5 select-none">
                             ERR
@@ -76,16 +78,16 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
                     {/* Message */}
                     <div className="space-y-6 -mt-24 md:-mt-40 relative z-30">
                         <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]">
-                            STORM IN THE <br />
-                            <span className="text-rose-500">SYSTEM.</span>
+                            {t('siteCopy.error.titleStart')} <br />
+                            <span className="text-rose-500">{t('siteCopy.error.titleEnd')}</span>
                         </h2>
                         <p className="text-brand-white/50 text-xl md:text-2xl font-medium leading-relaxed max-w-2xl">
-                            We've run into a sudden whiteout while navigating this page. Don't worry—our basecamp team is on it and all trekking logs are fully protected.
+                            {t('siteCopy.error.description')}
                         </p>
                         {error?.message && (
                             <div className="p-4 rounded-xl bg-white/5 border border-white/10 max-w-2xl">
                                 <p className="font-mono text-sm text-brand-white/40 break-words">
-                                    System report: {error.message}
+                                    {t('siteCopy.error.report')}: {error.message}
                                 </p>
                             </div>
                         )}
@@ -100,7 +102,7 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
                             className="group px-12 py-6 bg-brand-light text-brand-dark rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:bg-white transition-all shadow-2xl hover:cursor-pointer"
                         >
                             <RefreshCw size={18} className="group-hover:rotate-180 transition-transform duration-500" />
-                            Re-establish Connection
+                            {t('siteCopy.error.retry')}
                         </motion.button>
 
                         <Link href="/">
@@ -110,7 +112,7 @@ export default function ErrorPage({ error, reset }: ErrorProps) {
                                 className="group px-12 py-6 bg-white/5 border border-white/10 text-white rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:bg-white/10 transition-all hover:cursor-pointer w-full sm:w-auto"
                             >
                                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                                Return to Base Camp
+                                {t('siteCopy.error.home')}
                             </motion.button>
                         </Link>
                     </div>

@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { Trekking } from "@/components/sections/Trekking";
 import { Mountain, Compass, MapPin, Wind, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function TrekkingPage() {
+    const { t } = useLanguage();
     return (
         <main className="min-h-screen bg-brand-white">
             <section className="relative overflow-hidden bg-brand-dark">
@@ -17,9 +19,9 @@ export default function TrekkingPage() {
                             transition={{ delay: 0.3 }}
                             className="hidden lg:flex items-center gap-8 text-white/20 font-black text-sm uppercase tracking-[0.5em] origin-right -rotate-90 translate-x-12"
                         >
-                            <span>Est. 2012</span>
+                            <span>{t('siteCopy.trekking.established')}</span>
                             <div className="w-24 h-px bg-white/10" />
-                            <span>Nepal Himalayas</span>
+                            <span>{t('siteCopy.trekking.region')}</span>
                         </motion.div>
                     </div>
                 </div>

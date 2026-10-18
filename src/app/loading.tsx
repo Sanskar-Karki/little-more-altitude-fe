@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Loading() {
+    const { t } = useLanguage();
     return (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-brand-dark px-4 overflow-hidden">
             {/* Background Grain/Noise */}
@@ -74,7 +76,7 @@ export default function Loading() {
                         transition={{ duration: 2, repeat: Infinity }}
                         className="text-[8px] md:text-[9px] text-brand-light/50 uppercase tracking-[0.4em] sm:tracking-[0.6em] font-black mt-2 text-center"
                     >
-                        Descending into thin air...
+                        {t('siteCopy.error.loading')}
                     </motion.p>
                 </div>
             </div>
@@ -86,7 +88,7 @@ export default function Loading() {
                 transition={{ delay: 1 }}
                 className="absolute bottom-10 md:bottom-12 text-[7px] md:text-[8px] text-white uppercase tracking-[0.3em] md:tracking-[0.5em] font-bold text-center px-6"
             >
-                Himalayan Heritage • Professional Safety
+                {t('siteCopy.error.loadingFooter')}
             </motion.div>
         </div>
     );

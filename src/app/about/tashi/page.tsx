@@ -49,7 +49,7 @@ export default function TashiDetailPage() {
                             className="hidden lg:block pb-4 text-right"
                         >
                             <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto">
-                                "Service is not just about showing the way; it's about making the heart feel at home in the clouds."
+                                &ldquo;{t('siteCopy.profiles.tashi.quote')}&rdquo;
                             </p>
                         </motion.div>
                     </div>
@@ -112,11 +112,11 @@ export default function TashiDetailPage() {
                                 <div className="grid grid-cols-2 gap-3 max-w-[340px] mx-auto lg:mx-0">
                                     <div className="p-6 rounded-[2rem] bg-brand-medium text-white flex flex-col justify-center items-center text-center shadow-2xl">
                                         <p className="text-3xl font-black text-brand-light tracking-tighter">12+</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-70">Expeditions</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-70">{t('siteCopy.profiles.tashi.statOne')}</p>
                                     </div>
                                     <div className="p-6 rounded-[2rem] bg-white border border-brand-light/20 flex flex-col justify-center items-center text-center shadow-lg">
                                         <p className="text-3xl font-black text-brand-dark tracking-tighter">100%</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">Safety</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">{t('siteCopy.profiles.tashi.statTwo')}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -128,11 +128,11 @@ export default function TashiDetailPage() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
                                         <div className="h-px w-12 bg-brand-light" />
-                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">The Heart of Service</span>
+                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">{t('siteCopy.profiles.tashi.eyebrow')}</span>
                                     </div>
                                     <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
-                                        Forge in Resilience, <br />
-                                        <span className="text-brand-medium">Guided by Spirit.</span>
+                                        {t('siteCopy.profiles.tashi.heading')} <br />
+                                        <span className="text-brand-medium">{t('siteCopy.profiles.tashi.accent')}</span>
                                     </h2>
                                 </div>
 
@@ -151,22 +151,22 @@ export default function TashiDetailPage() {
                                     <div className="w-12 h-12 rounded-2xl bg-brand-dark text-brand-light flex items-center justify-center mb-6 shadow-lg">
                                         <Compass size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Operations Master</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Perfect logistics and safety management across Nepal's most rugged and legendary routes.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.tashi.expertiseOne')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.tashi.expertiseOneDesc')}</p>
                                 </div>
                                 <div className="group p-8 rounded-[2rem] bg-white border border-brand-light/10 hover:border-brand-light transition-all shadow-sm hover:shadow-xl">
                                     <div className="w-12 h-12 rounded-2xl bg-brand-medium text-brand-white flex items-center justify-center mb-6 shadow-lg">
                                         <Users size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Cultural Liaison</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Connecting guests with the deep traditions and local communities of the high Himalayas.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.tashi.expertiseTwo')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.tashi.expertiseTwoDesc')}</p>
                                 </div>
                             </div>
 
                             {/* Contact & Social Section */}
                             <div className="flex flex-wrap items-center gap-6 py-12">
                                 <button className="px-12 py-5 rounded-full bg-brand-medium text-white font-black uppercase tracking-widest text-[10px] hover:bg-brand-dark transition-all shadow-2xl flex items-center gap-4 group">
-                                    Plan with Tashi
+                                    {t('siteCopy.profiles.tashi.contact')}
                                     <Mail size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                                 <div className="flex gap-4">
@@ -189,7 +189,7 @@ export default function TashiDetailPage() {
                 <div className="container relative z-10 mx-auto px-8">
                     <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
                     <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
-                        "The mountain only cares if you respect its rhythm. I guide to help you find that rhythm within yourself."
+                        &ldquo;{t('siteCopy.profiles.tashi.closingQuote')}&rdquo;
                     </p>
                 </div>
             </div>

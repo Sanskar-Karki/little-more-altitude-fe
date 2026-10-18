@@ -11,13 +11,15 @@ import abcsun from "../../../public/images/Trekking/Abc/annapurna cover.jpg";
 import Langtang from "../../../public/images/HomePageImage/Langtang.jpg";
 import Manaslu from "../../../public/images/HomePageImage/MANASLU-circuit.png";
 import Mardi from "../../../public/images/Trekking/Mardi/MardiHimalCover.jpg";
+import Pikey from "../../../public/images/Trekking/PikeyPeak/pickey.jpg";
 
 const HERO_IMAGES = [
-    abcsun,
     Mardi,
     Langtang,
+    abcsun,
     Manaslu,
     ebc,
+    Pikey,
 ];
 
 export function Hero() {
@@ -25,11 +27,12 @@ export function Hero() {
     const [index, setIndex] = useState(0);
 
     const SLUGS = [
-        "annapurna-base-camp-trek",
         "mardi-himal-trek",
         "langtang-valley-trek",
+        "annapurna-base-camp-trek",
         "manaslu-circuit-trek",
-        "everest-base-camp-trek"
+        "everest-base-camp-trek",
+        "pikey-peak-dudh-kunda-trek"
     ];
 
     const translatedContent = t('hero.content') as { title: string, subtitle: string }[];

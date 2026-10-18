@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { Destinations } from "@/components/sections/Destinations";
 import { Mountain, Compass, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function DestinationsPage() {
+    const { t } = useLanguage();
     return (
         <main className="min-h-screen bg-brand-white">
             {/* Minimalist Premium Hero for White Mode */}
@@ -25,18 +27,17 @@ export default function DestinationsPage() {
                     <div className="max-w-2xl mx-auto space-y-8">
                         <Mountain className="mx-auto text-brand-light/40" size={48} />
                         <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
-                            Can't find your <br />
-                            <span className="text-brand-medium">dream summit?</span>
+                            {t('siteCopy.destinations.question')}
                         </h2>
                         <p className="text-brand-dark/60 text-lg">
-                            We specialize in crafting bespoke, private expeditions tailored to your experience level and ambitions. Contact our expert guides today.
+                            {t('siteCopy.destinations.description')}
                         </p>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-10 py-5 bg-brand-dark text-white rounded-full font-black uppercase tracking-widest text-sm hover:bg-brand-medium transition-colors shadow-2xl"
                         >
-                            Request Custom Itinerary
+                            {t('siteCopy.destinations.button')}
                         </motion.button>
                     </div>
                 </div>

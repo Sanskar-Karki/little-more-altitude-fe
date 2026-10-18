@@ -9,7 +9,27 @@ import { SectionBadge } from "@/components/ui/SectionBadge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLanguage } from "@/context/LanguageContext";
 
-function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
+interface ExpeditionEntry {
+    slug: string;
+    name: string;
+    image: string;
+    elevation: string;
+    duration: string;
+    difficulty: string;
+    technicalLevel: string;
+    price: string;
+    description: string;
+}
+
+const expeditionImages: Record<string, string> = {
+    "mera-peak": "/images/peaks/mera/mera.jpeg",
+    "yala-peak": "/images/peaks/yala/Yala-peak.jpg",
+    "lobuche-peak": "/images/peaks/lobuche/lobuce.webp",
+    "thorong-peak": "/images/peaks/thorong/Throng%20peak.jpg",
+    "larke-peak": "/images/peaks/larke/larkey%20peak.jpg"
+};
+
+function ExpeditionCard({ exp, index }: { exp: ExpeditionEntry; index: number }) {
     const { t } = useLanguage();
     const isEven = index % 2 === 0;
 
@@ -84,7 +104,7 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
                     </p>
 
                     <div className={`flex items-center gap-8 ${isEven ? 'justify-start' : 'justify-end lg:justify-start'} justify-center pt-4`}>
-                        <Link href={`/expedition/${exp.name.toLowerCase().replace(/ /g, "-")}`}>
+                        <Link href={`/expedition/${exp.slug}`}>
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -111,7 +131,7 @@ function ExpeditionCard({ exp, index }: { exp: any; index: number }) {
 
 export function Expedition() {
     const { t } = useLanguage();
-    const expeditions = t('expedition.list') as any[];
+    const expeditions = t('expedition.list') as ExpeditionEntry[];
 
     return (
         <Section id="expeditions" background="dark" container={false} className="relative py-24">
@@ -183,18 +203,13 @@ export function Expedition() {
                 </div>
 
                 <div className="relative pb-24">
-                    {expeditions.map((exp, index) => {
-                        // We need to inject images back as they are not in translations (usually best practice is to keep them in data)
-                        // but since they are hardcoded, I'll use index to match them or just keep them in translations
-                        // Actually, I put everything in translations including descriptions.
-                        // I'll add the image URLs to the translations list too just to be sure.
-                        const images = [
-                            "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-                            "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1200&q=80",
-                            "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?auto=format&fit=crop&w=1200&q=80"
-                        ];
-                        return <ExpeditionCard key={index} exp={{ ...exp, image: images[index] }} index={index} />;
-                    })}
+                    {expeditions.map((exp, index) => (
+                        <ExpeditionCard
+                            key={exp.slug}
+                            exp={{ ...exp, image: expeditionImages[exp.slug] }}
+                            index={index}
+                        />
+                    ))}
                 </div>
             </div>
         </Section>

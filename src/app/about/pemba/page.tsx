@@ -66,7 +66,7 @@ export default function PembaDetailPage() {
                             className="hidden lg:block pb-4 text-right"
                         >
                             <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto">
-                                "The mountains didn't just raise me; they defined my entire way of seeing the world."
+                                &ldquo;{t('siteCopy.profiles.pemba.quote')}&rdquo;
                             </p>
                         </motion.div>
                     </div>
@@ -151,11 +151,11 @@ export default function PembaDetailPage() {
                                 <div className="grid grid-cols-2 gap-3 max-w-[340px] mx-auto lg:mx-0">
                                     <div className="p-6 rounded-[2rem] bg-brand-dark text-white flex flex-col justify-center items-center text-center">
                                         <p className="text-3xl font-black text-brand-light tracking-tighter">10+</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">Years</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">{t('siteCopy.profiles.pemba.statOne')}</p>
                                     </div>
                                     <div className="p-6 rounded-[2rem] bg-white border border-brand-light/20 flex flex-col justify-center items-center text-center shadow-lg">
                                         <p className="text-3xl font-black text-brand-dark tracking-tighter">2x</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">Kili</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">{t('siteCopy.profiles.pemba.statTwo')}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -167,11 +167,11 @@ export default function PembaDetailPage() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
                                         <div className="h-px w-12 bg-brand-light" />
-                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">Origin Story</span>
+                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">{t('siteCopy.profiles.pemba.eyebrow')}</span>
                                     </div>
                                     <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
-                                        From Cherem to <br />
-                                        <span className="text-brand-medium">The Global Stage.</span>
+                                        {t('siteCopy.profiles.pemba.heading')} <br />
+                                        <span className="text-brand-medium">{t('siteCopy.profiles.pemba.accent')}</span>
                                     </h2>
                                 </div>
 
@@ -190,22 +190,22 @@ export default function PembaDetailPage() {
                                     <div className="w-12 h-12 rounded-2xl bg-brand-dark text-brand-light flex items-center justify-center mb-6 shadow-lg">
                                         <Camera size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Filmmaker</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Expertly documenting the majesty of the high peaks to share their secrets with the world.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.pemba.expertiseOne')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.pemba.expertiseOneDesc')}</p>
                                 </div>
                                 <div className="group p-8 rounded-[2rem] bg-white border border-brand-light/10 hover:border-brand-light transition-all shadow-sm hover:shadow-xl">
                                     <div className="w-12 h-12 rounded-2xl bg-brand-medium text-brand-white flex items-center justify-center mb-6 shadow-lg">
                                         <Award size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Lead Guide</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Certified expertise combined with a lifetime of intuition in extreme high-altitude environments.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.pemba.expertiseTwo')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.pemba.expertiseTwoDesc')}</p>
                                 </div>
                             </div>
 
                             {/* Contact & Social Section */}
                             <div className="flex flex-wrap items-center gap-6 py-12">
                                 <button className="px-12 py-5 rounded-full bg-brand-dark text-white font-black uppercase tracking-widest text-[10px] hover:bg-brand-medium transition-all shadow-2xl flex items-center gap-4 group">
-                                    Contact Pemba
+                                    {t('siteCopy.profiles.pemba.contact')}
                                     <Mail size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                                 <div className="flex gap-4">
@@ -228,7 +228,7 @@ export default function PembaDetailPage() {
                 <div className="container relative z-10 mx-auto px-8">
                     <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
                     <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
-                        "The altitude is just a number. It's the depth of the experience that truly counts toward the summit of one's soul."
+                        &ldquo;{t('siteCopy.profiles.pemba.closingQuote')}&rdquo;
                     </p>
                 </div>
             </div>

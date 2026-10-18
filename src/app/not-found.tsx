@@ -4,15 +4,17 @@ import { motion } from "framer-motion";
 import { Mountain, ArrowLeft, Search, Compass } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function NotFound() {
+    const { t } = useLanguage();
     return (
         <main className="min-h-screen bg-brand-dark flex items-center justify-center p-8 overflow-hidden relative">
             {/* Background Atmosphere */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90"
-                    alt="Atmospheric Mountains"
+                    alt={t('siteCopy.trekking.region')}
                     fill
                     className="object-cover opacity-20 filter grayscale"
                 />
@@ -56,7 +58,7 @@ export default function NotFound() {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4 text-brand-light">
                             <Compass className="animate-spin-slow" size={24} />
-                            <span className="text-[12px] font-black uppercase tracking-[0.5em]">System Status: Drifted</span>
+                            <span className="text-[12px] font-black uppercase tracking-[0.5em]">{t('siteCopy.error.notFoundStatus')}</span>
                         </div>
                         <h1 className="text-[12rem] md:text-[20rem] font-black leading-none tracking-tighter text-white/5">
                             404
@@ -66,12 +68,11 @@ export default function NotFound() {
                     {/* Message */}
                     <div className="space-y-6 -mt-24 md:-mt-40 relative z-30">
                         <h2 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]">
-                            LOST IN THE <br />
-                            <span className="text-brand-light">WHITEOUT.</span>
+                            {t('siteCopy.error.notFoundStart')} <br />
+                            <span className="text-brand-light">{t('siteCopy.error.notFoundEnd')}</span>
                         </h2>
                         <p className="text-brand-white/40 text-xl md:text-2xl font-medium leading-relaxed max-w-xl">
-                            The trail you're looking for has been buried in a storm.
-                            Our team is currently establishing a new route.
+                            {t('siteCopy.error.notFoundDescription')}
                         </p>
                     </div>
 
@@ -84,13 +85,13 @@ export default function NotFound() {
                                 className="group px-12 py-6 bg-brand-light text-brand-dark rounded-2xl font-black uppercase tracking-widest text-xs flex items-center gap-4 hover:bg-white transition-all shadow-2xl"
                             >
                                 <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                                Return to Base Camp
+                                {t('siteCopy.error.home')}
                             </motion.button>
                         </Link>
 
                         <div className="flex items-center gap-4 text-white/20">
                             <div className="w-12 h-px bg-white/20" />
-                            <span className="text-[10px] font-black uppercase tracking-widest">Signal Lost at High Altitude</span>
+                            <span className="text-[10px] font-black uppercase tracking-widest">{t('siteCopy.error.signalLost')}</span>
                         </div>
                     </div>
                 </motion.div>

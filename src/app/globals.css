@@ -49,6 +49,13 @@ body {
   /* Restore text direction to left-to-right */
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
 
 /* Custom Scrollbar Styling */
 ::-webkit-scrollbar {

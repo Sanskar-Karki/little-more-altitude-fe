@@ -22,28 +22,28 @@ const galleryImages: GalleryImage[] = [
     {
         id: 1,
         src: "/gallery/moments/DSC00326.jpg",
-        alt: "Trekking group enjoying the majestic scenery",
+        alt: "A moment captured on the Top while the sky is painted orange.",
         category: "moments",
         size: "large"
     },
     {
         id: 2,
         src: "/gallery/moments/DSC08043.jpg",
-        alt: "Trekkers ascending a high snow-covered slope",
+        alt: "Trekkers ascending and capturing the moment",
         category: "moments",
         size: "medium"
     },
     {
         id: 3,
         src: "/gallery/moments/DSC08099.jpeg",
-        alt: "Majestic moment beneath a snow-capped Himalayan peak",
+        alt: "Trekkers traversing a high mountain ridge",
         category: "moments",
         size: "medium"
     },
     {
         id: 4,
         src: "/gallery/moments/DSC08161.jpeg",
-        alt: "Trekkers traversing a high mountain ridge",
+        alt: "Majestic moment beneath a snow-capped Himalayan peak ",
         category: "moments",
         size: "small"
     },

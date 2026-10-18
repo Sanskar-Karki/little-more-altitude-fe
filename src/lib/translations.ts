@@ -15,16 +15,16 @@ export const translations = {
       cta: "Start Your Journey",
       content: [
         {
-          title: "Annapurna Base Camp",
-          subtitle: "Witness the magnificent sunrise over the Annapurna massif.",
-        },
-        {
           title: "Mardi Himal",
           subtitle: "Discover the hidden gem of the Annapurna region.",
         },
         {
           title: "Langtang Valley",
           subtitle: "Immerse yourself in the valley of glaciers and rich Tamang culture.",
+        },
+        {
+          title: "Annapurna Base Camp",
+          subtitle: "Witness the magnificent sunrise over the Annapurna massif.",
         },
         {
           title: "Manaslu Circuit",
@@ -95,7 +95,7 @@ export const translations = {
       badge: "Our Legacy",
       heading: "The Little More",
       gradient: "Experience.",
-      description: "Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba Nurbu Sherpa, Ngima Tashi Sherpa and Pemba Thilen Sherpa, born and raised on the Himalayan trails, Little More Altitude delivers safe, authentic, and perspective-shifting trekking adventures that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.",
+      description: "Founded on the firsthand high-altitude experience of lifelong mountain companions Pemba Nurbu Sherpa, Ngima Tashi Sherpa and Pema Thilen Sherpa, born and raised on the Himalayan trails, Little More Altitude delivers safe, authentic, and perspective-shifting trekking adventures that take you beyond breathtaking landscapes—toward deeper connection, purpose, and growth.",
       stats: {
         clients: "Clients Guided",
         years: "Years of Experience",
@@ -407,6 +407,12 @@ export const translations = {
         request: "Request Application",
         speak: "Speak with a Lead Guide"
       },
+      meeting: {
+        badge: "Personalized Expedition Planning",
+        heading: "Plan your peak with our Altitude team.",
+        description: "Book a meeting for a clear briefing on your peak, itinerary, preparation, and expedition logistics.",
+        button: "Book a meeting"
+      },
       section: {
         badge: "Elite Mountaineering",
         heading: "Premier Expeditions",
@@ -423,37 +429,64 @@ export const translations = {
       },
       list: [
         {
-          name: "Mount Everest",
-          elevation: "8,848m",
-          location: "Solu-Khumbu, Nepal",
-          duration: "65 Days",
-          difficulty: "Extreme",
-          technicalLevel: "High",
-          price: "Elite Pricing",
-          tag: "THE ULTIMATE SUMMIT",
-          description: "Stand on top of the world. Our South Col route expedition offers the most comprehensive support system ever engineered for Everest."
-        },
-        {
-          name: "Kilimanjaro",
-          elevation: "5,895m",
-          location: "Moshi, Tanzania",
-          duration: "9 Days",
-          difficulty: "Moderate+",
-          technicalLevel: "Low",
-          price: "$3,850+",
-          tag: "SEVEN SUMMITS",
-          description: "The Lemosho Route. Traverse through five distinct eco-systems to reach the highest point in Africa under the expert guidance of our summit leads."
-        },
-        {
-          name: "Manaslu",
-          elevation: "8,163m",
-          location: "Gorkha, Nepal",
-          duration: "45 Days",
-          difficulty: "Extreme",
+          slug: "mera-peak",
+          name: "Mera Peak",
+          elevation: "6,461m",
+          location: "Hinku Valley, Nepal",
+          duration: "17 Days",
+          difficulty: "Challenging",
           technicalLevel: "Moderate",
-          price: "$14,500+",
-          tag: "THE SPIRIT MOUNTAIN",
-          description: "Often the first 8000m peak for aspiring Everest climbers. Experience the raw power of the Himalayas on the world's 8th highest mountain."
+          price: "Inquire",
+          tag: "FIVE 8,000M VIEWS",
+          description: "Trek into the remote Hinku Valley and climb Nepal's highest trekking peak with experienced mountain guides."
+        },
+        {
+          slug: "yala-peak",
+          name: "Yala Peak",
+          elevation: "5,500m",
+          location: "Langtang Valley, Nepal",
+          duration: "14 Days",
+          difficulty: "Moderate",
+          technicalLevel: "Low",
+          price: "Inquire",
+          tag: "FIRST HIMALAYAN SUMMIT",
+          description: "Follow the Langtang Valley trail to a beginner-friendly snow summit beneath the great Himalayan peaks."
+        },
+        {
+          slug: "thorong-peak",
+          name: "Thorong Peak",
+          elevation: "6,144m",
+          location: "Annapurna, Nepal",
+          duration: "15 Days",
+          difficulty: "Challenging",
+          technicalLevel: "High",
+          price: "Inquire",
+          tag: "ANNAPURNA ALPINE CLIMB",
+          description: "A remote alpine ascent above the Annapurna Circuit, with glacier travel and steep snow slopes."
+        },
+        {
+          slug: "larke-peak",
+          name: "Larke Peak",
+          elevation: "5,135m",
+          location: "Manaslu, Nepal",
+          duration: "17 Days",
+          difficulty: "Challenging",
+          technicalLevel: "High",
+          price: "Inquire",
+          tag: "MANASLU CIRCUIT CLIMB",
+          description: "Combine the remote Manaslu Circuit with a technical alpine climb through glacial terrain."
+        },
+        {
+          slug: "lobuche-peak",
+          name: "Lobuche Peak",
+          elevation: "6,119m",
+          location: "Khumbu, Nepal",
+          duration: "15 Days",
+          difficulty: "Challenging",
+          technicalLevel: "Moderate",
+          price: "Inquire",
+          tag: "EVEREST REGION SUMMIT",
+          description: "Climb Lobuche East after trekking through Sherpa villages and the classic Everest Base Camp trail."
         }
       ]
     },
@@ -536,9 +569,127 @@ export const translations = {
         }
       ]
     },
+    siteCopy: {
+      nav: { peaks: "Peaks" },
+      footer: { termsPolicies: "Terms & Policies" },
+      trekking: { established: "Est. 2012", region: "Nepal Himalayas" },
+      destinations: {
+        question: "Can't find your dream summit?",
+        description: "We specialize in private expeditions tailored to your experience and ambitions. Speak with our expert guides to plan your route.",
+        button: "Request a custom itinerary"
+      },
+      error: {
+        warning: "Altitude warning: system error detected",
+        titleStart: "STORM IN THE",
+        titleEnd: "SYSTEM.",
+        description: "We've run into a sudden whiteout while navigating this page. Our basecamp team is on it, and your trekking plans remain safe.",
+        report: "System report",
+        retry: "Re-establish connection",
+        home: "Return to base camp",
+        notFoundStatus: "System status: off route",
+        notFoundStart: "LOST IN THE",
+        notFoundEnd: "WHITEOUT.",
+        notFoundDescription: "The trail you're looking for is hidden by the storm. Our team is charting a new route.",
+        signalLost: "Signal lost at high altitude",
+        loading: "Descending into thin air...",
+        loadingFooter: "Himalayan heritage • Professional safety"
+      },
+      terms: {
+        contents: "Contents",
+        conditions: "Terms & Conditions",
+        privacy: "Privacy Policy",
+        visa: "Visa Procedures",
+        service: "Terms of Service",
+        partners: "B2B & Partners"
+      },
+      profiles: {
+        pema: {
+          quote: "The mission is simple but deeply personal: to provide U.S. travelers with a safe, authentic, and unforgettable way to experience Nepal.",
+          statOne: "Army Reserve",
+          statTwo: "Safety Standards",
+          eyebrow: "A legacy of discipline",
+          heading: "Where heritage meets",
+          accent: "world-class professionalism.",
+          expertiseOne: "Safety protocols",
+          expertiseOneDesc: "Designing and executing rigorous safety and rescue protocols in the Himalayas.",
+          expertiseTwo: "Technical logistics",
+          expertiseTwoDesc: "Managing complex supply chains and remote camp operations with precision.",
+          contact: "Contact the logistics team",
+          closingQuote: "Sherpa roots upheld by the integrity of military service. We welcome you into our Himalayan home."
+        },
+        pemba: {
+          quote: "The mountains didn't just raise me; they defined my entire way of seeing the world.",
+          statOne: "Years",
+          statTwo: "Kilimanjaro summits",
+          eyebrow: "Origin story",
+          heading: "From Cherem to",
+          accent: "the global stage.",
+          expertiseOne: "Filmmaker",
+          expertiseOneDesc: "Documenting the majesty of the high peaks and sharing their stories with the world.",
+          expertiseTwo: "Lead guide",
+          expertiseTwoDesc: "Certified expertise shaped by a lifetime in extreme high-altitude environments.",
+          contact: "Contact Pemba",
+          closingQuote: "Real Sherpa roots, upheld by the integrity of military service. We invite you into our Himalayan home."
+        },
+        tashi: {
+          quote: "Service is not just about showing the way; it's about making the heart feel at home in the clouds.",
+          statOne: "Expeditions",
+          statTwo: "Safety",
+          eyebrow: "The heart of service",
+          heading: "Forged in resilience,",
+          accent: "guided by spirit.",
+          expertiseOne: "Operations master",
+          expertiseOneDesc: "Reliable logistics and safety management across Nepal's legendary routes.",
+          expertiseTwo: "Cultural liaison",
+          expertiseTwoDesc: "Connecting guests with the traditions and communities of the high Himalayas.",
+          contact: "Plan with Tashi",
+          closingQuote: "The mountain asks us to respect its rhythm. I guide to help you find that rhythm within yourself."
+        }
+      },
+      peakDetail: {
+        profile: "Expedition Profile",
+        missionBrief: "Mission Brief",
+        overview: "Mission Overview",
+        objective: "The Objective.",
+        preparation: "Climbing preparation",
+        fitness: "Build fitness and endurance before departure",
+        briefing: "Attend the guide's equipment and safety briefing",
+        acclimatization: "Follow the itinerary's acclimatization plan",
+        itinerary: "Day-by-day itinerary",
+        day: "Day",
+        more: "See more days",
+        less: "Show fewer days",
+        includes: "Cost includes",
+        excludes: "Cost excludes",
+        includedItems: [
+          "Private airport arrival and departure transfers",
+          "Four nights in Kathmandu with bed and breakfast",
+          "Transportation to and from the expedition trailhead",
+          "Peak climbing and required trekking permits",
+          "Teahouse, lodge, and camping accommodation as per itinerary",
+          "Breakfast, lunch, and dinner during the trek and climb",
+          "Experienced trekking and climbing guide",
+          "One porter for every two clients during trekking, plus an additional climbing porter",
+          "Essential climbing gear, kitchen, and camping equipment",
+          "Basic first-aid kit",
+          "Staff wages, clothing, and insurance",
+          "Welcome and farewell dinners in Kathmandu",
+          "Government taxes and required paperwork"
+        ],
+        excludedItems: [
+          "Personal climbing gear",
+          "Personal travel insurance",
+          "Tea, coffee, soft drinks, and water",
+          "Hot showers during the trekking portion",
+          "Personal expenses",
+          "Tips, donations, grants, and summit bonus for guides and porters"
+        ]
+      }
+    },
     common: {
       address: "Boudha, Kathmandu, Nepal",
       email: "alittlemorealtitude25@gmail.com",
+      back: "Back",
       readMore: "Read More",
       showLess: "Show Less"
     }
@@ -557,10 +708,6 @@ export const translations = {
       cta: "Commencez Votre Voyage",
       content: [
         {
-          title: "Camp de Base de l'Annapurna",
-          subtitle: "Assistez au magnifique lever de soleil sur le massif de l'Annapurna.",
-        },
-        {
           title: "Mardi Himal",
           subtitle: "Découvrez le joyau caché de la région de l'Annapurna.",
         },
@@ -569,12 +716,20 @@ export const translations = {
           subtitle: "Immergez-vous dans la vallée des glaciers et de la riche culture Tamang.",
         },
         {
+          title: "Camp de Base de l'Annapurna",
+          subtitle: "Assistez au magnifique lever de soleil sur le massif de l'Annapurna.",
+        },
+        {
           title: "Circuit de Manaslu",
           subtitle: "Explorez la beauté intacte et les sentiers accidentés du Manaslu.",
         },
         {
           title: "Camp de Base de l'Everest",
           subtitle: "Tenez-vous dans l'ombre du plus haut sommet du monde.",
+        },
+        {
+          title: "Pikey Peak et Dudh Kunda",
+          subtitle: "Un voyage spirituel vers des lacs sacrés et des panoramas grandioses.",
         },
       ]
     },
@@ -633,7 +788,7 @@ export const translations = {
       badge: "Notre Héritage",
       heading: "Le Petit Plus",
       gradient: "Expérience.",
-      description: "Fondé sur l'expérience directe en haute altitude de compagnons de montagne de longue date, Pemba Nurbu Sherpa, Ngima Tashi Sherpa et Pemba Thilen Sherpa, nés et élevés sur les sentiers de l'Himalaya, Little More Altitude propose des aventures de trekking sûres, authentiques et transformatrices qui vous emmènent au-delà des paysages époustouflants—vers une connexion, un but et une croissance plus profonds.",
+      description: "Fondé sur l'expérience directe en haute altitude de compagnons de montagne de longue date, Pemba Nurbu Sherpa, Ngima Tashi Sherpa et Pema Thilen Sherpa, nés et élevés sur les sentiers de l'Himalaya, Little More Altitude propose des aventures de trekking sûres, authentiques et transformatrices qui vous emmènent au-delà des paysages époustouflants—vers une connexion, un but et une croissance plus profonds.",
       stats: {
         clients: "Clients Guidés",
         years: "Années d'Expérience",
@@ -945,6 +1100,12 @@ export const translations = {
         request: "Demander une Candidature",
         speak: "Parler avec un Guide Principal"
       },
+      meeting: {
+        badge: "Préparation d'expédition personnalisée",
+        heading: "Préparez votre sommet avec l'équipe Altitude.",
+        description: "Réservez un rendez-vous pour faire le point sur le sommet, l'itinéraire, la préparation et la logistique de l'expédition.",
+        button: "Réserver un rendez-vous"
+      },
       section: {
         badge: "Alpinisme d'Élite",
         heading: "Expéditions de Premier Plan",
@@ -961,37 +1122,64 @@ export const translations = {
       },
       list: [
         {
-          name: "Mont Everest",
-          elevation: "8 848m",
-          location: "Solu-Khumbu, Népal",
-          duration: "65 Jours",
-          difficulty: "Extrême",
-          technicalLevel: "Élevé",
-          price: "Tarification Élite",
-          tag: "LE SOMMET ULTIME",
-          description: "Tenez-vous au sommet du monde. Notre expédition par la route du Col Sud offre le système de support le plus complet jamais conçu pour l'Everest."
-        },
-        {
-          name: "Kilimandjaro",
-          elevation: "5 895m",
-          location: "Moshi, Tanzanie",
-          duration: "9 Jours",
-          difficulty: "Modéré+",
-          technicalLevel: "Faible",
-          price: "3 850$+",
-          tag: "SEPT SOMMETS",
-          description: "La route Lemosho. Traversez cinq écosystèmes distincts pour atteindre le point culminant de l'Afrique sous la direction experte de nos chefs de sommet."
-        },
-        {
-          name: "Manaslu",
-          elevation: "8 163m",
-          location: "Gorkha, Népal",
-          duration: "45 Jours",
-          difficulty: "Extrême",
+          slug: "mera-peak",
+          name: "Mera Peak",
+          elevation: "6 461m",
+          location: "Vallée de Hinku, Népal",
+          duration: "17 jours",
+          difficulty: "Soutenu",
           technicalLevel: "Modéré",
-          price: "14 500$+",
-          tag: "LA MONTAGNE DE L'ESPRIT",
-          description: "Souvent le premier sommet de 8000m pour les aspirants grimpeurs de l'Everest. Découvrez la puissance brute de l'Himalaya sur la 8ème plus haute montagne du monde."
+          price: "Sur demande",
+          tag: "VUES SUR CINQ SOMMETS DE 8 000 M",
+          description: "Traversez la vallée reculée de Hinku et gravissez le plus haut sommet de trekking du Népal avec des guides expérimentés."
+        },
+        {
+          slug: "yala-peak",
+          name: "Yala Peak",
+          elevation: "5 500m",
+          location: "Vallée de Langtang, Népal",
+          duration: "14 jours",
+          difficulty: "Modéré",
+          technicalLevel: "Faible",
+          price: "Sur demande",
+          tag: "PREMIER SOMMET HIMALAYEN",
+          description: "Suivez le sentier de la vallée de Langtang jusqu'à un sommet enneigé accessible aux débutants."
+        },
+        {
+          slug: "thorong-peak",
+          name: "Thorong Peak",
+          elevation: "6 144m",
+          location: "Annapurna, Népal",
+          duration: "15 jours",
+          difficulty: "Soutenu",
+          technicalLevel: "Élevé",
+          price: "Sur demande",
+          tag: "ASCENSION ALPINE DE L'ANNAPURNA",
+          description: "Une ascension alpine isolée au-dessus du circuit des Annapurnas, avec glacier et pentes de neige raides."
+        },
+        {
+          slug: "larke-peak",
+          name: "Larke Peak",
+          elevation: "5 135m",
+          location: "Manaslu, Népal",
+          duration: "17 jours",
+          difficulty: "Soutenu",
+          technicalLevel: "Élevé",
+          price: "Sur demande",
+          tag: "ASCENSION DU CIRCUIT DU MANASLU",
+          description: "Associez le circuit isolé du Manaslu à une ascension alpine technique sur terrain glaciaire."
+        },
+        {
+          slug: "lobuche-peak",
+          name: "Lobuche Peak",
+          elevation: "6 119m",
+          location: "Khumbu, Népal",
+          duration: "15 jours",
+          difficulty: "Soutenu",
+          technicalLevel: "Modéré",
+          price: "Sur demande",
+          tag: "SOMMET DE LA RÉGION DE L'EVEREST",
+          description: "Gravissez le Lobuche East après les villages sherpas et le sentier classique du camp de base de l'Everest."
         }
       ]
     },
@@ -1074,9 +1262,127 @@ export const translations = {
         }
       ]
     },
+    siteCopy: {
+      nav: { peaks: "Sommets" },
+      footer: { termsPolicies: "Conditions et politiques" },
+      trekking: { established: "Depuis 2012", region: "Himalaya népalais" },
+      destinations: {
+        question: "Vous ne trouvez pas le sommet de vos rêves ?",
+        description: "Nous organisons des expéditions privées adaptées à votre expérience et à vos ambitions. Échangez avec nos guides experts pour préparer votre itinéraire.",
+        button: "Demander un itinéraire personnalisé"
+      },
+      error: {
+        warning: "Alerte d'altitude : erreur système détectée",
+        titleStart: "TEMPÊTE DANS LE",
+        titleEnd: "SYSTÈME.",
+        description: "Une tempête soudaine nous empêche d'afficher cette page. Notre équipe au camp de base s'en occupe et vos projets de trek restent en sécurité.",
+        report: "Rapport système",
+        retry: "Rétablir la connexion",
+        home: "Retour au camp de base",
+        notFoundStatus: "État du système : hors itinéraire",
+        notFoundStart: "PERDU DANS LA",
+        notFoundEnd: "TEMPÊTE.",
+        notFoundDescription: "Le sentier recherché est masqué par la tempête. Notre équipe prépare un nouvel itinéraire.",
+        signalLost: "Signal perdu en haute altitude",
+        loading: "Descente dans l'air raréfié...",
+        loadingFooter: "Héritage himalayen • Sécurité professionnelle"
+      },
+      terms: {
+        contents: "Sommaire",
+        conditions: "Conditions générales",
+        privacy: "Politique de confidentialité",
+        visa: "Procédures de visa",
+        service: "Conditions d'utilisation",
+        partners: "Partenaires B2B"
+      },
+      profiles: {
+        pema: {
+          quote: "La mission est simple mais profondément personnelle : offrir aux voyageurs américains une façon sûre, authentique et inoubliable de découvrir le Népal.",
+          statOne: "Réserve de l'armée",
+          statTwo: "Normes de sécurité",
+          eyebrow: "Un héritage de discipline",
+          heading: "Là où l'héritage rencontre",
+          accent: "le professionnalisme d'excellence.",
+          expertiseOne: "Protocoles de sécurité",
+          expertiseOneDesc: "Concevoir et appliquer des protocoles rigoureux de sécurité et de secours dans l'Himalaya.",
+          expertiseTwo: "Logistique technique",
+          expertiseTwoDesc: "Gérer avec précision les chaînes d'approvisionnement et les camps isolés.",
+          contact: "Contacter l'équipe logistique",
+          closingQuote: "Des racines sherpas soutenues par l'intégrité du service militaire. Nous vous accueillons dans notre foyer himalayen."
+        },
+        pemba: {
+          quote: "Les montagnes ne m'ont pas seulement élevé ; elles ont façonné ma façon de voir le monde.",
+          statOne: "Années",
+          statTwo: "Sommets du Kilimandjaro",
+          eyebrow: "Histoire des origines",
+          heading: "De Cherem à",
+          accent: "la scène internationale.",
+          expertiseOne: "Cinéaste",
+          expertiseOneDesc: "Filmer la majesté des hauts sommets et partager leurs histoires avec le monde.",
+          expertiseTwo: "Guide principal",
+          expertiseTwoDesc: "Une expertise certifiée, forgée par toute une vie en haute altitude.",
+          contact: "Contacter Pemba",
+          closingQuote: "De véritables racines sherpas, soutenues par l'intégrité du service militaire. Nous vous accueillons chez nous, dans l'Himalaya."
+        },
+        tashi: {
+          quote: "Servir ne consiste pas seulement à montrer le chemin ; c'est aussi faire sentir à chacun qu'il est chez lui dans les nuages.",
+          statOne: "Expéditions",
+          statTwo: "Sécurité",
+          eyebrow: "Le cœur du service",
+          heading: "Forgé par la résilience,",
+          accent: "guidé par l'esprit.",
+          expertiseOne: "Maître des opérations",
+          expertiseOneDesc: "Une logistique fiable et une gestion rigoureuse de la sécurité sur les routes légendaires du Népal.",
+          expertiseTwo: "Lien culturel",
+          expertiseTwoDesc: "Faire découvrir aux voyageurs les traditions et les communautés du haut Himalaya.",
+          contact: "Planifier avec Tashi",
+          closingQuote: "La montagne nous demande de respecter son rythme. Je vous guide pour vous aider à trouver ce rythme en vous."
+        }
+      },
+      peakDetail: {
+        profile: "Profil de l'expédition",
+        missionBrief: "Briefing de l'expédition",
+        overview: "Présentation de l'expédition",
+        objective: "L'objectif.",
+        preparation: "Préparation à l'ascension",
+        fitness: "Développez votre condition physique et votre endurance avant le départ",
+        briefing: "Participez au briefing matériel et sécurité du guide",
+        acclimatization: "Respectez le programme d'acclimatation de l'itinéraire",
+        itinerary: "Itinéraire jour par jour",
+        day: "Jour",
+        more: "Voir les jours suivants",
+        less: "Afficher moins de jours",
+        includes: "Inclus dans le prix",
+        excludes: "Non inclus dans le prix",
+        includedItems: [
+          "Transferts privés à l'arrivée et au départ de l'aéroport",
+          "Quatre nuits à Katmandou avec petit-déjeuner",
+          "Transport jusqu'au départ de l'itinéraire et retour",
+          "Permis d'ascension et permis de trekking requis",
+          "Hébergement en lodge, maison de thé et camp selon l'itinéraire",
+          "Petit-déjeuner, déjeuner et dîner pendant le trek et l'ascension",
+          "Guide expérimenté en trekking et en alpinisme",
+          "Un porteur pour deux clients pendant le trek et un porteur supplémentaire pour l'ascension",
+          "Matériel d'alpinisme essentiel, équipement de cuisine et de camping",
+          "Trousse de premiers secours de base",
+          "Salaires, vêtements et assurance du personnel",
+          "Dîner de bienvenue et dîner d'adieu à Katmandou",
+          "Taxes gouvernementales et formalités requises"
+        ],
+        excludedItems: [
+          "Équipement d'alpinisme personnel",
+          "Assurance voyage personnelle",
+          "Thé, café, boissons gazeuses et eau",
+          "Douches chaudes pendant la partie trekking",
+          "Dépenses personnelles",
+          "Pourboires, dons, contributions et prime de sommet pour les guides et porteurs"
+        ]
+      }
+    },
     common: {
       address: "Boudha, Katmandou, Népal",
       email: "alittlemorealtitude25@gmail.com",
+      back: "Retour",
       readMore: "Lire la suite",
       showLess: "Montrer moins"
     }
@@ -1095,10 +1401,6 @@ export const translations = {
       cta: "Comienza Tu Viaje",
       content: [
         {
-          title: "Campo Base del Annapurna",
-          subtitle: "Presencie el magnífico amanecer sobre el macizo del Annapurna.",
-        },
-        {
           title: "Mardi Himal",
           subtitle: "Descubra la joya escondida de la región del Annapurna.",
         },
@@ -1107,12 +1409,20 @@ export const translations = {
           subtitle: "Sumérjase en el valle de los glaciares y la rica cultura Tamang.",
         },
         {
+          title: "Campo Base del Annapurna",
+          subtitle: "Presencie el magnífico amanecer sobre el macizo del Annapurna.",
+        },
+        {
           title: "Circuito del Manaslu",
           subtitle: "Explore la belleza virgen y los senderos accidentados del Manaslu.",
         },
         {
           title: "Campo Base del Everest",
           subtitle: "Párese a la sombra del pico más alto del mundo.",
+        },
+        {
+          title: "Pikey Peak y Dudh Kunda",
+          subtitle: "Un viaje espiritual a lagos sagrados y miradores panorámicos.",
         },
       ]
     },
@@ -1171,7 +1481,7 @@ export const translations = {
       badge: "Nuestro Legado",
       heading: "El Poco Más",
       gradient: "Experiencia.",
-      description: "Fundado en la experiencia de primera mano en alta montaña de compañeros de toda la vida Pemba Nurbu Sherpa, Ngima Tashi Sherpa y Pemba Thilen Sherpa, nacidos y criados en los senderos del Himalaya, Little More Altitude ofrece aventuras de trekking seguras, auténticas y transformadoras que lo llevan más allá de los paisajes impresionantes—hacia una conexión, un propósito y un crecimiento más profundos.",
+      description: "Fundado en la experiencia de primera mano en alta montaña de compañeros de toda la vida Pemba Nurbu Sherpa, Ngima Tashi Sherpa y Pema Thilen Sherpa, nacidos y criados en los senderos del Himalaya, Little More Altitude ofrece aventuras de trekking seguras, auténticas y transformadoras que lo llevan más allá de los paisajes impresionantes—hacia una conexión, un propósito y un crecimiento más profundos.",
       stats: {
         clients: "Clientes Guiados",
         years: "Años de Experiencia",
@@ -1219,8 +1529,29 @@ export const translations = {
         {
           question: "¿Qué equipo debo llevar?",
           answer: "Proporcionamos una lista de empaque completa al realizar la reserva."
+        },
+        {
+          question: "¿Cómo garantizan la seguridad durante los trekkings?",
+          answer: "La seguridad es nuestra prioridad. Todos nuestros guías cuentan con formación en primeros auxilios y llevan dispositivos de comunicación de emergencia."
+        },
+        {
+          question: "¿Qué incluye el paquete de trekking?",
+          answer: "Nuestros paquetes suelen incluir traslados al aeropuerto, alojamiento, comidas durante el trekking, guías y porteadores experimentados, y permisos."
+        },
+        {
+          question: "¿Puedo personalizar mi itinerario?",
+          answer: "¡Por supuesto! Creamos itinerarios a medida, ya sea que quieras añadir días de descanso, ampliar el viaje o combinar varios trekkings."
+        },
+        {
+          question: "¿Cuál es la política de cancelación?",
+          answer: "Las cancelaciones realizadas con más de 60 días de antelación reciben un reembolso, menos los gastos de tramitación."
         }
       ]
+    },
+    stats: {
+      clients: "Clientes acompañados",
+      years: "Años de experiencia",
+      success: "Tasa de éxito general"
     },
     about: {
       badge: "Arraigado en la herencia Sherpa",
@@ -1395,6 +1726,12 @@ export const translations = {
         request: "Solicitar Aplicación",
         speak: "Hablar con un Guía Principal"
       },
+      meeting: {
+        badge: "Planificación personalizada de expedición",
+        heading: "Planifica tu cumbre con el equipo Altitude.",
+        description: "Reserva una reunión para recibir información clara sobre la cumbre, el itinerario, la preparación y la logística.",
+        button: "Reservar una reunión"
+      },
       section: {
         badge: "Montañismo de Élite",
         heading: "Expediciones Premier",
@@ -1411,37 +1748,64 @@ export const translations = {
       },
       list: [
         {
-          name: "Monte Everest",
-          elevation: "8,848m",
-          location: "Solu-Khumbu, Nepal",
-          duration: "65 Días",
-          difficulty: "Extremo",
-          technicalLevel: "Alto",
-          price: "Precios Élite",
-          tag: "LA CUMBRE DEFINITIVA",
-          description: "Párate en la cima del mundo. Nuestra expedición por la ruta del Collado Sur ofrece el sistema de apoyo más completo jamás diseñado para el Everest."
-        },
-        {
-          name: "Kilimanjaro",
-          elevation: "5,895m",
-          location: "Moshi, Tanzania",
-          duration: "9 Días",
-          difficulty: "Moderado+",
-          technicalLevel: "Bajo",
-          price: "$3,850+",
-          tag: "SIETE CUMBRES",
-          description: "La Ruta Lemosho. Atraviesa cinco ecosistemas distintos para llegar al punto más alto de África bajo la guía experta de nuestros líderes de cumbre."
-        },
-        {
-          name: "Manaslu",
-          elevation: "8,163m",
-          location: "Gorkha, Nepal",
-          duration: "45 Días",
-          difficulty: "Extremo",
+          slug: "mera-peak",
+          name: "Mera Peak",
+          elevation: "6,461m",
+          location: "Valle de Hinku, Nepal",
+          duration: "17 días",
+          difficulty: "Desafiante",
           technicalLevel: "Moderado",
-          price: "$14,500+",
-          tag: "LA MONTAÑA DEL ESPÍRITU",
-          description: "A menudo el primer pico de 8000m para aspirantes a escaladores del Everest. Experimenta el poder puro del Himalaya en la octava montaña más alta del mundo."
+          price: "Consultar",
+          tag: "VISTAS A CINCO PICOS DE 8.000 M",
+          description: "Adéntrate en el remoto valle de Hinku y escala el pico de trekking más alto de Nepal con guías expertos."
+        },
+        {
+          slug: "yala-peak",
+          name: "Yala Peak",
+          elevation: "5,500m",
+          location: "Valle de Langtang, Nepal",
+          duration: "14 días",
+          difficulty: "Moderado",
+          technicalLevel: "Bajo",
+          price: "Consultar",
+          tag: "PRIMERA CUMBRE HIMALAYA",
+          description: "Recorre el valle de Langtang hasta una cumbre nevada ideal para iniciarse en la escalada."
+        },
+        {
+          slug: "thorong-peak",
+          name: "Thorong Peak",
+          elevation: "6,144m",
+          location: "Annapurna, Nepal",
+          duration: "15 días",
+          difficulty: "Desafiante",
+          technicalLevel: "Alto",
+          price: "Consultar",
+          tag: "ASCENSO ALPINO DEL ANNAPURNA",
+          description: "Un ascenso alpino remoto sobre el circuito del Annapurna, con recorrido glaciar y pendientes de nieve."
+        },
+        {
+          slug: "larke-peak",
+          name: "Larke Peak",
+          elevation: "5,135m",
+          location: "Manaslu, Nepal",
+          duration: "17 días",
+          difficulty: "Desafiante",
+          technicalLevel: "Alto",
+          price: "Consultar",
+          tag: "ASCENSO DEL CIRCUITO DEL MANASLU",
+          description: "Combina el remoto circuito del Manaslu con una escalada alpina técnica por terreno glaciar."
+        },
+        {
+          slug: "lobuche-peak",
+          name: "Lobuche Peak",
+          elevation: "6,119m",
+          location: "Khumbu, Nepal",
+          duration: "15 días",
+          difficulty: "Desafiante",
+          technicalLevel: "Moderado",
+          price: "Consultar",
+          tag: "CUMBRE DE LA REGIÓN DEL EVEREST",
+          description: "Escala Lobuche East tras recorrer aldeas sherpas y el clásico sendero al Campo Base del Everest."
         }
       ]
     },
@@ -1591,9 +1955,127 @@ export const translations = {
         }
       ]
     },
+    siteCopy: {
+      nav: { peaks: "Cumbres" },
+      footer: { termsPolicies: "Términos y políticas" },
+      trekking: { established: "Desde 2012", region: "Himalaya de Nepal" },
+      destinations: {
+        question: "¿No encuentras la cumbre de tus sueños?",
+        description: "Diseñamos expediciones privadas según tu experiencia y tus objetivos. Habla con nuestros guías para planificar tu ruta.",
+        button: "Solicitar un itinerario personalizado"
+      },
+      error: {
+        warning: "Alerta de altitud: se detectó un error del sistema",
+        titleStart: "TORMENTA EN EL",
+        titleEnd: "SISTEMA.",
+        description: "Una tormenta repentina nos impide mostrar esta página. Nuestro equipo en el campamento base ya está trabajando y tus planes de trekking están protegidos.",
+        report: "Informe del sistema",
+        retry: "Restablecer conexión",
+        home: "Volver al campamento base",
+        notFoundStatus: "Estado del sistema: ruta perdida",
+        notFoundStart: "PERDIDO EN LA",
+        notFoundEnd: "TORMENTA.",
+        notFoundDescription: "La tormenta ha ocultado el sendero que buscas. Nuestro equipo está trazando una nueva ruta.",
+        signalLost: "Señal perdida en altura",
+        loading: "Descendiendo hacia el aire enrarecido...",
+        loadingFooter: "Herencia del Himalaya • Seguridad profesional"
+      },
+      terms: {
+        contents: "Contenido",
+        conditions: "Términos y condiciones",
+        privacy: "Política de privacidad",
+        visa: "Procedimientos de visa",
+        service: "Condiciones del servicio",
+        partners: "Socios B2B"
+      },
+      profiles: {
+        pema: {
+          quote: "La misión es sencilla pero profundamente personal: ofrecer a los viajeros estadounidenses una forma segura, auténtica e inolvidable de conocer Nepal.",
+          statOne: "Reserva del Ejército",
+          statTwo: "Normas de seguridad",
+          eyebrow: "Un legado de disciplina",
+          heading: "Donde la herencia se une",
+          accent: "al profesionalismo de primer nivel.",
+          expertiseOne: "Protocolos de seguridad",
+          expertiseOneDesc: "Diseñar y aplicar rigurosos protocolos de seguridad y rescate en el Himalaya.",
+          expertiseTwo: "Logística técnica",
+          expertiseTwoDesc: "Gestionar con precisión cadenas de suministro complejas y campamentos remotos.",
+          contact: "Contactar al equipo de logística",
+          closingQuote: "Raíces sherpas auténticas, respaldadas por la integridad del servicio militar. Te damos la bienvenida a nuestro hogar en el Himalaya."
+        },
+        pemba: {
+          quote: "Las montañas no solo me criaron; definieron mi manera de ver el mundo.",
+          statOne: "Años",
+          statTwo: "Cumbres del Kilimanjaro",
+          eyebrow: "Historia de origen",
+          heading: "De Cherem a",
+          accent: "la escena global.",
+          expertiseOne: "Cineasta",
+          expertiseOneDesc: "Documentar la majestuosidad de las altas cumbres y compartir sus historias con el mundo.",
+          expertiseTwo: "Guía principal",
+          expertiseTwoDesc: "Experiencia certificada junto con toda una vida en entornos de gran altitud.",
+          contact: "Contactar a Pemba",
+          closingQuote: "Raíces sherpas auténticas, respaldadas por la integridad del servicio militar. Te invitamos a nuestro hogar en el Himalaya."
+        },
+        tashi: {
+          quote: "Servir no consiste solo en mostrar el camino; también significa hacer que las personas se sientan como en casa entre las nubes.",
+          statOne: "Expediciones",
+          statTwo: "Seguridad",
+          eyebrow: "El corazón del servicio",
+          heading: "Forjado en la resiliencia,",
+          accent: "guiado por el espíritu.",
+          expertiseOne: "Maestro de operaciones",
+          expertiseOneDesc: "Logística fiable y gestión de seguridad en las rutas legendarias de Nepal.",
+          expertiseTwo: "Enlace cultural",
+          expertiseTwoDesc: "Acercar a los viajeros a las tradiciones y comunidades del alto Himalaya.",
+          contact: "Planificar con Tashi",
+          closingQuote: "La montaña nos pide respetar su ritmo. Guío para ayudarte a encontrar ese ritmo en tu interior."
+        }
+      },
+      peakDetail: {
+        profile: "Perfil de expedición",
+        missionBrief: "Resumen de la expedición",
+        overview: "Descripción de la expedición",
+        objective: "El objetivo.",
+        preparation: "Preparación para la escalada",
+        fitness: "Mejora tu resistencia y condición física antes de partir",
+        briefing: "Asiste a la charla de seguridad y revisión del equipo con el guía",
+        acclimatization: "Sigue el plan de aclimatación del itinerario",
+        itinerary: "Itinerario día a día",
+        day: "Día",
+        more: "Ver más días",
+        less: "Mostrar menos días",
+        includes: "El precio incluye",
+        excludes: "El precio no incluye",
+        includedItems: [
+          "Traslados privados de llegada y salida al aeropuerto",
+          "Cuatro noches en Katmandú con alojamiento y desayuno",
+          "Transporte de ida y vuelta al inicio de la ruta",
+          "Permisos de escalada y trekking requeridos",
+          "Alojamiento en casas de té, lodges y campamentos según el itinerario",
+          "Desayuno, almuerzo y cena durante el trekking y la escalada",
+          "Guía profesional con experiencia en trekking y escalada",
+          "Un porteador por cada dos clientes durante el trekking y uno adicional para la escalada",
+          "Equipo esencial de escalada, cocina y campamento",
+          "Botiquín básico de primeros auxilios",
+          "Salarios, ropa y seguro del personal",
+          "Cena de bienvenida y de despedida en Katmandú",
+          "Impuestos gubernamentales y trámites necesarios"
+        ],
+        excludedItems: [
+          "Equipo personal de escalada",
+          "Seguro de viaje personal",
+          "Té, café, refrescos y agua",
+          "Duchas calientes durante el trekking",
+          "Gastos personales",
+          "Propinas, donaciones, aportes y bonificación de cumbre para guías y porteadores"
+        ]
+      }
+    },
     common: {
       address: "Boudha, Katmandú, Nepal",
       email: "alittlemorealtitude25@gmail.com",
+      back: "Volver",
       readMore: "Leer más",
       showLess: "Mostrar menos"
     }
@@ -1612,10 +2094,6 @@ export const translations = {
       cta: "Beginnen Sie Ihre Reise",
       content: [
         {
-          title: "Annapurna Basislager",
-          subtitle: "Erleben Sie den prachtvollen Sonnenaufgang über dem Annapurna-Massiv.",
-        },
-        {
           title: "Mardi Himal",
           subtitle: "Entdecken Sie das verborgene Juwel der Annapurna-Region.",
         },
@@ -1624,12 +2102,20 @@ export const translations = {
           subtitle: "Tauchen Sie ein in das Tal der Gletscher und die reiche Tamang-Kultur.",
         },
         {
+          title: "Annapurna Basislager",
+          subtitle: "Erleben Sie den prachtvollen Sonnenaufgang über dem Annapurna-Massiv.",
+        },
+        {
           title: "Manaslu Runde",
           subtitle: "Erkunden Sie die unberührte Schönheit und die rauen Pfade des Manaslu.",
         },
         {
           title: "Everest Basislager",
           subtitle: "Stehen Sie im Schatten des höchsten Gipfels der Welt.",
+        },
+        {
+          title: "Pikey Peak und Dudh Kunda",
+          subtitle: "Eine spirituelle Reise zu heiligen Seen und aussichtsreichen Panoramen.",
         },
       ]
     },
@@ -1688,7 +2174,7 @@ export const translations = {
       badge: "Unser Erbe",
       heading: "Das kleine Extra",
       gradient: "Erlebnis.",
-      description: "Gegründet auf der persönlichen Hochgebirgserfahrung der lebenslangen Berggefährten Pemba Nurbu Sherpa, Ngima Tashi Sherpa und Pemba Thilen Sherpa, bietet Little More Altitude sichere, authentische und transformative Trekking-Abenteuer, die Sie über atemberaubende Landschaften hinaus zu tieferer Verbindung und persönlichem Wachstum führen.",
+      description: "Gegründet auf der persönlichen Hochgebirgserfahrung der lebenslangen Berggefährten Pemba Nurbu Sherpa, Ngima Tashi Sherpa und Pema Thilen Sherpa, bietet Little More Altitude sichere, authentische und transformative Trekking-Abenteuer, die Sie über atemberaubende Landschaften hinaus zu tieferer Verbindung und persönlichem Wachstum führen.",
       stats: {
         clients: "Geführte Kunden",
         years: "Jahre Erfahrung",
@@ -2000,6 +2486,12 @@ export const translations = {
         request: "Bewerbung anfordern",
         speak: "Mit einem Lead Guide sprechen"
       },
+      meeting: {
+        badge: "Individuelle Expeditionsplanung",
+        heading: "Planen Sie Ihren Gipfel mit dem Altitude-Team.",
+        description: "Buchen Sie ein Gespräch für eine klare Beratung zu Gipfel, Route, Vorbereitung und Expeditionslogistik.",
+        button: "Gespräch buchen"
+      },
       section: {
         badge: "Elite-Bergsteigen",
         heading: "Erstklassige Expeditionen",
@@ -2016,37 +2508,64 @@ export const translations = {
       },
       list: [
         {
-          name: "Mount Everest",
-          elevation: "8.848m",
-          location: "Solu-Khumbu, Nepal",
-          duration: "65 Tage",
-          difficulty: "Extrem",
-          technicalLevel: "Hoch",
-          price: "Elite-Preise",
-          tag: "DER ULTIMATIVE GIPFEL",
-          description: "Stehen Sie auf dem Dach der Welt. Unsere Expedition über den Südsattel bietet das umfassendste Support-System."
-        },
-        {
-          name: "Kilimandscharo",
-          elevation: "5.895m",
-          location: "Moshi, Tansania",
-          duration: "9 Tage",
-          difficulty: "Moderat+",
-          technicalLevel: "Niedrig",
-          price: "$3.850+",
-          tag: "SEVEN SUMMITS",
-          description: "Die Lemosho-Route. Durchqueren Sie fünf Ökosysteme, um den höchsten Punkt Afrikas zu erreichen."
-        },
-        {
-          name: "Manaslu",
-          elevation: "8.163m",
-          location: "Gorkha, Nepal",
-          duration: "45 Tage",
-          difficulty: "Extrem",
+          slug: "mera-peak",
+          name: "Mera Peak",
+          elevation: "6.461m",
+          location: "Hinku-Tal, Nepal",
+          duration: "17 Tage",
+          difficulty: "Anspruchsvoll",
           technicalLevel: "Moderat",
-          price: "$14.500+",
-          tag: "DER GEISTERBERG",
-          description: "Oft der erste 8000er für angehende Everest-Bergsteiger. Erleben Sie die rohe Kraft des Himalayas."
+          price: "Auf Anfrage",
+          tag: "AUSBLICK AUF FÜNF 8.000ER",
+          description: "Wandern Sie ins abgelegene Hinku-Tal und besteigen Sie Nepals höchsten Trekkinggipfel mit erfahrenen Bergführern."
+        },
+        {
+          slug: "yala-peak",
+          name: "Yala Peak",
+          elevation: "5.500m",
+          location: "Langtang-Tal, Nepal",
+          duration: "14 Tage",
+          difficulty: "Moderat",
+          technicalLevel: "Niedrig",
+          price: "Auf Anfrage",
+          tag: "ERSTER HIMALAYA-GIPFEL",
+          description: "Folgen Sie dem Langtang-Talweg zu einem schneebedeckten Gipfel, der für Klettereinsteiger geeignet ist."
+        },
+        {
+          slug: "thorong-peak",
+          name: "Thorong Peak",
+          elevation: "6.144m",
+          location: "Annapurna, Nepal",
+          duration: "15 Tage",
+          difficulty: "Anspruchsvoll",
+          technicalLevel: "Hoch",
+          price: "Auf Anfrage",
+          tag: "ALPINE ANNAPURNA-BESTEIGUNG",
+          description: "Eine abgelegene alpine Besteigung oberhalb des Annapurna Circuit mit Gletscherpassagen und steilen Schneehängen."
+        },
+        {
+          slug: "larke-peak",
+          name: "Larke Peak",
+          elevation: "5.135m",
+          location: "Manaslu, Nepal",
+          duration: "17 Tage",
+          difficulty: "Anspruchsvoll",
+          technicalLevel: "Hoch",
+          price: "Auf Anfrage",
+          tag: "MANASLU-CIRCUIT-BESTEIGUNG",
+          description: "Verbinden Sie den abgelegenen Manaslu Circuit mit einer technischen alpinen Besteigung durch Gletschergelände."
+        },
+        {
+          slug: "lobuche-peak",
+          name: "Lobuche Peak",
+          elevation: "6.119m",
+          location: "Khumbu, Nepal",
+          duration: "15 Tage",
+          difficulty: "Anspruchsvoll",
+          technicalLevel: "Moderat",
+          price: "Auf Anfrage",
+          tag: "GIPFEL IN DER EVEREST-REGION",
+          description: "Besteigen Sie Lobuche East nach einer Wanderung durch Sherpa-Dörfer und auf dem klassischen Everest-Base-Camp-Weg."
         }
       ]
     },
@@ -2129,9 +2648,127 @@ export const translations = {
         }
       ]
     },
+    siteCopy: {
+      nav: { peaks: "Gipfel" },
+      footer: { termsPolicies: "AGB und Richtlinien" },
+      trekking: { established: "Seit 2012", region: "Nepalesischer Himalaya" },
+      destinations: {
+        question: "Sie finden Ihren Wunschgipfel nicht?",
+        description: "Wir planen private Expeditionen passend zu Ihrer Erfahrung und Ihren Zielen. Unsere erfahrenen Bergführer helfen Ihnen bei der Routenplanung.",
+        button: "Individuelle Route anfragen"
+      },
+      error: {
+        warning: "Höhenwarnung: Systemfehler erkannt",
+        titleStart: "STURM IM",
+        titleEnd: "SYSTEM.",
+        description: "Ein plötzlicher Schneesturm verhindert gerade die Anzeige dieser Seite. Unser Team im Basislager kümmert sich darum; Ihre Trekkingpläne sind sicher.",
+        report: "Systembericht",
+        retry: "Verbindung wiederherstellen",
+        home: "Zurück zum Basislager",
+        notFoundStatus: "Systemstatus: vom Weg abgekommen",
+        notFoundStart: "IM SCHNEESTURM",
+        notFoundEnd: "VERLOREN.",
+        notFoundDescription: "Der gesuchte Pfad ist im Sturm verborgen. Unser Team plant eine neue Route.",
+        signalLost: "Signal in großer Höhe verloren",
+        loading: "Abstieg in die dünne Luft...",
+        loadingFooter: "Himalaya-Erbe • Professionelle Sicherheit"
+      },
+      terms: {
+        contents: "Inhalt",
+        conditions: "Allgemeine Geschäftsbedingungen",
+        privacy: "Datenschutzerklärung",
+        visa: "Visumverfahren",
+        service: "Nutzungsbedingungen",
+        partners: "B2B-Partner"
+      },
+      profiles: {
+        pema: {
+          quote: "Die Mission ist einfach, aber zutiefst persönlich: US-Reisenden eine sichere, authentische und unvergessliche Nepal-Erfahrung zu ermöglichen.",
+          statOne: "Reserve der US-Armee",
+          statTwo: "Sicherheitsstandards",
+          eyebrow: "Ein Erbe der Disziplin",
+          heading: "Wo Herkunft auf",
+          accent: "Professionalität auf höchstem Niveau trifft.",
+          expertiseOne: "Sicherheitsprotokolle",
+          expertiseOneDesc: "Strenge Sicherheits- und Rettungsprotokolle im Himalaya entwickeln und umsetzen.",
+          expertiseTwo: "Technische Logistik",
+          expertiseTwoDesc: "Komplexe Lieferketten und abgelegene Camps präzise organisieren.",
+          contact: "Logistikteam kontaktieren",
+          closingQuote: "Echte Sherpa-Wurzeln, getragen von der Integrität des Militärdienstes. Wir heißen Sie in unserem Himalaya-Zuhause willkommen."
+        },
+        pemba: {
+          quote: "Die Berge haben mich nicht nur großgezogen; sie haben meine Sicht auf die Welt geprägt.",
+          statOne: "Jahre",
+          statTwo: "Kilimandscharo-Gipfel",
+          eyebrow: "Die Geschichte meiner Herkunft",
+          heading: "Von Cherem auf",
+          accent: "die internationale Bühne.",
+          expertiseOne: "Filmemacher",
+          expertiseOneDesc: "Die Schönheit der hohen Gipfel festhalten und ihre Geschichten mit der Welt teilen.",
+          expertiseTwo: "Leitender Bergführer",
+          expertiseTwoDesc: "Zertifizierte Fachkenntnis und lebenslange Erfahrung in extremen Höhenlagen.",
+          contact: "Pemba kontaktieren",
+          closingQuote: "Echte Sherpa-Wurzeln, getragen von der Integrität des Militärdienstes. Wir laden Sie in unser Zuhause im Himalaya ein."
+        },
+        tashi: {
+          quote: "Beim Dienen geht es nicht nur darum, den Weg zu zeigen, sondern Menschen zwischen den Wolken ein Zuhause zu geben.",
+          statOne: "Expeditionen",
+          statTwo: "Sicherheit",
+          eyebrow: "Das Herz des Dienens",
+          heading: "In Widerstandskraft geformt,",
+          accent: "vom Geist geleitet.",
+          expertiseOne: "Operationsprofi",
+          expertiseOneDesc: "Zuverlässige Logistik und Sicherheitsmanagement auf Nepals legendären Routen.",
+          expertiseTwo: "Kulturvermittler",
+          expertiseTwoDesc: "Gäste mit den Traditionen und Gemeinden des hohen Himalayas verbinden.",
+          contact: "Mit Tashi planen",
+          closingQuote: "Der Berg verlangt Respekt für seinen Rhythmus. Ich begleite dich, damit du diesen Rhythmus in dir selbst findest."
+        }
+      },
+      peakDetail: {
+        profile: "Expeditionsprofil",
+        missionBrief: "Expeditionsbriefing",
+        overview: "Expeditionsübersicht",
+        objective: "Das Ziel.",
+        preparation: "Vorbereitung auf die Besteigung",
+        fitness: "Trainieren Sie Ausdauer und Fitness vor der Abreise",
+        briefing: "Nehmen Sie an der Ausrüstungs- und Sicherheitseinweisung teil",
+        acclimatization: "Befolgen Sie den Akklimatisierungsplan der Route",
+        itinerary: "Tagesprogramm",
+        day: "Tag",
+        more: "Weitere Tage anzeigen",
+        less: "Weniger Tage anzeigen",
+        includes: "Im Preis enthalten",
+        excludes: "Nicht im Preis enthalten",
+        includedItems: [
+          "Private Transfers bei Ankunft und Abreise",
+          "Vier Übernachtungen in Kathmandu mit Frühstück",
+          "Transport zum und vom Ausgangspunkt der Expedition",
+          "Erforderliche Kletter- und Trekkinggenehmigungen",
+          "Unterkunft in Teehäusern, Lodges und Camps laut Reiseplan",
+          "Frühstück, Mittag- und Abendessen während Trekking und Besteigung",
+          "Erfahrener Trekking- und Kletterführer",
+          "Ein Träger pro zwei Gäste beim Trekking sowie ein zusätzlicher Träger für die Besteigung",
+          "Wichtige Kletter-, Küchen- und Campingausrüstung",
+          "Einfaches Erste-Hilfe-Set",
+          "Löhne, Kleidung und Versicherung des Personals",
+          "Begrüßungs- und Abschiedsessen in Kathmandu",
+          "Staatliche Steuern und notwendige Formalitäten"
+        ],
+        excludedItems: [
+          "Persönliche Kletterausrüstung",
+          "Persönliche Reiseversicherung",
+          "Tee, Kaffee, Softdrinks und Wasser",
+          "Heiße Duschen während des Trekkingteils",
+          "Persönliche Ausgaben",
+          "Trinkgelder, Spenden und Gipfelprämien für Guides und Träger"
+        ]
+      }
+    },
     common: {
       address: "Boudha, Kathmandu, Nepal",
       email: "alittlemorealtitude25@gmail.com",
+      back: "Zurück",
       readMore: "Mehr lesen",
       showLess: "Weniger anzeigen"
     }

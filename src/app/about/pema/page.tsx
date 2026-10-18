@@ -47,7 +47,7 @@ export default function PemaDetailPage() {
                             className="hidden lg:block pb-4 text-right"
                         >
                             <p className="text-brand-white/60 text-lg md:text-xl font-medium max-w-6xl ml-auto">
-                                "The mission is simple but deeply personal—to provide U.S. travelers with a safe, authentic, and unforgettable way to experience Nepal."
+                                &ldquo;{t('siteCopy.profiles.pema.quote')}&rdquo;
                             </p>
                         </motion.div>
                     </div>
@@ -110,11 +110,11 @@ export default function PemaDetailPage() {
                                 <div className="grid grid-cols-2 gap-3 max-w-[340px] mx-auto lg:mx-0">
                                     <div className="p-6 rounded-[2rem] bg-brand-dark text-white flex flex-col justify-center items-center text-center">
                                         <p className="text-3xl font-black text-brand-light tracking-tighter">USA</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">Army Reserve</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold opacity-60">{t('siteCopy.profiles.pema.statOne')}</p>
                                     </div>
                                     <div className="p-6 rounded-[2rem] bg-white border border-brand-light/20 flex flex-col justify-center items-center text-center shadow-lg">
                                         <p className="text-3xl font-black text-brand-dark tracking-tighter">100%</p>
-                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">Safety Standards</p>
+                                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-medium/50">{t('siteCopy.profiles.pema.statTwo')}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -126,11 +126,11 @@ export default function PemaDetailPage() {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-3">
                                         <div className="h-px w-12 bg-brand-light" />
-                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">A Legacy of Discipline</span>
+                                        <span className="text-brand-medium font-bold uppercase tracking-[0.3em] text-xs">{t('siteCopy.profiles.pema.eyebrow')}</span>
                                     </div>
                                     <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
-                                        Where Heritage Meets <br />
-                                        <span className="text-brand-medium">World-Class Professionalism.</span>
+                                        {t('siteCopy.profiles.pema.heading')} <br />
+                                        <span className="text-brand-medium">{t('siteCopy.profiles.pema.accent')}</span>
                                     </h2>
                                 </div>
 
@@ -149,22 +149,22 @@ export default function PemaDetailPage() {
                                     <div className="w-12 h-12 rounded-2xl bg-brand-dark text-brand-light flex items-center justify-center mb-6 shadow-lg">
                                         <Shield size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Safety Protocols</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Designing and executing the most rigorous safety and rescue protocols in the Himalayas.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.pema.expertiseOne')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.pema.expertiseOneDesc')}</p>
                                 </div>
                                 <div className="group p-8 rounded-[2rem] bg-white border border-brand-light/10 hover:border-brand-light transition-all shadow-sm hover:shadow-xl">
                                     <div className="w-12 h-12 rounded-2xl bg-brand-medium text-brand-white flex items-center justify-center mb-6 shadow-lg">
                                         <Zap size={24} />
                                     </div>
-                                    <h4 className="text-xl font-black text-brand-dark mb-2">Technical Logistics</h4>
-                                    <p className="text-sm text-brand-dark/60 leading-relaxed">Managing complex supply chains and remote camp operations with surgical precision.</p>
+                                    <h4 className="text-xl font-black text-brand-dark mb-2">{t('siteCopy.profiles.pema.expertiseTwo')}</h4>
+                                    <p className="text-sm text-brand-dark/60 leading-relaxed">{t('siteCopy.profiles.pema.expertiseTwoDesc')}</p>
                                 </div>
                             </div>
 
                             {/* Contact & Social Section */}
                             <div className="flex flex-wrap items-center gap-6 py-12">
                                 <button className="px-12 py-5 rounded-full bg-brand-dark text-white font-black uppercase tracking-widest text-[10px] hover:bg-brand-medium transition-all shadow-2xl flex items-center gap-4 group">
-                                    Contact Logistics Team
+                                    {t('siteCopy.profiles.pema.contact')}
                                     <Mail size={16} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                                 <div className="flex gap-4">
@@ -187,7 +187,7 @@ export default function PemaDetailPage() {
                 <div className="container relative z-10 mx-auto px-8">
                     <Quote className="mx-auto text-brand-light/20 mb-10" size={64} />
                     <p className="text-3xl md:text-5xl font-black text-white max-w-4xl mx-auto leading-tight tracking-tight">
-                        "Real Sherpa roots, upheld by the integrity of military service. We invite you into our Himalayan home."
+                        &ldquo;{t('siteCopy.profiles.pema.closingQuote')}&rdquo;
                     </p>
                 </div>
             </div>

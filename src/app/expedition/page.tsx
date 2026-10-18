@@ -72,11 +72,7 @@ export default function ExpeditionPage() {
                                     {t('expedition.hero.description')}
                                 </p>
 
-                                <div className="flex gap-6">
-                                    <button className="group px-10 py-6 bg-brand-light text-brand-dark rounded-2xl font-black uppercase tracking-widest text-[11px] hover:bg-white transition-all flex items-center gap-4 shadow-2xl">
-                                        {t('expedition.hero.viewManifest')} <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                                    </button>
-                                </div>
+                               
                             </div>
                         </div>
                     </motion.div>
@@ -98,7 +94,7 @@ export default function ExpeditionPage() {
                                 { icon: Mountain, label: t('expedition.stats.successRate'), value: "98", suffix: "%" },
                                 { icon: Users, label: t('expedition.stats.guideRatio'), value: "1:1", suffix: "" },
                                 { icon: Shield, label: t('expedition.stats.safetyIndex'), value: "100", suffix: "%" },
-                                { icon: Target, label: t('expedition.stats.peakSummits'), value: "250", suffix: "+" }
+                                { icon: Target, label: t('expedition.stats.peakSummits'), value: "25", suffix: "+" }
                             ].map((stat, i) => (
                                 <div key={i} className="space-y-1">
                                     <div className="flex items-center gap-3 text-brand-light/50">
